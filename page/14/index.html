@@ -160,6 +160,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/国际化(i18n)应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>国际化（internationalization）是设计和制造容易适应不同区域要求的产品的一种方式。它要求从产品中抽离所有的与语言，国家／地区和文化相关的元素。换言之，应用程序的功能和代码设计考虑在不同地区运行的需要，其代码简化了不同本地版本的生产。开发这样的程序的过程，就称为国际化。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.07.22</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h1 id="四、示例"><a href="#四、示例" class="headerlink" title="四、示例"></a>四、示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lapland.utils.i18n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.MessageFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.NumberFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.GregorianCalendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"><span class="keyword">import</span> java.util.ResourceBundle;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * i18n_Test</span></span><br><span class="line"><span class="comment"> * jdk转换命令 -native2ascii（中文转Ascii编码）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zz</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 上午4:10 18-7-20</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">i18n_Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** logger日志 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(i18n_Test.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据资源包基名和语言环境加载对应的语言资源文件</span></span><br><span class="line">        ResourceBundle bundler = ResourceBundle.getBundle(<span class="string">"resources.MessageResource"</span>, Locale.CHINA);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"username"</span>));</span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"password"</span>));</span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"email"</span>)+<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Locale locale = Locale.getDefault();</span><br><span class="line">        <span class="comment">//Locale locale = new Locale("zh", "CN");</span></span><br><span class="line">        <span class="comment">//Locale locale = new Locale("en", "US");</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 数值，货币格式化</span></span><br><span class="line">        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);</span><br><span class="line">        <span class="keyword">double</span> i = <span class="number">123456.78</span>;</span><br><span class="line">        LOGGER.info(numberFormat.format(i) + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 日期，时间格式化</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date();</span><br><span class="line">        DateFormat dateFormat_0 = DateFormat.getDateInstance(DateFormat.LONG, locale);</span><br><span class="line">        DateFormat dateFormat_1 = DateFormat.getTimeInstance(DateFormat.FULL, locale);</span><br><span class="line">        DateFormat dateFormat_2 = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(dateFormat_0.format(date));</span><br><span class="line">        LOGGER.info(dateFormat_1.format(date));</span><br><span class="line">        LOGGER.info(dateFormat_2.format(date) + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文本格式化</span></span><br><span class="line">        String pattern1 = <span class="string">"&#123;0&#125;，你好！你于 &#123;1&#125; 在工商银行存入 &#123;2&#125; 元。"</span>;</span><br><span class="line">        String pattern2 = <span class="string">"At &#123;1,time,short&#125; On &#123;1,date,long&#125;，&#123;0&#125; paid &#123;2,number, currency&#125;."</span>;</span><br><span class="line"></span><br><span class="line">        Object[] params_1 = &#123;<span class="string">"John"</span>, <span class="keyword">new</span> GregorianCalendar().getTime(), <span class="number">1.0E3</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用默认本地化对象格式化信息</span></span><br><span class="line">        String msg1 = MessageFormat.format(pattern1, params_1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用指定的本地化对象格式化信息</span></span><br><span class="line">        MessageFormat mf = <span class="keyword">new</span> MessageFormat(pattern2, Locale.US);</span><br><span class="line">        String msg2 = mf.format(params_1);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(msg1);</span><br><span class="line">        LOGGER.info(msg2 + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 资源文件动态文本格式化</span></span><br><span class="line">        String pattern_A = bundler.getString(<span class="string">"message"</span>);</span><br><span class="line">        Object[] params_A = &#123;dateFormat_0.format(date), <span class="number">99</span>, <span class="number">100000000</span>&#125;;</span><br><span class="line"></span><br><span class="line">        MessageFormat format_A = <span class="keyword">new</span> MessageFormat(pattern_A, Locale.CHINA);</span><br><span class="line">        String msg_A = format_A.format(params_A);</span><br><span class="line">        LOGGER.info(msg_A);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五、拓展阅读"><a href="#五、拓展阅读" class="headerlink" title="五、拓展阅读"></a>五、拓展阅读</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/lcore/article/details/42126299" target="_blank" rel="noopener">Spring MVC异常统一处理(异常信息的国际化,日志记录)</a></li>
+</ul>
+<h1 id="六、参考资料"><a href="#六、参考资料" class="headerlink" title="六、参考资料"></a>六、参考资料</h1><ul>
+<li><p>[x] <a href="https://blog.csdn.net/yerenyuan_pku/article/details/52234742" target="_blank" rel="noopener">国际化(i18n)</a></p>
+</li>
+<li><p>[x] <a href="https://blog.csdn.net/m0_37355951/article/details/77895585" target="_blank" rel="noopener">jquery-i18n-properties国际化</a></p>
+</li>
+<li><p>[x] <a href="https://blog.csdn.net/ethan_fu/article/details/45621337" target="_blank" rel="noopener">深入理解spring国际化</a></p>
+</li>
+</ul>
+<h1 id="七、结语"><a href="#七、结语" class="headerlink" title="七、结语"></a>七、结语</h1><blockquote>
+<p>此篇仅为测试代码，须继续在实际项目中验证完善。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/国际化(i18n)应用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Lombok使用方法简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -238,90 +322,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Lombok使用方法简介/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/国际化(i18n)应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>国际化（internationalization）是设计和制造容易适应不同区域要求的产品的一种方式。它要求从产品中抽离所有的与语言，国家／地区和文化相关的元素。换言之，应用程序的功能和代码设计考虑在不同地区运行的需要，其代码简化了不同本地版本的生产。开发这样的程序的过程，就称为国际化。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.07.22</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h1 id="四、示例"><a href="#四、示例" class="headerlink" title="四、示例"></a>四、示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lapland.utils.i18n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.MessageFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.NumberFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.GregorianCalendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"><span class="keyword">import</span> java.util.ResourceBundle;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * i18n_Test</span></span><br><span class="line"><span class="comment"> * jdk转换命令 -native2ascii（中文转Ascii编码）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zz</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 上午4:10 18-7-20</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">i18n_Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** logger日志 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(i18n_Test.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据资源包基名和语言环境加载对应的语言资源文件</span></span><br><span class="line">        ResourceBundle bundler = ResourceBundle.getBundle(<span class="string">"resources.MessageResource"</span>, Locale.CHINA);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"username"</span>));</span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"password"</span>));</span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"email"</span>)+<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Locale locale = Locale.getDefault();</span><br><span class="line">        <span class="comment">//Locale locale = new Locale("zh", "CN");</span></span><br><span class="line">        <span class="comment">//Locale locale = new Locale("en", "US");</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 数值，货币格式化</span></span><br><span class="line">        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);</span><br><span class="line">        <span class="keyword">double</span> i = <span class="number">123456.78</span>;</span><br><span class="line">        LOGGER.info(numberFormat.format(i) + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 日期，时间格式化</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date();</span><br><span class="line">        DateFormat dateFormat_0 = DateFormat.getDateInstance(DateFormat.LONG, locale);</span><br><span class="line">        DateFormat dateFormat_1 = DateFormat.getTimeInstance(DateFormat.FULL, locale);</span><br><span class="line">        DateFormat dateFormat_2 = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(dateFormat_0.format(date));</span><br><span class="line">        LOGGER.info(dateFormat_1.format(date));</span><br><span class="line">        LOGGER.info(dateFormat_2.format(date) + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文本格式化</span></span><br><span class="line">        String pattern1 = <span class="string">"&#123;0&#125;，你好！你于 &#123;1&#125; 在工商银行存入 &#123;2&#125; 元。"</span>;</span><br><span class="line">        String pattern2 = <span class="string">"At &#123;1,time,short&#125; On &#123;1,date,long&#125;，&#123;0&#125; paid &#123;2,number, currency&#125;."</span>;</span><br><span class="line"></span><br><span class="line">        Object[] params_1 = &#123;<span class="string">"John"</span>, <span class="keyword">new</span> GregorianCalendar().getTime(), <span class="number">1.0E3</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用默认本地化对象格式化信息</span></span><br><span class="line">        String msg1 = MessageFormat.format(pattern1, params_1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用指定的本地化对象格式化信息</span></span><br><span class="line">        MessageFormat mf = <span class="keyword">new</span> MessageFormat(pattern2, Locale.US);</span><br><span class="line">        String msg2 = mf.format(params_1);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(msg1);</span><br><span class="line">        LOGGER.info(msg2 + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 资源文件动态文本格式化</span></span><br><span class="line">        String pattern_A = bundler.getString(<span class="string">"message"</span>);</span><br><span class="line">        Object[] params_A = &#123;dateFormat_0.format(date), <span class="number">99</span>, <span class="number">100000000</span>&#125;;</span><br><span class="line"></span><br><span class="line">        MessageFormat format_A = <span class="keyword">new</span> MessageFormat(pattern_A, Locale.CHINA);</span><br><span class="line">        String msg_A = format_A.format(params_A);</span><br><span class="line">        LOGGER.info(msg_A);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="五、拓展阅读"><a href="#五、拓展阅读" class="headerlink" title="五、拓展阅读"></a>五、拓展阅读</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/lcore/article/details/42126299" target="_blank" rel="noopener">Spring MVC异常统一处理(异常信息的国际化,日志记录)</a></li>
-</ul>
-<h1 id="六、参考资料"><a href="#六、参考资料" class="headerlink" title="六、参考资料"></a>六、参考资料</h1><ul>
-<li><p>[x] <a href="https://blog.csdn.net/yerenyuan_pku/article/details/52234742" target="_blank" rel="noopener">国际化(i18n)</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/m0_37355951/article/details/77895585" target="_blank" rel="noopener">jquery-i18n-properties国际化</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/ethan_fu/article/details/45621337" target="_blank" rel="noopener">深入理解spring国际化</a></p>
-</li>
-</ul>
-<h1 id="七、结语"><a href="#七、结语" class="headerlink" title="七、结语"></a>七、结语</h1><blockquote>
-<p>此篇仅为测试代码，须继续在实际项目中验证完善。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/国际化(i18n)应用/">展开全文 >></a>
         </p>
       
 
@@ -803,6 +803,53 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/websocket总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/websocket总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]跨域问题的几种解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -960,12 +1007,107 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/websocket总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]Java加密部署，使用自定义的classloader解密的方法实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿 </td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>使用jfinalQ-encrypt开源软件。对项目的class文件加密，防止反编译，可自定义加密解密算法，支持tomcat部署。</p>
+<h2 id="2-jfinalQ-encrypt-项目结构"><a href="#2-jfinalQ-encrypt-项目结构" class="headerlink" title="2.jfinalQ-encrypt 项目结构"></a>2.jfinalQ-encrypt 项目结构</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505893688_9592.png" alt="image"></p>
+<h2 id="3-流程"><a href="#3-流程" class="headerlink" title="3. 流程"></a>3. 流程</h2><blockquote>
+<p>2.1 首先将class文件进行字节流加密；<br><br>2.2 然后自定义tomcat的ClassLoader；<br><br>2.3 最后通过自定义的ClassLoader解密并加载class。</p>
+</blockquote>
+<h1 id="二、加密"><a href="#二、加密" class="headerlink" title="二、加密"></a>二、加密</h1><p>本节以Test项目为例，对其class文件进行加密。并用自定义的classloader进行解密。</p>
+<h2 id="1-Test项目目录结构"><a href="#1-Test项目目录结构" class="headerlink" title="1. Test项目目录结构"></a>1. Test项目目录结构</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505895167_6951.png" alt="image"></p>
+<h3 id="1-1-web-xml-配置"><a href="#1-1-web-xml-配置" class="headerlink" title="1.1 web.xml 配置"></a>1.1 web.xml 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.demo.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/HelloServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-HelloServlet代码"><a href="#1-2-HelloServlet代码" class="headerlink" title="1.2 HelloServlet代码"></a>1.2 HelloServlet代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 请求地址 ：http://localhost:8080/Test/HelloServlet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// handle post request</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name = request.getParameter(<span class="string">"userName"</span>);</span><br><span class="line">	</span><br><span class="line">	response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">	response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">	</span><br><span class="line">	PrintWriter out = response.getWriter();</span><br><span class="line">	out.println(<span class="string">"欢迎你: "</span>+<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO-8859-1"</span>), <span class="string">"UTF-8"</span>)+ <span class="string">"!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// destroy</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-前端页面代码"><a href="#1-3-前端页面代码" class="headerlink" title="1.3 前端页面代码"></a>1.3 前端页面代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">contentType</span>=<span class="string">"text/html;charset=UTF-8"</span> <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">language</span>=<span class="string">"java"</span>%&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 请求地址： localhost:8080/Test/index.jsp --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"HelloServlet"</span> <span class="attr">name</span>=<span class="string">"form"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">		姓名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">			<span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此时部署成功后经测试，tomcat下class文件可以轻松反编译，JSP页面可正常访问servlet文件。接下来对class文件进行加密。</p>
+</blockquote>
+<h2 id="2-加密解密算法，可修改"><a href="#2-加密解密算法，可修改" class="headerlink" title="2. 加密解密算法，可修改"></a>2. 加密解密算法，可修改</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505894738_7972.png" alt="image"></p>
+<h2 id="3-运行QEncryptFrame-java文件"><a href="#3-运行QEncryptFrame-java文件" class="headerlink" title="3. 运行QEncryptFrame.java文件"></a>3. 运行QEncryptFrame.java文件</h2><ul>
+<li>选择需要加密的文件</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505895997_8647.png" alt="image"></p>
+<ul>
+<li>加密成功后显示</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505896220_6708.png" alt="image"></p>
+<h2 id="4-把生成的加密后的class文件拷贝到源class文件的位置。"><a href="#4-把生成的加密后的class文件拷贝到源class文件的位置。" class="headerlink" title="4. 把生成的加密后的class文件拷贝到源class文件的位置。"></a>4. 把生成的加密后的class文件拷贝到源class文件的位置。</h2><blockquote>
+<p>覆盖完成后，不要做修改代码，clean等操作，否则加密后的class会被再次覆盖。</p>
+</blockquote>
+<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h2><ul>
+<li>此时再对class文件进行反编译，则如下报错</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505896972_4328.png" alt="image"></p>
+<ul>
+<li>并且JSP文件不可正常请求servlet</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505898081_6329.png" alt="image"></p>
+<ul>
+<li>点击登录后返回</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505897627_2120.png" alt="image"></p>
+<h1 id="三、解密"><a href="#三、解密" class="headerlink" title="三、解密"></a>三、解密</h1><h2 id="1-配置-loader-properties-文件"><a href="#1-配置-loader-properties-文件" class="headerlink" title="1. 配置 loader.properties 文件"></a>1. 配置 loader.properties 文件</h2><blockquote>
+<p>此配置文件指定了自定义的ClassLoader需要进行解析的classs文件范围。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">encrypted_package=com.demo</span><br><span class="line">encrypted_class_path=D\:/apache-tomcat-7.0.70/webapps/Test/WEB-INF/classes/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>encrypted_package       需要进行解密的包，多个包名用逗号分隔；</li>
+<li>encrypted_class_path    tomcat中项目的classess文件夹路径。</li>
+</ul>
+<h2 id="2-打包自定义classloader文件"><a href="#2-打包自定义classloader文件" class="headerlink" title="2. 打包自定义classloader文件"></a>2. 打包自定义classloader文件</h2><blockquote>
+<p>将jfinalQ-encrypt中的loader包和QClassUtil打为一个jar，并命名为++classloaderQ.jar++，如下图所示：</p>
+</blockquote>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505898422_5153.png" alt="image"></p>
+<h2 id="3-更改tomcat的默认loader，改为自定义classloader"><a href="#3-更改tomcat的默认loader，改为自定义classloader" class="headerlink" title="3. 更改tomcat的默认loader，改为自定义classloader"></a>3. 更改tomcat的默认loader，改为自定义classloader</h2><ul>
+<li>修改tomcat/conf/context.xml文件，添加如下代码：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Loader</span> <span class="attr">loaderClass</span>=<span class="string">"com.uikoo9.loader.QClassLoader"</span> <span class="attr">delegate</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">Loader</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-替换jar包"><a href="#4-替换jar包" class="headerlink" title="4. 替换jar包"></a>4. 替换jar包</h2><blockquote>
+<p>把classloaderQ.jar放到Tomcat的lib（D:\apache-tomcat-7.0.70\lib）文件夹下面。</p>
+</blockquote>
+<h2 id="5-测试-1"><a href="#5-测试-1" class="headerlink" title="5. 测试"></a>5. 测试</h2><ul>
+<li>对class文件进行反编译，报错</li>
+<li>JSP文件可正常请求servlet.</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505905760_5556.png" alt="image"></p>
+<ul>
+<li>点击登录后返回页面</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505905761_5042.png" alt="image"></p>
+<ul>
+<li>测试成功</li>
+</ul>
+<h1 id="四、源码"><a href="#四、源码" class="headerlink" title="四、源码"></a>四、源码</h1><ul>
+<li><a href="https://github.com/uikoo9/jfinalQ-encrypt/" target="_blank" rel="noopener">源码下载</a></li>
+</ul>
+<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><blockquote>
+<p>由于时间原因，jfinalQ-encrypt源代码没能细读，只能做到初步应用，此文有待逐步后续完善。</p>
+</blockquote>
+
       
 
       
@@ -977,55 +1119,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/websocket总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/网页集成富文本编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ck<br>kindEditor</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/网页集成富文本编辑器/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/[已发布]Java加密部署，使用自定义的classloader解密的方法实例/">展开全文 >></a>
         </p>
       
 
