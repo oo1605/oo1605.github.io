@@ -439,158 +439,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/InterliJ IDEA 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>由于工作需求，需要开发和阅读一部分前端和移动端代码，然而Eclipse对这些的支持不是很友好，所以尝试用InterliJ IDEA来开发这部分代码，本文用来记录InterliJ IDEA的常用配置，以作备忘。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.01.19</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、代码风格设置"><a href="#三、代码风格设置" class="headerlink" title="三、代码风格设置"></a>三、代码风格设置</h1><h2 id="3-1、编码-颜色-字体"><a href="#3-1、编码-颜色-字体" class="headerlink" title="3.1、编码/颜色/字体"></a>3.1、编码/颜色/字体</h2><h2 id="3-2、代码注释"><a href="#3-2、代码注释" class="headerlink" title="3.2、代码注释"></a>3.2、代码注释</h2><h3 id="3-21、新建class类注释"><a href="#3-21、新建class类注释" class="headerlink" title="3.21、新建class类注释"></a>3.21、新建class类注释</h3><p>设置新建Java类时自动生成类的注解。</p>
-<ul>
-<li>File -&gt; Setting -&gt; File and Code Templates</li>
-<li>设置步骤图解如下：</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201516372950.png" alt="image"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> $&#123;USER&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $&#123;TIME&#125; $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> TODO</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-22、自定义类和方法注释"><a href="#3-22、自定义类和方法注释" class="headerlink" title="3.22、自定义类和方法注释"></a>3.22、自定义类和方法注释</h3><p>由于InterliJ IDEA不能像Eclipse那样，修改类和方法的Code Template注释，所以需要通过自定义快捷键的方式来实现。</p>
-<ul>
-<li>File -&gt; Settings -&gt; Editor -&gt; Live Templates</li>
-<li>设置步骤图解如下：</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201516372886.png" alt="image"></p>
-<ul>
-<li>类注释：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@author</span> $USER$</span><br><span class="line"> * <span class="meta">@date</span> $TIME$ $DATE$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>类注释使用时输入 /* + Enter</p>
-</blockquote>
-<ul>
-<li>方法注释：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">$PARAMS$</span><br><span class="line"> * <span class="meta">@return</span> $RETURNS$</span><br><span class="line"> * <span class="meta">@throws</span> $EXCECPTION$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果要设置参数分列显示，须把$PARAMS$表达式的值为如下脚本：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(<span class="string">"def result=''; def params=\"$&#123;_1&#125;\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')&#125;; return result"</span>, methodParameters())</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>方法注释使用时输入 /** + Enter</p>
-</blockquote>
-<h2 id="3-3、快捷键风格"><a href="#3-3、快捷键风格" class="headerlink" title="3.3、快捷键风格"></a>3.3、快捷键风格</h2><h3 id="3-31、快捷键设置"><a href="#3-31、快捷键设置" class="headerlink" title="3.31、快捷键设置"></a>3.31、快捷键设置</h3><p>因为以前一直使用Eclispe，为了使快捷键的使用不至于混乱，所以IntelliJ IDEA快捷键沿用Eclipse风格。设置如下：</p>
-<p>File -&gt; Setting -&gt; Keymap -&gt; Eclispe</p>
-<h3 id="3-32、快速输入"><a href="#3-32、快速输入" class="headerlink" title="3.32、快速输入"></a>3.32、快速输入</h3><blockquote>
-<p>快速输入是通过设置快捷键的方式实现的，方法如自定义注解的方式相同。</p>
-</blockquote>
-<ul>
-<li>常用快速输入设置如下：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:left">代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">logger</td>
-<td style="text-align:left"><figure class="highlight plain"><figcaption><span>static final Logger LOGGER </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main        | ```public static void main(String [] agrs)&#123;$END$&#125;</span><br></pre></td></tr></table></figure></td>
-</tr>
-</tbody>
-</table>
-<p>syso        | <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for         | ```for (int $i$=$start$; $i$&lt;$end$; $i$++) &#123;$cursor$&#125;</span><br></pre></td></tr></table></figure></p>
-<p>foreach     | <figure class="highlight plain"><figcaption><span>($i$ : $data$) &#123;$cursor$&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch      | ```switch ($VAR$) &#123;case $VAR_CHILDREN$:break;$END$&#125;</span><br></pre></td></tr></table></figure></p>
-<p>if          | <code>if ($VAR_a$==$VAR_b$) {$cursor$} else if($VAR_a$==$VAR_b$) {$cursor$} else {$cursor$ }</code></p>
-<blockquote>
-<p>使用时输入 快捷键 + Enter，例如 syso +  + Enter</p>
-</blockquote>
-<h2 id="3-4、生成Javadoc文档"><a href="#3-4、生成Javadoc文档" class="headerlink" title="3.4、生成Javadoc文档"></a>3.4、生成Javadoc文档</h2><p><img src="http://img.cdn.lapland.top/Image%201516373772.png" alt="image"></p>
-<h3 id="3-41、问题一：-javadoc-编码GBK的不可映射字符"><a href="#3-41、问题一：-javadoc-编码GBK的不可映射字符" class="headerlink" title="3.41、问题一： javadoc 编码GBK的不可映射字符"></a>3.41、问题一： javadoc 编码GBK的不可映射字符</h3><ul>
-<li>解决方案：</li>
-</ul>
-<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-encoding utf-8 -charset utf-8</strong></font> 。</p>
-<h3 id="3-42、问题二：-date等是未知标记"><a href="#3-42、问题二：-date等是未知标记" class="headerlink" title="3.42、问题二： @date等是未知标记"></a>3.42、问题二： @date等是未知标记</h3><ul>
-<li>解决方案：</li>
-</ul>
-<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-tag date:a:”日期:” -tag description:a:”描述:”</strong></font> 。</p>
-<h1 id="四、开发环境设置"><a href="#四、开发环境设置" class="headerlink" title="四、开发环境设置"></a>四、开发环境设置</h1><h2 id="4-1、JDK"><a href="#4-1、JDK" class="headerlink" title="4.1、JDK"></a>4.1、JDK</h2><h2 id="4-2、Tomcat"><a href="#4-2、Tomcat" class="headerlink" title="4.2、Tomcat"></a>4.2、Tomcat</h2><h2 id="4-3、JRebel热部署插件"><a href="#4-3、JRebel热部署插件" class="headerlink" title="4.3、JRebel热部署插件"></a>4.3、JRebel热部署插件</h2><blockquote>
-<p>现在 JRebel 对个人非商业用途的用户永久免费。</p>
-</blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://yiweifen.com/html/news/WaiYu/167639.html" target="_blank" rel="noopener">idea2017+热部署插件jRebel安装与配置</a></li>
-</ul>
-<h2 id="4-4、Maven"><a href="#4-4、Maven" class="headerlink" title="4.4、Maven"></a>4.4、Maven</h2><h2 id="4-5、SVN"><a href="#4-5、SVN" class="headerlink" title="4.5、SVN"></a>4.5、SVN</h2><h1 id="五、输入输出自定义模板"><a href="#五、输入输出自定义模板" class="headerlink" title="五、输入输出自定义模板"></a>五、输入输出自定义模板</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc//" target="_blank" rel="noopener">IntelliJ IDEA官方文档</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc/intellij_idea_doc-itw32eg4.html/" target="_blank" rel="noopener">IntelliJ IDEA使用语言构造的周围代码块</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u014044812/article/details/76577479/" target="_blank" rel="noopener">IntelliJ IDEA 自定义方法注解模板</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-template-variables.html?spm=a2c4e.11153940.blogcont73449.14.692ef64TXby13/" target="_blank" rel="noopener">Creating and Editing Template Variables</a></li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/InterliJ IDEA 使用总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/MyEclipse 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -721,6 +569,158 @@ Type variables(类型变量): 128, 0, 25   红罗色
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/MyEclipse 使用总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/InterliJ IDEA 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>由于工作需求，需要开发和阅读一部分前端和移动端代码，然而Eclipse对这些的支持不是很友好，所以尝试用InterliJ IDEA来开发这部分代码，本文用来记录InterliJ IDEA的常用配置，以作备忘。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018.01.19</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、代码风格设置"><a href="#三、代码风格设置" class="headerlink" title="三、代码风格设置"></a>三、代码风格设置</h1><h2 id="3-1、编码-颜色-字体"><a href="#3-1、编码-颜色-字体" class="headerlink" title="3.1、编码/颜色/字体"></a>3.1、编码/颜色/字体</h2><h2 id="3-2、代码注释"><a href="#3-2、代码注释" class="headerlink" title="3.2、代码注释"></a>3.2、代码注释</h2><h3 id="3-21、新建class类注释"><a href="#3-21、新建class类注释" class="headerlink" title="3.21、新建class类注释"></a>3.21、新建class类注释</h3><p>设置新建Java类时自动生成类的注解。</p>
+<ul>
+<li>File -&gt; Setting -&gt; File and Code Templates</li>
+<li>设置步骤图解如下：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201516372950.png" alt="image"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> $&#123;USER&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $&#123;TIME&#125; $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> TODO</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-22、自定义类和方法注释"><a href="#3-22、自定义类和方法注释" class="headerlink" title="3.22、自定义类和方法注释"></a>3.22、自定义类和方法注释</h3><p>由于InterliJ IDEA不能像Eclipse那样，修改类和方法的Code Template注释，所以需要通过自定义快捷键的方式来实现。</p>
+<ul>
+<li>File -&gt; Settings -&gt; Editor -&gt; Live Templates</li>
+<li>设置步骤图解如下：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201516372886.png" alt="image"></p>
+<ul>
+<li>类注释：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@author</span> $USER$</span><br><span class="line"> * <span class="meta">@date</span> $TIME$ $DATE$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>类注释使用时输入 /* + Enter</p>
+</blockquote>
+<ul>
+<li>方法注释：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">$PARAMS$</span><br><span class="line"> * <span class="meta">@return</span> $RETURNS$</span><br><span class="line"> * <span class="meta">@throws</span> $EXCECPTION$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要设置参数分列显示，须把$PARAMS$表达式的值为如下脚本：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(<span class="string">"def result=''; def params=\"$&#123;_1&#125;\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')&#125;; return result"</span>, methodParameters())</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>方法注释使用时输入 /** + Enter</p>
+</blockquote>
+<h2 id="3-3、快捷键风格"><a href="#3-3、快捷键风格" class="headerlink" title="3.3、快捷键风格"></a>3.3、快捷键风格</h2><h3 id="3-31、快捷键设置"><a href="#3-31、快捷键设置" class="headerlink" title="3.31、快捷键设置"></a>3.31、快捷键设置</h3><p>因为以前一直使用Eclispe，为了使快捷键的使用不至于混乱，所以IntelliJ IDEA快捷键沿用Eclipse风格。设置如下：</p>
+<p>File -&gt; Setting -&gt; Keymap -&gt; Eclispe</p>
+<h3 id="3-32、快速输入"><a href="#3-32、快速输入" class="headerlink" title="3.32、快速输入"></a>3.32、快速输入</h3><blockquote>
+<p>快速输入是通过设置快捷键的方式实现的，方法如自定义注解的方式相同。</p>
+</blockquote>
+<ul>
+<li>常用快速输入设置如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">logger</td>
+<td style="text-align:left"><figure class="highlight plain"><figcaption><span>static final Logger LOGGER </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main        | ```public static void main(String [] agrs)&#123;$END$&#125;</span><br></pre></td></tr></table></figure></td>
+</tr>
+</tbody>
+</table>
+<p>syso        | <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for         | ```for (int $i$=$start$; $i$&lt;$end$; $i$++) &#123;$cursor$&#125;</span><br></pre></td></tr></table></figure></p>
+<p>foreach     | <figure class="highlight plain"><figcaption><span>($i$ : $data$) &#123;$cursor$&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch      | ```switch ($VAR$) &#123;case $VAR_CHILDREN$:break;$END$&#125;</span><br></pre></td></tr></table></figure></p>
+<p>if          | <code>if ($VAR_a$==$VAR_b$) {$cursor$} else if($VAR_a$==$VAR_b$) {$cursor$} else {$cursor$ }</code></p>
+<blockquote>
+<p>使用时输入 快捷键 + Enter，例如 syso +  + Enter</p>
+</blockquote>
+<h2 id="3-4、生成Javadoc文档"><a href="#3-4、生成Javadoc文档" class="headerlink" title="3.4、生成Javadoc文档"></a>3.4、生成Javadoc文档</h2><p><img src="http://img.cdn.lapland.top/Image%201516373772.png" alt="image"></p>
+<h3 id="3-41、问题一：-javadoc-编码GBK的不可映射字符"><a href="#3-41、问题一：-javadoc-编码GBK的不可映射字符" class="headerlink" title="3.41、问题一： javadoc 编码GBK的不可映射字符"></a>3.41、问题一： javadoc 编码GBK的不可映射字符</h3><ul>
+<li>解决方案：</li>
+</ul>
+<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-encoding utf-8 -charset utf-8</strong></font> 。</p>
+<h3 id="3-42、问题二：-date等是未知标记"><a href="#3-42、问题二：-date等是未知标记" class="headerlink" title="3.42、问题二： @date等是未知标记"></a>3.42、问题二： @date等是未知标记</h3><ul>
+<li>解决方案：</li>
+</ul>
+<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-tag date:a:”日期:” -tag description:a:”描述:”</strong></font> 。</p>
+<h1 id="四、开发环境设置"><a href="#四、开发环境设置" class="headerlink" title="四、开发环境设置"></a>四、开发环境设置</h1><h2 id="4-1、JDK"><a href="#4-1、JDK" class="headerlink" title="4.1、JDK"></a>4.1、JDK</h2><h2 id="4-2、Tomcat"><a href="#4-2、Tomcat" class="headerlink" title="4.2、Tomcat"></a>4.2、Tomcat</h2><h2 id="4-3、JRebel热部署插件"><a href="#4-3、JRebel热部署插件" class="headerlink" title="4.3、JRebel热部署插件"></a>4.3、JRebel热部署插件</h2><blockquote>
+<p>现在 JRebel 对个人非商业用途的用户永久免费。</p>
+</blockquote>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://yiweifen.com/html/news/WaiYu/167639.html" target="_blank" rel="noopener">idea2017+热部署插件jRebel安装与配置</a></li>
+</ul>
+<h2 id="4-4、Maven"><a href="#4-4、Maven" class="headerlink" title="4.4、Maven"></a>4.4、Maven</h2><h2 id="4-5、SVN"><a href="#4-5、SVN" class="headerlink" title="4.5、SVN"></a>4.5、SVN</h2><h1 id="五、输入输出自定义模板"><a href="#五、输入输出自定义模板" class="headerlink" title="五、输入输出自定义模板"></a>五、输入输出自定义模板</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc//" target="_blank" rel="noopener">IntelliJ IDEA官方文档</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc/intellij_idea_doc-itw32eg4.html/" target="_blank" rel="noopener">IntelliJ IDEA使用语言构造的周围代码块</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u014044812/article/details/76577479/" target="_blank" rel="noopener">IntelliJ IDEA 自定义方法注解模板</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-template-variables.html?spm=a2c4e.11153940.blogcont73449.14.692ef64TXby13/" target="_blank" rel="noopener">Creating and Editing Template Variables</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/InterliJ IDEA 使用总结/">展开全文 >></a>
         </p>
       
 
