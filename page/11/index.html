@@ -160,131 +160,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/持续集成及自动化运维/利用Jenkins进行持续集成的实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文主要讲述如何使用Jenkins 搭建自动化 CI/CD 流水线。以实现软件服务的快速迭代。测试环境：Centos 7 。</p>
-<ul>
-<li>Jenkins 可实现如下功能：<ul>
-<li>持续集成Continuous Integration</li>
-<li>持续交付Continuous Delivery</li>
-<li>持续部署Continuous Deployment</li>
-<li>自动化测试（可集成脚本或自动化平台）</li>
-</ul>
-</li>
-</ul>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.02.05</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-<tr>
-<td style="text-align:center"> 2</td>
-<td style="text-align:center">2018.03.14</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">补充完整</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、持续集成"><a href="#3-1、持续集成" class="headerlink" title="3.1、持续集成"></a>3.1、持续集成</h2><p>持续集成（Continuous integration，简称CI）指的是，频繁地（一天多次）将代码集成到主干。</p>
-<h2 id="3-2、持续交付"><a href="#3-2、持续交付" class="headerlink" title="3.2、持续交付"></a>3.2、持续交付</h2><p>持续交付（Continuous delivery）指的是，频繁地将软件的新版本，交付给质量团队或者用户，以供评审。</p>
-<h2 id="3-3、持续部署"><a href="#3-3、持续部署" class="headerlink" title="3.3、持续部署"></a>3.3、持续部署</h2><p>持续部署（continuous deployment）是持续交付的下一步，指的是代码通过评审以后，自动部署到生产环境。</p>
-<h1 id="四、持续集成部署图"><a href="#四、持续集成部署图" class="headerlink" title="四、持续集成部署图"></a>四、持续集成部署图</h1><h1 id="五、部署过程"><a href="#五、部署过程" class="headerlink" title="五、部署过程"></a>五、部署过程</h1><h2 id="5-1、前期准备"><a href="#5-1、前期准备" class="headerlink" title="5.1、前期准备"></a>5.1、前期准备</h2><ul>
-<li>安装JDK1.7及以上；</li>
-<li>安装Git进行版本控制；</li>
-<li>安装Maven进行项目构建，jar包管理；</li>
-<li><p>搭建Nexus私服。</p>
-</li>
-<li><p>Maven jobs and Java versions compatibility</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Jenkins &gt;= 1.520 requires Java 6 thus Maven jobs must be launched with Java &gt;= 6.</span><br><span class="line">Jenkins &gt;= 1.612 requires Java 7 thus Maven jobs must be launched with Java &gt;= 7.</span><br><span class="line">Jenkins &gt;= 2.54 requires Java 8 thus Maven jobs must be launched with Java &gt;= 8.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="5-2、Jenkins安装"><a href="#5-2、Jenkins安装" class="headerlink" title="5.2、Jenkins安装"></a>5.2、Jenkins安装</h2><h3 id="5-21、War包安装"><a href="#5-21、War包安装" class="headerlink" title="5.21、War包安装"></a>5.21、War包安装</h3><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins官方网站 - 下载地址</a></li>
-</ul>
-<p>把解压得到的war包直接扔到tomcat下，启动tomcat。访问 <a href="http://localhost:8080/jenkins" target="_blank" rel="noopener">http://localhost:8080/jenkins</a></p>
-<h3 id="5-22、Centos下的安装"><a href="#5-22、Centos下的安装" class="headerlink" title="5.22、Centos下的安装"></a>5.22、Centos下的安装</h3><h3 id="5-221、安装"><a href="#5-221、安装" class="headerlink" title="5.221、安装"></a>5.221、安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo</span><br><span class="line"># rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key</span><br><span class="line"># yum install jenkins</span><br></pre></td></tr></table></figure>
-<h4 id="5-222、配置jdk安装路径"><a href="#5-222、配置jdk安装路径" class="headerlink" title="5.222、配置jdk安装路径"></a>5.222、配置jdk安装路径</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># whereis java  --&gt; /usr/lib/jvm/java-1.8.0-openjdk-amd64</span><br><span class="line"># vim /etc/init.d/jenkins</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在candidates中第一行添加java路径，如下：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">candidates="</span><br><span class="line">/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java</span><br><span class="line">/etc/alternatives/java</span><br><span class="line">/usr/lib/jvm/java-1.8.0/bin/java</span><br><span class="line">/usr/lib/jvm/jre-1.8.0/bin/java</span><br><span class="line">/usr/lib/jvm/java-1.7.0/bin/java</span><br><span class="line">/usr/lib/jvm/jre-1.7.0/bin/java</span><br><span class="line">/usr/bin/java</span><br><span class="line"><span class="string">"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="5-223、修改端口号，默认8080"><a href="#5-223、修改端口号，默认8080" class="headerlink" title="5.223、修改端口号，默认8080"></a>5.223、修改端口号，默认8080</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd</span><br><span class="line"># java -jar jenkins.war –httpPort=18080 –ajp13Port=18009</span><br></pre></td></tr></table></figure>
-<h4 id="5-224、其他命令"><a href="#5-224、其他命令" class="headerlink" title="5.224、其他命令"></a>5.224、其他命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 停止/启动</span><br><span class="line"># service jenkins start [stop]/[restart]</span><br><span class="line">// 加入开机启动</span><br><span class="line"># chkconfig jenkins on</span><br></pre></td></tr></table></figure>
-<h2 id="5-3、Jenkins安装"><a href="#5-3、Jenkins安装" class="headerlink" title="5.3、Jenkins安装"></a>5.3、Jenkins安装</h2><h3 id="5-31、访问-http-localhost-8080-jenkins"><a href="#5-31、访问-http-localhost-8080-jenkins" class="headerlink" title="5.31、访问 http://localhost:8080/jenkins/"></a>5.31、访问 <a href="http://localhost:8080/jenkins/" target="_blank" rel="noopener">http://localhost:8080/jenkins/</a></h3><ul>
-<li>第一次启动时，会要求设置初始密码，如下图所示，找到密码并输入</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201521043445.png" alt="image"></p>
-<h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html/" target="_blank" rel="noopener">持续集成是什么？</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://wenku.baidu.com/view/c15fb28b69eae009591bec25.html" target="_blank" rel="noopener">Jenkins持续集成文档</a></li>
-<li><p>[x] <a href="http://blog.csdn.net/kefengwang/article/details/54233584" target="_blank" rel="noopener">Jenkins 持续集成综合实战</a></p>
-</li>
-<li><p>[x] <a href="https://www.cnblogs.com/fanzhenyong/p/7709434.html" target="_blank" rel="noopener">Nexus搭建私有Maven仓库</a></p>
-</li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/持续集成及自动化运维/利用Jenkins进行持续集成的实践/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/Nginx/Nginx的负载均衡方案详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -681,6 +556,53 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC04 数据库应用/SQL语句优化/索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/SQL语句优化/索引/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC04 数据库应用/SQL语句优化/SQL语句性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -751,53 +673,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/SQL语句优化/SQL语句性能优化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC04 数据库应用/SQL语句优化/索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/SQL语句优化/索引/">展开全文 >></a>
         </p>
       
 
@@ -938,6 +813,143 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC04 数据库应用/数据库设计基础/数据库设计步骤及示例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文记录了一个实际项目的数据库设计流程。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.11.27</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、数据库设计的基本步骤"><a href="#三、数据库设计的基本步骤" class="headerlink" title="三、数据库设计的基本步骤"></a>三、数据库设计的基本步骤</h1><p>1）需求分析<br>分析用户的需求，包括数据、功能和性能需求。</p>
+<p>2）概念结构设计<br>主要采用E-R模型进行设计，包括画E-R图。</p>
+<p>3）逻辑结构设计<br>通过将E-R图转换成表，实现从E-R模型到关系模型的转换。</p>
+<p>4）物理结构设计<br>主要是为所设计的数据库选择合适的存储结构和存取路径。</p>
+<p>5）数据库实施<br>包括编程、测试和试运行。</p>
+<p>6）数据库的运行和维护<br>系统的运行与数据库的日常维护。</p>
+<h2 id="3-1、文档样例"><a href="#3-1、文档样例" class="headerlink" title="3.1、文档样例"></a>3.1、文档样例</h2><table>
+<thead>
+<tr>
+<th>列名</th>
+<th>数据类型</th>
+<th>允许空值</th>
+<th>自动编号</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int(11)</td>
+<td>not null</td>
+<td>auto</td>
+<td>PK</td>
+<td>编号</td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>int(11)</td>
+<td>not null</td>
+<td></td>
+<td>FK</td>
+<td>分类编号</td>
+</tr>
+<tr>
+<td>category_name</td>
+<td>varchar(50)</td>
+<td>not null</td>
+<td></td>
+<td></td>
+<td>分类名称</td>
+</tr>
+<tr>
+<td>title</td>
+<td>varchar(200)</td>
+<td>not null</td>
+<td></td>
+<td>index</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>text</td>
+<td>null</td>
+<td></td>
+<td></td>
+<td>使用说明</td>
+</tr>
+</tbody>
+</table>
+<h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">异常处理_百度百科</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<blockquote>
+<p>文章仅作为个人学习总结之用，如能惠及他人，不胜荣幸。作者知识水平有限，欢迎批评指正。</p>
+</blockquote>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/数据库设计基础/数据库设计步骤及示例/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/10/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/12/">Next &raquo;</a>
@@ -1033,6 +1045,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

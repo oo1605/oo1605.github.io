@@ -160,113 +160,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Lombok使用方法简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Lombok是一个可以通过注解的形式来帮助我们简化 Java 代码的工具。它可以帮助我们在编译生成getter / setter、构造函数、toString()、hashcode()等一些常用的方法的字节码文件，而在源码中不必写这些代码。</p>
-<p>本文主要介绍如何使用Lombok插件来简化代码。 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://projectlombok.org/" target="_blank" rel="noopener">官网地址</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/rzwitserloot/lombok" target="_blank" rel="noopener">Github地址</a></li>
-</ul>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.06.25</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、Lombok配置"><a href="#三、Lombok配置" class="headerlink" title="三、Lombok配置"></a>三、Lombok配置</h1><h2 id="3-1、添加Lombok依赖"><a href="#3-1、添加Lombok依赖" class="headerlink" title="3.1、添加Lombok依赖"></a>3.1、添加Lombok依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- model生成其构造器、getter、setter、equals、hashcode、toString方法 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.18.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2、添加IDEA插件"><a href="#3-2、添加IDEA插件" class="headerlink" title="3.2、添加IDEA插件"></a>3.2、添加IDEA插件</h2><p><img src="http://img.cdn.lapland.top/Image%201529916441.png" alt="image"></p>
-<h2 id="3-3、启用Annotation编译"><a href="#3-3、启用Annotation编译" class="headerlink" title="3.3、启用Annotation编译"></a>3.3、启用Annotation编译</h2><blockquote>
-<p>File –&gt; Settings –&gt; Builder，Execution，Deployment –&gt; Compiler –&gt; Annotation Processors。<br>选中下图中复选框 , 重启服务器。</p>
-</blockquote>
-<p><img src="http://img.cdn.lapland.top/Image%201529916236.png" alt="image"></p>
-<h1 id="四、Lombok使用"><a href="#四、Lombok使用" class="headerlink" title="四、Lombok使用"></a>四、Lombok使用</h1><h2 id="4-1、Lombok注解"><a href="#4-1、Lombok注解" class="headerlink" title="4.1、Lombok注解"></a>4.1、Lombok注解</h2><p>下面只是介绍了几个常用的注解，更多的请参见<a href="https://projectlombok.org/features/index.html。" target="_blank" rel="noopener">https://projectlombok.org/features/index.html。</a></p>
-<h3 id="4-111、-Getter-Setter"><a href="#4-111、-Getter-Setter" class="headerlink" title="4.111、@Getter / @Setter"></a>4.111、@Getter / @Setter</h3><p>可以作用在类上和属性上，放在类上，会对所有的非静态(non-static)属性生成Getter/Setter方法，放在属性上，会对该属性生成Getter/Setter方法。并可以指定Getter/Setter方法的访问级别。</p>
-<h3 id="4-112、-EqualsAndHashCode"><a href="#4-112、-EqualsAndHashCode" class="headerlink" title="4.112、@EqualsAndHashCode"></a>4.112、@EqualsAndHashCode</h3><p>默认情况下，会使用所有非瞬态(non-transient)和非静态(non-static)字段来生成equals和hascode方法，也可以指定具体使用哪些属性。</p>
-<h3 id="4-113、-ToString"><a href="#4-113、-ToString" class="headerlink" title="4.113、@ToString"></a>4.113、@ToString</h3><p>生成toString方法，默认情况下，会输出类名、所有属性，属性会按照顺序输出，以逗号分割。</p>
-<h3 id="4-114、-NoArgsConstructor，-RequiredArgsConstructor，-AllArgsConstructor"><a href="#4-114、-NoArgsConstructor，-RequiredArgsConstructor，-AllArgsConstructor" class="headerlink" title="4.114、@NoArgsConstructor，@RequiredArgsConstructor，@AllArgsConstructor"></a>4.114、@NoArgsConstructor，@RequiredArgsConstructor，@AllArgsConstructor</h3><p>无参构造器、部分参数构造器、全参构造器，当我们需要重载多个构造器的时候，Lombok就无能为力了。</p>
-<ul>
-<li>@NoArgsConstructor</li>
-</ul>
-<p>生成一个无参数的构造方法</p>
-<ul>
-<li>@RequiredArgsConstructor</li>
-</ul>
-<p>会生成构造方法（可能带参数也可能不带参数），如果带参数，这参数只能是以final修饰的未经初始化的字段，或者是以@NonNull注解的未经初始化的字段。</p>
-<ul>
-<li>@AllArgsConstructor</li>
-</ul>
-<p>会生成一个包含所有变量，同时如果变量使用了NotNull annotation ， 会进行是否为空的校验。</p>
-<h3 id="4-115、-Data"><a href="#4-115、-Data" class="headerlink" title="4.115、@Data"></a>4.115、@Data</h3><p>自动为所有字段添加@ToString, @EqualsAndHashCode, @Getter方法，为非final字段添加@Setter,和@RequiredArgsConstructor。</p>
-<h3 id="4-116、-Log4j"><a href="#4-116、-Log4j" class="headerlink" title="4.116、@Log4j"></a>4.116、@Log4j</h3><p>注解在类上；提供一个 属性名为log 的 log4j 日志对象，调用 log.info(xxxx)；</p>
-<h1 id="五、参考资料"><a href="#五、参考资料" class="headerlink" title="五、参考资料"></a>五、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jianshu.com/p/365ea41b3573" target="_blank" rel="noopener">lombok</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/ghsau/article/details/52334762" target="_blank" rel="noopener">Java奇淫巧技之Lombok</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/lvshuchangyin/article/details/68065775" target="_blank" rel="noopener">Lombok 之 Constructor</a></li>
-</ul>
-<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><blockquote>
-<p>待补充实例</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Lombok使用方法简介/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/国际化(i18n)应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -803,53 +696,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/websocket总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/websocket总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]跨域问题的几种解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -978,6 +824,53 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/[已发布]跨域问题的几种解决方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/websocket总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/websocket总结/">展开全文 >></a>
         </p>
       
 
@@ -1197,6 +1090,56 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/网页集成Markdown工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/pandao/editor.md" target="_blank" rel="noopener">editor.md</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/网页集成Markdown工具/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
@@ -1292,6 +1235,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

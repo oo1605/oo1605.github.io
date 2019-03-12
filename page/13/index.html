@@ -160,185 +160,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC04 数据库应用/非关系型数据库和关系型数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><blockquote>
-<p>本文介绍了非关系型数据库和关系型数据库的概念、特性以及实际应用中的选型参考依据。两种类型的数据库各有自身特点及应用场景，总之，没有最好的方案，只有最合适的方案。</p>
-</blockquote>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.12.28</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿  </td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、关系型数据库"><a href="#3-1、关系型数据库" class="headerlink" title="3.1、关系型数据库"></a>3.1、关系型数据库</h2><blockquote>
-<p>关系型数据库，是指采用了关系模型来组织数据的数据库。简单来说，关系模型指的就是二维表格模型，而一个关系型数据库就是由二维表及其之间的联系所组成的一个数据组织。关系型数据库的最大特点就是事务的一致性。读写操作都是事务的，具有ACID的特点，ACID是Atomic原子性，Consistency一致性，Isolation隔离性，Durability持久性。</p>
-</blockquote>
-<blockquote>
-<p>常见的关系型数据库有Oracle、DB2、Mysql等。</p>
-</blockquote>
-<h2 id="3-2、非关系型数据库（NOSQL）"><a href="#3-2、非关系型数据库（NOSQL）" class="headerlink" title="3.2、非关系型数据库（NOSQL）"></a>3.2、非关系型数据库（NOSQL）</h2><blockquote>
-<p>非关系型数据库，是指那些非关系型的，分布式的，且一般不保证遵循ACID原则的数据存储系统。NOSQL数据库不提供sql支持，非关系型数据库是基于CAP模型的。</p>
-</blockquote>
-<blockquote>
-<p>常见的非关系型数据库有Redis、Memcached、MongoDB、HBase等。</p>
-</blockquote>
-<h1 id="四、关系型数据库的特性"><a href="#四、关系型数据库的特性" class="headerlink" title="四、关系型数据库的特性"></a>四、关系型数据库的特性</h1><h2 id="4-1、关系型数据库的优点"><a href="#4-1、关系型数据库的优点" class="headerlink" title="4.1、关系型数据库的优点"></a>4.1、关系型数据库的优点</h2><ul>
-<li>结构化查询 - SQL语言</li>
-</ul>
-<blockquote>
-<p>通用的SQL语言使得操作关系型数据库非常方便。关系型数据库可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</p>
-</blockquote>
-<ul>
-<li>数据一致性</li>
-</ul>
-<blockquote>
-<p>关系型数据库的最大特点就是事务的一致性。这个特性使得关系型数据库被应用于几乎对一致性有要求的系统中，如银行系统。为了维护一致性所付出的代价就是其读写性能比较差。</p>
-</blockquote>
-<ul>
-<li>持久存储</li>
-</ul>
-<blockquote>
-<p>数据的持久存储，尤其是海量数据的持久存储，还是需要一种关系数据库。</p>
-</blockquote>
-<h2 id="4-2、关系型数据库的瓶颈"><a href="#4-2、关系型数据库的瓶颈" class="headerlink" title="4.2、关系型数据库的瓶颈"></a>4.2、关系型数据库的瓶颈</h2><ul>
-<li>高并发读写需求</li>
-</ul>
-<blockquote>
-<p>网站的用户并发性非常高，往往达到每秒上万次读写请求，对于传统关系型数据库来说，硬盘I/O是一个很大的瓶颈。</p>
-</blockquote>
-<ul>
-<li>海量数据的高效率读写</li>
-</ul>
-<blockquote>
-<p>网站每天产生的数据量是巨大的，对于关系型数据库来说，在一张包含海量数据的表中查询，效率是非常低的。</p>
-</blockquote>
-<ul>
-<li>高扩展性和可用性</li>
-</ul>
-<blockquote>
-<p>在基于web的结构中，数据库是最难进行横向扩展的。因为关系型数据库具有有预定义好的结构(列的定义)，和多表查询机制。虽然预定义结构带来了可靠性和稳定性，但是当一个应用系统的用户量和访问量与日俱增的时候，数据库却没有办法像web server和app server那样简单的通过添加更多的硬件和服务节点来扩展性能和负载能力。或者由于系统的升级，功能的增加，数据结构变动比较大，此时对数据库系统升级和扩展都是非常痛苦的事情。</p>
-</blockquote>
-<ul>
-<li>性能</li>
-</ul>
-<blockquote>
-<p>关系型数据库将数据存储在硬盘中，查询速度不如NOSQL数据库。</p>
-</blockquote>
-<h1 id="五、非关系型数据库的特性"><a href="#五、非关系型数据库的特性" class="headerlink" title="五、非关系型数据库的特性"></a>五、非关系型数据库的特性</h1><blockquote>
-<p>非关系型数据库往往在某些特定的领域具有优势。</p>
-</blockquote>
-<h2 id="5-1、非关系型数据库的优点"><a href="#5-1、非关系型数据库的优点" class="headerlink" title="5.1、非关系型数据库的优点"></a>5.1、非关系型数据库的优点</h2><ul>
-<li>性能</li>
-</ul>
-<blockquote>
-<p>NOSQL数据库将数据存储于内存，查询速度非常快，例如redis作为数据的缓存。</p>
-</blockquote>
-<ul>
-<li>高并发读写需求</li>
-</ul>
-<blockquote>
-<p>key-value数据库：key-value数据库的主要特点即使具有极高的并发读写性能，Redis,Tokyo Cabinet,Flare就是这类的代表。</p>
-</blockquote>
-<ul>
-<li>海量数据的高效率读写</li>
-</ul>
-<blockquote>
-<p>面向文档数据库：这类数据库的特点是，可以在海量的数据中快速的查询数据，典型代表为MongoDB。</p>
-</blockquote>
-<ul>
-<li>高扩展性和可用性</li>
-</ul>
-<blockquote>
-<p>分布式数据库：NoSQL数据之间没有耦合性，数据的格式十分灵活没有固定的表结构，所以非常容易水平扩展。非关系型数据可以很容易适应数据类型和结构的变化，因为动态结构本身就支持这一点。</p>
-</blockquote>
-<h2 id="5-2、非关系型数据库的瓶颈"><a href="#5-2、非关系型数据库的瓶颈" class="headerlink" title="5.2、非关系型数据库的瓶颈"></a>5.2、非关系型数据库的瓶颈</h2><ul>
-<li>数据一致性</li>
-</ul>
-<blockquote>
-<p>非关系型数据库一般强调的是数据最终一致性，而不没有像ACID一样强调数据的强一致性，从非关系型数据库中读到的有可能还是处于一个中间态的数据，因此如果你的业务对于数据的一致性要求很高，那么非关系型数据库并不一个很好的选择，非关系型数据库可能更多的偏向于OLAP场景，而关系型数据库更多偏向于OLTP场景。</p>
-</blockquote>
-<blockquote>
-<p>不提供关系型数据库对事物的处理。</p>
-</blockquote>
-<h1 id="六、关系型数据库与非关系型数据库的选择"><a href="#六、关系型数据库与非关系型数据库的选择" class="headerlink" title="六、关系型数据库与非关系型数据库的选择"></a>六、关系型数据库与非关系型数据库的选择</h1><ul>
-<li><p>事务一致性: 关系型数据库在对事物一致性的维护中有很大的开销，而现在很多web2.0系统对事物的读写一致性都不高。</p>
-</li>
-<li><p>读写实时性: 对关系数据库来说，插入一条数据之后立刻查询，是肯定可以读出这条数据的，但是对于很多web应用来说，并不要求这么高的实时性，比如发一条消息之后，过几秒乃至十几秒之后才看到这条动态是完全可以接受的。</p>
-</li>
-<li><p>复杂SQL，特别是多表关联查询: 任何大数据量的web系统，都非常忌讳多个大表的关联查询，以及复杂的数据分析类型的复杂SQL报表查询，特别是SNS类型的网站（SNS，专指社交网络服务，包括了社交软件和社交网站。），从需求以及产品阶级角度，就避免了这种情况的产生。往往更多的只是单表的主键查询，以及单表的简单条件分页查询，SQL的功能极大的弱化了。</p>
-</li>
-</ul>
-<h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE/5910594" target="_blank" rel="noopener">结构化数据</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE/309808?fr=aladdin" target="_blank" rel="noopener">非结构化数据</a></li>
-</ul>
-<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/wanghongyun/p/6193912.html" target="_blank" rel="noopener">SQL与NoSQL（关系型与非关系型）数据库的区别</a> </li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>初稿完成，后续完善。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/非关系型数据库和关系型数据库/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC04 数据库应用/数据库操作的几种方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -611,6 +432,83 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司某项目有需求，要求可以在Html页面中打开演示PPT，并能打开点击播放PPT中的视频、音频。现有解决思路如下，会逐一实现，并进行比较。</p>
+<ul>
+<li>使用poi将PPT转为图片,在线预览PPT</li>
+<li>根据PDF模板生成PDF文件 下载 在线预览</li>
+<li>使用poi实现word、excel、ppt转html</li>
+</ul>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.07.18</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、占位"><a href="#3-1、占位" class="headerlink" title="3.1、占位"></a>3.1、占位</h2><h1 id="四、正文"><a href="#四、正文" class="headerlink" title="四、正文"></a>四、正文</h1><h1 id="五、正文"><a href="#五、正文" class="headerlink" title="五、正文"></a>五、正文</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Web Office/Apache POI使用入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -717,83 +615,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Web Office/Apache POI使用入门/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司某项目有需求，要求可以在Html页面中打开演示PPT，并能打开点击播放PPT中的视频、音频。现有解决思路如下，会逐一实现，并进行比较。</p>
-<ul>
-<li>使用poi将PPT转为图片,在线预览PPT</li>
-<li>根据PDF模板生成PDF文件 下载 在线预览</li>
-<li>使用poi实现word、excel、ppt转html</li>
-</ul>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.07.18</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、占位"><a href="#3-1、占位" class="headerlink" title="3.1、占位"></a>3.1、占位</h2><h1 id="四、正文"><a href="#四、正文" class="headerlink" title="四、正文"></a>四、正文</h1><h1 id="五、正文"><a href="#五、正文" class="headerlink" title="五、正文"></a>五、正文</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件/">展开全文 >></a>
         </p>
       
 
@@ -1413,6 +1234,113 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Lombok使用方法简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Lombok是一个可以通过注解的形式来帮助我们简化 Java 代码的工具。它可以帮助我们在编译生成getter / setter、构造函数、toString()、hashcode()等一些常用的方法的字节码文件，而在源码中不必写这些代码。</p>
+<p>本文主要介绍如何使用Lombok插件来简化代码。 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://projectlombok.org/" target="_blank" rel="noopener">官网地址</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/rzwitserloot/lombok" target="_blank" rel="noopener">Github地址</a></li>
+</ul>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.06.25</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、Lombok配置"><a href="#三、Lombok配置" class="headerlink" title="三、Lombok配置"></a>三、Lombok配置</h1><h2 id="3-1、添加Lombok依赖"><a href="#3-1、添加Lombok依赖" class="headerlink" title="3.1、添加Lombok依赖"></a>3.1、添加Lombok依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- model生成其构造器、getter、setter、equals、hashcode、toString方法 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.18.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2、添加IDEA插件"><a href="#3-2、添加IDEA插件" class="headerlink" title="3.2、添加IDEA插件"></a>3.2、添加IDEA插件</h2><p><img src="http://img.cdn.lapland.top/Image%201529916441.png" alt="image"></p>
+<h2 id="3-3、启用Annotation编译"><a href="#3-3、启用Annotation编译" class="headerlink" title="3.3、启用Annotation编译"></a>3.3、启用Annotation编译</h2><blockquote>
+<p>File –&gt; Settings –&gt; Builder，Execution，Deployment –&gt; Compiler –&gt; Annotation Processors。<br>选中下图中复选框 , 重启服务器。</p>
+</blockquote>
+<p><img src="http://img.cdn.lapland.top/Image%201529916236.png" alt="image"></p>
+<h1 id="四、Lombok使用"><a href="#四、Lombok使用" class="headerlink" title="四、Lombok使用"></a>四、Lombok使用</h1><h2 id="4-1、Lombok注解"><a href="#4-1、Lombok注解" class="headerlink" title="4.1、Lombok注解"></a>4.1、Lombok注解</h2><p>下面只是介绍了几个常用的注解，更多的请参见<a href="https://projectlombok.org/features/index.html。" target="_blank" rel="noopener">https://projectlombok.org/features/index.html。</a></p>
+<h3 id="4-111、-Getter-Setter"><a href="#4-111、-Getter-Setter" class="headerlink" title="4.111、@Getter / @Setter"></a>4.111、@Getter / @Setter</h3><p>可以作用在类上和属性上，放在类上，会对所有的非静态(non-static)属性生成Getter/Setter方法，放在属性上，会对该属性生成Getter/Setter方法。并可以指定Getter/Setter方法的访问级别。</p>
+<h3 id="4-112、-EqualsAndHashCode"><a href="#4-112、-EqualsAndHashCode" class="headerlink" title="4.112、@EqualsAndHashCode"></a>4.112、@EqualsAndHashCode</h3><p>默认情况下，会使用所有非瞬态(non-transient)和非静态(non-static)字段来生成equals和hascode方法，也可以指定具体使用哪些属性。</p>
+<h3 id="4-113、-ToString"><a href="#4-113、-ToString" class="headerlink" title="4.113、@ToString"></a>4.113、@ToString</h3><p>生成toString方法，默认情况下，会输出类名、所有属性，属性会按照顺序输出，以逗号分割。</p>
+<h3 id="4-114、-NoArgsConstructor，-RequiredArgsConstructor，-AllArgsConstructor"><a href="#4-114、-NoArgsConstructor，-RequiredArgsConstructor，-AllArgsConstructor" class="headerlink" title="4.114、@NoArgsConstructor，@RequiredArgsConstructor，@AllArgsConstructor"></a>4.114、@NoArgsConstructor，@RequiredArgsConstructor，@AllArgsConstructor</h3><p>无参构造器、部分参数构造器、全参构造器，当我们需要重载多个构造器的时候，Lombok就无能为力了。</p>
+<ul>
+<li>@NoArgsConstructor</li>
+</ul>
+<p>生成一个无参数的构造方法</p>
+<ul>
+<li>@RequiredArgsConstructor</li>
+</ul>
+<p>会生成构造方法（可能带参数也可能不带参数），如果带参数，这参数只能是以final修饰的未经初始化的字段，或者是以@NonNull注解的未经初始化的字段。</p>
+<ul>
+<li>@AllArgsConstructor</li>
+</ul>
+<p>会生成一个包含所有变量，同时如果变量使用了NotNull annotation ， 会进行是否为空的校验。</p>
+<h3 id="4-115、-Data"><a href="#4-115、-Data" class="headerlink" title="4.115、@Data"></a>4.115、@Data</h3><p>自动为所有字段添加@ToString, @EqualsAndHashCode, @Getter方法，为非final字段添加@Setter,和@RequiredArgsConstructor。</p>
+<h3 id="4-116、-Log4j"><a href="#4-116、-Log4j" class="headerlink" title="4.116、@Log4j"></a>4.116、@Log4j</h3><p>注解在类上；提供一个 属性名为log 的 log4j 日志对象，调用 log.info(xxxx)；</p>
+<h1 id="五、参考资料"><a href="#五、参考资料" class="headerlink" title="五、参考资料"></a>五、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jianshu.com/p/365ea41b3573" target="_blank" rel="noopener">lombok</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/ghsau/article/details/52334762" target="_blank" rel="noopener">Java奇淫巧技之Lombok</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/lvshuchangyin/article/details/68065775" target="_blank" rel="noopener">Lombok 之 Constructor</a></li>
+</ul>
+<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><blockquote>
+<p>待补充实例</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Lombok使用方法简介/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
@@ -1508,6 +1436,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
