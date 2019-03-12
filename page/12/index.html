@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟</title>
+  <title>不系之舟- z</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="website">
-<meta property="og:title" content="不系之舟">
+<meta property="og:title" content="不系之舟- z">
 <meta property="og:url" content="http://www.lapland.top/page/12/index.html">
-<meta property="og:site_name" content="不系之舟">
+<meta property="og:site_name" content="不系之舟- z">
 <meta property="og:description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟">
+<meta name="twitter:title" content="不系之舟- z">
 <meta name="twitter:description" content="不系之舟的个人博客，使用Hexo搭建">
   
-    <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="不系之舟- z" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -1025,12 +1025,28 @@ temporary tablespace temp;
 
 
   
-    <article id="post-[置顶] 博客文章/SC04 数据库应用/数据库操作的几种方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC04 数据库应用/记录一次数据库恢复" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>重装系统后发现mysql数据库忘记导出sql语句了，幸好备份了数据盘，看看mysql文件夹下有什么东西：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201524753386.png" alt="image"></p>
+<ul>
+<li><p>其中*.frm是表结构文件，db.opt编码格式，ib_logfile0是日志文件，ibdata1是具体的数据。</p>
+</li>
+<li><p>是接下来要做的就是把备份的除了mysql、sys、performance_schema外的数据库文件夹和ibdata1文件拷贝复制到新的数据库相应目录下，重启服务器，搞定！</p>
+</li>
+</ul>
+<blockquote>
+<p>注：记得及时备份sql语句。</p>
+</blockquote>
+<blockquote>
+<p>如果mysql错误还是无法恢复，可以卸载后重装，切记卸载时不要勾选删除数据。</p>
+</blockquote>
+
       
 
       
@@ -1042,7 +1058,7 @@ temporary tablespace temp;
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/数据库操作的几种方式/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/记录一次数据库恢复/">展开全文 >></a>
         </p>
       
 
