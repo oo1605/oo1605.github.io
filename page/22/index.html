@@ -91,6 +91,8 @@
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="gitee" target="_blank" href="#" title="gitee"><i class="icon-gitee"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -134,6 +136,8 @@
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="gitee" target="_blank" href="#" title="gitee"><i class="icon-gitee"></i></a>
+			        
 				</div>
 			</nav>
 
@@ -159,57 +163,6 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java 非空判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>那些地方要做非空判断</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://segmentfault.com/q/1010000005172195" target="_blank" rel="noopener">关于java方法里的非空判断的疑问，谢谢</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java 非空判断/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
     <article id="post-[置顶] 博客文章/SC01 程序设计基础/软件设计概念解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -351,6 +304,202 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/软件设计概念解析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Tomcat类加载机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿 </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>加载顺序：</li>
+</ul>
+<ol>
+<li>$java_home/lib 目录下的java核心api </li>
+<li>$java_home/lib/ext 目录下的java扩展jar包</li>
+<li>java -classpath/-Djava.class.path所指的目录下的类与jar包</li>
+<li>$CATALINA_HOME/common目录下按照文件夹的顺序从上往下依次加载</li>
+<li>$CATALINA_HOME/server目录下按照文件夹的顺序从上往下依次加载</li>
+<li>$CATALINA_BASE/shared目录下按照文件夹的顺序从上往下依次加载</li>
+<li>我们的项目路径/WEB-INF/classes下的class文件</li>
+<li>我们的项目路径/WEB-INF/lib下的jar文件</li>
+</ol>
+<ul>
+<li>在同一个文件夹下，jar包是按顺序从上到下依次加载</li>
+</ul>
+<blockquote>
+<p>由ClassLoader的双亲委托模式加载机制我们可以知道，假设两个包名和类名完全相同的class文件不再同一个jar包，如果一个class文件已经被加载java虚拟机里了，那么后面的相同的class文件就不会被加载了。</p>
+</blockquote>
+<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><h1 id="六、参考资料"><a href="#六、参考资料" class="headerlink" title="六、参考资料"></a>六、参考资料</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Tomcat类加载机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC01 程序设计基础/JAVA与JS常用字符串操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文介绍了在JavaScript和Java常用的字符串操作及转换方法，以作备忘，方便查询。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018.01.04</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿  </td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、JS对象"><a href="#3-1、JS对象" class="headerlink" title="3.1、JS对象"></a>3.1、JS对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> employee = &#123;</span><br><span class="line">    firstName: <span class="string">"Bill"</span>,</span><br><span class="line">    lastName : <span class="string">"Gates"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2、JS数组"><a href="#3-2、JS数组" class="headerlink" title="3.2、JS数组"></a>3.2、JS数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> employees = [&#123;</span><br><span class="line">    firstName: <span class="string">"Bill"</span>,</span><br><span class="line">    lastName : <span class="string">"Gates"</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">    firstName: <span class="string">"George"</span>,</span><br><span class="line">    lastName : <span class="string">"Bush"</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h2 id="3-1、Java对象"><a href="#3-1、Java对象" class="headerlink" title="3.1、Java对象"></a>3.1、Java对象</h2><blockquote>
+<p>Java中创建的对象。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略略略</span><br></pre></td></tr></table></figure>
+<h2 id="3-1、JSON对象"><a href="#3-1、JSON对象" class="headerlink" title="3.1、JSON对象"></a>3.1、JSON对象</h2><blockquote>
+<p>JSON 对象在花括号中书写，对象可以包含多个名称/值对。</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"firstname"</span>: <span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"lastname"</span>: <span class="string">"Doe"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-1、JSON数组"><a href="#3-1、JSON数组" class="headerlink" title="3.1、JSON数组"></a>3.1、JSON数组</h2><blockquote>
+<p>JSON 数组在方括号中书写，数组可包含多个对象。</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"employees"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"firstName"</span>: <span class="string">"John"</span>,</span><br><span class="line">            <span class="attr">"lastName"</span>: <span class="string">"Doe"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"firstName"</span>: <span class="string">"Anna"</span>,</span><br><span class="line">            <span class="attr">"lastName"</span>: <span class="string">"Smith"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-1、JSON字符串"><a href="#3-1、JSON字符串" class="headerlink" title="3.1、JSON字符串"></a>3.1、JSON字符串</h2><blockquote>
+<p>JS或Java对象的字符串表示法。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'&#123;firstname:"John",lastname:"Doe"&#125;'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="四、JS字符串操作"><a href="#四、JS字符串操作" class="headerlink" title="四、JS字符串操作"></a>四、JS字符串操作</h1><h2 id="4-1、JS截取字符串，去掉前几位"><a href="#4-1、JS截取字符串，去掉前几位" class="headerlink" title="4.1、JS截取字符串，去掉前几位"></a>4.1、JS截取字符串，去掉前几位</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"abc12345"</span>;</span><br><span class="line"><span class="keyword">var</span> a = str.substr(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">var</span> a = str.substr(<span class="number">3</span>,b.length());</span><br><span class="line">==&gt; a = <span class="string">"12345"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"abc12345"</span>;</span><br><span class="line"><span class="keyword">var</span> a = str.slice(<span class="number">3</span>);</span><br><span class="line">==&gt; a = <span class="string">"12345"</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-2、JS截取字符串，取前几位"><a href="#4-2、JS截取字符串，取前几位" class="headerlink" title="4.2、JS截取字符串，取前几位"></a>4.2、JS截取字符串，取前几位</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str =<span class="string">"abc12345"</span>;</span><br><span class="line"><span class="keyword">var</span> a = str.substr(<span class="number">0</span>,<span class="number">3</span>); </span><br><span class="line">==&gt; a = <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-3、JS以特殊符号拆分字符串"><a href="#4-3、JS以特殊符号拆分字符串" class="headerlink" title="4.3、JS以特殊符号拆分字符串"></a>4.3、JS以特殊符号拆分字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"Bill,Georg,Gates,Bush"</span>; </span><br><span class="line">strArray=str.split(<span class="string">","</span>); </span><br><span class="line"><span class="keyword">var</span> a = strArray[<span class="number">0</span>];</span><br><span class="line">==&gt; a = <span class="string">"Georg"</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-4、字符串类-–-gt-Number类型"><a href="#4-4、字符串类-–-gt-Number类型" class="headerlink" title="4.4、字符串类 –&gt; Number类型"></a>4.4、字符串类 –&gt; Number类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"10086"</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">parseInt</span>(str);</span><br><span class="line">==&gt; a = <span class="number">10086</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-5、JS-对象-–-gt-JSON-字符串，使用-JSON-stringify-方法"><a href="#4-5、JS-对象-–-gt-JSON-字符串，使用-JSON-stringify-方法" class="headerlink" title="4.5、JS 对象 –&gt; JSON 字符串，使用 JSON.stringify()方法"></a>4.5、JS 对象 –&gt; JSON 字符串，使用 JSON.stringify()方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json = <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">a</span>: <span class="string">'Hello'</span>, <span class="attr">b</span>: <span class="string">'World'</span>&#125;); </span><br><span class="line">==&gt; json = <span class="string">'&#123;"a": "Hello", "b": "World"&#125;'</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-6、JSON-字符串-–-gt-JS-对象，使用-JSON-parse-方法"><a href="#4-6、JSON-字符串-–-gt-JS-对象，使用-JSON-parse-方法" class="headerlink" title="4.6、JSON 字符串 –&gt; JS 对象，使用 JSON.parse()方法"></a>4.6、JSON 字符串 –&gt; JS 对象，使用 JSON.parse()方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">'&#123;"a": "Hello", "b": "World"&#125;'</span>);</span><br><span class="line">==&gt; obj =  &#123;<span class="attr">a</span>: <span class="string">'Hello'</span>, <span class="attr">b</span>: <span class="string">'World'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五、Java字符串操作"><a href="#五、Java字符串操作" class="headerlink" title="五、Java字符串操作"></a>五、Java字符串操作</h1><h2 id="5-1、提取下标区间字段"><a href="#5-1、提取下标区间字段" class="headerlink" title="5.1、提取下标区间字段"></a>5.1、提取下标区间字段</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"abc12345"</span>;</span><br><span class="line">String s2 = s1.substring(<span class="number">1</span>,<span class="number">5</span>);</span><br><span class="line">==&gt; s2 = <span class="string">"bc123"</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-2、字符串拆分-用数组接收"><a href="#5-2、字符串拆分-用数组接收" class="headerlink" title="5.2、字符串拆分,用数组接收"></a>5.2、字符串拆分,用数组接收</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"abc+12345"</span>;</span><br><span class="line">String[] strArray = s5.split(<span class="string">"+ |，|？"</span>); <span class="comment">// 正则</span></span><br><span class="line">String s2 = strArray[<span class="number">0</span>];</span><br><span class="line">==&gt; s2 = <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-3、连接字符串"><a href="#5-3、连接字符串" class="headerlink" title="5.3、连接字符串"></a>5.3、连接字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"abc"</span>;</span><br><span class="line">String s2 = <span class="string">"+"</span>;</span><br><span class="line">String s3 = <span class="string">"12345"</span>;</span><br><span class="line">String s5 = s1.concat(s2.concat(s3));</span><br><span class="line">==&gt; s2 = <span class="string">"abc+12345"</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-4、字符串类型-–-gt-int类型"><a href="#5-4、字符串类型-–-gt-int类型" class="headerlink" title="5.4、字符串类型 –&gt; int类型"></a>5.4、字符串类型 –&gt; int类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = Integer.parseInt(<span class="string">"10086"</span>);</span><br><span class="line">==&gt; num = <span class="string">"10086"</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-5、Java-对象-–-gt-JSON-字符串，FastJSON"><a href="#5-5、Java-对象-–-gt-JSON-字符串，FastJSON" class="headerlink" title="5.5、Java 对象 –&gt; JSON 字符串，FastJSON"></a>5.5、Java 对象 –&gt; JSON 字符串，FastJSON</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">user.setId(<span class="number">1</span>);</span><br><span class="line">user.setName(<span class="string">"admin"</span>);</span><br><span class="line">String json = JSON.toJSONString(user);</span><br><span class="line">==&gt; json = <span class="string">'&#123;"id": "1", "name": "admin"&#125;'</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-6、JSON-字符串-–-gt-Java-对象，FastJSON"><a href="#5-6、JSON-字符串-–-gt-Java-对象，FastJSON" class="headerlink" title="5.6、JSON 字符串 –&gt; Java 对象，FastJSON"></a>5.6、JSON 字符串 –&gt; Java 对象，FastJSON</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String json = <span class="string">'&#123;"id": "1", "name": "admin"&#125;'</span>;</span><br><span class="line">User user = JSON.parseObject(jsonString, User.class);</span><br><span class="line">String name = user.name;</span><br><span class="line">==&gt; name = <span class="string">"admin"</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="六、拓展阅读"><a href="#六、拓展阅读" class="headerlink" title="六、拓展阅读"></a>六、拓展阅读</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">JSON语法及JSON定义规范化</a></li>
+</ul>
+<h1 id="七、参考资料"><a href="#七、参考资料" class="headerlink" title="七、参考资料"></a>七、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/zeuskingzb/article/details/17468079" target="_blank" rel="noopener">FastJSON 使用方法</a> </li>
+</ul>
+<h1 id="八、结语"><a href="#八、结语" class="headerlink" title="八、结语"></a>八、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/JAVA与JS常用字符串操作/">展开全文 >></a>
         </p>
       
 
@@ -610,162 +759,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC01 程序设计基础/JAVA与JS常用字符串操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文介绍了在JavaScript和Java常用的字符串操作及转换方法，以作备忘，方便查询。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.01.04</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿  </td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、JS对象"><a href="#3-1、JS对象" class="headerlink" title="3.1、JS对象"></a>3.1、JS对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> employee = &#123;</span><br><span class="line">    firstName: <span class="string">"Bill"</span>,</span><br><span class="line">    lastName : <span class="string">"Gates"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2、JS数组"><a href="#3-2、JS数组" class="headerlink" title="3.2、JS数组"></a>3.2、JS数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> employees = [&#123;</span><br><span class="line">    firstName: <span class="string">"Bill"</span>,</span><br><span class="line">    lastName : <span class="string">"Gates"</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">    firstName: <span class="string">"George"</span>,</span><br><span class="line">    lastName : <span class="string">"Bush"</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-<h2 id="3-1、Java对象"><a href="#3-1、Java对象" class="headerlink" title="3.1、Java对象"></a>3.1、Java对象</h2><blockquote>
-<p>Java中创建的对象。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">略略略</span><br></pre></td></tr></table></figure>
-<h2 id="3-1、JSON对象"><a href="#3-1、JSON对象" class="headerlink" title="3.1、JSON对象"></a>3.1、JSON对象</h2><blockquote>
-<p>JSON 对象在花括号中书写，对象可以包含多个名称/值对。</p>
-</blockquote>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"firstname"</span>: <span class="string">"John"</span>,</span><br><span class="line">    <span class="attr">"lastname"</span>: <span class="string">"Doe"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-1、JSON数组"><a href="#3-1、JSON数组" class="headerlink" title="3.1、JSON数组"></a>3.1、JSON数组</h2><blockquote>
-<p>JSON 数组在方括号中书写，数组可包含多个对象。</p>
-</blockquote>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"employees"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"firstName"</span>: <span class="string">"John"</span>,</span><br><span class="line">            <span class="attr">"lastName"</span>: <span class="string">"Doe"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"firstName"</span>: <span class="string">"Anna"</span>,</span><br><span class="line">            <span class="attr">"lastName"</span>: <span class="string">"Smith"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-1、JSON字符串"><a href="#3-1、JSON字符串" class="headerlink" title="3.1、JSON字符串"></a>3.1、JSON字符串</h2><blockquote>
-<p>JS或Java对象的字符串表示法。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'&#123;firstname:"John",lastname:"Doe"&#125;'</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="四、JS字符串操作"><a href="#四、JS字符串操作" class="headerlink" title="四、JS字符串操作"></a>四、JS字符串操作</h1><h2 id="4-1、JS截取字符串，去掉前几位"><a href="#4-1、JS截取字符串，去掉前几位" class="headerlink" title="4.1、JS截取字符串，去掉前几位"></a>4.1、JS截取字符串，去掉前几位</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"abc12345"</span>;</span><br><span class="line"><span class="keyword">var</span> a = str.substr(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">var</span> a = str.substr(<span class="number">3</span>,b.length());</span><br><span class="line">==&gt; a = <span class="string">"12345"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"abc12345"</span>;</span><br><span class="line"><span class="keyword">var</span> a = str.slice(<span class="number">3</span>);</span><br><span class="line">==&gt; a = <span class="string">"12345"</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-2、JS截取字符串，取前几位"><a href="#4-2、JS截取字符串，取前几位" class="headerlink" title="4.2、JS截取字符串，取前几位"></a>4.2、JS截取字符串，取前几位</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str =<span class="string">"abc12345"</span>;</span><br><span class="line"><span class="keyword">var</span> a = str.substr(<span class="number">0</span>,<span class="number">3</span>); </span><br><span class="line">==&gt; a = <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-3、JS以特殊符号拆分字符串"><a href="#4-3、JS以特殊符号拆分字符串" class="headerlink" title="4.3、JS以特殊符号拆分字符串"></a>4.3、JS以特殊符号拆分字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"Bill,Georg,Gates,Bush"</span>; </span><br><span class="line">strArray=str.split(<span class="string">","</span>); </span><br><span class="line"><span class="keyword">var</span> a = strArray[<span class="number">0</span>];</span><br><span class="line">==&gt; a = <span class="string">"Georg"</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-4、字符串类-–-gt-Number类型"><a href="#4-4、字符串类-–-gt-Number类型" class="headerlink" title="4.4、字符串类 –&gt; Number类型"></a>4.4、字符串类 –&gt; Number类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"10086"</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">parseInt</span>(str);</span><br><span class="line">==&gt; a = <span class="number">10086</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-5、JS-对象-–-gt-JSON-字符串，使用-JSON-stringify-方法"><a href="#4-5、JS-对象-–-gt-JSON-字符串，使用-JSON-stringify-方法" class="headerlink" title="4.5、JS 对象 –&gt; JSON 字符串，使用 JSON.stringify()方法"></a>4.5、JS 对象 –&gt; JSON 字符串，使用 JSON.stringify()方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json = <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">a</span>: <span class="string">'Hello'</span>, <span class="attr">b</span>: <span class="string">'World'</span>&#125;); </span><br><span class="line">==&gt; json = <span class="string">'&#123;"a": "Hello", "b": "World"&#125;'</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-6、JSON-字符串-–-gt-JS-对象，使用-JSON-parse-方法"><a href="#4-6、JSON-字符串-–-gt-JS-对象，使用-JSON-parse-方法" class="headerlink" title="4.6、JSON 字符串 –&gt; JS 对象，使用 JSON.parse()方法"></a>4.6、JSON 字符串 –&gt; JS 对象，使用 JSON.parse()方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(<span class="string">'&#123;"a": "Hello", "b": "World"&#125;'</span>);</span><br><span class="line">==&gt; obj =  &#123;<span class="attr">a</span>: <span class="string">'Hello'</span>, <span class="attr">b</span>: <span class="string">'World'</span>&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="五、Java字符串操作"><a href="#五、Java字符串操作" class="headerlink" title="五、Java字符串操作"></a>五、Java字符串操作</h1><h2 id="5-1、提取下标区间字段"><a href="#5-1、提取下标区间字段" class="headerlink" title="5.1、提取下标区间字段"></a>5.1、提取下标区间字段</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"abc12345"</span>;</span><br><span class="line">String s2 = s1.substring(<span class="number">1</span>,<span class="number">5</span>);</span><br><span class="line">==&gt; s2 = <span class="string">"bc123"</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-2、字符串拆分-用数组接收"><a href="#5-2、字符串拆分-用数组接收" class="headerlink" title="5.2、字符串拆分,用数组接收"></a>5.2、字符串拆分,用数组接收</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"abc+12345"</span>;</span><br><span class="line">String[] strArray = s5.split(<span class="string">"+ |，|？"</span>); <span class="comment">// 正则</span></span><br><span class="line">String s2 = strArray[<span class="number">0</span>];</span><br><span class="line">==&gt; s2 = <span class="string">"abc"</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-3、连接字符串"><a href="#5-3、连接字符串" class="headerlink" title="5.3、连接字符串"></a>5.3、连接字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"abc"</span>;</span><br><span class="line">String s2 = <span class="string">"+"</span>;</span><br><span class="line">String s3 = <span class="string">"12345"</span>;</span><br><span class="line">String s5 = s1.concat(s2.concat(s3));</span><br><span class="line">==&gt; s2 = <span class="string">"abc+12345"</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-4、字符串类型-–-gt-int类型"><a href="#5-4、字符串类型-–-gt-int类型" class="headerlink" title="5.4、字符串类型 –&gt; int类型"></a>5.4、字符串类型 –&gt; int类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = Integer.parseInt(<span class="string">"10086"</span>);</span><br><span class="line">==&gt; num = <span class="string">"10086"</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-5、Java-对象-–-gt-JSON-字符串，FastJSON"><a href="#5-5、Java-对象-–-gt-JSON-字符串，FastJSON" class="headerlink" title="5.5、Java 对象 –&gt; JSON 字符串，FastJSON"></a>5.5、Java 对象 –&gt; JSON 字符串，FastJSON</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">user.setId(<span class="number">1</span>);</span><br><span class="line">user.setName(<span class="string">"admin"</span>);</span><br><span class="line">String json = JSON.toJSONString(user);</span><br><span class="line">==&gt; json = <span class="string">'&#123;"id": "1", "name": "admin"&#125;'</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-6、JSON-字符串-–-gt-Java-对象，FastJSON"><a href="#5-6、JSON-字符串-–-gt-Java-对象，FastJSON" class="headerlink" title="5.6、JSON 字符串 –&gt; Java 对象，FastJSON"></a>5.6、JSON 字符串 –&gt; Java 对象，FastJSON</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String json = <span class="string">'&#123;"id": "1", "name": "admin"&#125;'</span>;</span><br><span class="line">User user = JSON.parseObject(jsonString, User.class);</span><br><span class="line">String name = user.name;</span><br><span class="line">==&gt; name = <span class="string">"admin"</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="六、拓展阅读"><a href="#六、拓展阅读" class="headerlink" title="六、拓展阅读"></a>六、拓展阅读</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">JSON语法及JSON定义规范化</a></li>
-</ul>
-<h1 id="七、参考资料"><a href="#七、参考资料" class="headerlink" title="七、参考资料"></a>七、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/zeuskingzb/article/details/17468079" target="_blank" rel="noopener">FastJSON 使用方法</a> </li>
-</ul>
-<h1 id="八、结语"><a href="#八、结语" class="headerlink" title="八、结语"></a>八、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/JAVA与JS常用字符串操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java开发常用Util工具类-StringUtil、CollectionUtil等" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -815,6 +808,53 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java开发常用Util工具类-StringUtil、CollectionUtil等/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用/">展开全文 >></a>
         </p>
       
 
