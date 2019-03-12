@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟- z</title>
+  <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="[TOC] 一、前言本文记录了Java开发环境搭建与项目部署，以及日常应用过程中涉及到的常用命令和操作.。 测试环境：Deepin 15.5 发行版。 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.02.18 1.0 ZZ 初稿    三、系统安装3.1、系统安装  详见深度科技社区主页  安装好deepin后，一定先要更新下，让系统保持更新。 1234// 更新">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不系之舟- z">
+<meta property="og:title" content="不系之舟">
 <meta property="og:url" content="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Linux系统 ）/index.html">
-<meta property="og:site_name" content="不系之舟- z">
+<meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="[TOC] 一、前言本文记录了Java开发环境搭建与项目部署，以及日常应用过程中涉及到的常用命令和操作.。 测试环境：Deepin 15.5 发行版。 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.02.18 1.0 ZZ 初稿    三、系统安装3.1、系统安装  详见深度科技社区主页  安装好deepin后，一定先要更新下，让系统保持更新。 1234// 更新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-11-28T08:32:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟- z">
+<meta name="twitter:title" content="不系之舟">
 <meta name="twitter:description" content="[TOC] 一、前言本文记录了Java开发环境搭建与项目部署，以及日常应用过程中涉及到的常用命令和操作.。 测试环境：Deepin 15.5 发行版。 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.02.18 1.0 ZZ 初稿    三、系统安装3.1、系统安装  详见深度科技社区主页  安装好deepin后，一定先要更新下，让系统保持更新。 1234// 更新">
   
-    <link rel="alternative" href="/atom.xml" title="不系之舟- z" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/assets/img/head.gif" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -108,7 +108,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/assets/img/head.gif" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -144,7 +144,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -330,6 +330,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -438,10 +448,43 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、系统安装"><span class="toc-number">3.</span> <span class="toc-text">三、系统安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、系统安装"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、系统安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、安装后配置"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、安装后配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、JDK的安装及环境变量的配置"><span class="toc-number">4.</span> <span class="toc-text">四、JDK的安装及环境变量的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、压缩包安装"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、压缩包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、Deepin应用商店安装。"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、Deepin应用商店安装。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、IDEA安装"><span class="toc-number">4.3.</span> <span class="toc-text">4.3、IDEA安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Tomcat服务器的安装与部署"><span class="toc-number">5.</span> <span class="toc-text">五、Tomcat服务器的安装与部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、双Tomcat版"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、双Tomcat版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-11、配置环境变量"><span class="toc-number">5.1.1.</span> <span class="toc-text">5.11、配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-12、修改catalina-sh-catalina-bat（Windows），在最后添加"><span class="toc-number">5.1.2.</span> <span class="toc-text">5.12、修改catalina.sh / catalina.bat（Windows），在最后添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-13、修改端口号"><span class="toc-number">5.1.3.</span> <span class="toc-text">5.13、修改端口号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-14、启动"><span class="toc-number">5.1.4.</span> <span class="toc-text">5.14、启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-15、查看tomcat是否启动"><span class="toc-number">5.1.5.</span> <span class="toc-text">5.15、查看tomcat是否启动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、Mysql安装及配置"><span class="toc-number">6.</span> <span class="toc-text">六、Mysql安装及配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1、压缩包形式安装（推荐）"><span class="toc-number">6.1.</span> <span class="toc-text">6.1、压缩包形式安装（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2、在线安装（不推荐）"><span class="toc-number">6.2.</span> <span class="toc-text">6.2、在线安装（不推荐）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、Oracle安装及配置"><span class="toc-number">7.</span> <span class="toc-text">七、Oracle安装及配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、SQL-Server安装及配置"><span class="toc-number">8.</span> <span class="toc-text">七、SQL Server安装及配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、SVN-安装及初始化操作"><span class="toc-number">9.</span> <span class="toc-text">八、SVN 安装及初始化操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、Git-客户端操作"><span class="toc-number">10.</span> <span class="toc-text">九、Git 客户端操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、Maven项目管理与配置"><span class="toc-number">11.</span> <span class="toc-text">十、Maven项目管理与配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、Nginx安装配置"><span class="toc-number">12.</span> <span class="toc-text">十一、Nginx安装配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-1、源码编译安装"><span class="toc-number">12.1.</span> <span class="toc-text">11.1、源码编译安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-11、安装gcc-g-的依赖库"><span class="toc-number">12.1.1.</span> <span class="toc-text">11.11、安装gcc g++的依赖库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-12、安装pcre依赖库"><span class="toc-number">12.1.2.</span> <span class="toc-text">11.12、安装pcre依赖库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-13、安装zlib依赖库"><span class="toc-number">12.1.3.</span> <span class="toc-text">11.13、安装zlib依赖库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-14、安装ssl依赖库"><span class="toc-number">12.1.4.</span> <span class="toc-text">11.14、安装ssl依赖库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-15、安装-Nginx"><span class="toc-number">12.1.5.</span> <span class="toc-text">11.15、安装 Nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-2、Nginx的配置"><span class="toc-number">12.2.</span> <span class="toc-text">11.2、Nginx的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-21、配置nginx-conf"><span class="toc-number">12.2.1.</span> <span class="toc-text">11.21、配置nginx.conf</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-3、启动-Nginx"><span class="toc-number">12.3.</span> <span class="toc-text">11.3、启动 Nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-4、访问测试"><span class="toc-number">12.4.</span> <span class="toc-text">11.4、访问测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十二、参考资料"><span class="toc-number">13.</span> <span class="toc-text">十二、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三、结语"><span class="toc-number">14.</span> <span class="toc-text">十三、结语</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Linux系统 ）" data-title data-url="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Linux系统 ）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
   
@@ -615,22 +658,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
         </ul>
   		
     	</section>
@@ -639,7 +666,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">初从文，三年不中；&lt;br&gt;后习武，校场发一矢，中鼓吏，逐之出；&lt;br&gt;遂学医，有所成。自撰一良方，服之，卒。</div>
   	  	
     	</section>
     

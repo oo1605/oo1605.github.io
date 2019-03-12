@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟- z</title>
+  <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="[TOC] 一、前言本文记录了线上项目服务端的配置过程。测试环境：服务端系统为CentOS 7（阿里云服务器），客户端系统为Deepin 15.5发行版。   客户端系统配置详见：安装配置详见Java开发环境搭建及项目部署（Deepin系统）  二、版本   编号 修改日期 版本号 修改人 修改说明     1 2018.02.28 1.0 ZZ 初稿    三、客户端远程工具Deepin 客户端">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不系之舟- z">
+<meta property="og:title" content="不系之舟">
 <meta property="og:url" content="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/阿里云服务器配置/index.html">
-<meta property="og:site_name" content="不系之舟- z">
+<meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="[TOC] 一、前言本文记录了线上项目服务端的配置过程。测试环境：服务端系统为CentOS 7（阿里云服务器），客户端系统为Deepin 15.5发行版。   客户端系统配置详见：安装配置详见Java开发环境搭建及项目部署（Deepin系统）  二、版本   编号 修改日期 版本号 修改人 修改说明     1 2018.02.28 1.0 ZZ 初稿    三、客户端远程工具Deepin 客户端">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-02-22T08:36:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟- z">
+<meta name="twitter:title" content="不系之舟">
 <meta name="twitter:description" content="[TOC] 一、前言本文记录了线上项目服务端的配置过程。测试环境：服务端系统为CentOS 7（阿里云服务器），客户端系统为Deepin 15.5发行版。   客户端系统配置详见：安装配置详见Java开发环境搭建及项目部署（Deepin系统）  二、版本   编号 修改日期 版本号 修改人 修改说明     1 2018.02.28 1.0 ZZ 初稿    三、客户端远程工具Deepin 客户端">
   
-    <link rel="alternative" href="/atom.xml" title="不系之舟- z" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/assets/img/head.gif" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -62,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -108,7 +108,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/assets/img/head.gif" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -144,7 +144,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -366,6 +366,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -474,10 +484,43 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、客户端远程工具"><span class="toc-number">3.</span> <span class="toc-text">三、客户端远程工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1、SSH远程管理"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1、SSH远程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2、上传下载"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2、上传下载</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#四、IP地址配置"><span class="toc-number">4.</span> <span class="toc-text">四、IP地址配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1、vim-编辑网卡配置文件"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1、vim 编辑网卡配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2、配置示例"><span class="toc-number">4.0.2.</span> <span class="toc-text">4.2、配置示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3、保存退出，并重启服务"><span class="toc-number">4.0.3.</span> <span class="toc-text">4.3、保存退出，并重启服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4、测试"><span class="toc-number">4.0.4.</span> <span class="toc-text">4.4、测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、安装FTP服务（按需）"><span class="toc-number">5.</span> <span class="toc-text">五、安装FTP服务（按需）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、安装FTP服务"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、安装FTP服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-11、检测是否安装ftp服务"><span class="toc-number">5.1.1.</span> <span class="toc-text">5.11、检测是否安装ftp服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-12、安装ftp"><span class="toc-number">5.1.2.</span> <span class="toc-text">5.12、安装ftp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-13、开启服务"><span class="toc-number">5.1.3.</span> <span class="toc-text">5.13、开启服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-14、查看服务启动状态"><span class="toc-number">5.1.4.</span> <span class="toc-text">5.14、查看服务启动状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、配置用户及权限"><span class="toc-number">5.2.</span> <span class="toc-text">5.2、配置用户及权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-21、配置root用户登录（按需）"><span class="toc-number">5.2.1.</span> <span class="toc-text">5.21、配置root用户登录（按需）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-22、增加用户ftpuser"><span class="toc-number">5.2.2.</span> <span class="toc-text">5.22、增加用户ftpuser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-23、为ftpuser设置密码"><span class="toc-number">5.2.3.</span> <span class="toc-text">5.23、为ftpuser设置密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-24、设置-vsftpd-conf"><span class="toc-number">5.2.4.</span> <span class="toc-text">5.24、设置 vsftpd.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-25、设置selinux-disable"><span class="toc-number">5.2.5.</span> <span class="toc-text">5.25、设置selinux=disable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3、安装telnet"><span class="toc-number">5.3.</span> <span class="toc-text">5.3、安装telnet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4、-禁用防火墙"><span class="toc-number">5.4.</span> <span class="toc-text">5.4、# 禁用防火墙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5、-查看ftp端口"><span class="toc-number">5.5.</span> <span class="toc-text">5.5、# 查看ftp端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6、设置开机启动"><span class="toc-number">5.6.</span> <span class="toc-text">5.6、设置开机启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7、重启服务"><span class="toc-number">5.7.</span> <span class="toc-text">5.7、重启服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8、查询开机启动项"><span class="toc-number">5.8.</span> <span class="toc-text">5.8、查询开机启动项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9、卸载ftp"><span class="toc-number">5.9.</span> <span class="toc-text">5.9、卸载ftp</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、安装JDK"><span class="toc-number">6.</span> <span class="toc-text">六、安装JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-0、查看当前有没有安装jdk"><span class="toc-number">6.1.</span> <span class="toc-text">6.0、查看当前有没有安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1、安装"><span class="toc-number">6.2.</span> <span class="toc-text">6.1、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-11、源码包安装（推荐）"><span class="toc-number">6.2.1.</span> <span class="toc-text">6.11、源码包安装（推荐）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-111、在-usr-目录下创建java目录"><span class="toc-number">6.2.1.1.</span> <span class="toc-text">6.111、在/usr/目录下创建java目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-112、下载JDK压缩包-然后解压"><span class="toc-number">6.2.1.2.</span> <span class="toc-text">6.112、下载JDK压缩包,然后解压</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-12、用yum在线安装JDK（不推荐）"><span class="toc-number">6.2.2.</span> <span class="toc-text">6.12、用yum在线安装JDK（不推荐）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-121、查看yum库中都有哪些jdk版本"><span class="toc-number">6.2.2.1.</span> <span class="toc-text">6.121、查看yum库中都有哪些jdk版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-122、选择版本-进行安装"><span class="toc-number">6.2.2.2.</span> <span class="toc-text">6.122、选择版本,进行安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-13、用rpm安装JDK安装包（推荐）"><span class="toc-number">6.2.3.</span> <span class="toc-text">6.13、用rpm安装JDK安装包（推荐）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-131、下载rpm安装文件"><span class="toc-number">6.2.3.1.</span> <span class="toc-text">6.131、下载rpm安装文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-132、使用rpm命令安装"><span class="toc-number">6.2.3.2.</span> <span class="toc-text">6.132、使用rpm命令安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2、设置环境变量"><span class="toc-number">6.3.</span> <span class="toc-text">6.2、设置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3、修改生效"><span class="toc-number">6.4.</span> <span class="toc-text">6.3、修改生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4、验证JDK有效性"><span class="toc-number">6.5.</span> <span class="toc-text">6.4、验证JDK有效性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、安装Web服务器Tomcat"><span class="toc-number">7.</span> <span class="toc-text">七、安装Web服务器Tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1、下载安装包"><span class="toc-number">7.1.</span> <span class="toc-text">7.1、下载安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2、通过ftp上传到服务器"><span class="toc-number">7.2.</span> <span class="toc-text">7.2、通过ftp上传到服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3、解压文件"><span class="toc-number">7.3.</span> <span class="toc-text">7.3、解压文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4、移动和重命名"><span class="toc-number">7.4.</span> <span class="toc-text">7.4、移动和重命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5、启动测试"><span class="toc-number">7.5.</span> <span class="toc-text">7.5、启动测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6、添加用户"><span class="toc-number">7.6.</span> <span class="toc-text">7.6、添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-7、设置tomcat开机启动"><span class="toc-number">7.7.</span> <span class="toc-text">7.7、设置tomcat开机启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-71、脚本文件启动"><span class="toc-number">7.7.1.</span> <span class="toc-text">7.71、脚本文件启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-73、后续设置"><span class="toc-number">7.7.2.</span> <span class="toc-text">7.73、后续设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-74、其他常用命令"><span class="toc-number">7.7.3.</span> <span class="toc-text">7.74、其他常用命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、安装MySql数据库（建议mysql-5-7-以上）"><span class="toc-number">8.</span> <span class="toc-text">八、安装MySql数据库（建议mysql 5.7 以上）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-0、安装前看是否安装过mysql"><span class="toc-number">8.1.</span> <span class="toc-text">8.0、安装前看是否安装过mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1、压缩包形式安装（推荐）"><span class="toc-number">8.2.</span> <span class="toc-text">8.1、压缩包形式安装（推荐）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-11、创建安装文件夹"><span class="toc-number">8.2.1.</span> <span class="toc-text">8.11、创建安装文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-12、在线下载安装包"><span class="toc-number">8.2.2.</span> <span class="toc-text">8.12、在线下载安装包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-13、解压并复制"><span class="toc-number">8.2.3.</span> <span class="toc-text">8.13、解压并复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-14、创建data目录"><span class="toc-number">8.2.4.</span> <span class="toc-text">8.14、创建data目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-15、添加用户mysql-到用户组mysql（按需）"><span class="toc-number">8.2.5.</span> <span class="toc-text">8.15、添加用户mysql 到用户组mysql（按需）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-16、修改文件夹的所有者"><span class="toc-number">8.2.6.</span> <span class="toc-text">8.16、修改文件夹的所有者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-17、初始化数据库，添加mysql用户"><span class="toc-number">8.2.7.</span> <span class="toc-text">8.17、初始化数据库，添加mysql用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-18、修改开机启动"><span class="toc-number">8.2.8.</span> <span class="toc-text">8.18、修改开机启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-19、设置用户密码和开启远程访问权限"><span class="toc-number">8.2.9.</span> <span class="toc-text">8.19、设置用户密码和开启远程访问权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2、yum仓库在线安装"><span class="toc-number">8.3.</span> <span class="toc-text">8.2、yum仓库在线安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、Git服务器安装（按需）"><span class="toc-number">9.</span> <span class="toc-text">九、Git服务器安装（按需）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、反向代理Nginx"><span class="toc-number">10.</span> <span class="toc-text">十、反向代理Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1、反向代理隐藏Tomcat端口号"><span class="toc-number">10.1.</span> <span class="toc-text">10.1、反向代理隐藏Tomcat端口号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2、Nginx负载均衡"><span class="toc-number">10.2.</span> <span class="toc-text">10.2、Nginx负载均衡</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一、安装部署DNS解析服务器"><span class="toc-number">11.</span> <span class="toc-text">十一、安装部署DNS解析服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十二、安装文件服务器"><span class="toc-number">12.</span> <span class="toc-text">十二、安装文件服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三、阿里云自定义镜像及跨服务器迁移"><span class="toc-number">13.</span> <span class="toc-text">十三、阿里云自定义镜像及跨服务器迁移</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十四、开启关闭防火墙"><span class="toc-number">14.</span> <span class="toc-text">十四、开启关闭防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#14-1、查看防火墙状态"><span class="toc-number">14.1.</span> <span class="toc-text">14.1、查看防火墙状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-2、停止firewall"><span class="toc-number">14.2.</span> <span class="toc-text">14.2、停止firewall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-3、禁止firewall开机启动"><span class="toc-number">14.3.</span> <span class="toc-text">14.3、禁止firewall开机启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十五、其他"><span class="toc-number">15.</span> <span class="toc-text">十五、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#15-1、网段变更后，涉及IP地址更改"><span class="toc-number">15.1.</span> <span class="toc-text">15.1、网段变更后，涉及IP地址更改</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十六、参考资料"><span class="toc-number">16.</span> <span class="toc-text">十六、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十七、结语"><span class="toc-number">17.</span> <span class="toc-text">十七、结语</span></a></li>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/阿里云服务器配置" data-title data-url="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/阿里云服务器配置/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
   
@@ -651,22 +694,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
         </ul>
   		
     	</section>
@@ -675,7 +702,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">初从文，三年不中；&lt;br&gt;后习武，校场发一矢，中鼓吏，逐之出；&lt;br&gt;遂学医，有所成。自撰一良方，服之，卒。</div>
   	  	
     	</section>
     

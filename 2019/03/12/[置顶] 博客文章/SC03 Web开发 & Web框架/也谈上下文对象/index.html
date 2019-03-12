@@ -6,27 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟- z</title>
+  <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、前言二、版本   编号 修改日期 版本号 修改人 修改说明     1 2017.09.24 1.0 ZZ 初稿     二、概念解析Context可以理解为提供信息或功能的容器或环境。容器里的东西是共享的。 Web上下文（ServletContext）目标对象是所有Web应用，Spring 上下文（ApplicationContext）目标对象是单个Web 应用，SpringMVC上下文（W">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不系之舟- z">
+<meta property="og:title" content="不系之舟">
 <meta property="og:url" content="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/也谈上下文对象/index.html">
-<meta property="og:site_name" content="不系之舟- z">
+<meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="一、前言二、版本   编号 修改日期 版本号 修改人 修改说明     1 2017.09.24 1.0 ZZ 初稿     二、概念解析Context可以理解为提供信息或功能的容器或环境。容器里的东西是共享的。 Web上下文（ServletContext）目标对象是所有Web应用，Spring 上下文（ApplicationContext）目标对象是单个Web 应用，SpringMVC上下文（W">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.it165.net/uploadfile/files/2015/0201/2015020117491892.png">
 <meta property="og:updated_time" content="2018-11-28T08:32:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟- z">
+<meta name="twitter:title" content="不系之舟">
 <meta name="twitter:description" content="一、前言二、版本   编号 修改日期 版本号 修改人 修改说明     1 2017.09.24 1.0 ZZ 初稿     二、概念解析Context可以理解为提供信息或功能的容器或环境。容器里的东西是共享的。 Web上下文（ServletContext）目标对象是所有Web应用，Spring 上下文（ApplicationContext）目标对象是单个Web 应用，SpringMVC上下文（W">
 <meta name="twitter:image" content="http://www.it165.net/uploadfile/files/2015/0201/2015020117491892.png">
   
-    <link rel="alternative" href="/atom.xml" title="不系之舟- z" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -50,7 +50,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/assets/img/head.gif" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -64,7 +64,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/assets/img/head.gif" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -146,7 +146,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -286,6 +286,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -363,7 +373,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/[已发布]浅谈Java异常处理机制及项目中的的规范处理方法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/数据字典表设计 & 加载配置文件的几种方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -394,10 +404,43 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、概念解析"><span class="toc-number">3.</span> <span class="toc-text">二、概念解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、上下文对象解析"><span class="toc-number">4.</span> <span class="toc-text">三、上下文对象解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、Context"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、Context</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、HttpContext"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、HttpContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、pageContext"><span class="toc-number">4.3.</span> <span class="toc-text">3.3、pageContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、ServletContext"><span class="toc-number">4.4.</span> <span class="toc-text">3.4、ServletContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5、ActionContext"><span class="toc-number">4.5.</span> <span class="toc-text">3.5、ActionContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6、ServletActionContext"><span class="toc-number">4.6.</span> <span class="toc-text">3.6、ServletActionContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7、ApplicationContext"><span class="toc-number">4.7.</span> <span class="toc-text">3.7、ApplicationContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8、WebApplicationContext"><span class="toc-number">4.8.</span> <span class="toc-text">3.8、WebApplicationContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9、SessionContext"><span class="toc-number">4.9.</span> <span class="toc-text">3.9、SessionContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10、Android-Context"><span class="toc-number">4.10.</span> <span class="toc-text">3.10、Android Context</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11、上下文与作用域的区别"><span class="toc-number">4.11.</span> <span class="toc-text">3.11、上下文与作用域的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12、上下文与作用域的区别"><span class="toc-number">4.12.</span> <span class="toc-text">3.12、上下文与作用域的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、参考资料"><span class="toc-number">5.</span> <span class="toc-text">四、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、结语"><span class="toc-number">6.</span> <span class="toc-text">五、结语</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="[置顶] 博客文章/SC03 Web开发 &amp; Web框架/也谈上下文对象" data-title data-url="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC03 Web开发 &amp; Web框架/也谈上下文对象/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
   
@@ -571,22 +614,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
         </ul>
   		
     	</section>
@@ -595,7 +622,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">初从文，三年不中；&lt;br&gt;后习武，校场发一矢，中鼓吏，逐之出；&lt;br&gt;遂学医，有所成。自撰一良方，服之，卒。</div>
   	  	
     	</section>
     

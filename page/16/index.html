@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟- z</title>
+  <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="website">
-<meta property="og:title" content="不系之舟- z">
+<meta property="og:title" content="不系之舟">
 <meta property="og:url" content="http://www.lapland.top/page/16/index.html">
-<meta property="og:site_name" content="不系之舟- z">
+<meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟- z">
+<meta name="twitter:title" content="不系之舟">
 <meta name="twitter:description" content="不系之舟的个人博客，使用Hexo搭建">
   
-    <link rel="alternative" href="/atom.xml" title="不系之舟- z" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/assets/img/head.gif" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -61,7 +61,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -107,7 +107,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/assets/img/head.gif" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -143,7 +143,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -1190,63 +1190,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/前端/CSS 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>display:block<br>    block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>    block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>    block元素可以设置margin和padding属性。</p>
-<p>display:inline<br>    inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>    inline元素设置width,height属性无效。<br>    inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</p>
-<p>display:inline-block<br>    简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。</p>
-<p>浮动：</p>
-<p>行内元素浮动之后会变成块级元素</p>
-<p>相对定位和绝对定位</p>
-<p>position: relative;<br>相对定位：相对定位是“相对于”元素（本身）在文档流中的初始位置；<br>position: absolute;<br>绝对定位是“相对于”距离它最近的已定位祖先元素（即设置了position样式属性的祖先元素），如果不存在已定位的祖先元素，那么相对于初始包含块（即浏览器）。</p>
-<p>对普通文档流的影响</p>
-<p>在使用相对定位是，无论是否移动，元素仍然占据原来的空间。<br>而与之相反，绝对定位使元素的位置与文档流无关，因此不占据空间。普通文档流中其它元素的布局就像绝对定位的元素不存在时一样。</p>
-<p>position:absolute，float会隐式地改变display的类型（display：none除外）。即是当元素设置position:absolute、float:left、float:right中任意一个时，都会让元素以display:inline-block的方式显示（特点是：可以设置长宽，默认宽度不占满父元素）。这时，即使故意设置display:inline; display:block都是无效的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/前端/Html引入公共页面的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1350,6 +1293,63 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/前端/Html引入公共页面的几种方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/前端/CSS 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>display:block<br>    block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>    block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>    block元素可以设置margin和padding属性。</p>
+<p>display:inline<br>    inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>    inline元素设置width,height属性无效。<br>    inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</p>
+<p>display:inline-block<br>    简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。</p>
+<p>浮动：</p>
+<p>行内元素浮动之后会变成块级元素</p>
+<p>相对定位和绝对定位</p>
+<p>position: relative;<br>相对定位：相对定位是“相对于”元素（本身）在文档流中的初始位置；<br>position: absolute;<br>绝对定位是“相对于”距离它最近的已定位祖先元素（即设置了position样式属性的祖先元素），如果不存在已定位的祖先元素，那么相对于初始包含块（即浏览器）。</p>
+<p>对普通文档流的影响</p>
+<p>在使用相对定位是，无论是否移动，元素仍然占据原来的空间。<br>而与之相反，绝对定位使元素的位置与文档流无关，因此不占据空间。普通文档流中其它元素的布局就像绝对定位的元素不存在时一样。</p>
+<p>position:absolute，float会隐式地改变display的类型（display：none除外）。即是当元素设置position:absolute、float:left、float:right中任意一个时，都会让元素以display:inline-block的方式显示（特点是：可以设置长宽，默认宽度不占满父元素）。这时，即使故意设置display:inline; display:block都是无效的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/">展开全文 >></a>
         </p>
       
 
@@ -1720,22 +1720,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
         </ul>
   		
     	</section>
@@ -1744,7 +1728,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">初从文，三年不中；&lt;br&gt;后习武，校场发一矢，中鼓吏，逐之出；&lt;br&gt;遂学医，有所成。自撰一良方，服之，卒。</div>
   	  	
     	</section>
     

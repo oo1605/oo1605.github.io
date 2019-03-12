@@ -6,24 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟- z</title>
+  <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="website">
-<meta property="og:title" content="不系之舟- z">
+<meta property="og:title" content="不系之舟">
 <meta property="og:url" content="http://www.lapland.top/page/13/index.html">
-<meta property="og:site_name" content="不系之舟- z">
+<meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟- z">
+<meta name="twitter:title" content="不系之舟">
 <meta name="twitter:description" content="不系之舟的个人博客，使用Hexo搭建">
   
-    <link rel="alternative" href="/atom.xml" title="不系之舟- z" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/assets/img/head.gif" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -61,7 +61,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -107,7 +107,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/assets/img/head.gif" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -143,7 +143,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -207,142 +207,26 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC04 数据库应用/非关系型数据库和关系型数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC04 数据库应用/记录一次数据库恢复" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><blockquote>
-<p>本文介绍了非关系型数据库和关系型数据库的概念、特性以及实际应用中的选型参考依据。两种类型的数据库各有自身特点及应用场景，总之，没有最好的方案，只有最合适的方案。</p>
-</blockquote>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.12.28</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿  </td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、关系型数据库"><a href="#3-1、关系型数据库" class="headerlink" title="3.1、关系型数据库"></a>3.1、关系型数据库</h2><blockquote>
-<p>关系型数据库，是指采用了关系模型来组织数据的数据库。简单来说，关系模型指的就是二维表格模型，而一个关系型数据库就是由二维表及其之间的联系所组成的一个数据组织。关系型数据库的最大特点就是事务的一致性。读写操作都是事务的，具有ACID的特点，ACID是Atomic原子性，Consistency一致性，Isolation隔离性，Durability持久性。</p>
-</blockquote>
-<blockquote>
-<p>常见的关系型数据库有Oracle、DB2、Mysql等。</p>
-</blockquote>
-<h2 id="3-2、非关系型数据库（NOSQL）"><a href="#3-2、非关系型数据库（NOSQL）" class="headerlink" title="3.2、非关系型数据库（NOSQL）"></a>3.2、非关系型数据库（NOSQL）</h2><blockquote>
-<p>非关系型数据库，是指那些非关系型的，分布式的，且一般不保证遵循ACID原则的数据存储系统。NOSQL数据库不提供sql支持，非关系型数据库是基于CAP模型的。</p>
-</blockquote>
-<blockquote>
-<p>常见的非关系型数据库有Redis、Memcached、MongoDB、HBase等。</p>
-</blockquote>
-<h1 id="四、关系型数据库的特性"><a href="#四、关系型数据库的特性" class="headerlink" title="四、关系型数据库的特性"></a>四、关系型数据库的特性</h1><h2 id="4-1、关系型数据库的优点"><a href="#4-1、关系型数据库的优点" class="headerlink" title="4.1、关系型数据库的优点"></a>4.1、关系型数据库的优点</h2><ul>
-<li>结构化查询 - SQL语言</li>
+        <ul>
+<li>重装系统后发现mysql数据库忘记导出sql语句了，幸好备份了数据盘，看看mysql文件夹下有什么东西：</li>
 </ul>
-<blockquote>
-<p>通用的SQL语言使得操作关系型数据库非常方便。关系型数据库可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</p>
-</blockquote>
+<p><img src="http://img.cdn.lapland.top/Image%201524753386.png" alt="image"></p>
 <ul>
-<li>数据一致性</li>
-</ul>
-<blockquote>
-<p>关系型数据库的最大特点就是事务的一致性。这个特性使得关系型数据库被应用于几乎对一致性有要求的系统中，如银行系统。为了维护一致性所付出的代价就是其读写性能比较差。</p>
-</blockquote>
-<ul>
-<li>持久存储</li>
-</ul>
-<blockquote>
-<p>数据的持久存储，尤其是海量数据的持久存储，还是需要一种关系数据库。</p>
-</blockquote>
-<h2 id="4-2、关系型数据库的瓶颈"><a href="#4-2、关系型数据库的瓶颈" class="headerlink" title="4.2、关系型数据库的瓶颈"></a>4.2、关系型数据库的瓶颈</h2><ul>
-<li>高并发读写需求</li>
-</ul>
-<blockquote>
-<p>网站的用户并发性非常高，往往达到每秒上万次读写请求，对于传统关系型数据库来说，硬盘I/O是一个很大的瓶颈。</p>
-</blockquote>
-<ul>
-<li>海量数据的高效率读写</li>
-</ul>
-<blockquote>
-<p>网站每天产生的数据量是巨大的，对于关系型数据库来说，在一张包含海量数据的表中查询，效率是非常低的。</p>
-</blockquote>
-<ul>
-<li>高扩展性和可用性</li>
-</ul>
-<blockquote>
-<p>在基于web的结构中，数据库是最难进行横向扩展的。因为关系型数据库具有有预定义好的结构(列的定义)，和多表查询机制。虽然预定义结构带来了可靠性和稳定性，但是当一个应用系统的用户量和访问量与日俱增的时候，数据库却没有办法像web server和app server那样简单的通过添加更多的硬件和服务节点来扩展性能和负载能力。或者由于系统的升级，功能的增加，数据结构变动比较大，此时对数据库系统升级和扩展都是非常痛苦的事情。</p>
-</blockquote>
-<ul>
-<li>性能</li>
-</ul>
-<blockquote>
-<p>关系型数据库将数据存储在硬盘中，查询速度不如NOSQL数据库。</p>
-</blockquote>
-<h1 id="五、非关系型数据库的特性"><a href="#五、非关系型数据库的特性" class="headerlink" title="五、非关系型数据库的特性"></a>五、非关系型数据库的特性</h1><blockquote>
-<p>非关系型数据库往往在某些特定的领域具有优势。</p>
-</blockquote>
-<h2 id="5-1、非关系型数据库的优点"><a href="#5-1、非关系型数据库的优点" class="headerlink" title="5.1、非关系型数据库的优点"></a>5.1、非关系型数据库的优点</h2><ul>
-<li>性能</li>
-</ul>
-<blockquote>
-<p>NOSQL数据库将数据存储于内存，查询速度非常快，例如redis作为数据的缓存。</p>
-</blockquote>
-<ul>
-<li>高并发读写需求</li>
-</ul>
-<blockquote>
-<p>key-value数据库：key-value数据库的主要特点即使具有极高的并发读写性能，Redis,Tokyo Cabinet,Flare就是这类的代表。</p>
-</blockquote>
-<ul>
-<li>海量数据的高效率读写</li>
-</ul>
-<blockquote>
-<p>面向文档数据库：这类数据库的特点是，可以在海量的数据中快速的查询数据，典型代表为MongoDB。</p>
-</blockquote>
-<ul>
-<li>高扩展性和可用性</li>
-</ul>
-<blockquote>
-<p>分布式数据库：NoSQL数据之间没有耦合性，数据的格式十分灵活没有固定的表结构，所以非常容易水平扩展。非关系型数据可以很容易适应数据类型和结构的变化，因为动态结构本身就支持这一点。</p>
-</blockquote>
-<h2 id="5-2、非关系型数据库的瓶颈"><a href="#5-2、非关系型数据库的瓶颈" class="headerlink" title="5.2、非关系型数据库的瓶颈"></a>5.2、非关系型数据库的瓶颈</h2><ul>
-<li>数据一致性</li>
-</ul>
-<blockquote>
-<p>非关系型数据库一般强调的是数据最终一致性，而不没有像ACID一样强调数据的强一致性，从非关系型数据库中读到的有可能还是处于一个中间态的数据，因此如果你的业务对于数据的一致性要求很高，那么非关系型数据库并不一个很好的选择，非关系型数据库可能更多的偏向于OLAP场景，而关系型数据库更多偏向于OLTP场景。</p>
-</blockquote>
-<blockquote>
-<p>不提供关系型数据库对事物的处理。</p>
-</blockquote>
-<h1 id="六、关系型数据库与非关系型数据库的选择"><a href="#六、关系型数据库与非关系型数据库的选择" class="headerlink" title="六、关系型数据库与非关系型数据库的选择"></a>六、关系型数据库与非关系型数据库的选择</h1><ul>
-<li><p>事务一致性: 关系型数据库在对事物一致性的维护中有很大的开销，而现在很多web2.0系统对事物的读写一致性都不高。</p>
+<li><p>其中*.frm是表结构文件，db.opt编码格式，ib_logfile0是日志文件，ibdata1是具体的数据。</p>
 </li>
-<li><p>读写实时性: 对关系数据库来说，插入一条数据之后立刻查询，是肯定可以读出这条数据的，但是对于很多web应用来说，并不要求这么高的实时性，比如发一条消息之后，过几秒乃至十几秒之后才看到这条动态是完全可以接受的。</p>
-</li>
-<li><p>复杂SQL，特别是多表关联查询: 任何大数据量的web系统，都非常忌讳多个大表的关联查询，以及复杂的数据分析类型的复杂SQL报表查询，特别是SNS类型的网站（SNS，专指社交网络服务，包括了社交软件和社交网站。），从需求以及产品阶级角度，就避免了这种情况的产生。往往更多的只是单表的主键查询，以及单表的简单条件分页查询，SQL的功能极大的弱化了。</p>
+<li><p>是接下来要做的就是把备份的除了mysql、sys、performance_schema外的数据库文件夹和ibdata1文件拷贝复制到新的数据库相应目录下，重启服务器，搞定！</p>
 </li>
 </ul>
-<h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE/5910594" target="_blank" rel="noopener">结构化数据</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/%E9%9D%9E%E7%BB%93%E6%9E%84%E5%8C%96%E6%95%B0%E6%8D%AE/309808?fr=aladdin" target="_blank" rel="noopener">非结构化数据</a></li>
-</ul>
-<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/wanghongyun/p/6193912.html" target="_blank" rel="noopener">SQL与NoSQL（关系型与非关系型）数据库的区别</a> </li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>初稿完成，后续完善。</p>
+<blockquote>
+<p>注：记得及时备份sql语句。</p>
+</blockquote>
+<blockquote>
+<p>如果mysql错误还是无法恢复，可以卸载后重装，切记卸载时不要勾选删除数据。</p>
 </blockquote>
 
       
@@ -356,7 +240,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/非关系型数据库和关系型数据库/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC04 数据库应用/记录一次数据库恢复/">展开全文 >></a>
         </p>
       
 
@@ -611,83 +495,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司某项目有需求，要求可以在Html页面中打开演示PPT，并能打开点击播放PPT中的视频、音频。现有解决思路如下，会逐一实现，并进行比较。</p>
-<ul>
-<li>使用poi将PPT转为图片,在线预览PPT</li>
-<li>根据PDF模板生成PDF文件 下载 在线预览</li>
-<li>使用poi实现word、excel、ppt转html</li>
-</ul>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.07.18</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、占位"><a href="#3-1、占位" class="headerlink" title="3.1、占位"></a>3.1、占位</h2><h1 id="四、正文"><a href="#四、正文" class="headerlink" title="四、正文"></a>四、正文</h1><h1 id="五、正文"><a href="#五、正文" class="headerlink" title="五、正文"></a>五、正文</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Web Office/Apache POI使用入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -794,6 +601,83 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Web Office/Apache POI使用入门/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司某项目有需求，要求可以在Html页面中打开演示PPT，并能打开点击播放PPT中的视频、音频。现有解决思路如下，会逐一实现，并进行比较。</p>
+<ul>
+<li>使用poi将PPT转为图片,在线预览PPT</li>
+<li>根据PDF模板生成PDF文件 下载 在线预览</li>
+<li>使用poi实现word、excel、ppt转html</li>
+</ul>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.07.18</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、占位"><a href="#3-1、占位" class="headerlink" title="3.1、占位"></a>3.1、占位</h2><h1 id="四、正文"><a href="#四、正文" class="headerlink" title="四、正文"></a>四、正文</h1><h1 id="五、正文"><a href="#五、正文" class="headerlink" title="五、正文"></a>五、正文</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Web Office/Java Web在线预览Office文件/">展开全文 >></a>
         </p>
       
 
@@ -1193,80 +1077,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/通过Web页面上传下载功能实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.07.22</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">异常处理_百度百科</a></li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/通过Web页面上传下载功能实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1384,6 +1194,80 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/通过Web页面上传下载功能实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.07.22</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">异常处理_百度百科</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/通过Web页面上传下载功能实现/">展开全文 >></a>
         </p>
       
 
@@ -1581,22 +1465,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
         </ul>
   		
     	</section>
@@ -1605,7 +1473,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">初从文，三年不中；&lt;br&gt;后习武，校场发一矢，中鼓吏，逐之出；&lt;br&gt;遂学医，有所成。自撰一良方，服之，卒。</div>
   	  	
     	</section>
     
