@@ -160,12 +160,68 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/Markdown/如何使用markdown画思维导图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/Markdown/Atom搭建Markdown写作环境，托管到Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>作者曾热衷于有道云笔记，但是每三个月导出一次的限制，和Linux系统客户端的实现不完美，使我再次寻求解决方案。在尝试过多种Markdown笔记工具后，认为Atom的实现是最好的。</p>
+<p>Atom 可以通过导入项目的形式管理文件结构（tree-view）。通过Markdown-writer插件和Markdown-preview-enhanced实现写作与预览同步，并且Markdown-preview-enhanced集成了同步滚动，导出Html，PDF，eBook，目录导航等功能。还可以通过language-markdown插件实现代码高亮，minimap实现mini地图导航，tool-bar插件实现Markdown常用工具栏功能。以及Git插件实现文档托管。有需要还可以通过atom-simplified-chinese-menu实现软件的汉化。</p>
+<p>总之，Atom及其插件的配合，实现了我使用Markdown写作的所有需求，并且性能稳定，文档安全。</p>
+<p>测试环境：Deepin 15.5 发行版。Atom 1.22.1 x64。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.03.17</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、安装及配置"><a href="#三、安装及配置" class="headerlink" title="三、安装及配置"></a>三、安装及配置</h1><font color="ED1C1C"><center><strong>Atom 集成Markdown效果图</strong></center></font>
+
+<p><img src="http://img.cdn.lapland.top/Image%201521270927.png" alt="image"></p>
+<h2 id="3-1、安装Atom"><a href="#3-1、安装Atom" class="headerlink" title="3.1、安装Atom"></a>3.1、安装Atom</h2><ul>
+<li style="list-style: none"><input type="checkbox" checked> Atom安装过程详见：<a href="https://atom.io/" target="_blank" rel="noopener">Atom官网</a></li>
+</ul>
+<h2 id="3-2、安装插件"><a href="#3-2、安装插件" class="headerlink" title="3.2、安装插件"></a>3.2、安装插件</h2><p>可以通过编辑 - 偏好设置 - Settings - 安装拓展包/主题 ，搜索你需要安装的插件。并且安装后可以对插件的参数进行设置。</p>
+<p><img src="http://img.cdn.lapland.top/Image%201521272928.png" alt="image"></p>
+<h2 id="3-21、写作增强（Markdown-writer）"><a href="#3-21、写作增强（Markdown-writer）" class="headerlink" title="3.21、写作增强（Markdown-writer）"></a>3.21、写作增强（Markdown-writer）</h2><p>它能让你更方便地管理和编辑Markdown文件，并自带tool-bar工具插件。提供Markdown写作中常用标签的快捷键。</p>
+<h2 id="3-22、预览增强（Markdown-preview-enhanced）"><a href="#3-22、预览增强（Markdown-preview-enhanced）" class="headerlink" title="3.22、预览增强（Markdown-preview-enhanced）"></a>3.22、预览增强（Markdown-preview-enhanced）</h2><p>Atom自带的Markdown预览插件markdown-preview功能比较简单，Markdown-preview-enhanced对其做了功能扩展和增强。使用该插件前，需要先禁用markdown-preview。</p>
+<ul>
+<li>目录导航</li>
+<li>支持同步预览</li>
+<li>支持Latex公式。</li>
+<li>Html，PDF，eBook导出。</li>
+</ul>
+<h2 id="3-23、语法增强（language-markdown）"><a href="#3-23、语法增强（language-markdown）" class="headerlink" title="3.23、语法增强（language-markdown）"></a>3.23、语法增强（language-markdown）</h2><p>一般的Markdown编辑器提供了代码着色等基本功能，language-markdown除了能给代码着色，还提供了快捷的代码片段生成等功能。</p>
+<h2 id="3-24、迷你地图导航（minimap）"><a href="#3-24、迷你地图导航（minimap）" class="headerlink" title="3.24、迷你地图导航（minimap）"></a>3.24、迷你地图导航（minimap）</h2><p>在写作右侧显示迷你地图，以便于搜索和快速导航。</p>
+<h2 id="3-25、图标插件（file-icons）"><a href="#3-25、图标插件（file-icons）" class="headerlink" title="3.25、图标插件（file-icons）"></a>3.25、图标插件（file-icons）</h2><p>用于渲染文件扩展名的图标和颜色，以提高文件查找的视觉效果。</p>
+<h2 id="3-26、Git插件（Atom自带）"><a href="#3-26、Git插件（Atom自带）" class="headerlink" title="3.26、Git插件（Atom自带）"></a>3.26、Git插件（Atom自带）</h2><p>可以实现Git常用功能的需求。</p>
+<h2 id="3-27、汉化插件（atom-simplified-chinese-menu）"><a href="#3-27、汉化插件（atom-simplified-chinese-menu）" class="headerlink" title="3.27、汉化插件（atom-simplified-chinese-menu）"></a>3.27、汉化插件（atom-simplified-chinese-menu）</h2><p>Atom 简体中文语言包，提供最新的菜单栏、右键菜单及设置完整汉化。</p>
+<h2 id="3-3、Atom的配置"><a href="#3-3、Atom的配置" class="headerlink" title="3.3、Atom的配置"></a>3.3、Atom的配置</h2><ul>
+<li>可以通过直接编辑Atom样式表 styles.less，来设置软件的字体样式等。示例如下：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.tree-view</span> &#123;</span><br><span class="line">  // background-color: whitesmoke;</span><br><span class="line">  <span class="selector-tag">font-family</span><span class="selector-pseudo">:"</span>微软雅黑";</span><br><span class="line">  <span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br><span class="line">&#125;``</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">atom-pane</span>, <span class="selector-class">.command-palette</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"微软雅黑"</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.settings-view</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"微软雅黑"</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.tab-bar</span> <span class="selector-class">.tab</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"微软雅黑"</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/libin-1/p/6638165.html" target="_blank" rel="noopener">使用Atom打造无懈可击的Markdown编辑器</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>由于插件的安装比较简单，故只做了功能介绍。目前尚欠缺的是博客发布功能，有待机进一步研究。</p>
+</blockquote>
+
       
 
       
@@ -177,7 +233,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/Markdown/如何使用markdown画思维导图/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/Markdown/Atom搭建Markdown写作环境，托管到Git/">展开全文 >></a>
         </p>
       
 
@@ -439,6 +495,158 @@
 
 
   
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/InterliJ IDEA 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>由于工作需求，需要开发和阅读一部分前端和移动端代码，然而Eclipse对这些的支持不是很友好，所以尝试用InterliJ IDEA来开发这部分代码，本文用来记录InterliJ IDEA的常用配置，以作备忘。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018.01.19</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、代码风格设置"><a href="#三、代码风格设置" class="headerlink" title="三、代码风格设置"></a>三、代码风格设置</h1><h2 id="3-1、编码-颜色-字体"><a href="#3-1、编码-颜色-字体" class="headerlink" title="3.1、编码/颜色/字体"></a>3.1、编码/颜色/字体</h2><h2 id="3-2、代码注释"><a href="#3-2、代码注释" class="headerlink" title="3.2、代码注释"></a>3.2、代码注释</h2><h3 id="3-21、新建class类注释"><a href="#3-21、新建class类注释" class="headerlink" title="3.21、新建class类注释"></a>3.21、新建class类注释</h3><p>设置新建Java类时自动生成类的注解。</p>
+<ul>
+<li>File -&gt; Setting -&gt; File and Code Templates</li>
+<li>设置步骤图解如下：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201516372950.png" alt="image"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> $&#123;USER&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $&#123;TIME&#125; $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> TODO</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-22、自定义类和方法注释"><a href="#3-22、自定义类和方法注释" class="headerlink" title="3.22、自定义类和方法注释"></a>3.22、自定义类和方法注释</h3><p>由于InterliJ IDEA不能像Eclipse那样，修改类和方法的Code Template注释，所以需要通过自定义快捷键的方式来实现。</p>
+<ul>
+<li>File -&gt; Settings -&gt; Editor -&gt; Live Templates</li>
+<li>设置步骤图解如下：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201516372886.png" alt="image"></p>
+<ul>
+<li>类注释：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@author</span> $USER$</span><br><span class="line"> * <span class="meta">@date</span> $TIME$ $DATE$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>类注释使用时输入 /* + Enter</p>
+</blockquote>
+<ul>
+<li>方法注释：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">$PARAMS$</span><br><span class="line"> * <span class="meta">@return</span> $RETURNS$</span><br><span class="line"> * <span class="meta">@throws</span> $EXCECPTION$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要设置参数分列显示，须把$PARAMS$表达式的值为如下脚本：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(<span class="string">"def result=''; def params=\"$&#123;_1&#125;\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')&#125;; return result"</span>, methodParameters())</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>方法注释使用时输入 /** + Enter</p>
+</blockquote>
+<h2 id="3-3、快捷键风格"><a href="#3-3、快捷键风格" class="headerlink" title="3.3、快捷键风格"></a>3.3、快捷键风格</h2><h3 id="3-31、快捷键设置"><a href="#3-31、快捷键设置" class="headerlink" title="3.31、快捷键设置"></a>3.31、快捷键设置</h3><p>因为以前一直使用Eclispe，为了使快捷键的使用不至于混乱，所以IntelliJ IDEA快捷键沿用Eclipse风格。设置如下：</p>
+<p>File -&gt; Setting -&gt; Keymap -&gt; Eclispe</p>
+<h3 id="3-32、快速输入"><a href="#3-32、快速输入" class="headerlink" title="3.32、快速输入"></a>3.32、快速输入</h3><blockquote>
+<p>快速输入是通过设置快捷键的方式实现的，方法如自定义注解的方式相同。</p>
+</blockquote>
+<ul>
+<li>常用快速输入设置如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">logger</td>
+<td style="text-align:left"><figure class="highlight plain"><figcaption><span>static final Logger LOGGER </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main        | ```public static void main(String [] agrs)&#123;$END$&#125;</span><br></pre></td></tr></table></figure></td>
+</tr>
+</tbody>
+</table>
+<p>syso        | <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for         | ```for (int $i$=$start$; $i$&lt;$end$; $i$++) &#123;$cursor$&#125;</span><br></pre></td></tr></table></figure></p>
+<p>foreach     | <figure class="highlight plain"><figcaption><span>($i$ : $data$) &#123;$cursor$&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch      | ```switch ($VAR$) &#123;case $VAR_CHILDREN$:break;$END$&#125;</span><br></pre></td></tr></table></figure></p>
+<p>if          | <code>if ($VAR_a$==$VAR_b$) {$cursor$} else if($VAR_a$==$VAR_b$) {$cursor$} else {$cursor$ }</code></p>
+<blockquote>
+<p>使用时输入 快捷键 + Enter，例如 syso +  + Enter</p>
+</blockquote>
+<h2 id="3-4、生成Javadoc文档"><a href="#3-4、生成Javadoc文档" class="headerlink" title="3.4、生成Javadoc文档"></a>3.4、生成Javadoc文档</h2><p><img src="http://img.cdn.lapland.top/Image%201516373772.png" alt="image"></p>
+<h3 id="3-41、问题一：-javadoc-编码GBK的不可映射字符"><a href="#3-41、问题一：-javadoc-编码GBK的不可映射字符" class="headerlink" title="3.41、问题一： javadoc 编码GBK的不可映射字符"></a>3.41、问题一： javadoc 编码GBK的不可映射字符</h3><ul>
+<li>解决方案：</li>
+</ul>
+<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-encoding utf-8 -charset utf-8</strong></font> 。</p>
+<h3 id="3-42、问题二：-date等是未知标记"><a href="#3-42、问题二：-date等是未知标记" class="headerlink" title="3.42、问题二： @date等是未知标记"></a>3.42、问题二： @date等是未知标记</h3><ul>
+<li>解决方案：</li>
+</ul>
+<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-tag date:a:”日期:” -tag description:a:”描述:”</strong></font> 。</p>
+<h1 id="四、开发环境设置"><a href="#四、开发环境设置" class="headerlink" title="四、开发环境设置"></a>四、开发环境设置</h1><h2 id="4-1、JDK"><a href="#4-1、JDK" class="headerlink" title="4.1、JDK"></a>4.1、JDK</h2><h2 id="4-2、Tomcat"><a href="#4-2、Tomcat" class="headerlink" title="4.2、Tomcat"></a>4.2、Tomcat</h2><h2 id="4-3、JRebel热部署插件"><a href="#4-3、JRebel热部署插件" class="headerlink" title="4.3、JRebel热部署插件"></a>4.3、JRebel热部署插件</h2><blockquote>
+<p>现在 JRebel 对个人非商业用途的用户永久免费。</p>
+</blockquote>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://yiweifen.com/html/news/WaiYu/167639.html" target="_blank" rel="noopener">idea2017+热部署插件jRebel安装与配置</a></li>
+</ul>
+<h2 id="4-4、Maven"><a href="#4-4、Maven" class="headerlink" title="4.4、Maven"></a>4.4、Maven</h2><h2 id="4-5、SVN"><a href="#4-5、SVN" class="headerlink" title="4.5、SVN"></a>4.5、SVN</h2><h1 id="五、输入输出自定义模板"><a href="#五、输入输出自定义模板" class="headerlink" title="五、输入输出自定义模板"></a>五、输入输出自定义模板</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc//" target="_blank" rel="noopener">IntelliJ IDEA官方文档</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc/intellij_idea_doc-itw32eg4.html/" target="_blank" rel="noopener">IntelliJ IDEA使用语言构造的周围代码块</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u014044812/article/details/76577479/" target="_blank" rel="noopener">IntelliJ IDEA 自定义方法注解模板</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-template-variables.html?spm=a2c4e.11153940.blogcont73449.14.692ef64TXby13/" target="_blank" rel="noopener">Creating and Editing Template Variables</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/InterliJ IDEA 使用总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/MyEclipse 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -569,158 +777,6 @@ Type variables(类型变量): 128, 0, 25   红罗色
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/MyEclipse 使用总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/InterliJ IDEA 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>由于工作需求，需要开发和阅读一部分前端和移动端代码，然而Eclipse对这些的支持不是很友好，所以尝试用InterliJ IDEA来开发这部分代码，本文用来记录InterliJ IDEA的常用配置，以作备忘。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.01.19</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、代码风格设置"><a href="#三、代码风格设置" class="headerlink" title="三、代码风格设置"></a>三、代码风格设置</h1><h2 id="3-1、编码-颜色-字体"><a href="#3-1、编码-颜色-字体" class="headerlink" title="3.1、编码/颜色/字体"></a>3.1、编码/颜色/字体</h2><h2 id="3-2、代码注释"><a href="#3-2、代码注释" class="headerlink" title="3.2、代码注释"></a>3.2、代码注释</h2><h3 id="3-21、新建class类注释"><a href="#3-21、新建class类注释" class="headerlink" title="3.21、新建class类注释"></a>3.21、新建class类注释</h3><p>设置新建Java类时自动生成类的注解。</p>
-<ul>
-<li>File -&gt; Setting -&gt; File and Code Templates</li>
-<li>设置步骤图解如下：</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201516372950.png" alt="image"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> $&#123;USER&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $&#123;TIME&#125; $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> TODO</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-22、自定义类和方法注释"><a href="#3-22、自定义类和方法注释" class="headerlink" title="3.22、自定义类和方法注释"></a>3.22、自定义类和方法注释</h3><p>由于InterliJ IDEA不能像Eclipse那样，修改类和方法的Code Template注释，所以需要通过自定义快捷键的方式来实现。</p>
-<ul>
-<li>File -&gt; Settings -&gt; Editor -&gt; Live Templates</li>
-<li>设置步骤图解如下：</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201516372886.png" alt="image"></p>
-<ul>
-<li>类注释：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@author</span> $USER$</span><br><span class="line"> * <span class="meta">@date</span> $TIME$ $DATE$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>类注释使用时输入 /* + Enter</p>
-</blockquote>
-<ul>
-<li>方法注释：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">$PARAMS$</span><br><span class="line"> * <span class="meta">@return</span> $RETURNS$</span><br><span class="line"> * <span class="meta">@throws</span> $EXCECPTION$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果要设置参数分列显示，须把$PARAMS$表达式的值为如下脚本：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(<span class="string">"def result=''; def params=\"$&#123;_1&#125;\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')&#125;; return result"</span>, methodParameters())</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>方法注释使用时输入 /** + Enter</p>
-</blockquote>
-<h2 id="3-3、快捷键风格"><a href="#3-3、快捷键风格" class="headerlink" title="3.3、快捷键风格"></a>3.3、快捷键风格</h2><h3 id="3-31、快捷键设置"><a href="#3-31、快捷键设置" class="headerlink" title="3.31、快捷键设置"></a>3.31、快捷键设置</h3><p>因为以前一直使用Eclispe，为了使快捷键的使用不至于混乱，所以IntelliJ IDEA快捷键沿用Eclipse风格。设置如下：</p>
-<p>File -&gt; Setting -&gt; Keymap -&gt; Eclispe</p>
-<h3 id="3-32、快速输入"><a href="#3-32、快速输入" class="headerlink" title="3.32、快速输入"></a>3.32、快速输入</h3><blockquote>
-<p>快速输入是通过设置快捷键的方式实现的，方法如自定义注解的方式相同。</p>
-</blockquote>
-<ul>
-<li>常用快速输入设置如下：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:left">代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">logger</td>
-<td style="text-align:left"><figure class="highlight plain"><figcaption><span>static final Logger LOGGER </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main        | ```public static void main(String [] agrs)&#123;$END$&#125;</span><br></pre></td></tr></table></figure></td>
-</tr>
-</tbody>
-</table>
-<p>syso        | <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for         | ```for (int $i$=$start$; $i$&lt;$end$; $i$++) &#123;$cursor$&#125;</span><br></pre></td></tr></table></figure></p>
-<p>foreach     | <figure class="highlight plain"><figcaption><span>($i$ : $data$) &#123;$cursor$&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch      | ```switch ($VAR$) &#123;case $VAR_CHILDREN$:break;$END$&#125;</span><br></pre></td></tr></table></figure></p>
-<p>if          | <code>if ($VAR_a$==$VAR_b$) {$cursor$} else if($VAR_a$==$VAR_b$) {$cursor$} else {$cursor$ }</code></p>
-<blockquote>
-<p>使用时输入 快捷键 + Enter，例如 syso +  + Enter</p>
-</blockquote>
-<h2 id="3-4、生成Javadoc文档"><a href="#3-4、生成Javadoc文档" class="headerlink" title="3.4、生成Javadoc文档"></a>3.4、生成Javadoc文档</h2><p><img src="http://img.cdn.lapland.top/Image%201516373772.png" alt="image"></p>
-<h3 id="3-41、问题一：-javadoc-编码GBK的不可映射字符"><a href="#3-41、问题一：-javadoc-编码GBK的不可映射字符" class="headerlink" title="3.41、问题一： javadoc 编码GBK的不可映射字符"></a>3.41、问题一： javadoc 编码GBK的不可映射字符</h3><ul>
-<li>解决方案：</li>
-</ul>
-<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-encoding utf-8 -charset utf-8</strong></font> 。</p>
-<h3 id="3-42、问题二：-date等是未知标记"><a href="#3-42、问题二：-date等是未知标记" class="headerlink" title="3.42、问题二： @date等是未知标记"></a>3.42、问题二： @date等是未知标记</h3><ul>
-<li>解决方案：</li>
-</ul>
-<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-tag date:a:”日期:” -tag description:a:”描述:”</strong></font> 。</p>
-<h1 id="四、开发环境设置"><a href="#四、开发环境设置" class="headerlink" title="四、开发环境设置"></a>四、开发环境设置</h1><h2 id="4-1、JDK"><a href="#4-1、JDK" class="headerlink" title="4.1、JDK"></a>4.1、JDK</h2><h2 id="4-2、Tomcat"><a href="#4-2、Tomcat" class="headerlink" title="4.2、Tomcat"></a>4.2、Tomcat</h2><h2 id="4-3、JRebel热部署插件"><a href="#4-3、JRebel热部署插件" class="headerlink" title="4.3、JRebel热部署插件"></a>4.3、JRebel热部署插件</h2><blockquote>
-<p>现在 JRebel 对个人非商业用途的用户永久免费。</p>
-</blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://yiweifen.com/html/news/WaiYu/167639.html" target="_blank" rel="noopener">idea2017+热部署插件jRebel安装与配置</a></li>
-</ul>
-<h2 id="4-4、Maven"><a href="#4-4、Maven" class="headerlink" title="4.4、Maven"></a>4.4、Maven</h2><h2 id="4-5、SVN"><a href="#4-5、SVN" class="headerlink" title="4.5、SVN"></a>4.5、SVN</h2><h1 id="五、输入输出自定义模板"><a href="#五、输入输出自定义模板" class="headerlink" title="五、输入输出自定义模板"></a>五、输入输出自定义模板</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc//" target="_blank" rel="noopener">IntelliJ IDEA官方文档</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc/intellij_idea_doc-itw32eg4.html/" target="_blank" rel="noopener">IntelliJ IDEA使用语言构造的周围代码块</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u014044812/article/details/76577479/" target="_blank" rel="noopener">IntelliJ IDEA 自定义方法注解模板</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-template-variables.html?spm=a2c4e.11153940.blogcont73449.14.692ef64TXby13/" target="_blank" rel="noopener">Creating and Editing Template Variables</a></li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/InterliJ IDEA 使用总结/">展开全文 >></a>
         </p>
       
 
@@ -983,6 +1039,92 @@ Type variables(类型变量): 128, 0, 25   红罗色
 
 
   
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/持续集成及自动化运维/DevOps 自动化运维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。</p>
+<ul>
+<li>大致步骤：</li>
+</ul>
+<blockquote>
+<p>代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC</p>
+</blockquote>
+<p> 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。<br> 代码托管：码云<br> 云服务器：阿里云 CentOS 7</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2019.03.10</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、Paas-教程"><a href="#三、Paas-教程" class="headerlink" title="三、Paas 教程"></a>三、Paas 教程</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://gitee.com/Yshow123/WenDa/paas/code_pipeline" target="_blank" rel="noopener">阿里云 CodePipeline 服务 - 文档</a></li>
+</ul>
+<h1 id="四、参考文章"><a href="#四、参考文章" class="headerlink" title="四、参考文章"></a>四、参考文章</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/devops/2613029?fr=aladdin" target="_blank" rel="noopener">DevOps - 百度百科</a></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zhihu.com/question/24413538?sort=created" target="_blank" rel="noopener">你所在的公司是如何实施DevOps的？</a></li>
+</ul>
+<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><p>码云上面文档写的很详细，就不做赘言了~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/持续集成及自动化运维/DevOps 自动化运维/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Windows系统）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1118,92 +1260,6 @@ set classpath=XXX
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Windows系统）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/持续集成及自动化运维/DevOps 自动化运维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。</p>
-<ul>
-<li>大致步骤：</li>
-</ul>
-<blockquote>
-<p>代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC</p>
-</blockquote>
-<p> 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。<br> 代码托管：码云<br> 云服务器：阿里云 CentOS 7</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2019.03.10</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、Paas-教程"><a href="#三、Paas-教程" class="headerlink" title="三、Paas 教程"></a>三、Paas 教程</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://gitee.com/Yshow123/WenDa/paas/code_pipeline" target="_blank" rel="noopener">阿里云 CodePipeline 服务 - 文档</a></li>
-</ul>
-<h1 id="四、参考文章"><a href="#四、参考文章" class="headerlink" title="四、参考文章"></a>四、参考文章</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/devops/2613029?fr=aladdin" target="_blank" rel="noopener">DevOps - 百度百科</a></li>
-</ul>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zhihu.com/question/24413538?sort=created" target="_blank" rel="noopener">你所在的公司是如何实施DevOps的？</a></li>
-</ul>
-<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><p>码云上面文档写的很详细，就不做赘言了~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/持续集成及自动化运维/DevOps 自动化运维/">展开全文 >></a>
         </p>
       
 
