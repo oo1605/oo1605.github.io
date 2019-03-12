@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="website">
 <meta property="og:title" content="不系之舟">
-<meta property="og:url" content="http://yoursite.com/page/19/index.html">
+<meta property="og:url" content="http://www.lapland.top/page/19/index.html">
 <meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="不系之舟的个人博客，使用Hexo搭建">
 <meta property="og:locale" content="en">
@@ -507,12 +507,91 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/软件架构/模块化设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/各种中文乱码问题的解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">代码框架设计</span><br><span class="line">楼主认为框架设计的目的是：</span><br><span class="line">1. 将整个项目合理的拆分为许多模块，各个模块功能职责明确，降低各个模块的依赖，耦合；做到想用某一个模块时就用，不用时就去除掉，并且不影响其他模块</span><br><span class="line">2. 合理设计类与类之间的继承关系，接口的实现关系，和利用java的public、private、protected、default权限，来掩藏代码内部逻辑，争取做到只暴露外部开发接口，完全掩藏内部逻辑</span><br><span class="line">楼主认为：</span><br><span class="line">以功能为单位划分模块，无论功能大小均划分成模块，方便后期代码升级可以进行添加；</span><br><span class="line">模块设计准则：</span><br><span class="line">a.模块设计准则：在一个功能模块下，放于同一个package下，根据功能点为这个模块创建一个接口，创建两个功能管理类并实现前面的该接口，一个用于对外部模块开放接口，另一个用于控制模块内部逻辑。最后，在将模块内部真正实现的代码逻辑类全部设置为default权限，保证package以外的无法访问；如下图：</span><br><span class="line">模块设计</span><br><span class="line">b. 类与类的继承、接口实现；如果有多个相同的功能的代码块，都为其写一个基类，子类来继承即可；接口方面，如果多个类有相同的功能，但实现不一样则就用接口来实现</span><br></pre></td></tr></table></figure>
+        <pre><code>[TOC]
+</code></pre><h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018.07.20</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><p>–&gt; 凡是非二进制文件均有编码方式.</p>
+<p>–&gt; 本地环境简介:</p>
+<pre><code>计算机的系统编码:GBK,(cmd--chcp,936为GBK,1252为ANSI)
+浏览器编码格式 : GBK
+TXT文件保存默认格式: ANSI
+Java的内核和class文件是基于unicode的
+    System.getProperty(&quot;file.encoding&quot;)--&gt;main()所在的类文件文件的保存编码(一般认为JVM的默认编码)
+JVM 默认为系统编码方式
+</code></pre><p>–&gt; Java中编码方式的设置:<br>    java–&gt; encoding=”utf-8”；<br>    html–&gt;charset=utf-8 ,css–&gt; @charset “utf-8”；<br>    jsp–&gt;pageEncoding是jsp文件本身的编码 ontentType的charset是指服务器发送给客户端时的内容编码（转码后发送）  URIEncoding=”utf-8”是连接编码格式。</p>
+<p>–&gt; 常见字符集有：ASCII字符集、ISO-8859-1字符集(兼容ASCII) 、GB2312字符集(兼容ASCII) 、GBK字符集(兼容GB2312)、BIG5字符集、GB18030字符集(兼容GBK)、Unicode(兼容ISO-8859-1)字符集等。</p>
+<p>–&gt; 产生乱码的两种原因:</p>
+<ol>
+<li><p>文件存储<br> Java 把源文件 存储/编译成二进制文件,等到运行时再进行解码运行或显示.</p>
+</li>
+<li><p>文件传递<br> Java 文件传递的是二进制文件,故需要发送端把源文进行编码成二进制,然后接收端根据发送端的编码方式进行解码.</p>
+</li>
+</ol>
+<p>–&gt; 解决思路:</p>
+<ol>
+<li>本地设置的一般是文件的编码方式,接收端文件的编码方式不能对接收的文件进行解码,就会出现乱码</li>
+<li>当解码方式不兼容编码方式时,便会显示乱码.(就像高版本word可以打开低版本,反之不行)</li>
+<li>根据上述条件分析产生乱码的环节.</li>
+</ol>
+<ol>
+<li>MyEclipse</li>
+</ol>
+<p>–&gt; 控制台输入输出乱码<br>    run as configurations –&gt; common –&gt;讲编码改为GBK</p>
+<p>–&gt; 文件输入输出乱码</p>
+<ol start="2">
+<li>MySql 数据库编码方式(设置成UTF-8后),cmd输出乱码</li>
+</ol>
+<p>–&gt; CMD 显示输出乱码<br>+————————–+——————————————-+<br>| Variable_name            | Value                                     |<br>+————————–+——————————————-+<br>| character_set_client     | gbk                                       |<br>| character_set_connection | gbk                                       |<br>| character_set_database   | utf8                                      |<br>| character_set_results    | gbk                                       |<br>| character_set_server     | utf8                                      |<br>| character_set_system     | utf8                                      |<br>| character_sets_dir       | D:\MySQL\MySQL Server 5.0\share\charsets\ |<br>+————————–+——————————————-+</p>
+<p>解 : cmd–set names gbk (本地系统编码格式为gbk)<br>或者 cmd - chcp 65001设置cmd编码格式;(不建议,因为虚拟机也得跟着设置)</p>
+<p>–&gt; 以文件形式导出乱码</p>
+<ol start="3">
+<li>TomCat 服务端编码, 编码方式设置成UTF-8后,浏览器端乱码</li>
+</ol>
+<p>–&gt; JSP 输出乱码</p>
+<p>解:<br>    // 乱码原因: tomcat默认以ISO-8859-1的编码方式进行编码,JSP一般设置UTF-8</p>
+<pre><code>// method =&quot;post&quot; ,以from表单和 URL表头 的形式传输
+request.setCharacterEncoding(&quot;UTF-8&quot;);
+// 设置接收请求(表单)的解码方式
+response.setCharacterEncoding(&quot;UTF-8&quot;);
+// 设置响应(发送表单)的编码方式,可省,与 page: chatset=&quot;utf-8&quot;相同
+String username  = request.getParameter(&quot;username&quot;);
+
+// method =&quot;get&quot;,以 URL表头 的形式传输
+// String username  = request.getParameter(&quot;username&quot;); // TomCat默认以ISO-8895-1接收储存
+// String un = new String(username.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;); // 转码
+// method =&quot;get&quot;或者
+// conf 配置 --&gt; server.xml
+// &lt;Connector&gt; 语句中 添加 URIEncoding=&quot;utf-8&quot;针对get,提交路径参数中包含中文
+// 注:修改配置后须重启服务
+</code></pre><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.ibm.com/developerworks/cn/java/analysis-and-summary-of-common-random-code-problems/index.html/" target="_blank" rel="noopener">常见乱码问题分析和总结</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
 
       
 
@@ -525,7 +604,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/各种中文乱码问题的解决/">展开全文 >></a>
         </p>
       
 
@@ -576,6 +655,54 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/架构设计和技术选型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/软件架构/模块化设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">代码框架设计</span><br><span class="line">楼主认为框架设计的目的是：</span><br><span class="line">1. 将整个项目合理的拆分为许多模块，各个模块功能职责明确，降低各个模块的依赖，耦合；做到想用某一个模块时就用，不用时就去除掉，并且不影响其他模块</span><br><span class="line">2. 合理设计类与类之间的继承关系，接口的实现关系，和利用java的public、private、protected、default权限，来掩藏代码内部逻辑，争取做到只暴露外部开发接口，完全掩藏内部逻辑</span><br><span class="line">楼主认为：</span><br><span class="line">以功能为单位划分模块，无论功能大小均划分成模块，方便后期代码升级可以进行添加；</span><br><span class="line">模块设计准则：</span><br><span class="line">a.模块设计准则：在一个功能模块下，放于同一个package下，根据功能点为这个模块创建一个接口，创建两个功能管理类并实现前面的该接口，一个用于对外部模块开放接口，另一个用于控制模块内部逻辑。最后，在将模块内部真正实现的代码逻辑类全部设置为default权限，保证package以外的无法访问；如下图：</span><br><span class="line">模块设计</span><br><span class="line">b. 类与类的继承、接口实现；如果有多个相同的功能的代码块，都为其写一个基类，子类来继承即可；接口方面，如果多个类有相同的功能，但实现不一样则就用接口来实现</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">展开全文 >></a>
         </p>
       
 
@@ -1020,75 +1147,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向对象编程SOLID原则/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/设计模式/责任链模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止，这就是职责链模式。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.04.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、责任链模式"><a href="#三、责任链模式" class="headerlink" title="三、责任链模式"></a>三、责任链模式</h1><h1 id="四、结语"><a href="#四、结语" class="headerlink" title="四、结语"></a>四、结语</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/责任链模式/">展开全文 >></a>
         </p>
       
 
