@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/head.gif" class="js-avatar">
+			<img src="/assets/img/head.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -109,7 +109,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/head.gif" class="js-avatar">
+				<img src="/assets/img/head.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -1194,63 +1194,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/前端/CSS 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>display:block<br>    block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>    block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>    block元素可以设置margin和padding属性。</p>
-<p>display:inline<br>    inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>    inline元素设置width,height属性无效。<br>    inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</p>
-<p>display:inline-block<br>    简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。</p>
-<p>浮动：</p>
-<p>行内元素浮动之后会变成块级元素</p>
-<p>相对定位和绝对定位</p>
-<p>position: relative;<br>相对定位：相对定位是“相对于”元素（本身）在文档流中的初始位置；<br>position: absolute;<br>绝对定位是“相对于”距离它最近的已定位祖先元素（即设置了position样式属性的祖先元素），如果不存在已定位的祖先元素，那么相对于初始包含块（即浏览器）。</p>
-<p>对普通文档流的影响</p>
-<p>在使用相对定位是，无论是否移动，元素仍然占据原来的空间。<br>而与之相反，绝对定位使元素的位置与文档流无关，因此不占据空间。普通文档流中其它元素的布局就像绝对定位的元素不存在时一样。</p>
-<p>position:absolute，float会隐式地改变display的类型（display：none除外）。即是当元素设置position:absolute、float:left、float:right中任意一个时，都会让元素以display:inline-block的方式显示（特点是：可以设置长宽，默认宽度不占满父元素）。这时，即使故意设置display:inline; display:block都是无效的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/前端/Html引入公共页面的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1383,36 +1326,21 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/前端/CSS 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿 </td>
-</tr>
-</tbody>
-</table>
-<h2 id="1、将HttpSession作为Spring-MVC-的方法参数传入，直接获取"><a href="#1、将HttpSession作为Spring-MVC-的方法参数传入，直接获取" class="headerlink" title="1、将HttpSession作为Spring MVC 的方法参数传入，直接获取"></a>1、将HttpSession作为Spring MVC 的方法参数传入，直接获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public void getSessionAction(HttpSession session)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2、将HttpServletRequest作为Spring-MVC-的方法参数，间接获取"><a href="#2、将HttpServletRequest作为Spring-MVC-的方法参数，间接获取" class="headerlink" title="2、将HttpServletRequest作为Spring MVC 的方法参数，间接获取"></a>2、将HttpServletRequest作为Spring MVC 的方法参数，间接获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void getSessionAction(HttpServletRequest request)&#123;</span><br><span class="line">    HttpSession session = request.getSession();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3、通过-Autowired-HttpServletRequest-request-获取"><a href="#3、通过-Autowired-HttpServletRequest-request-获取" class="headerlink" title="3、通过@Autowired HttpServletRequest request 获取"></a>3、通过@Autowired HttpServletRequest request 获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private  HttpServletRequest request;</span><br></pre></td></tr></table></figure>
-<h2 id="赠送一个如何在Struts2中获取request对象"><a href="#赠送一个如何在Struts2中获取request对象" class="headerlink" title="赠送一个如何在Struts2中获取request对象"></a>赠送一个如何在Struts2中获取request对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest request = ServletActionContext.getRequest();</span><br></pre></td></tr></table></figure>
+        <p>display:block<br>    block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>    block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>    block元素可以设置margin和padding属性。</p>
+<p>display:inline<br>    inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>    inline元素设置width,height属性无效。<br>    inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</p>
+<p>display:inline-block<br>    简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。</p>
+<p>浮动：</p>
+<p>行内元素浮动之后会变成块级元素</p>
+<p>相对定位和绝对定位</p>
+<p>position: relative;<br>相对定位：相对定位是“相对于”元素（本身）在文档流中的初始位置；<br>position: absolute;<br>绝对定位是“相对于”距离它最近的已定位祖先元素（即设置了position样式属性的祖先元素），如果不存在已定位的祖先元素，那么相对于初始包含块（即浏览器）。</p>
+<p>对普通文档流的影响</p>
+<p>在使用相对定位是，无论是否移动，元素仍然占据原来的空间。<br>而与之相反，绝对定位使元素的位置与文档流无关，因此不占据空间。普通文档流中其它元素的布局就像绝对定位的元素不存在时一样。</p>
+<p>position:absolute，float会隐式地改变display的类型（display：none除外）。即是当元素设置position:absolute、float:left、float:right中任意一个时，都会让元素以display:inline-block的方式显示（特点是：可以设置长宽，默认宽度不占满父元素）。这时，即使故意设置display:inline; display:block都是无效的。</p>
 
       
 
@@ -1425,7 +1353,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/">展开全文 >></a>
         </p>
       
 
@@ -1527,6 +1455,78 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿 </td>
+</tr>
+</tbody>
+</table>
+<h2 id="1、将HttpSession作为Spring-MVC-的方法参数传入，直接获取"><a href="#1、将HttpSession作为Spring-MVC-的方法参数传入，直接获取" class="headerlink" title="1、将HttpSession作为Spring MVC 的方法参数传入，直接获取"></a>1、将HttpSession作为Spring MVC 的方法参数传入，直接获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public void getSessionAction(HttpSession session)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、将HttpServletRequest作为Spring-MVC-的方法参数，间接获取"><a href="#2、将HttpServletRequest作为Spring-MVC-的方法参数，间接获取" class="headerlink" title="2、将HttpServletRequest作为Spring MVC 的方法参数，间接获取"></a>2、将HttpServletRequest作为Spring MVC 的方法参数，间接获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void getSessionAction(HttpServletRequest request)&#123;</span><br><span class="line">    HttpSession session = request.getSession();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、通过-Autowired-HttpServletRequest-request-获取"><a href="#3、通过-Autowired-HttpServletRequest-request-获取" class="headerlink" title="3、通过@Autowired HttpServletRequest request 获取"></a>3、通过@Autowired HttpServletRequest request 获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">private  HttpServletRequest request;</span><br></pre></td></tr></table></figure>
+<h2 id="赠送一个如何在Struts2中获取request对象"><a href="#赠送一个如何在Struts2中获取request对象" class="headerlink" title="赠送一个如何在Struts2中获取request对象"></a>赠送一个如何在Struts2中获取request对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest request = ServletActionContext.getRequest();</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法/">展开全文 >></a>
         </p>
       
 
