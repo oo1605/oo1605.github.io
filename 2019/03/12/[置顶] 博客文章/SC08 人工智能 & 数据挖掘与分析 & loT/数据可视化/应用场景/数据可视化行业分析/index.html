@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] 一、前言用数据讲故事 关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.05.06 1.0 ZZ 初稿    三、应用场景 智慧城市  智能停车场 智慧交通   行业应用  电力行业 交通行业 机房运维可视化 / 建筑 3D仿真 3D设计图纸：更准确描绘设计思路，直观审视设计成果 电子沙">
+  <meta name="description" content="数据可视化行业分析                                                                                                                  /**  * prism.js Github theme based on GitHub&apos;s theme.  * @auth">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="不系之舟">
 <meta property="og:url" content="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/数据可视化行业分析/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="[TOC] 一、前言用数据讲故事 关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.05.06 1.0 ZZ 初稿    三、应用场景 智慧城市  智能停车场 智慧交通   行业应用  电力行业 交通行业 机房运维可视化 / 建筑 3D仿真 3D设计图纸：更准确描绘设计思路，直观审视设计成果 电子沙">
+<meta property="og:description" content="数据可视化行业分析                                                                                                                  /**  * prism.js Github theme based on GitHub&apos;s theme.  * @auth">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201516372887.png">
 <meta property="og:updated_time" content="2018-12-11T05:02:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不系之舟">
-<meta name="twitter:description" content="[TOC] 一、前言用数据讲故事 关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.05.06 1.0 ZZ 初稿    三、应用场景 智慧城市  智能停车场 智慧交通   行业应用  电力行业 交通行业 机房运维可视化 / 建筑 3D仿真 3D设计图纸：更准确描绘设计思路，直观审视设计成果 电子沙">
+<meta name="twitter:description" content="数据可视化行业分析                                                                                                                  /**  * prism.js Github theme based on GitHub&apos;s theme.  * @auth">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/Image%201516372887.png">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -166,10 +166,241 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>用数据讲故事</p>
+        <!DOCTYPE html>
+  <html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+      <title>数据可视化行业分析</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <div><ul>
+<li><a href="#%E4%B8%80-%E5%89%8D%E8%A8%80">一、前言</a></li>
+<li><a href="#%E4%BA%8C-%E7%89%88%E6%9C%AC">二、版本</a></li>
+<li><a href="#%E4%B8%89-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">三、应用场景</a></li>
+<li><a href="#%E5%9B%9B-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A0%88">四、数据可视化技术栈</a></li>
+<li><a href="#%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%8E%82%E5%95%86%E5%88%86%E6%9E%90">五、可视化解决方案厂商分析</a></li>
+<li><a href="#%E5%85%AD-%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%98%93%E5%B8%82%E5%9C%BA">六、大数据交易市场</a></li>
+<li><a href="#%E4%B8%83-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86">七、大数据采集</a></li>
+<li><a href="#%E5%85%AB-%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E6%A1%88%E4%BE%8B">八、交互技术案例</a></li>
+<li><a href="#%E4%B9%9D-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">九、参考资料</a></li>
+<li><a href="#%E5%8D%81-%E5%90%8E%E8%AE%B0">十、后记</a></li>
+</ul>
+<h1 class="mume-header" id="%E4%B8%80-%E5%89%8D%E8%A8%80">一、前言</h1>
+
+<p>用数据讲故事</p>
 <p>关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<h1 class="mume-header" id="%E4%BA%8C-%E7%89%88%E6%9C%AC">二、版本</h1>
+
+<table>
 <thead>
 <tr>
 <th style="text-align:center">编号</th>
@@ -181,7 +412,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"> 1</td>
+<td style="text-align:center">1</td>
 <td style="text-align:center">2018.05.06</td>
 <td style="text-align:center">1.0</td>
 <td style="text-align:center">ZZ</td>
@@ -189,24 +420,30 @@
 </tr>
 </tbody>
 </table>
-<h1 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h1><ul>
-<li><p>智慧城市</p>
+<h1 class="mume-header" id="%E4%B8%89-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">三、应用场景</h1>
+
+<ul>
+<li>
+<p>智慧城市</p>
 <ul>
 <li>智能停车场</li>
 <li>智慧交通</li>
 </ul>
 </li>
-<li><p>行业应用</p>
+<li>
+<p>行业应用</p>
 <ul>
 <li>电力行业</li>
 <li>交通行业</li>
-<li>机房运维可视化 / 建筑 3D仿真<ul>
+<li>机房运维可视化 / 建筑 3D仿真
+<ul>
 <li>3D设计图纸：更准确描绘设计思路，直观审视设计成果</li>
 <li>电子沙盘：3D立体化互动式电子沙盘，创新的园区和建筑展示介绍</li>
 <li>互动式导航：动态线路指引，用于园区、大型建筑的3D地图式导航</li>
 </ul>
 </li>
-<li>工业组态软件<ul>
+<li>工业组态软件
+<ul>
 <li>电信网络拓扑和设备管理</li>
 <li>电力、燃气等工业自动化(HMI/SCADA)领域</li>
 </ul>
@@ -214,120 +451,191 @@
 </ul>
 </li>
 </ul>
-<h1 id="四、数据可视化技术栈"><a href="#四、数据可视化技术栈" class="headerlink" title="四、数据可视化技术栈"></a>四、数据可视化技术栈</h1><p><img src="http://img.cdn.lapland.top/Image%201516372887.png" alt="image"></p>
-<h1 id="五、可视化解决方案厂商分析"><a href="#五、可视化解决方案厂商分析" class="headerlink" title="五、可视化解决方案厂商分析"></a>五、可视化解决方案厂商分析</h1><ul>
-<li><p>[x] <a href="http://www.digihail.com/" target="_blank" rel="noopener">数字冰雹</a></p>
+<h1 class="mume-header" id="%E5%9B%9B-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A0%88">四、数据可视化技术栈</h1>
+
+<p><img src="http://img.cdn.lapland.top/Image%201516372887.png" alt="image"></p>
+<h1 class="mume-header" id="%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%8E%82%E5%95%86%E5%88%86%E6%9E%90">五、可视化解决方案厂商分析</h1>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.digihail.com/" target="_blank" rel="noopener">数字冰雹</a></li>
+</ul>
 <blockquote>
-<p>大屏可视化及BI商业智能领域。3D建模及渲染能力较强，支持数据分析。<br>使用技术3ds max、C# 、WPF。<br>官网有较多解决方案，相关硬件及性能参数，有新浪/CSND博客。<br>完全定制，不支持组件及模板开发。</p>
+<p>大屏可视化及BI商业智能领域。3D建模及渲染能力较强，支持数据分析。<br>
+使用技术3ds max、C# 、WPF。<br>
+官网有较多解决方案，相关硬件及性能参数，有新浪/CSND博客。<br>
+完全定制，不支持组件及模板开发。</p>
 </blockquote>
-</li>
-<li><p>[x] <a href="http://www.vtron.com/mIndex.html" target="_blank" rel="noopener">威创</a></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.vtron.com/mIndex.html" target="_blank" rel="noopener">威创</a></li>
+</ul>
 <blockquote>
-<p>显示设备硬件服务商，专注大屏可视化。<br>前端使用WPF框架，服务端使用C#。<br>官网有较多解决方案，相关硬件及性能参数，没有技术方面资料。<br>完全定制，不支持组件及模板开发。</p>
+<p>显示设备硬件服务商，专注大屏可视化。<br>
+前端使用WPF框架，服务端使用C#。<br>
+官网有较多解决方案，相关硬件及性能参数，没有技术方面资料。<br>
+完全定制，不支持组件及模板开发。</p>
 </blockquote>
-</li>
-<li><p>[x] <a href="http://www.poya.com.cn/contact/" target="_blank" rel="noopener">铂亚信息技术有限公司</a></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.poya.com.cn/contact/" target="_blank" rel="noopener">铂亚信息技术有限公司</a></li>
+</ul>
 <blockquote>
 <p>官网有较多解决方案。</p>
 </blockquote>
-</li>
-<li><p>[x] <a href="http://www.twinflag.com/index.shtml" target="_blank" rel="noopener">双旗科技</a></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.twinflag.com/index.shtml" target="_blank" rel="noopener">双旗科技</a></li>
+</ul>
 <blockquote>
-<p>显示设备硬件服务商，专注大屏可视化。<br>官网案例和信息较少</p>
+<p>显示设备硬件服务商，专注大屏可视化。<br>
+官网案例和信息较少</p>
 </blockquote>
-</li>
-<li><p>[x] <a href="http://www.bocom.cn/" target="_blank" rel="noopener">博康智能</a></p>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.bocom.cn/" target="_blank" rel="noopener">博康智能</a></li>
+</ul>
 <blockquote>
 <p>官网有很多较详细的解决方案</p>
 </blockquote>
-</li>
-<li><p>[x] <a href="http://www.hydata.cc/" target="_blank" rel="noopener">海云数据</a></p>
-<blockquote>
-<p>侧重与数据分析。<br>官网界面写的不错。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.powerbi.com.cn/" target="_blank" rel="noopener">奥威</a></p>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。有大屏可视化应用<br>支持组件化/模板化开发，布局自适应。<br>官网有较多在线Demo，但比较粗糙。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.finebi.com/" target="_blank" rel="noopener">FindBI</a></p>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。<br>支持组件化/模板化开发，布局自适应。<br>官网有较多在线Demo。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.finebi.com/" target="_blank" rel="noopener">海致BDP</a></p>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。<br>支持组件化/模板化开发，布局自适应。<br>个人免费使用在线版。官网功能产品介绍 - 特点部分可作为参考。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://www.ruisitech.com/product.html" target="_blank" rel="noopener">睿思BI</a></p>
-<blockquote>
-<p> 开源商业智能系统。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.fanruan.com/" target="_blank" rel="noopener">帆软</a></p>
-<blockquote>
-<p>大屏可视化及BI商业智能领域。<br>支持组件化/模板化开发。<br>官网有较多案例、并有帆软开发论坛。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://data.aliyun.com/visual/datav" target="_blank" rel="noopener">阿里云 - DataV</a></p>
-<blockquote>
-<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>支持组件化/模板化开发。<br>官网有相关教程、API文档。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://di.baidu.com/product/habo" target="_blank" rel="noopener">百度云  - Habo</a></p>
-<blockquote>
-<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>支持组件化/模板化开发。<br>开放资源比较少。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://cloud.tencent.com/product/RayData" target="_blank" rel="noopener">腾讯云 - RayData</a></p>
-<blockquote>
-<p>支持组件化/模板化开发。<br>开放资源比较少。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://www.baidu.com/s?wd=%E4%B8%87%E5%8D%9A%E6%80%9D%E5%9B%BE" target="_blank" rel="noopener">万博思图</a></p>
-<blockquote>
-<p>侧重BI商业智能。<br>支持组件化开发。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.uinnova.cn/signup" target="_blank" rel="noopener">优诺科技</a></p>
-<blockquote>
-<p>3D仿真/机房运维可视化应用场景能力比较强。<br>有可视化三维模型创建功能，支持CAD底图导入，及模型导出。<br>使用的WebGL框架为three.js 及 Unity3D 引擎技术。<br>官网有相关Demo及教程。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.servasoft.com/index.html" target="_blank" rel="noopener">赛瓦软件TWaver</a></p>
-<blockquote>
-<p>3D仿真/机房运维可视化领域应用场景能力比较强。<br>使用的 Canvas, WebGL技术。<br>官网有相关Demo、教程、API文档、论坛。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.hightopo.com" target="_blank" rel="noopener">Hightopo 图扑软件</a></p>
-<blockquote>
-<p>3D仿真/机房运维可视化/工业组态应用场景能力比较强。<br>使用技术不详。<br>官网有相关Demo、教程、API文档、技术博客。</p>
-</blockquote>
-</li>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.hydata.cc/" target="_blank" rel="noopener">海云数据</a></li>
 </ul>
-<h1 id="六、大数据交易市场"><a href="#六、大数据交易市场" class="headerlink" title="六、大数据交易市场"></a>六、大数据交易市场</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.moojnn.com/" target="_blank" rel="noopener">国云数据 - 魔镜</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.chinadatatrading.com/" target="_blank" rel="noopener">东湖大数据交易中心</a></li>
+<blockquote>
+<p>侧重与数据分析。<br>
+官网界面写的不错。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.powerbi.com.cn/" target="_blank" rel="noopener">奥威</a></li>
 </ul>
-<h1 id="七、大数据采集"><a href="#七、大数据采集" class="headerlink" title="七、大数据采集"></a>七、大数据采集</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.54spider.com/" target="_blank" rel="noopener">军犬采集</a></li>
+<blockquote>
+<p>侧重与数据分析和BI商业智能领域。有大屏可视化应用<br>
+支持组件化/模板化开发，布局自适应。<br>
+官网有较多在线Demo，但比较粗糙。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.finebi.com/" target="_blank" rel="noopener">FindBI</a></li>
 </ul>
-<h1 id="八、交互技术案例"><a href="#八、交互技术案例" class="headerlink" title="八、交互技术案例"></a>八、交互技术案例</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.pjtime.com/2011/2/89588953_all.shtml" target="_blank" rel="noopener">途拓 炫影-交互显示平台–让大屏幕动起来!</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://lcd.zol.com.cn/416/4168437.html" target="_blank" rel="noopener">清投T-Show超高清信息可视化交互系统</a></li>
+<blockquote>
+<p>侧重与数据分析和BI商业智能领域。<br>
+支持组件化/模板化开发，布局自适应。<br>
+官网有较多在线Demo。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.finebi.com/" target="_blank" rel="noopener">海致BDP</a></li>
+</ul>
+<blockquote>
+<p>侧重与数据分析和BI商业智能领域。<br>
+支持组件化/模板化开发，布局自适应。<br>
+个人免费使用在线版。官网功能产品介绍 - 特点部分可作为参考。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://www.ruisitech.com/product.html" target="_blank" rel="noopener">睿思BI</a></li>
+</ul>
+<blockquote>
+<p>开源商业智能系统。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.fanruan.com/" target="_blank" rel="noopener">帆软</a></li>
+</ul>
+<blockquote>
+<p>大屏可视化及BI商业智能领域。<br>
+支持组件化/模板化开发。<br>
+官网有较多案例、并有帆软开发论坛。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://data.aliyun.com/visual/datav" target="_blank" rel="noopener">阿里云 - DataV</a></li>
+</ul>
+<blockquote>
+<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>
+支持组件化/模板化开发。<br>
+官网有相关教程、API文档。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://di.baidu.com/product/habo" target="_blank" rel="noopener">百度云  - Habo</a></li>
+</ul>
+<blockquote>
+<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>
+支持组件化/模板化开发。<br>
+开放资源比较少。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://cloud.tencent.com/product/RayData" target="_blank" rel="noopener">腾讯云 - RayData</a></li>
+</ul>
+<blockquote>
+<p>支持组件化/模板化开发。<br>
+开放资源比较少。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://www.baidu.com/s?wd=%E4%B8%87%E5%8D%9A%E6%80%9D%E5%9B%BE" target="_blank" rel="noopener">万博思图</a></li>
+</ul>
+<blockquote>
+<p>侧重BI商业智能。<br>
+支持组件化开发。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.uinnova.cn/signup" target="_blank" rel="noopener">优诺科技</a></li>
+</ul>
+<blockquote>
+<p>3D仿真/机房运维可视化应用场景能力比较强。<br>
+有可视化三维模型创建功能，支持CAD底图导入，及模型导出。<br>
+使用的WebGL框架为three.js 及 Unity3D 引擎技术。<br>
+官网有相关Demo及教程。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.servasoft.com/index.html" target="_blank" rel="noopener">赛瓦软件TWaver</a></li>
+</ul>
+<blockquote>
+<p>3D仿真/机房运维可视化领域应用场景能力比较强。<br>
+使用的 Canvas, WebGL技术。<br>
+官网有相关Demo、教程、API文档、论坛。</p>
+</blockquote>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.hightopo.com" target="_blank" rel="noopener">Hightopo 图扑软件</a></li>
+</ul>
+<blockquote>
+<p>3D仿真/机房运维可视化/工业组态应用场景能力比较强。<br>
+使用技术不详。<br>
+官网有相关Demo、教程、API文档、技术博客。</p>
+</blockquote>
+<h1 class="mume-header" id="%E5%85%AD-%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%98%93%E5%B8%82%E5%9C%BA">六、大数据交易市场</h1>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.moojnn.com/" target="_blank" rel="noopener">国云数据 - 魔镜</a></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.chinadatatrading.com/" target="_blank" rel="noopener">东湖大数据交易中心</a></li>
+</ul>
+<h1 class="mume-header" id="%E4%B8%83-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86">七、大数据采集</h1>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.54spider.com/" target="_blank" rel="noopener">军犬采集</a></li>
+</ul>
+<h1 class="mume-header" id="%E5%85%AB-%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E6%A1%88%E4%BE%8B">八、交互技术案例</h1>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.pjtime.com/2011/2/89588953_all.shtml" target="_blank" rel="noopener">途拓 炫影-交互显示平台--让大屏幕动起来!</a></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://lcd.zol.com.cn/416/4168437.html" target="_blank" rel="noopener">清投T-Show超高清信息可视化交互系统</a></li>
 </ul>
 <blockquote>
 <p>更多厂商查看天眼查竞品信息。</p>
 </blockquote>
-<h1 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.ck365.cn/news/10/45276.html" target="_blank" rel="noopener">智能停车领域的应用场景及行业痛点</a></li>
+<h1 class="mume-header" id="%E4%B9%9D-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">九、参考资料</h1>
+
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.ck365.cn/news/10/45276.html" target="_blank" rel="noopener">智能停车领域的应用场景及行业痛点</a></li>
 </ul>
-<h1 id="十、后记"><a href="#十、后记" class="headerlink" title="十、后记"></a>十、后记</h1><blockquote>
+<h1 class="mume-header" id="%E5%8D%81-%E5%90%8E%E8%AE%B0">十、后记</h1>
+
+<blockquote>
 <p>未完待续</p>
 </blockquote>
-
+</div>
+      </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+    
+    
+  </html>
       
 
       

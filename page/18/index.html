@@ -160,12 +160,97 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring 框架概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Spring是一个非常活跃的开源框架；它是一个基于Core来构架多层JavaEE系统的框架,它的主要目地是简化企业开发。<br></p>
+<p>Spring以一种非侵入式的方式来管理你的代码，Spring提倡”最少侵入”，这也就意味着你可以适当的时候安装或卸载Spring。 </p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿 </td>
+</tr>
+</tbody>
+</table>
+<h1 id="二、Spring的优点"><a href="#二、Spring的优点" class="headerlink" title="二、Spring的优点"></a>二、Spring的优点</h1><ul>
+<li>方便解耦，简化开发（Spring IoC特性）</li>
+<li>AOP编程的支持</li>
+<li>声明式事务的支持</li>
+<li>方便程序的测试</li>
+<li>方便集成各种优秀框架 （整合Struts2 、 Hibernate 、MyBatis 、Struts1 ）</li>
+<li>降低JavaEE API的使用难度 （Spring 提供大量工具类， 简化代码编写 ）</li>
+</ul>
+<h1 id="三、基本概念"><a href="#三、基本概念" class="headerlink" title="三、基本概念"></a>三、基本概念</h1><p>Spring 框架是一个分层架构，由 7 个定义良好的模块组成。Spring 模块构建在核心容器之上，核心容器定义了创建、配置和管理 bean 的方式。</p>
+<p><img src="https://www.ibm.com/developerworks/cn/java/wa-spring1/spring_framework.gif" alt=" Spring 框架的 7 个模块"></p>
+<p>组成 Spring 框架的每个模块（或组件）都可以单独存在，或者与其他一个或多个模块联合实现。每个模块的功能如下：</p>
+<ul>
+<li><p><strong>核心容器</strong>：核心容器提供 Spring 框架的基本功能。核心容器的主要组件是 <strong>BeanFactory</strong>，它是工厂模式的实现。BeanFactory 使用控制反转 （IOC）模式将应用程序的配置和依赖性规范与实际的应用程序代码分开。</p>
+</li>
+<li><p><strong>Spring 上下文</strong>：Spring上下文是一个配置文件，向 Spring 框架提供上下文信息。Spring 上下文包括企业服务，例如 JNDI、EJB、电子邮件、国际化、校验和调度功能。</p>
+</li>
+<li><p><strong>Spring AOP</strong>：通过配置管理特性，Spring AOP 模块直接将面向方面的编程功能集成到了 Spring 框架中。所以，可以很容易地使 Spring 框架管理的任何对象支持 AOP。Spring AOP 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。通过使用 Spring AOP，不用依赖 EJB 组件，就可以将声明性事务管理集成到应用程序中。</p>
+</li>
+</ul>
+<p>-<strong> Spring DAO</strong>：JDBC DAO 抽象层提供了有意义的异常层次结构，可用该结构来管理异常处理和不同数据库供应商抛出的错误消息。异常层次结构简化了错误处理，并且极大地降低了需要编写的异常代码数量（例如打开和关闭连接）。Spring DAO 的面向 JDBC 的异常遵从通用的 DAO 异常层次结构。</p>
+<ul>
+<li><p><strong>Spring ORM</strong>：Spring框架插入了若干个 ORM 框架，从而提供了 ORM 的对象关系工具，其中包括 JDO、Hibernate 和 iBatis SQL Map。所有这些都遵从 Spring 的通用事务和 DAO 异常层次结构。</p>
+</li>
+<li><p><strong>Spring Web模块</strong>：Web上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。所以，Spring 框架支持与 Jakarta Struts 的集成。Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作。</p>
+</li>
+</ul>
+<p>-<strong> Spring MVC框架</strong>：MVC框架是一个全功能的构建 Web 应用程序的 MVC 实现。通过策略接口，MVC 框架变成为高度可配置的，MVC 容纳了大量视图技术，其中包括 JSP、Velocity、Tiles、iText 和 POI。</p>
+<h1 id="四、Spring容器的启动过程"><a href="#四、Spring容器的启动过程" class="headerlink" title="四、Spring容器的启动过程"></a>四、Spring容器的启动过程</h1><p>首先，对于一个web应用，其部署在web容器中，web容器提供其一个全局的上下文环境，这个上下文就是ServletContext，其为后面的spring IoC容器提供宿主环境；</p>
+<p>其次，在web.xml中会提供有contextLoaderListener。在web容器启动时，会触发容器初始化事件，此时contextLoaderListener会监听到这个事件，其contextInitialized方法会被调用，在这个方法中，spring会初始化一个启动上下文，这个上下文被称为根上下文，即WebApplicationContext，这是一个接口类，确切的说，其实际的实现类是XmlWebApplicationContext。这个就是spring的IoC容器，其对应的Bean定义的配置由web.xml中的context-param标签指定。在这个IoC容器初始化完毕后，spring以WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE为属性Key，将其存储到ServletContext中，便于获取；</p>
+<p>再次，contextLoaderListener监听器初始化完毕后，开始初始化web.xml中配置的Servlet，这个servlet可以配置多个，以最常见的DispatcherServlet为例，这个servlet实际上是一个标准的前端控制器，用以转发、匹配、处理每个servlet请求。DispatcherServlet上下文在初始化的时候会建立自己的IoC上下文，用以持有springmvc相关的bean。在建立DispatcherServlet自己的IoC上下文时，会利用WebApplicationContext.ROOTWEBAPPLICATIONCONTEXTATTRIBUTE先从ServletContext中获取之前的根上下文(即WebApplicationContext)作为自己上下文的parent上下文。有了这个parent上下文之后，再初始化自己持有的上下文。这个DispatcherServlet初始化自己上下文的工作在其initStrategies方法中可以看到，大概的工作就是初始化处理器映射、视图解析等。这个servlet自己持有的上下文默认实现类也是xmlWebApplicationContext。初始化完毕后，spring以org.springframework.web.servlet.FrameworkServlet.CONTEXT”+Servlet名称为属性Key，也将其存到ServletContext中，以便后续使用。这样每个servlet就持有自己的上下文，即拥有自己独立的bean空间，同时各个servlet共享相同的bean，即根上下文(第2步中初始化的上下文)定义的那些bean。</p>
+<h1 id="五、Spring的配置"><a href="#五、Spring的配置" class="headerlink" title="五、Spring的配置"></a>五、Spring的配置</h1><h2 id="5-1、Spring容器的初始化配置"><a href="#5-1、Spring容器的初始化配置" class="headerlink" title="5.1、Spring容器的初始化配置"></a>5.1、Spring容器的初始化配置</h2><ul>
+<li>web.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--Spring上下文配置文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:spring/spring-context.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--Spring上下文监听器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 防止spring内存溢出监听器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.util.IntrospectorCleanupListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-2、Spring引入外部属性文件"><a href="#5-2、Spring引入外部属性文件" class="headerlink" title="5.2、Spring引入外部属性文件"></a>5.2、Spring引入外部属性文件</h2><ul>
+<li>spring-context.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 加载MQ配置文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:activeMQ.properties"</span> <span class="attr">ignore-unresolvable</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 加载其他xml文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">"classpath:spring/spring-context-mybaits.xml"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-3、Spring连接池配置"><a href="#5-3、Spring连接池配置" class="headerlink" title="5.3、Spring连接池配置"></a>5.3、Spring连接池配置</h2><ul>
+<li>spring-context.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 加载JDBC配置文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:jdbc.properties"</span> <span class="attr">ignore-unresolvable</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 数据库连接池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"com.alibaba.druid.pool.DruidDataSource"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span> /&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 开发阶段建议最大连接数据尽量少，够用即可 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxActive"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.maxActive&#125;"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minIdle"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.minIdle&#125;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 应用：Mybatis会话工厂 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 加载mybatis的配置文件 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"configLocation"</span> <span class="attr">value</span>=<span class="string">"classpath:mybatis/mybatis-config.xml"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-4、声明式事务管理的两种配置方法"><a href="#5-4、声明式事务管理的两种配置方法" class="headerlink" title="5.4、声明式事务管理的两种配置方法"></a>5.4、声明式事务管理的两种配置方法</h2><h3 id="5-41、基于advice实现声明式事务管理"><a href="#5-41、基于advice实现声明式事务管理" class="headerlink" title="5.41、基于advice实现声明式事务管理"></a>5.41、基于advice实现声明式事务管理</h3><ul>
+<li>spring-context.xml </li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置事务管理器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 数据源 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 配置事务传播特性，基于advice，添加tx名字空间--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:advice</span> <span class="attr">id</span>=<span class="string">"txAdvice"</span> <span class="attr">transaction-manager</span>=<span class="string">"transactionManager"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 传播行为 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"save*"</span> <span class="attr">propagation</span>=<span class="string">"REQUIRED"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"update*"</span> <span class="attr">propagation</span>=<span class="string">"REQUIRED"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"delete*"</span> <span class="attr">propagation</span>=<span class="string">"REQUIRED"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"insert*"</span> <span class="attr">propagation</span>=<span class="string">"REQUIRED"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"load*"</span> <span class="attr">propagation</span>=<span class="string">"SUPPORTS"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"find*"</span> <span class="attr">propagation</span>=<span class="string">"SUPPORTS"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"list*"</span> <span class="attr">propagation</span>=<span class="string">"SUPPORTS"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"check*"</span> <span class="attr">propagation</span>=<span class="string">"SUPPORTS"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">"*"</span> <span class="attr">propagation</span>=<span class="string">"SUPPORTS"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tx:advice</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 事务管理-切面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span> <span class="attr">proxy-target-class</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">aop:advisor</span> <span class="attr">advice-ref</span>=<span class="string">"txAdvice"</span> <span class="attr">pointcut</span>=<span class="string">"execution(* lapland.*.service.impl.*.*(..))"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-42、注解实现声明式事务管理"><a href="#5-42、注解实现声明式事务管理" class="headerlink" title="5.42、注解实现声明式事务管理"></a>5.42、注解实现声明式事务管理</h3><ul>
+<li>spring-context.xml </li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置事务管理器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 数据源 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 配置事务传播特性，基于advice --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:advice</span> <span class="attr">id</span>=<span class="string">"txAdvice"</span> <span class="attr">transaction-manager</span>=<span class="string">"transactionManager"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 开启事务控制的注解支持 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">tx:annotation-driven</span> <span class="attr">transaction-manager</span>=<span class="string">"transactionManager"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="六、SpringIoC-控制反转"><a href="#六、SpringIoC-控制反转" class="headerlink" title="六、SpringIoC 控制反转"></a>六、SpringIoC 控制反转</h1><p>控制反转模式（Inversion of Control也称作依赖性介入）的基本概念是：将程序中原来构造对象的权限，交给IoC容器来构造，当程序需要对象，找IoC容器获取。IoC容器需要为程序提供依赖对象。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 详见：<a href="http://note.youdao.com/" target="_blank" rel="noopener">Spring 控制反转IoC</a></li>
+</ul>
+<h1 id="七、SpringAOP-面向切面编程"><a href="#七、SpringAOP-面向切面编程" class="headerlink" title="七、SpringAOP 面向切面编程"></a>七、SpringAOP 面向切面编程</h1><p>面向切面编程，即 AOP，是一种编程技术，它允许程序员对横切关注点或横切典型的职责（例如日志和事务管理）进行模块化。AOP的核心构造是切面，它将那些影响多个类的行为封装到可重用的模块中。</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> 详见：<a href="http://note.youdao.com/" target="_blank" rel="noopener">Spring 面向切面编程AOP</a></li>
+</ul>
+<h1 id="八、Spring-基础框架整合SSM"><a href="#八、Spring-基础框架整合SSM" class="headerlink" title="八、Spring 基础框架整合SSM"></a>八、Spring 基础框架整合SSM</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> 详见：<a href="http://note.youdao.com/" target="_blank" rel="noopener">基础框架整合SSH(Spring +Struts2+Hibernate）</a></li>
+<li style="list-style: none"><input type="checkbox" checked> 详见：<a href="http://note.youdao.com/" target="_blank" rel="noopener">Spring 基础框架整合SSM(Spring +SpringMVC+Mybatis）</a></li>
+</ul>
+<h1 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h1><h1 id="十、结语"><a href="#十、结语" class="headerlink" title="十、结语"></a>十、结语</h1>
       
 
       
@@ -177,7 +262,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 框架概述/">展开全文 >></a>
         </p>
       
 
@@ -1228,13 +1313,13 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/JavaWeb中的相对路径和绝对路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/系统开发手册/系统规格需求说明书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<h1 id="一、项目概述"><a href="#一、项目概述" class="headerlink" title="一、项目概述"></a>一、项目概述</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
 <tr>
 <th style="text-align:center">编号</th>
@@ -1246,60 +1331,293 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.11.29</td>
 <td style="text-align:center">1.0</td>
 <td style="text-align:center">ZZ</td>
 <td style="text-align:center">初稿</td>
 </tr>
 </tbody>
 </table>
-<h1 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h1><ul>
-<li>绝对路径：绝对路径就是你的主页上的文件或目录在硬盘上真正的路径。</li>
-<li>相对路径：相对与某个基准目录的路径。例如：”/“代表根目录，”./“ 或不写代表当前目录，”../“代表父级目录。</li>
+<h1 id="三、-项目背景"><a href="#三、-项目背景" class="headerlink" title="三、 项目背景"></a>三、 项目背景</h1><h1 id="四、-用户角色"><a href="#四、-用户角色" class="headerlink" title="四、 用户角色"></a>四、 用户角色</h1><h1 id="五、-需求分析"><a href="#五、-需求分析" class="headerlink" title="五、 需求分析"></a>五、 需求分析</h1><h1 id="六、-业务流程"><a href="#六、-业务流程" class="headerlink" title="六、 业务流程"></a>六、 业务流程</h1><h1 id="七、-业务功能模块"><a href="#七、-业务功能模块" class="headerlink" title="七、 业务功能模块"></a>七、 业务功能模块</h1><h1 id="八、项目配置情况"><a href="#八、项目配置情况" class="headerlink" title="八、项目配置情况"></a>八、项目配置情况</h1><h2 id="8-1、人员配置"><a href="#8-1、人员配置" class="headerlink" title="8.1、人员配置"></a>8.1、人员配置</h2><table>
+<thead>
+<tr>
+<th><strong>角色</strong></th>
+<th><strong>职责</strong></th>
+<th><strong>人员</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目经理</td>
+<td>项目整体执行控制</td>
+<td></td>
+</tr>
+<tr>
+<td>架构师</td>
+<td>系统架构搭建</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>系统集成</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>技术预研</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>需求分析</td>
+<td>需求调研、需求分析</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>编写系统需求规格说明书</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>开发</td>
+<td>系统模块开发编码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>单元测试</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>参与系统集成</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>配合系统测试，修改bug</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>配合系统产品化工作</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>编写用户操作手册</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>测试</td>
+<td>编写测试用例</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>系统集成测试</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>系统功能测试</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>系统性能测试</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>产品化</td>
+<td>制作系统安装包</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>制作系统升级包</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>运维</td>
+<td>系统安装调试</td>
+<td></td>
+</tr>
+<tr>
+<td>用户培训</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>后期系统维护</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-2、开发周期"><a href="#8-2、开发周期" class="headerlink" title="8.2、开发周期"></a>8.2、开发周期</h2><ul>
+<li>当需求不明确，使用原型模型降低风险。</li>
 </ul>
-<ul>
-<li>服务端的根目录：服务端的根目录是你的web应用的地址，即 <a href="http://192.168.0.1/webapp/。" target="_blank" rel="noopener">http://192.168.0.1/webapp/。</a></li>
-<li>客户端的的根目录：客户端的的根目录是服务器根目录，即 <a href="http://192.168.0.1/。" target="_blank" rel="noopener">http://192.168.0.1/。</a></li>
+<table>
+<thead>
+<tr>
+<th><strong>阶段名称</strong></th>
+<th><strong>开始时间</strong></th>
+<th><strong>结束时间</strong></th>
+<th><strong>工期</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求阶段</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>开发阶段</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>测试阶段</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>部署上线</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-3、开发环境"><a href="#8-3、开发环境" class="headerlink" title="8.3、开发环境"></a>8.3、开发环境</h2><table>
+<thead>
+<tr>
+<th>网络环境</th>
+<th>局域网</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬件平台</td>
+<td>本地:             Web服务器 +             数据库服务器</td>
+</tr>
+<tr>
+<td>操作系统平台</td>
+<td>Windows             7</td>
+</tr>
+<tr>
+<td>数据库平台</td>
+<td>MySql</td>
+</tr>
+<tr>
+<td>Java环境</td>
+<td>Jdk1.7</td>
+</tr>
+<tr>
+<td>Web服务</td>
+<td>Tomcat             7</td>
+</tr>
+<tr>
+<td>项目构建</td>
+<td>Maven3.2</td>
+</tr>
+<tr>
+<td>IDE</td>
+<td>Eclipse4.3             或 IDEA</td>
+</tr>
+<tr>
+<td>版本管理</td>
+<td>SVN</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-4、测试环境"><a href="#8-4、测试环境" class="headerlink" title="8.4、测试环境"></a>8.4、测试环境</h2><table>
+<thead>
+<tr>
+<th>网络环境</th>
+<th>局域网 +             互联网</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬件平台</td>
+<td>本地:             Web服务器 +             数据库服务器</td>
+</tr>
+<tr>
+<td>操作系统平台</td>
+<td>Windows             7 + Linux</td>
+</tr>
+<tr>
+<td>数据库平台</td>
+<td>MySql             +　Oracle             + MongoDB</td>
+</tr>
+<tr>
+<td>Java环境</td>
+<td>Jdk1.7</td>
+</tr>
+<tr>
+<td>Web服务</td>
+<td>Tomcat             7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-5、系统正式运行的环境"><a href="#8-5、系统正式运行的环境" class="headerlink" title="8.5、系统正式运行的环境"></a>8.5、系统正式运行的环境</h2><table>
+<thead>
+<tr>
+<th>网络环境</th>
+<th>互联网</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬件平台</td>
+<td>Web服务器 x 1  &amp; 数据库服务器 x 1</td>
+</tr>
+<tr>
+<td>操作系统平台</td>
+<td>Windows  7 &amp; Centos 7</td>
+</tr>
+<tr>
+<td>数据库平台</td>
+<td>MySql             &amp; Oracle10G</td>
+</tr>
+<tr>
+<td>Java环境</td>
+<td>Jdk1.7</td>
+</tr>
+<tr>
+<td>Web服务</td>
+<td>Tomcat  7</td>
+</tr>
+</tbody>
+</table>
+<h1 id="九、系统设计"><a href="#九、系统设计" class="headerlink" title="九、系统设计"></a>九、系统设计</h1><h2 id="9-1、系统概要设计"><a href="#9-1、系统概要设计" class="headerlink" title="9.1、系统概要设计"></a>9.1、系统概要设计</h2><p>设计内容：主要系统框架、系统内外部接口<br>内部接口：本平台各各子系统之间的接口，模块之间接口。<br>外部接口：和其它系统的接口。<br>网络部署：<br>成果：“系统概要设计文档”</p>
+<p>a) 系统模块划分<br>b) 系统架构<br>系统架构图</p>
+<h2 id="9-2、系统详细设计"><a href="#9-2、系统详细设计" class="headerlink" title="9.2、系统详细设计"></a>9.2、系统详细设计</h2><p>成果：“系统详细设计文档”<br>设计内容：类、接口、及方法描述<br>数据库设计</p>
+<h1 id="十、参考资料"><a href="#十、参考资料" class="headerlink" title="十、参考资料"></a>十、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">异常处理_百度百科</a></li>
 </ul>
-<h1 id="三、相对路径会遇到的一些情况"><a href="#三、相对路径会遇到的一些情况" class="headerlink" title="三、相对路径会遇到的一些情况"></a>三、相对路径会遇到的一些情况</h1><ul>
-<li>在服务端解析的文件路径会相对于服务端根目录。在客户端解析的文件路径会相对于客户端根目录。</li>
-<li><p>javascript、jquery、html、css等在客户端解析，后台语言在服务器端解析，如php、asp、jsp等。</p>
-</li>
-<li><p>相对路径会因为服务端解析还是客户端解析而导致不同，因此建议使用绝对路径。</p>
-</li>
-</ul>
-<h1 id="四、绝对路径的定义和使用"><a href="#四、绝对路径的定义和使用" class="headerlink" title="四、绝对路径的定义和使用"></a>四、绝对路径的定义和使用</h1><ul>
-<li>定义 - common_tag.jsp</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><br><span class="line"><span class="tag">// 相对路径, <span class="attr">path</span> = <span class="string">"/SmartCity/"</span>          服务器才有根路径的概念</span></span><br><span class="line"><span class="tag"><span class="attr">String</span> <span class="attr">path</span> = <span class="string">request.getContextPath()+</span>"/";</span></span><br><span class="line"><span class="tag">// 绝对路径, <span class="attr">basePath</span>=<span class="string">"http://localhost:8080/SmartCity/"</span></span></span><br><span class="line"><span class="tag"><span class="attr">String</span> <span class="attr">basePath</span> = <span class="string">request.getScheme()+</span>"<span class="attr">:</span>//"+<span class="attr">request.getServerName</span>()+"<span class="attr">:</span>"+<span class="attr">request.getServerPort</span>()+<span class="attr">path</span>;</span></span><br><span class="line"><span class="tag">%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"&lt;%=basePath%&gt;"</span> &gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>引用 - index.jsp</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">include</span> <span class="attr">file</span>=<span class="string">"/WEB-INF/jsp/common/common_tag.jsp"</span>%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"static/styles/custom/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>或者</p>
-</li>
-<li><p>定义 - common_tag.jsp</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span>%&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 相对路径, baseurl = "/SmartCity/" --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">c:set</span> <span class="attr">var</span>=<span class="string">"baseurl"</span> <span class="attr">value</span>=<span class="string">"$&#123;pageContext.request.contextPath&#125;/"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:set</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>引用 - index.jsp</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">include</span> <span class="attr">file</span>=<span class="string">"/WEB-INF/jsp/common/common_tag.jsp"</span>%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"$&#123;baseurl&#125;static/styles/custom/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="五、controller及配置文件中的路径"><a href="#五、controller及配置文件中的路径" class="headerlink" title="五、controller及配置文件中的路径"></a>五、controller及配置文件中的路径</h1><ul>
-<li>controller中的路径是根据SpringMVC中视图解析器的定义来决定的。</li>
-<li>而SpringMVC等配置文件的地址一般相对于服务端的根目录或用classpath来定义。</li>
-</ul>
-<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><blockquote>
-<p>拦截器拦截与不拦截的区别，及客户端（浏览器）与服务端解析区别，有待后续完善。</p>
+<h1 id="十一、结语"><a href="#十一、结语" class="headerlink" title="十一、结语"></a>十一、结语</h1><blockquote>
+<blockquote>
+<p>文章仅作为个人学习总结之用，如能惠及他人，不胜荣幸。作者知识水平有限，欢迎批评指正。</p>
 </blockquote>
-<h1 id="七、参考文章"><a href="#七、参考文章" class="headerlink" title="七、参考文章"></a>七、参考文章</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.blogjava.net/simie/archive/2007/07/29/133094.html" target="_blank" rel="noopener">java中相对路径，绝对路径问题总结</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/wym19830218/article/details/5503533/" target="_blank" rel="noopener">JSP、Servlet中的相对路径和绝对路径 页面跳转问题</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/zhangminghui/p/4122821.html" target="_blank" rel="noopener">JSP之项目路径问题（${pageContext.request.contextPath},&lt;%=request.getContextPath()%&gt;以及绝对路径获取）</a></li>
-</ul>
+</blockquote>
 
       
 
@@ -1312,7 +1630,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/JavaWeb中的相对路径和绝对路径/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/系统开发手册/系统规格需求说明书/">展开全文 >></a>
         </p>
       
 

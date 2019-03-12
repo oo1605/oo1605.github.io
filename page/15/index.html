@@ -160,14 +160,106 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/网页集成Markdown工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]Java加密部署，使用自定义的classloader解密的方法实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/pandao/editor.md" target="_blank" rel="noopener">editor.md</a></li>
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿 </td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>使用jfinalQ-encrypt开源软件。对项目的class文件加密，防止反编译，可自定义加密解密算法，支持tomcat部署。</p>
+<h2 id="2-jfinalQ-encrypt-项目结构"><a href="#2-jfinalQ-encrypt-项目结构" class="headerlink" title="2.jfinalQ-encrypt 项目结构"></a>2.jfinalQ-encrypt 项目结构</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505893688_9592.png" alt="image"></p>
+<h2 id="3-流程"><a href="#3-流程" class="headerlink" title="3. 流程"></a>3. 流程</h2><blockquote>
+<p>2.1 首先将class文件进行字节流加密；<br><br>2.2 然后自定义tomcat的ClassLoader；<br><br>2.3 最后通过自定义的ClassLoader解密并加载class。</p>
+</blockquote>
+<h1 id="二、加密"><a href="#二、加密" class="headerlink" title="二、加密"></a>二、加密</h1><p>本节以Test项目为例，对其class文件进行加密。并用自定义的classloader进行解密。</p>
+<h2 id="1-Test项目目录结构"><a href="#1-Test项目目录结构" class="headerlink" title="1. Test项目目录结构"></a>1. Test项目目录结构</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505895167_6951.png" alt="image"></p>
+<h3 id="1-1-web-xml-配置"><a href="#1-1-web-xml-配置" class="headerlink" title="1.1 web.xml 配置"></a>1.1 web.xml 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.demo.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/HelloServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-HelloServlet代码"><a href="#1-2-HelloServlet代码" class="headerlink" title="1.2 HelloServlet代码"></a>1.2 HelloServlet代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 请求地址 ：http://localhost:8080/Test/HelloServlet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// handle post request</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name = request.getParameter(<span class="string">"userName"</span>);</span><br><span class="line">	</span><br><span class="line">	response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">	response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">	</span><br><span class="line">	PrintWriter out = response.getWriter();</span><br><span class="line">	out.println(<span class="string">"欢迎你: "</span>+<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO-8859-1"</span>), <span class="string">"UTF-8"</span>)+ <span class="string">"!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// destroy</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-前端页面代码"><a href="#1-3-前端页面代码" class="headerlink" title="1.3 前端页面代码"></a>1.3 前端页面代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">contentType</span>=<span class="string">"text/html;charset=UTF-8"</span> <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">language</span>=<span class="string">"java"</span>%&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 请求地址： localhost:8080/Test/index.jsp --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"HelloServlet"</span> <span class="attr">name</span>=<span class="string">"form"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">		姓名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">			<span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此时部署成功后经测试，tomcat下class文件可以轻松反编译，JSP页面可正常访问servlet文件。接下来对class文件进行加密。</p>
+</blockquote>
+<h2 id="2-加密解密算法，可修改"><a href="#2-加密解密算法，可修改" class="headerlink" title="2. 加密解密算法，可修改"></a>2. 加密解密算法，可修改</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505894738_7972.png" alt="image"></p>
+<h2 id="3-运行QEncryptFrame-java文件"><a href="#3-运行QEncryptFrame-java文件" class="headerlink" title="3. 运行QEncryptFrame.java文件"></a>3. 运行QEncryptFrame.java文件</h2><ul>
+<li>选择需要加密的文件</li>
 </ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505895997_8647.png" alt="image"></p>
+<ul>
+<li>加密成功后显示</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505896220_6708.png" alt="image"></p>
+<h2 id="4-把生成的加密后的class文件拷贝到源class文件的位置。"><a href="#4-把生成的加密后的class文件拷贝到源class文件的位置。" class="headerlink" title="4. 把生成的加密后的class文件拷贝到源class文件的位置。"></a>4. 把生成的加密后的class文件拷贝到源class文件的位置。</h2><blockquote>
+<p>覆盖完成后，不要做修改代码，clean等操作，否则加密后的class会被再次覆盖。</p>
+</blockquote>
+<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h2><ul>
+<li>此时再对class文件进行反编译，则如下报错</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505896972_4328.png" alt="image"></p>
+<ul>
+<li>并且JSP文件不可正常请求servlet</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505898081_6329.png" alt="image"></p>
+<ul>
+<li>点击登录后返回</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505897627_2120.png" alt="image"></p>
+<h1 id="三、解密"><a href="#三、解密" class="headerlink" title="三、解密"></a>三、解密</h1><h2 id="1-配置-loader-properties-文件"><a href="#1-配置-loader-properties-文件" class="headerlink" title="1. 配置 loader.properties 文件"></a>1. 配置 loader.properties 文件</h2><blockquote>
+<p>此配置文件指定了自定义的ClassLoader需要进行解析的classs文件范围。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">encrypted_package=com.demo</span><br><span class="line">encrypted_class_path=D\:/apache-tomcat-7.0.70/webapps/Test/WEB-INF/classes/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>encrypted_package       需要进行解密的包，多个包名用逗号分隔；</li>
+<li>encrypted_class_path    tomcat中项目的classess文件夹路径。</li>
+</ul>
+<h2 id="2-打包自定义classloader文件"><a href="#2-打包自定义classloader文件" class="headerlink" title="2. 打包自定义classloader文件"></a>2. 打包自定义classloader文件</h2><blockquote>
+<p>将jfinalQ-encrypt中的loader包和QClassUtil打为一个jar，并命名为++classloaderQ.jar++，如下图所示：</p>
+</blockquote>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505898422_5153.png" alt="image"></p>
+<h2 id="3-更改tomcat的默认loader，改为自定义classloader"><a href="#3-更改tomcat的默认loader，改为自定义classloader" class="headerlink" title="3. 更改tomcat的默认loader，改为自定义classloader"></a>3. 更改tomcat的默认loader，改为自定义classloader</h2><ul>
+<li>修改tomcat/conf/context.xml文件，添加如下代码：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Loader</span> <span class="attr">loaderClass</span>=<span class="string">"com.uikoo9.loader.QClassLoader"</span> <span class="attr">delegate</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">Loader</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-替换jar包"><a href="#4-替换jar包" class="headerlink" title="4. 替换jar包"></a>4. 替换jar包</h2><blockquote>
+<p>把classloaderQ.jar放到Tomcat的lib（D:\apache-tomcat-7.0.70\lib）文件夹下面。</p>
+</blockquote>
+<h2 id="5-测试-1"><a href="#5-测试-1" class="headerlink" title="5. 测试"></a>5. 测试</h2><ul>
+<li>对class文件进行反编译，报错</li>
+<li>JSP文件可正常请求servlet.</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505905760_5556.png" alt="image"></p>
+<ul>
+<li>点击登录后返回页面</li>
+</ul>
+<p><img src="http://img.my.csdn.net/uploads/201709/20/1505905761_5042.png" alt="image"></p>
+<ul>
+<li>测试成功</li>
+</ul>
+<h1 id="四、源码"><a href="#四、源码" class="headerlink" title="四、源码"></a>四、源码</h1><ul>
+<li><a href="https://github.com/uikoo9/jfinalQ-encrypt/" target="_blank" rel="noopener">源码下载</a></li>
+</ul>
+<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><blockquote>
+<p>由于时间原因，jfinalQ-encrypt源代码没能细读，只能做到初步应用，此文有待逐步后续完善。</p>
+</blockquote>
 
       
 
@@ -180,7 +272,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/网页集成Markdown工具/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/[已发布]Java加密部署，使用自定义的classloader解密的方法实例/">展开全文 >></a>
         </p>
       
 
@@ -379,7 +471,7 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/微服务/Spring Boot入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/微服务/SpringCloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -396,7 +488,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/微服务/Spring Boot入门/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/">展开全文 >></a>
         </p>
       
 
@@ -426,7 +518,7 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/微服务/SpringCloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/微服务/Spring Boot入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -443,7 +535,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/微服务/Spring Boot入门/">展开全文 >></a>
         </p>
       
 
@@ -577,84 +669,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/权限控制/浅谈权限管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿 </td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h1><p>RBAC(Role-Based Access Control，基于角色的权限管理)。<br>RBAC(Resource-Based Access Control，基于资源的权限管理)。</p>
-<p>是的，一个人是可以有多个角色。对于功能权限（比如查询权限，修改权限等这些），用角色就够了。</p>
-<p>但是对于数据权限，比如同一张表的 A数据，B数据，用户X有查，删的权限；A数据，C数据，用户Y有查的权限；B数据, C数据，用户Z有删除，修改的权限等等</p>
-<p>这样的话用角色来区分不同类的权限，就会导致角色非常多。管理角色本身就很费劲</p>
-<h2 id="粗粒度和细粒度权限"><a href="#粗粒度和细粒度权限" class="headerlink" title="粗粒度和细粒度权限"></a>粗粒度和细粒度权限</h2><p>粗粒度权限管理，对资源类型的权限管理。资源类型比如：菜单、url连接、用户添加页面、用户信息、类方法、页面中按钮。<br>粗粒度权限管理比如：超级管理员可以访问户添加页面、用户信息等全部页面。部门管理员可以访问用户信息页面包括 页面中所有按钮。</p>
-<p>细粒度权限管理，对资源实例的权限管理。资源实例就资源类型的具体化，比如：用户id为001的修改连接，1110班的用户信息、行政部的员工。<br>细粒度权限管理就是数据级别的权限管理。<br>细粒度权限管理比如：部门经理只可以访问本部门的员工信息，用户只可以看到自己的菜单，大区经理只能查看本辖区的销售订单。。</p>
-<h2 id="粗粒度和细粒度例子："><a href="#粗粒度和细粒度例子：" class="headerlink" title="粗粒度和细粒度例子："></a>粗粒度和细粒度例子：</h2><p>系统有一个用户列表查询页面，对用户列表查询分权限，如果粗颗粒管理，张三和李四都有用户列表查询的权限，张三和李四都可以访问用户列表查询。 进一步进行细颗粒管理，张三（行政部）和李四(开发部)只可以查询自己本部门的用户信息。张三只能查看行政部 的用户信息，李四只能查看开发部门的用户信息。细粒度权限管理就是数据级别的权限管理。</p>
-<h2 id="如何实现粗粒度和细粒度权限管理"><a href="#如何实现粗粒度和细粒度权限管理" class="headerlink" title="如何实现粗粒度和细粒度权限管理"></a>如何实现粗粒度和细粒度权限管理</h2><p>如何实现粗粒度权限管理？<br>粗粒度权限管理比较容易将权限管理的代码抽取出来在系统架构级别统一处理。比如：通过springmvc的拦截器实现授权。<br>如何实现细粒度权限管理？<br>对细粒度权限管理在数据级别是没有共性可言，针对细粒度权限管理就是系统业务逻辑的一部分，如果在业务层去处理相对比较简单，如果将细粒度权限管理统一在系统架构级别去抽取，比较困难，即使抽取的功能可能也存在扩展不强。<br>建议细粒度权限管理在业务层去控制。<br>比如：部门经理只查询本部门员工信息，在service接口提供一个部门id的参数，controller中根据当前用户的信息得到该 用户属于哪个部门，调用service时将部门id传入service，实现该用户只查询本部门的员工。</p>
-<p>基于url拦截的方式实现<br>基于url拦截的方式实现在实际开发中比较常用的一种方式。<br>对于web系统，通过filter过虑器实现url拦截，也可以springmvc的拦截器实现基于url的拦截。</p>
-<p>使用权限管理框架实现<br>对于粗粒度权限管理，建议使用优秀权限管理框架来实现，节省开发成功，提高开发效率。<br>shiro就是一个优秀权限管理框架。</p>
-<h2 id="基于角色的权限管理"><a href="#基于角色的权限管理" class="headerlink" title="基于角色的权限管理"></a>基于角色的权限管理</h2><h2 id="基于资源的权限管理"><a href="#基于资源的权限管理" class="headerlink" title="基于资源的权限管理"></a>基于资源的权限管理</h2><h2 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/权限控制/Shiro安全框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -730,6 +744,84 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/权限控制/Shiro安全框架/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/权限控制/浅谈权限管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2017.09.24</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿 </td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h1><p>RBAC(Role-Based Access Control，基于角色的权限管理)。<br>RBAC(Resource-Based Access Control，基于资源的权限管理)。</p>
+<p>是的，一个人是可以有多个角色。对于功能权限（比如查询权限，修改权限等这些），用角色就够了。</p>
+<p>但是对于数据权限，比如同一张表的 A数据，B数据，用户X有查，删的权限；A数据，C数据，用户Y有查的权限；B数据, C数据，用户Z有删除，修改的权限等等</p>
+<p>这样的话用角色来区分不同类的权限，就会导致角色非常多。管理角色本身就很费劲</p>
+<h2 id="粗粒度和细粒度权限"><a href="#粗粒度和细粒度权限" class="headerlink" title="粗粒度和细粒度权限"></a>粗粒度和细粒度权限</h2><p>粗粒度权限管理，对资源类型的权限管理。资源类型比如：菜单、url连接、用户添加页面、用户信息、类方法、页面中按钮。<br>粗粒度权限管理比如：超级管理员可以访问户添加页面、用户信息等全部页面。部门管理员可以访问用户信息页面包括 页面中所有按钮。</p>
+<p>细粒度权限管理，对资源实例的权限管理。资源实例就资源类型的具体化，比如：用户id为001的修改连接，1110班的用户信息、行政部的员工。<br>细粒度权限管理就是数据级别的权限管理。<br>细粒度权限管理比如：部门经理只可以访问本部门的员工信息，用户只可以看到自己的菜单，大区经理只能查看本辖区的销售订单。。</p>
+<h2 id="粗粒度和细粒度例子："><a href="#粗粒度和细粒度例子：" class="headerlink" title="粗粒度和细粒度例子："></a>粗粒度和细粒度例子：</h2><p>系统有一个用户列表查询页面，对用户列表查询分权限，如果粗颗粒管理，张三和李四都有用户列表查询的权限，张三和李四都可以访问用户列表查询。 进一步进行细颗粒管理，张三（行政部）和李四(开发部)只可以查询自己本部门的用户信息。张三只能查看行政部 的用户信息，李四只能查看开发部门的用户信息。细粒度权限管理就是数据级别的权限管理。</p>
+<h2 id="如何实现粗粒度和细粒度权限管理"><a href="#如何实现粗粒度和细粒度权限管理" class="headerlink" title="如何实现粗粒度和细粒度权限管理"></a>如何实现粗粒度和细粒度权限管理</h2><p>如何实现粗粒度权限管理？<br>粗粒度权限管理比较容易将权限管理的代码抽取出来在系统架构级别统一处理。比如：通过springmvc的拦截器实现授权。<br>如何实现细粒度权限管理？<br>对细粒度权限管理在数据级别是没有共性可言，针对细粒度权限管理就是系统业务逻辑的一部分，如果在业务层去处理相对比较简单，如果将细粒度权限管理统一在系统架构级别去抽取，比较困难，即使抽取的功能可能也存在扩展不强。<br>建议细粒度权限管理在业务层去控制。<br>比如：部门经理只查询本部门员工信息，在service接口提供一个部门id的参数，controller中根据当前用户的信息得到该 用户属于哪个部门，调用service时将部门id传入service，实现该用户只查询本部门的员工。</p>
+<p>基于url拦截的方式实现<br>基于url拦截的方式实现在实际开发中比较常用的一种方式。<br>对于web系统，通过filter过虑器实现url拦截，也可以springmvc的拦截器实现基于url的拦截。</p>
+<p>使用权限管理框架实现<br>对于粗粒度权限管理，建议使用优秀权限管理框架来实现，节省开发成功，提高开发效率。<br>shiro就是一个优秀权限管理框架。</p>
+<h2 id="基于角色的权限管理"><a href="#基于角色的权限管理" class="headerlink" title="基于角色的权限管理"></a>基于角色的权限管理</h2><h2 id="基于资源的权限管理"><a href="#基于资源的权限管理" class="headerlink" title="基于资源的权限管理"></a>基于资源的权限管理</h2><h2 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/">展开全文 >></a>
         </p>
       
 
