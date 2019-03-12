@@ -1289,13 +1289,16 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/Markdown/在JavaWeb项目中实现Markdown编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/Markdown/Atom搭建Markdown写作环境，托管到Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文介绍在JavaWeb项目中集成Markdown组件的方法，实现文章<br>的编辑与保存，以及数据库或Git仓库*.md格式文章的读取与展示。</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>作者曾热衷于有道云笔记，但是每三个月导出一次的限制，和Linux系统客户端的实现不完美，使我再次寻求解决方案。在尝试过多种Markdown笔记工具后，认为Atom的实现是最好的。</p>
+<p>Atom 可以通过导入项目的形式管理文件结构（tree-view）。通过Markdown-writer插件和Markdown-preview-enhanced实现写作与预览同步，并且Markdown-preview-enhanced集成了同步滚动，导出Html，PDF，eBook，目录导航等功能。还可以通过language-markdown插件实现代码高亮，minimap实现mini地图导航，tool-bar插件实现Markdown常用工具栏功能。以及Git插件实现文档托管。有需要还可以通过atom-simplified-chinese-menu实现软件的汉化。</p>
+<p>总之，Atom及其插件的配合，实现了我使用Markdown写作的所有需求，并且性能稳定，文档安全。</p>
+<p>测试环境：Deepin 15.5 发行版。Atom 1.22.1 x64。</p>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
 <tr>
@@ -1309,21 +1312,43 @@
 <tbody>
 <tr>
 <td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.03.12</td>
+<td style="text-align:center">2018.03.17</td>
 <td style="text-align:center">1.0</td>
 <td style="text-align:center">ZZ</td>
 <td style="text-align:center">初稿</td>
 </tr>
 </tbody>
 </table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jianshu.com/p/8fdaee0a5640" target="_blank" rel="noopener">markdown在项目中的使用</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/sinat_36553913/article/details/78339733" target="_blank" rel="noopener">在web项目中使用MarkDown组件</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/qq_36157439/article/details/78946298#insertcode" target="_blank" rel="noopener">javaweb项目集成editor.md编辑器—markdown编辑器</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.hexcode.cn/article/show/editormd" target="_blank" rel="noopener">使用并改造editor.md在JAVA-WEB项目中实现Markdown编辑器</a></li>
+<h1 id="三、安装及配置"><a href="#三、安装及配置" class="headerlink" title="三、安装及配置"></a>三、安装及配置</h1><font color="ED1C1C"><center><strong>Atom 集成Markdown效果图</strong></center></font>
+
+<p><img src="http://img.cdn.lapland.top/Image%201521270927.png" alt="image"></p>
+<h2 id="3-1、安装Atom"><a href="#3-1、安装Atom" class="headerlink" title="3.1、安装Atom"></a>3.1、安装Atom</h2><ul>
+<li style="list-style: none"><input type="checkbox" checked> Atom安装过程详见：<a href="https://atom.io/" target="_blank" rel="noopener">Atom官网</a></li>
+</ul>
+<h2 id="3-2、安装插件"><a href="#3-2、安装插件" class="headerlink" title="3.2、安装插件"></a>3.2、安装插件</h2><p>可以通过编辑 - 偏好设置 - Settings - 安装拓展包/主题 ，搜索你需要安装的插件。并且安装后可以对插件的参数进行设置。</p>
+<p><img src="http://img.cdn.lapland.top/Image%201521272928.png" alt="image"></p>
+<h2 id="3-21、写作增强（Markdown-writer）"><a href="#3-21、写作增强（Markdown-writer）" class="headerlink" title="3.21、写作增强（Markdown-writer）"></a>3.21、写作增强（Markdown-writer）</h2><p>它能让你更方便地管理和编辑Markdown文件，并自带tool-bar工具插件。提供Markdown写作中常用标签的快捷键。</p>
+<h2 id="3-22、预览增强（Markdown-preview-enhanced）"><a href="#3-22、预览增强（Markdown-preview-enhanced）" class="headerlink" title="3.22、预览增强（Markdown-preview-enhanced）"></a>3.22、预览增强（Markdown-preview-enhanced）</h2><p>Atom自带的Markdown预览插件markdown-preview功能比较简单，Markdown-preview-enhanced对其做了功能扩展和增强。使用该插件前，需要先禁用markdown-preview。</p>
+<ul>
+<li>目录导航</li>
+<li>支持同步预览</li>
+<li>支持Latex公式。</li>
+<li>Html，PDF，eBook导出。</li>
+</ul>
+<h2 id="3-23、语法增强（language-markdown）"><a href="#3-23、语法增强（language-markdown）" class="headerlink" title="3.23、语法增强（language-markdown）"></a>3.23、语法增强（language-markdown）</h2><p>一般的Markdown编辑器提供了代码着色等基本功能，language-markdown除了能给代码着色，还提供了快捷的代码片段生成等功能。</p>
+<h2 id="3-24、迷你地图导航（minimap）"><a href="#3-24、迷你地图导航（minimap）" class="headerlink" title="3.24、迷你地图导航（minimap）"></a>3.24、迷你地图导航（minimap）</h2><p>在写作右侧显示迷你地图，以便于搜索和快速导航。</p>
+<h2 id="3-25、图标插件（file-icons）"><a href="#3-25、图标插件（file-icons）" class="headerlink" title="3.25、图标插件（file-icons）"></a>3.25、图标插件（file-icons）</h2><p>用于渲染文件扩展名的图标和颜色，以提高文件查找的视觉效果。</p>
+<h2 id="3-26、Git插件（Atom自带）"><a href="#3-26、Git插件（Atom自带）" class="headerlink" title="3.26、Git插件（Atom自带）"></a>3.26、Git插件（Atom自带）</h2><p>可以实现Git常用功能的需求。</p>
+<h2 id="3-27、汉化插件（atom-simplified-chinese-menu）"><a href="#3-27、汉化插件（atom-simplified-chinese-menu）" class="headerlink" title="3.27、汉化插件（atom-simplified-chinese-menu）"></a>3.27、汉化插件（atom-simplified-chinese-menu）</h2><p>Atom 简体中文语言包，提供最新的菜单栏、右键菜单及设置完整汉化。</p>
+<h2 id="3-3、Atom的配置"><a href="#3-3、Atom的配置" class="headerlink" title="3.3、Atom的配置"></a>3.3、Atom的配置</h2><ul>
+<li>可以通过直接编辑Atom样式表 styles.less，来设置软件的字体样式等。示例如下：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.tree-view</span> &#123;</span><br><span class="line">  // background-color: whitesmoke;</span><br><span class="line">  <span class="selector-tag">font-family</span><span class="selector-pseudo">:"</span>微软雅黑";</span><br><span class="line">  <span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br><span class="line">&#125;``</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">atom-pane</span>, <span class="selector-class">.command-palette</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"微软雅黑"</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.settings-view</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"微软雅黑"</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.tab-bar</span> <span class="selector-class">.tab</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"微软雅黑"</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/libin-1/p/6638165.html" target="_blank" rel="noopener">使用Atom打造无懈可击的Markdown编辑器</a></li>
 </ul>
 <h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
+<p>由于插件的安装比较简单，故只做了功能介绍。目前尚欠缺的是博客发布功能，有待机进一步研究。</p>
 </blockquote>
 
       
@@ -1337,7 +1362,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/Markdown/在JavaWeb项目中实现Markdown编辑器/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/Markdown/Atom搭建Markdown写作环境，托管到Git/">展开全文 >></a>
         </p>
       
 
@@ -1436,10 +1461,6 @@
     </div>
   </div>
 </footer>
-
-<span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_site_uv">  本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
-
     </div>
     <script>
 	var yiliaConfig = {
@@ -1464,7 +1485,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
