@@ -439,158 +439,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/InterliJ IDEA 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>由于工作需求，需要开发和阅读一部分前端和移动端代码，然而Eclipse对这些的支持不是很友好，所以尝试用InterliJ IDEA来开发这部分代码，本文用来记录InterliJ IDEA的常用配置，以作备忘。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.01.19</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、代码风格设置"><a href="#三、代码风格设置" class="headerlink" title="三、代码风格设置"></a>三、代码风格设置</h1><h2 id="3-1、编码-颜色-字体"><a href="#3-1、编码-颜色-字体" class="headerlink" title="3.1、编码/颜色/字体"></a>3.1、编码/颜色/字体</h2><h2 id="3-2、代码注释"><a href="#3-2、代码注释" class="headerlink" title="3.2、代码注释"></a>3.2、代码注释</h2><h3 id="3-21、新建class类注释"><a href="#3-21、新建class类注释" class="headerlink" title="3.21、新建class类注释"></a>3.21、新建class类注释</h3><p>设置新建Java类时自动生成类的注解。</p>
-<ul>
-<li>File -&gt; Setting -&gt; File and Code Templates</li>
-<li>设置步骤图解如下：</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201516372950.png" alt="image"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> $&#123;USER&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $&#123;TIME&#125; $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> TODO</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-22、自定义类和方法注释"><a href="#3-22、自定义类和方法注释" class="headerlink" title="3.22、自定义类和方法注释"></a>3.22、自定义类和方法注释</h3><p>由于InterliJ IDEA不能像Eclipse那样，修改类和方法的Code Template注释，所以需要通过自定义快捷键的方式来实现。</p>
-<ul>
-<li>File -&gt; Settings -&gt; Editor -&gt; Live Templates</li>
-<li>设置步骤图解如下：</li>
-</ul>
-<p><img src="http://img.cdn.lapland.top/Image%201516372886.png" alt="image"></p>
-<ul>
-<li>类注释：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@author</span> $USER$</span><br><span class="line"> * <span class="meta">@date</span> $TIME$ $DATE$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>类注释使用时输入 /* + Enter</p>
-</blockquote>
-<ul>
-<li>方法注释：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">$PARAMS$</span><br><span class="line"> * <span class="meta">@return</span> $RETURNS$</span><br><span class="line"> * <span class="meta">@throws</span> $EXCECPTION$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果要设置参数分列显示，须把$PARAMS$表达式的值为如下脚本：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(<span class="string">"def result=''; def params=\"$&#123;_1&#125;\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')&#125;; return result"</span>, methodParameters())</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>方法注释使用时输入 /** + Enter</p>
-</blockquote>
-<h2 id="3-3、快捷键风格"><a href="#3-3、快捷键风格" class="headerlink" title="3.3、快捷键风格"></a>3.3、快捷键风格</h2><h3 id="3-31、快捷键设置"><a href="#3-31、快捷键设置" class="headerlink" title="3.31、快捷键设置"></a>3.31、快捷键设置</h3><p>因为以前一直使用Eclispe，为了使快捷键的使用不至于混乱，所以IntelliJ IDEA快捷键沿用Eclipse风格。设置如下：</p>
-<p>File -&gt; Setting -&gt; Keymap -&gt; Eclispe</p>
-<h3 id="3-32、快速输入"><a href="#3-32、快速输入" class="headerlink" title="3.32、快速输入"></a>3.32、快速输入</h3><blockquote>
-<p>快速输入是通过设置快捷键的方式实现的，方法如自定义注解的方式相同。</p>
-</blockquote>
-<ul>
-<li>常用快速输入设置如下：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:left">代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">logger</td>
-<td style="text-align:left"><figure class="highlight plain"><figcaption><span>static final Logger LOGGER </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main        | ```public static void main(String [] agrs)&#123;$END$&#125;</span><br></pre></td></tr></table></figure></td>
-</tr>
-</tbody>
-</table>
-<p>syso        | <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for         | ```for (int $i$=$start$; $i$&lt;$end$; $i$++) &#123;$cursor$&#125;</span><br></pre></td></tr></table></figure></p>
-<p>foreach     | <figure class="highlight plain"><figcaption><span>($i$ : $data$) &#123;$cursor$&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch      | ```switch ($VAR$) &#123;case $VAR_CHILDREN$:break;$END$&#125;</span><br></pre></td></tr></table></figure></p>
-<p>if          | <code>if ($VAR_a$==$VAR_b$) {$cursor$} else if($VAR_a$==$VAR_b$) {$cursor$} else {$cursor$ }</code></p>
-<blockquote>
-<p>使用时输入 快捷键 + Enter，例如 syso +  + Enter</p>
-</blockquote>
-<h2 id="3-4、生成Javadoc文档"><a href="#3-4、生成Javadoc文档" class="headerlink" title="3.4、生成Javadoc文档"></a>3.4、生成Javadoc文档</h2><p><img src="http://img.cdn.lapland.top/Image%201516373772.png" alt="image"></p>
-<h3 id="3-41、问题一：-javadoc-编码GBK的不可映射字符"><a href="#3-41、问题一：-javadoc-编码GBK的不可映射字符" class="headerlink" title="3.41、问题一： javadoc 编码GBK的不可映射字符"></a>3.41、问题一： javadoc 编码GBK的不可映射字符</h3><ul>
-<li>解决方案：</li>
-</ul>
-<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-encoding utf-8 -charset utf-8</strong></font> 。</p>
-<h3 id="3-42、问题二：-date等是未知标记"><a href="#3-42、问题二：-date等是未知标记" class="headerlink" title="3.42、问题二： @date等是未知标记"></a>3.42、问题二： @date等是未知标记</h3><ul>
-<li>解决方案：</li>
-</ul>
-<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-tag date:a:”日期:” -tag description:a:”描述:”</strong></font> 。</p>
-<h1 id="四、开发环境设置"><a href="#四、开发环境设置" class="headerlink" title="四、开发环境设置"></a>四、开发环境设置</h1><h2 id="4-1、JDK"><a href="#4-1、JDK" class="headerlink" title="4.1、JDK"></a>4.1、JDK</h2><h2 id="4-2、Tomcat"><a href="#4-2、Tomcat" class="headerlink" title="4.2、Tomcat"></a>4.2、Tomcat</h2><h2 id="4-3、JRebel热部署插件"><a href="#4-3、JRebel热部署插件" class="headerlink" title="4.3、JRebel热部署插件"></a>4.3、JRebel热部署插件</h2><blockquote>
-<p>现在 JRebel 对个人非商业用途的用户永久免费。</p>
-</blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://yiweifen.com/html/news/WaiYu/167639.html" target="_blank" rel="noopener">idea2017+热部署插件jRebel安装与配置</a></li>
-</ul>
-<h2 id="4-4、Maven"><a href="#4-4、Maven" class="headerlink" title="4.4、Maven"></a>4.4、Maven</h2><h2 id="4-5、SVN"><a href="#4-5、SVN" class="headerlink" title="4.5、SVN"></a>4.5、SVN</h2><h1 id="五、输入输出自定义模板"><a href="#五、输入输出自定义模板" class="headerlink" title="五、输入输出自定义模板"></a>五、输入输出自定义模板</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc//" target="_blank" rel="noopener">IntelliJ IDEA官方文档</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc/intellij_idea_doc-itw32eg4.html/" target="_blank" rel="noopener">IntelliJ IDEA使用语言构造的周围代码块</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u014044812/article/details/76577479/" target="_blank" rel="noopener">IntelliJ IDEA 自定义方法注解模板</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-template-variables.html?spm=a2c4e.11153940.blogcont73449.14.692ef64TXby13/" target="_blank" rel="noopener">Creating and Editing Template Variables</a></li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/InterliJ IDEA 使用总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/MyEclipse 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -721,6 +569,158 @@ Type variables(类型变量): 128, 0, 25   红罗色
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/MyEclipse 使用总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/IDE &amp; 编程软件/InterliJ IDEA 使用总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>由于工作需求，需要开发和阅读一部分前端和移动端代码，然而Eclipse对这些的支持不是很友好，所以尝试用InterliJ IDEA来开发这部分代码，本文用来记录InterliJ IDEA的常用配置，以作备忘。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018.01.19</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、代码风格设置"><a href="#三、代码风格设置" class="headerlink" title="三、代码风格设置"></a>三、代码风格设置</h1><h2 id="3-1、编码-颜色-字体"><a href="#3-1、编码-颜色-字体" class="headerlink" title="3.1、编码/颜色/字体"></a>3.1、编码/颜色/字体</h2><h2 id="3-2、代码注释"><a href="#3-2、代码注释" class="headerlink" title="3.2、代码注释"></a>3.2、代码注释</h2><h3 id="3-21、新建class类注释"><a href="#3-21、新建class类注释" class="headerlink" title="3.21、新建class类注释"></a>3.21、新建class类注释</h3><p>设置新建Java类时自动生成类的注解。</p>
+<ul>
+<li>File -&gt; Setting -&gt; File and Code Templates</li>
+<li>设置步骤图解如下：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201516372950.png" alt="image"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> $&#123;USER&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> $&#123;TIME&#125; $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> TODO</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-22、自定义类和方法注释"><a href="#3-22、自定义类和方法注释" class="headerlink" title="3.22、自定义类和方法注释"></a>3.22、自定义类和方法注释</h3><p>由于InterliJ IDEA不能像Eclipse那样，修改类和方法的Code Template注释，所以需要通过自定义快捷键的方式来实现。</p>
+<ul>
+<li>File -&gt; Settings -&gt; Editor -&gt; Live Templates</li>
+<li>设置步骤图解如下：</li>
+</ul>
+<p><img src="http://img.cdn.lapland.top/Image%201516372886.png" alt="image"></p>
+<ul>
+<li>类注释：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * <span class="meta">@author</span> $USER$</span><br><span class="line"> * <span class="meta">@date</span> $TIME$ $DATE$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>类注释使用时输入 /* + Enter</p>
+</blockquote>
+<ul>
+<li>方法注释：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line">$PARAMS$</span><br><span class="line"> * <span class="meta">@return</span> $RETURNS$</span><br><span class="line"> * <span class="meta">@throws</span> $EXCECPTION$</span><br><span class="line"> * <span class="meta">@description</span> TODO</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要设置参数分列显示，须把$PARAMS$表达式的值为如下脚本：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(<span class="string">"def result=''; def params=\"$&#123;_1&#125;\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')&#125;; return result"</span>, methodParameters())</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>方法注释使用时输入 /** + Enter</p>
+</blockquote>
+<h2 id="3-3、快捷键风格"><a href="#3-3、快捷键风格" class="headerlink" title="3.3、快捷键风格"></a>3.3、快捷键风格</h2><h3 id="3-31、快捷键设置"><a href="#3-31、快捷键设置" class="headerlink" title="3.31、快捷键设置"></a>3.31、快捷键设置</h3><p>因为以前一直使用Eclispe，为了使快捷键的使用不至于混乱，所以IntelliJ IDEA快捷键沿用Eclipse风格。设置如下：</p>
+<p>File -&gt; Setting -&gt; Keymap -&gt; Eclispe</p>
+<h3 id="3-32、快速输入"><a href="#3-32、快速输入" class="headerlink" title="3.32、快速输入"></a>3.32、快速输入</h3><blockquote>
+<p>快速输入是通过设置快捷键的方式实现的，方法如自定义注解的方式相同。</p>
+</blockquote>
+<ul>
+<li>常用快速输入设置如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">logger</td>
+<td style="text-align:left"><figure class="highlight plain"><figcaption><span>static final Logger LOGGER </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main        | ```public static void main(String [] agrs)&#123;$END$&#125;</span><br></pre></td></tr></table></figure></td>
+</tr>
+</tbody>
+</table>
+<p>syso        | <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for         | ```for (int $i$=$start$; $i$&lt;$end$; $i$++) &#123;$cursor$&#125;</span><br></pre></td></tr></table></figure></p>
+<p>foreach     | <figure class="highlight plain"><figcaption><span>($i$ : $data$) &#123;$cursor$&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch      | ```switch ($VAR$) &#123;case $VAR_CHILDREN$:break;$END$&#125;</span><br></pre></td></tr></table></figure></p>
+<p>if          | <code>if ($VAR_a$==$VAR_b$) {$cursor$} else if($VAR_a$==$VAR_b$) {$cursor$} else {$cursor$ }</code></p>
+<blockquote>
+<p>使用时输入 快捷键 + Enter，例如 syso +  + Enter</p>
+</blockquote>
+<h2 id="3-4、生成Javadoc文档"><a href="#3-4、生成Javadoc文档" class="headerlink" title="3.4、生成Javadoc文档"></a>3.4、生成Javadoc文档</h2><p><img src="http://img.cdn.lapland.top/Image%201516373772.png" alt="image"></p>
+<h3 id="3-41、问题一：-javadoc-编码GBK的不可映射字符"><a href="#3-41、问题一：-javadoc-编码GBK的不可映射字符" class="headerlink" title="3.41、问题一： javadoc 编码GBK的不可映射字符"></a>3.41、问题一： javadoc 编码GBK的不可映射字符</h3><ul>
+<li>解决方案：</li>
+</ul>
+<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-encoding utf-8 -charset utf-8</strong></font> 。</p>
+<h3 id="3-42、问题二：-date等是未知标记"><a href="#3-42、问题二：-date等是未知标记" class="headerlink" title="3.42、问题二： @date等是未知标记"></a>3.42、问题二： @date等是未知标记</h3><ul>
+<li>解决方案：</li>
+</ul>
+<p>运行Tools -&gt; Gerenate JavaDoc时，<br>在Other command line arguments 栏里输入：<font color="22B14C"><strong>-tag date:a:”日期:” -tag description:a:”描述:”</strong></font> 。</p>
+<h1 id="四、开发环境设置"><a href="#四、开发环境设置" class="headerlink" title="四、开发环境设置"></a>四、开发环境设置</h1><h2 id="4-1、JDK"><a href="#4-1、JDK" class="headerlink" title="4.1、JDK"></a>4.1、JDK</h2><h2 id="4-2、Tomcat"><a href="#4-2、Tomcat" class="headerlink" title="4.2、Tomcat"></a>4.2、Tomcat</h2><h2 id="4-3、JRebel热部署插件"><a href="#4-3、JRebel热部署插件" class="headerlink" title="4.3、JRebel热部署插件"></a>4.3、JRebel热部署插件</h2><blockquote>
+<p>现在 JRebel 对个人非商业用途的用户永久免费。</p>
+</blockquote>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://yiweifen.com/html/news/WaiYu/167639.html" target="_blank" rel="noopener">idea2017+热部署插件jRebel安装与配置</a></li>
+</ul>
+<h2 id="4-4、Maven"><a href="#4-4、Maven" class="headerlink" title="4.4、Maven"></a>4.4、Maven</h2><h2 id="4-5、SVN"><a href="#4-5、SVN" class="headerlink" title="4.5、SVN"></a>4.5、SVN</h2><h1 id="五、输入输出自定义模板"><a href="#五、输入输出自定义模板" class="headerlink" title="五、输入输出自定义模板"></a>五、输入输出自定义模板</h1><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc//" target="_blank" rel="noopener">IntelliJ IDEA官方文档</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.w3cschool.cn/intellij_idea_doc/intellij_idea_doc-itw32eg4.html/" target="_blank" rel="noopener">IntelliJ IDEA使用语言构造的周围代码块</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u014044812/article/details/76577479/" target="_blank" rel="noopener">IntelliJ IDEA 自定义方法注解模板</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jetbrains.com/help/idea/2016.3/creating-and-editing-template-variables.html?spm=a2c4e.11153940.blogcont73449.14.692ef64TXby13/" target="_blank" rel="noopener">Creating and Editing Template Variables</a></li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/IDE & 编程软件/InterliJ IDEA 使用总结/">展开全文 >></a>
         </p>
       
 
@@ -983,6 +983,256 @@ Type variables(类型变量): 128, 0, 25   红罗色
 
 
   
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Windows系统）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文记录了Java开发环境搭建与项目部署，以及日常应用过程中涉及到的常用命令和操作。测试环境：Windows10 系统。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2018.02.06</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2018.03.06</td>
+<td style="text-align:center">1.1</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">Git单独列出</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、JDK的安装及环境变量的配置"><a href="#三、JDK的安装及环境变量的配置" class="headerlink" title="三、JDK的安装及环境变量的配置"></a>三、JDK的安装及环境变量的配置</h1><p><img src="http://img.cdn.lapland.top/Image%201517908277.png" alt="image"></p>
+<h2 id="3-1、Java运行环境配置"><a href="#3-1、Java运行环境配置" class="headerlink" title="3.1、Java运行环境配置"></a>3.1、Java运行环境配置</h2><p>配置环境变量是为了让Java jdk\bin目录下的工具，可以在任意目录下运行，原因是，将该工具所在目录告诉了系统，当使用该工具时，由系统帮我们去找指定的目录。</p>
+<h3 id="3-11、PATH环境变量"><a href="#3-11、PATH环境变量" class="headerlink" title="3.11、PATH环境变量"></a>3.11、PATH环境变量</h3><p>作用是指定命令搜索路径，在shell下面执行命令时，它会到PATH变量所指定的路径中查找看是否能找到相应的命令程序。我们需要把 jdk安装目录下的bin目录增加到现有的PATH变量中，bin目录中包含经常要用到的可执行文件如Javac/Java/Javadoc等，设置好 PATH变量后，就可以在任何目录下执行Javac/Java等工具了。</p>
+<h3 id="3-12、CLASSPATH环境变量"><a href="#3-12、CLASSPATH环境变量" class="headerlink" title="3.12、CLASSPATH环境变量"></a>3.12、CLASSPATH环境变量</h3><p>作用是指定类搜索路径，要使用已经编写好的类，前提当然是能够找到它们了，JVM就是通过CLASSPTH来寻找类的。我们需要把jdk安装目录下的lib子目录中的dt.jar和tools.jar设置到CLASSPATH中，当然，当前目录“.”也必须加入到该变量中。</p>
+<h3 id="3-13、JAVA-HOME环境变量"><a href="#3-13、JAVA-HOME环境变量" class="headerlink" title="3.13、JAVA_HOME环境变量"></a>3.13、JAVA_HOME环境变量</h3><p>它指向jdk的安装目录，Eclipse/NetBeans/Tomcat等软件就是通过搜索JAVA_HOME变量来找到并使用安装好的jdk。</p>
+<h3 id="3-14、永久配置方式"><a href="#3-14、永久配置方式" class="headerlink" title="3.14、永久配置方式"></a>3.14、永久配置方式</h3><pre><code>Java_Home： C:\Program Files\Java\jdk1.7.0_07
+Path:       %Java_Home%\bin;%Java_Home%\jre\bin;
+</code></pre><p>特点：系统默认先去当前路径下找要执行的程序，如果没有，再去path中设置的路径下找</p>
+<h3 id="3-15、临时配置方式-DOS"><a href="#3-15、临时配置方式-DOS" class="headerlink" title="3.15、临时配置方式(DOS)"></a>3.15、临时配置方式(DOS)</h3><pre><code>set path=%path%;C:\Program Files\Java\jdk\bin
+set classpath=XXX
+注释：环境变量的配置已经完成，DOS命令下输入Java/Javac/Java –version检测。
+</code></pre><h3 id="3-16、补充几点"><a href="#3-16、补充几点" class="headerlink" title="3.16、补充几点"></a>3.16、补充几点</h3><p>如果没有定义环境变量classpath，Java启动JVM后，会在当前目录下查找要运行的类文件；如果指定了classpath，那么会在指定的目录下查找要运行的类文件。<br>还会在当前目录找吗？两种情况：</p>
+<ul>
+<li>如果classpath的值结尾处有分号，在具体路径中没有找到运行的类，会默认在当前目录再找一次。</li>
+<li>如果classpath的值结果出没有分号，在具体的路径中没有找到运行的类，不会再当前目录找。</li>
+<li>一般不指定分号，如果没有在指定目录下找到要运行的类文件，就报错，这样可以调试程序。</li>
+</ul>
+<h1 id="四、Tomcat服务器的安装与部署"><a href="#四、Tomcat服务器的安装与部署" class="headerlink" title="四、Tomcat服务器的安装与部署"></a>四、Tomcat服务器的安装与部署</h1><h2 id="4-1、搭建JavaWeb应用开发环境——Tomcat服务器"><a href="#4-1、搭建JavaWeb应用开发环境——Tomcat服务器" class="headerlink" title="4.1、搭建JavaWeb应用开发环境——Tomcat服务器"></a>4.1、搭建JavaWeb应用开发环境——Tomcat服务器</h2><p>Tomcat是一个实现了JAVA EE标准的最小的WEB服务器。</p>
+<h2 id="4-2、Tomcat的目录层次结构"><a href="#4-2、Tomcat的目录层次结构" class="headerlink" title="4.2、Tomcat的目录层次结构"></a>4.2、Tomcat的目录层次结构</h2><ul>
+<li>Bin：存放启动和关闭Tomcat的脚本文件。</li>
+<li>Conf：存放Tomcat服务器的各种配置文件。</li>
+<li>Lib：存放Tomcat服务器的支持jar包</li>
+<li>ogs：存放Tomcat的日志文件</li>
+<li>Temp：存放Tomcat运行时产生的临时文件</li>
+<li>Webapps：项目发布目录，存放web资源和java编译后的class文件</li>
+<li>Works：Tomcat工作目录，存放jsp翻译后的的servlet和servlet编译后的class文件</li>
+</ul>
+<h2 id="4-3、Tomcat安装与配置"><a href="#4-3、Tomcat安装与配置" class="headerlink" title="4.3、Tomcat安装与配置"></a>4.3、Tomcat安装与配置</h2><h3 id="4-31、把免安装版Tomcat解压包放到任意文件夹"><a href="#4-31、把免安装版Tomcat解压包放到任意文件夹" class="headerlink" title="4.31、把免安装版Tomcat解压包放到任意文件夹"></a>4.31、把免安装版Tomcat解压包放到任意文件夹</h3><h3 id="4-32、配置conf文件-server-xml"><a href="#4-32、配置conf文件-server-xml" class="headerlink" title="4.32、配置conf文件:server.xml"></a>4.32、配置conf文件:server.xml</h3><ul>
+<li>connector端口号:8080(默认)</li>
+<li>charactor字符集:UFT-8</li>
+</ul>
+<h3 id="4-33、环境变量配置"><a href="#4-33、环境变量配置" class="headerlink" title="4.33、环境变量配置"></a>4.33、环境变量配置</h3><ul>
+<li>Tomcat 7.x 会自动寻找位置，不需要环境变量配置。</li>
+<li>JAVA 工具箱 1.0_ZZ.bat 为 了正确开闭服务所以配置了环境变量如下：<ul>
+<li>CATALINA_HOME = D:\apache-tomcat-7.0.70；</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-34、MyEclipse-配置"><a href="#4-34、MyEclipse-配置" class="headerlink" title="4.34、MyEclipse 配置"></a>4.34、MyEclipse 配置</h3><ul>
+<li>windouws–&gt;Preferences–&gt; TomCat 7.x<ul>
+<li>指定Tomca放置路径D:\apache-tomcat-7.0.70。</li>
+<li>指定JDK 版本为本项目应用版本。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-35、开启Tomcat服务"><a href="#4-35、开启Tomcat服务" class="headerlink" title="4.35、开启Tomcat服务"></a>4.35、开启Tomcat服务</h3><ul>
+<li>Windows系统下，应用D:\apache-tomcat-7.0.70\bin 目录下批处理文件</li>
+<li>startup.bat // 启动服务</li>
+<li>shutdown.bat // 关闭服务</li>
+</ul>
+<h2 id="4-4、部署项目的几种方法"><a href="#4-4、部署项目的几种方法" class="headerlink" title="4.4、部署项目的几种方法"></a>4.4、部署项目的几种方法</h2><h3 id="4-41、静态部署"><a href="#4-41、静态部署" class="headerlink" title="4.41、静态部署"></a>4.41、静态部署</h3><h4 id="4-411-利用Tomcat自动部署"><a href="#4-411-利用Tomcat自动部署" class="headerlink" title="4.411 利用Tomcat自动部署"></a>4.411 利用Tomcat自动部署</h4><pre><code>- 把JSP (war包) 放到Webapps容器中，启动服务
+- 浏览器通过访问http://localhost:8080/news
+</code></pre><p>注：Webapps目录是Tomcat默认的应用目录，当服务器启动时，会加载所有这个目录下的应用。</p>
+<h4 id="4-412-通过MyEclipse部署"><a href="#4-412-通过MyEclipse部署" class="headerlink" title="4.412 通过MyEclipse部署"></a>4.412 通过MyEclipse部署</h4><ul>
+<li>部署按钮，编译源码生成Webapps容器中，启动服务</li>
+<li>运行网页 <a href="http://localhost:8080/news/" target="_blank" rel="noopener">http://localhost:8080/news/</a></li>
+</ul>
+<h4 id="4-413-修改Server-xml文件部署"><a href="#4-413-修改Server-xml文件部署" class="headerlink" title="4.413 修改Server.xml文件部署"></a>4.413 修改Server.xml文件部署</h4><p>一个Tomcat 值负责一个工程</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">Path</span> = <span class="string">"/ItcastOA "</span> <span class="attr">docBase</span> = <span class="string">"E:\JAVA\U100\ItcastOA\WebRoot"</span> <span class="attr">reloadable</span> = <span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>热加载配置 –&gt; 修改java代码后，不用重新部署</li>
+<li>拓展：jsp不用编译，故修改后自动更新</li>
+<li>拓展：xml通过server.xml –&gt; autoDeploy=”true” 实现热加载</li>
+<li>增加自定义web部署文件(推荐使用，不需要重启Tomcat )</li>
+</ul>
+<h3 id="4-42-动态部署"><a href="#4-42-动态部署" class="headerlink" title="4.42 动态部署"></a>4.42 动态部署</h3><h1 id="五、Mysql安装及配置"><a href="#五、Mysql安装及配置" class="headerlink" title="五、Mysql安装及配置"></a>五、Mysql安装及配置</h1><ul>
+<li>安装过程详见相关安装图解。</li>
+</ul>
+<h2 id="5-1-安装两个mysql数据库步骤"><a href="#5-1-安装两个mysql数据库步骤" class="headerlink" title="5.1 安装两个mysql数据库步骤"></a>5.1 安装两个mysql数据库步骤</h2><p>安装时注意安装目录，数据目录和端口号不同即可。</p>
+<h1 id="六、Oracle安装及配置"><a href="#六、Oracle安装及配置" class="headerlink" title="六、Oracle安装及配置"></a>六、Oracle安装及配置</h1><ul>
+<li>安装过程详见相关安装图解。</li>
+</ul>
+<h1 id="七、SVN-安装及初始化操作"><a href="#七、SVN-安装及初始化操作" class="headerlink" title="七、SVN 安装及初始化操作"></a>七、SVN 安装及初始化操作</h1><ul>
+<li>安装过程详见相关安装图解。根据需要安装客户端/服务端/SunEclipse插件</li>
+<li>测试cmd–svn 服务器是否</li>
+</ul>
+<h1 id="七、Git-安装及初始化操作"><a href="#七、Git-安装及初始化操作" class="headerlink" title="七、Git 安装及初始化操作"></a>七、Git 安装及初始化操作</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> 详见 <a href="https://note.youdao.com/" target="_blank" rel="noopener">Git使用教程</a></li>
+</ul>
+<h1 id="八、Maven项目管理与配置"><a href="#八、Maven项目管理与配置" class="headerlink" title="八、Maven项目管理与配置"></a>八、Maven项目管理与配置</h1><h1 id="九、mongoDB安装与配置"><a href="#九、mongoDB安装与配置" class="headerlink" title="九、mongoDB安装与配置"></a>九、mongoDB安装与配置</h1><h1 id="十、JDBC-配置-、-Dom4j配置"><a href="#十、JDBC-配置-、-Dom4j配置" class="headerlink" title="十、JDBC 配置 、 Dom4j配置"></a>十、JDBC 配置 、 Dom4j配置</h1><p>引入相关JAR包即可。</p>
+<h1 id="十一、参考资料"><a href="#十一、参考资料" class="headerlink" title="十一、参考资料"></a>十一、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/yangxueyong/article/details/6130065/" target="_blank" rel="noopener">Tomcat部署Web应用方法总结</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/xdp-gacl/p/3734395.html/" target="_blank" rel="noopener">JavaWeb学习总结(二)–Tomcat服务器学习和使用(一)</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/xdp-gacl/p/3744053.html/" target="_blank" rel="noopener">JavaWeb学习总结(三)–Tomcat服务器学习和使用(二)</a></li>
+</ul>
+<h1 id="十二、结语"><a href="#十二、结语" class="headerlink" title="十二、结语"></a>十二、结语</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Windows系统）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/持续集成及自动化运维/DevOps 自动化运维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。</p>
+<ul>
+<li>大致步骤：</li>
+</ul>
+<blockquote>
+<p>代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC</p>
+</blockquote>
+<p> 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。<br> 代码托管：码云<br> 云服务器：阿里云 CentOS 7</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2019.03.10</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、Paas-教程"><a href="#三、Paas-教程" class="headerlink" title="三、Paas 教程"></a>三、Paas 教程</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://gitee.com/Yshow123/WenDa/paas/code_pipeline" target="_blank" rel="noopener">阿里云 CodePipeline 服务 - 文档</a></li>
+</ul>
+<h1 id="四、参考文章"><a href="#四、参考文章" class="headerlink" title="四、参考文章"></a>四、参考文章</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/devops/2613029?fr=aladdin" target="_blank" rel="noopener">DevOps - 百度百科</a></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zhihu.com/question/24413538?sort=created" target="_blank" rel="noopener">你所在的公司是如何实施DevOps的？</a></li>
+</ul>
+<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><p>码云上面文档写的很详细，就不做赘言了~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/持续集成及自动化运维/DevOps 自动化运维/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Linux系统 ）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1151,256 +1401,6 @@ Type variables(类型变量): 128, 0, 25   红罗色
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Linux系统 ）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/持续集成及自动化运维/DevOps 自动化运维" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。</p>
-<ul>
-<li>大致步骤：</li>
-</ul>
-<blockquote>
-<p>代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC</p>
-</blockquote>
-<p> 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。<br> 代码托管：码云<br> 云服务器：阿里云 CentOS 7</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2019.03.10</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、Paas-教程"><a href="#三、Paas-教程" class="headerlink" title="三、Paas 教程"></a>三、Paas 教程</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://gitee.com/Yshow123/WenDa/paas/code_pipeline" target="_blank" rel="noopener">阿里云 CodePipeline 服务 - 文档</a></li>
-</ul>
-<h1 id="四、参考文章"><a href="#四、参考文章" class="headerlink" title="四、参考文章"></a>四、参考文章</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/devops/2613029?fr=aladdin" target="_blank" rel="noopener">DevOps - 百度百科</a></li>
-</ul>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zhihu.com/question/24413538?sort=created" target="_blank" rel="noopener">你所在的公司是如何实施DevOps的？</a></li>
-</ul>
-<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><p>码云上面文档写的很详细，就不做赘言了~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/持续集成及自动化运维/DevOps 自动化运维/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-[置顶] 博客文章/SC05 项目配置 &amp; 运维 &amp; 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Windows系统）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文记录了Java开发环境搭建与项目部署，以及日常应用过程中涉及到的常用命令和操作。测试环境：Windows10 系统。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.02.06</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2018.03.06</td>
-<td style="text-align:center">1.1</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">Git单独列出</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、JDK的安装及环境变量的配置"><a href="#三、JDK的安装及环境变量的配置" class="headerlink" title="三、JDK的安装及环境变量的配置"></a>三、JDK的安装及环境变量的配置</h1><p><img src="http://img.cdn.lapland.top/Image%201517908277.png" alt="image"></p>
-<h2 id="3-1、Java运行环境配置"><a href="#3-1、Java运行环境配置" class="headerlink" title="3.1、Java运行环境配置"></a>3.1、Java运行环境配置</h2><p>配置环境变量是为了让Java jdk\bin目录下的工具，可以在任意目录下运行，原因是，将该工具所在目录告诉了系统，当使用该工具时，由系统帮我们去找指定的目录。</p>
-<h3 id="3-11、PATH环境变量"><a href="#3-11、PATH环境变量" class="headerlink" title="3.11、PATH环境变量"></a>3.11、PATH环境变量</h3><p>作用是指定命令搜索路径，在shell下面执行命令时，它会到PATH变量所指定的路径中查找看是否能找到相应的命令程序。我们需要把 jdk安装目录下的bin目录增加到现有的PATH变量中，bin目录中包含经常要用到的可执行文件如Javac/Java/Javadoc等，设置好 PATH变量后，就可以在任何目录下执行Javac/Java等工具了。</p>
-<h3 id="3-12、CLASSPATH环境变量"><a href="#3-12、CLASSPATH环境变量" class="headerlink" title="3.12、CLASSPATH环境变量"></a>3.12、CLASSPATH环境变量</h3><p>作用是指定类搜索路径，要使用已经编写好的类，前提当然是能够找到它们了，JVM就是通过CLASSPTH来寻找类的。我们需要把jdk安装目录下的lib子目录中的dt.jar和tools.jar设置到CLASSPATH中，当然，当前目录“.”也必须加入到该变量中。</p>
-<h3 id="3-13、JAVA-HOME环境变量"><a href="#3-13、JAVA-HOME环境变量" class="headerlink" title="3.13、JAVA_HOME环境变量"></a>3.13、JAVA_HOME环境变量</h3><p>它指向jdk的安装目录，Eclipse/NetBeans/Tomcat等软件就是通过搜索JAVA_HOME变量来找到并使用安装好的jdk。</p>
-<h3 id="3-14、永久配置方式"><a href="#3-14、永久配置方式" class="headerlink" title="3.14、永久配置方式"></a>3.14、永久配置方式</h3><pre><code>Java_Home： C:\Program Files\Java\jdk1.7.0_07
-Path:       %Java_Home%\bin;%Java_Home%\jre\bin;
-</code></pre><p>特点：系统默认先去当前路径下找要执行的程序，如果没有，再去path中设置的路径下找</p>
-<h3 id="3-15、临时配置方式-DOS"><a href="#3-15、临时配置方式-DOS" class="headerlink" title="3.15、临时配置方式(DOS)"></a>3.15、临时配置方式(DOS)</h3><pre><code>set path=%path%;C:\Program Files\Java\jdk\bin
-set classpath=XXX
-注释：环境变量的配置已经完成，DOS命令下输入Java/Javac/Java –version检测。
-</code></pre><h3 id="3-16、补充几点"><a href="#3-16、补充几点" class="headerlink" title="3.16、补充几点"></a>3.16、补充几点</h3><p>如果没有定义环境变量classpath，Java启动JVM后，会在当前目录下查找要运行的类文件；如果指定了classpath，那么会在指定的目录下查找要运行的类文件。<br>还会在当前目录找吗？两种情况：</p>
-<ul>
-<li>如果classpath的值结尾处有分号，在具体路径中没有找到运行的类，会默认在当前目录再找一次。</li>
-<li>如果classpath的值结果出没有分号，在具体的路径中没有找到运行的类，不会再当前目录找。</li>
-<li>一般不指定分号，如果没有在指定目录下找到要运行的类文件，就报错，这样可以调试程序。</li>
-</ul>
-<h1 id="四、Tomcat服务器的安装与部署"><a href="#四、Tomcat服务器的安装与部署" class="headerlink" title="四、Tomcat服务器的安装与部署"></a>四、Tomcat服务器的安装与部署</h1><h2 id="4-1、搭建JavaWeb应用开发环境——Tomcat服务器"><a href="#4-1、搭建JavaWeb应用开发环境——Tomcat服务器" class="headerlink" title="4.1、搭建JavaWeb应用开发环境——Tomcat服务器"></a>4.1、搭建JavaWeb应用开发环境——Tomcat服务器</h2><p>Tomcat是一个实现了JAVA EE标准的最小的WEB服务器。</p>
-<h2 id="4-2、Tomcat的目录层次结构"><a href="#4-2、Tomcat的目录层次结构" class="headerlink" title="4.2、Tomcat的目录层次结构"></a>4.2、Tomcat的目录层次结构</h2><ul>
-<li>Bin：存放启动和关闭Tomcat的脚本文件。</li>
-<li>Conf：存放Tomcat服务器的各种配置文件。</li>
-<li>Lib：存放Tomcat服务器的支持jar包</li>
-<li>ogs：存放Tomcat的日志文件</li>
-<li>Temp：存放Tomcat运行时产生的临时文件</li>
-<li>Webapps：项目发布目录，存放web资源和java编译后的class文件</li>
-<li>Works：Tomcat工作目录，存放jsp翻译后的的servlet和servlet编译后的class文件</li>
-</ul>
-<h2 id="4-3、Tomcat安装与配置"><a href="#4-3、Tomcat安装与配置" class="headerlink" title="4.3、Tomcat安装与配置"></a>4.3、Tomcat安装与配置</h2><h3 id="4-31、把免安装版Tomcat解压包放到任意文件夹"><a href="#4-31、把免安装版Tomcat解压包放到任意文件夹" class="headerlink" title="4.31、把免安装版Tomcat解压包放到任意文件夹"></a>4.31、把免安装版Tomcat解压包放到任意文件夹</h3><h3 id="4-32、配置conf文件-server-xml"><a href="#4-32、配置conf文件-server-xml" class="headerlink" title="4.32、配置conf文件:server.xml"></a>4.32、配置conf文件:server.xml</h3><ul>
-<li>connector端口号:8080(默认)</li>
-<li>charactor字符集:UFT-8</li>
-</ul>
-<h3 id="4-33、环境变量配置"><a href="#4-33、环境变量配置" class="headerlink" title="4.33、环境变量配置"></a>4.33、环境变量配置</h3><ul>
-<li>Tomcat 7.x 会自动寻找位置，不需要环境变量配置。</li>
-<li>JAVA 工具箱 1.0_ZZ.bat 为 了正确开闭服务所以配置了环境变量如下：<ul>
-<li>CATALINA_HOME = D:\apache-tomcat-7.0.70；</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-34、MyEclipse-配置"><a href="#4-34、MyEclipse-配置" class="headerlink" title="4.34、MyEclipse 配置"></a>4.34、MyEclipse 配置</h3><ul>
-<li>windouws–&gt;Preferences–&gt; TomCat 7.x<ul>
-<li>指定Tomca放置路径D:\apache-tomcat-7.0.70。</li>
-<li>指定JDK 版本为本项目应用版本。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-35、开启Tomcat服务"><a href="#4-35、开启Tomcat服务" class="headerlink" title="4.35、开启Tomcat服务"></a>4.35、开启Tomcat服务</h3><ul>
-<li>Windows系统下，应用D:\apache-tomcat-7.0.70\bin 目录下批处理文件</li>
-<li>startup.bat // 启动服务</li>
-<li>shutdown.bat // 关闭服务</li>
-</ul>
-<h2 id="4-4、部署项目的几种方法"><a href="#4-4、部署项目的几种方法" class="headerlink" title="4.4、部署项目的几种方法"></a>4.4、部署项目的几种方法</h2><h3 id="4-41、静态部署"><a href="#4-41、静态部署" class="headerlink" title="4.41、静态部署"></a>4.41、静态部署</h3><h4 id="4-411-利用Tomcat自动部署"><a href="#4-411-利用Tomcat自动部署" class="headerlink" title="4.411 利用Tomcat自动部署"></a>4.411 利用Tomcat自动部署</h4><pre><code>- 把JSP (war包) 放到Webapps容器中，启动服务
-- 浏览器通过访问http://localhost:8080/news
-</code></pre><p>注：Webapps目录是Tomcat默认的应用目录，当服务器启动时，会加载所有这个目录下的应用。</p>
-<h4 id="4-412-通过MyEclipse部署"><a href="#4-412-通过MyEclipse部署" class="headerlink" title="4.412 通过MyEclipse部署"></a>4.412 通过MyEclipse部署</h4><ul>
-<li>部署按钮，编译源码生成Webapps容器中，启动服务</li>
-<li>运行网页 <a href="http://localhost:8080/news/" target="_blank" rel="noopener">http://localhost:8080/news/</a></li>
-</ul>
-<h4 id="4-413-修改Server-xml文件部署"><a href="#4-413-修改Server-xml文件部署" class="headerlink" title="4.413 修改Server.xml文件部署"></a>4.413 修改Server.xml文件部署</h4><p>一个Tomcat 值负责一个工程</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">Path</span> = <span class="string">"/ItcastOA "</span> <span class="attr">docBase</span> = <span class="string">"E:\JAVA\U100\ItcastOA\WebRoot"</span> <span class="attr">reloadable</span> = <span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>热加载配置 –&gt; 修改java代码后，不用重新部署</li>
-<li>拓展：jsp不用编译，故修改后自动更新</li>
-<li>拓展：xml通过server.xml –&gt; autoDeploy=”true” 实现热加载</li>
-<li>增加自定义web部署文件(推荐使用，不需要重启Tomcat )</li>
-</ul>
-<h3 id="4-42-动态部署"><a href="#4-42-动态部署" class="headerlink" title="4.42 动态部署"></a>4.42 动态部署</h3><h1 id="五、Mysql安装及配置"><a href="#五、Mysql安装及配置" class="headerlink" title="五、Mysql安装及配置"></a>五、Mysql安装及配置</h1><ul>
-<li>安装过程详见相关安装图解。</li>
-</ul>
-<h2 id="5-1-安装两个mysql数据库步骤"><a href="#5-1-安装两个mysql数据库步骤" class="headerlink" title="5.1 安装两个mysql数据库步骤"></a>5.1 安装两个mysql数据库步骤</h2><p>安装时注意安装目录，数据目录和端口号不同即可。</p>
-<h1 id="六、Oracle安装及配置"><a href="#六、Oracle安装及配置" class="headerlink" title="六、Oracle安装及配置"></a>六、Oracle安装及配置</h1><ul>
-<li>安装过程详见相关安装图解。</li>
-</ul>
-<h1 id="七、SVN-安装及初始化操作"><a href="#七、SVN-安装及初始化操作" class="headerlink" title="七、SVN 安装及初始化操作"></a>七、SVN 安装及初始化操作</h1><ul>
-<li>安装过程详见相关安装图解。根据需要安装客户端/服务端/SunEclipse插件</li>
-<li>测试cmd–svn 服务器是否</li>
-</ul>
-<h1 id="七、Git-安装及初始化操作"><a href="#七、Git-安装及初始化操作" class="headerlink" title="七、Git 安装及初始化操作"></a>七、Git 安装及初始化操作</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> 详见 <a href="https://note.youdao.com/" target="_blank" rel="noopener">Git使用教程</a></li>
-</ul>
-<h1 id="八、Maven项目管理与配置"><a href="#八、Maven项目管理与配置" class="headerlink" title="八、Maven项目管理与配置"></a>八、Maven项目管理与配置</h1><h1 id="九、mongoDB安装与配置"><a href="#九、mongoDB安装与配置" class="headerlink" title="九、mongoDB安装与配置"></a>九、mongoDB安装与配置</h1><h1 id="十、JDBC-配置-、-Dom4j配置"><a href="#十、JDBC-配置-、-Dom4j配置" class="headerlink" title="十、JDBC 配置 、 Dom4j配置"></a>十、JDBC 配置 、 Dom4j配置</h1><p>引入相关JAR包即可。</p>
-<h1 id="十一、参考资料"><a href="#十一、参考资料" class="headerlink" title="十一、参考资料"></a>十一、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/yangxueyong/article/details/6130065/" target="_blank" rel="noopener">Tomcat部署Web应用方法总结</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/xdp-gacl/p/3734395.html/" target="_blank" rel="noopener">JavaWeb学习总结(二)–Tomcat服务器学习和使用(一)</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/xdp-gacl/p/3744053.html/" target="_blank" rel="noopener">JavaWeb学习总结(三)–Tomcat服务器学习和使用(二)</a></li>
-</ul>
-<h1 id="十二、结语"><a href="#十二、结语" class="headerlink" title="十二、结语"></a>十二、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/Java 开发环境搭建及项目部署（Windows系统）/">展开全文 >></a>
         </p>
       
 

@@ -160,52 +160,16 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Tomcat类加载机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java 非空判断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿 </td>
-</tr>
-</tbody>
-</table>
+        <p>那些地方要做非空判断</p>
 <ul>
-<li>加载顺序：</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://segmentfault.com/q/1010000005172195" target="_blank" rel="noopener">关于java方法里的非空判断的疑问，谢谢</a></li>
 </ul>
-<ol>
-<li>$java_home/lib 目录下的java核心api </li>
-<li>$java_home/lib/ext 目录下的java扩展jar包</li>
-<li>java -classpath/-Djava.class.path所指的目录下的类与jar包</li>
-<li>$CATALINA_HOME/common目录下按照文件夹的顺序从上往下依次加载</li>
-<li>$CATALINA_HOME/server目录下按照文件夹的顺序从上往下依次加载</li>
-<li>$CATALINA_BASE/shared目录下按照文件夹的顺序从上往下依次加载</li>
-<li>我们的项目路径/WEB-INF/classes下的class文件</li>
-<li>我们的项目路径/WEB-INF/lib下的jar文件</li>
-</ol>
-<ul>
-<li>在同一个文件夹下，jar包是按顺序从上到下依次加载</li>
-</ul>
-<blockquote>
-<p>由ClassLoader的双亲委托模式加载机制我们可以知道，假设两个包名和类名完全相同的class文件不再同一个jar包，如果一个class文件已经被加载java虚拟机里了，那么后面的相同的class文件就不会被加载了。</p>
-</blockquote>
-<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><h1 id="六、参考资料"><a href="#六、参考资料" class="headerlink" title="六、参考资料"></a>六、参考资料</h1>
+
       
 
       
@@ -217,7 +181,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Tomcat类加载机制/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java 非空判断/">展开全文 >></a>
         </p>
       
 
@@ -755,53 +719,6 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java开发常用Util工具类-StringUtil、CollectionUtil等" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -851,6 +768,53 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java开发常用Util工具类-StringUtil、CollectionUtil等/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC01 程序设计基础/Java反射机制及其项目应用/">展开全文 >></a>
         </p>
       
 
@@ -1112,7 +1076,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p><a href="http://www.lapland.top/" target="_blank" rel="noopener">Lapland</a> 是作者尝试搭建的第一个个人网站，初步构想网站主体内容为”技术博客“和”个人思维体系建设“两大模块，如有需要会将”人工智障研究中心模块“作为子域名单独划分出。<br><br>本文作为”Lapland开发实录”系列文章的开篇和索引，以日志的形式记录网站的整个发展历程。</p>
+<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p><a href="http://www.lapland.top/">Lapland</a> 是作者尝试搭建的第一个个人网站，初步构想网站主体内容为”技术博客“和”个人思维体系建设“两大模块，如有需要会将”人工智障研究中心模块“作为子域名单独划分出。<br><br>本文作为”Lapland开发实录”系列文章的开篇和索引，以日志的形式记录网站的整个发展历程。</p>
 <h1 id="二、建站日志"><a href="#二、建站日志" class="headerlink" title="二、建站日志"></a>二、建站日志</h1><ul>
 <li style="list-style: none"><input type="checkbox" checked> 2017-03-26：申请<a href="http://www.Lapland.top万网域名，有效期一年；" target="_blank" rel="noopener">www.Lapland.top万网域名，有效期一年；</a></li>
 <li style="list-style: none"><input type="checkbox" checked> 2017-03-26：购买腾讯云主机，有效期一个月；</li>
