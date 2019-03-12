@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>不系之舟</title>
+  <title>基于Bootstrap-Table的分页查询功能实现 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] 一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.">
-<meta name="keywords" content="Java">
+  <meta name="description" content="一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
+<meta name="keywords" content="Bootstrap-Table,分页组件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不系之舟">
+<meta property="og:title" content="基于Bootstrap-Table的分页查询功能实现">
 <meta property="og:url" content="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="[TOC] 一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.">
+<meta property="og:description" content="一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201533665654.png">
-<meta property="og:updated_time" content="2018-12-11T05:02:06.000Z">
+<meta property="og:updated_time" content="2019-03-12T13:49:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不系之舟">
-<meta name="twitter:description" content="[TOC] 一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。 二、版本   编号 修改日期 版本号 修改人 修改说明      1 2018.">
+<meta name="twitter:title" content="基于Bootstrap-Table的分页查询功能实现">
+<meta name="twitter:description" content="一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/Image%201533665654.png">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -168,11 +168,26 @@
             <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基于Bootstrap-Table的分页查询功能实现
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。</p>
 <p>Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。</p>
+<a id="more"></a>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
 <tr>
@@ -211,7 +226,7 @@
 <ul>
 <li>pageHelp-2.js</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 前端分页</span></span><br><span class="line"><span class="comment"> * @author zz</span></span><br><span class="line"><span class="comment"> * @date 上午2:06 18-08-08</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化bootstrap-table的内容</span></span><br><span class="line">    <span class="keyword">var</span> queryUrl = <span class="string">'../../../json/tableHelpData-2.json'</span>;</span><br><span class="line">    $(<span class="string">'#tab-2'</span>).bootstrapTable(&#123;</span><br><span class="line">        method: <span class="string">'get'</span>,                  <span class="comment">//请求方式（*）</span></span><br><span class="line">        url: queryUrl,                  <span class="comment">//请求后台的URL（*）</span></span><br><span class="line">        <span class="comment">// height: 500,                 //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度</span></span><br><span class="line">        cache: <span class="literal">false</span>,                   <span class="comment">//是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）</span></span><br><span class="line">        pagination: <span class="literal">true</span>,               <span class="comment">//是否显示分页条（*）</span></span><br><span class="line">        sidePagination: <span class="string">'clinet'</span>,       <span class="comment">//分页方式：client客户端分页，server服务端分页（*）</span></span><br><span class="line">        <span class="comment">// queryParams: queryParams,</span></span><br><span class="line">        responseHandler: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">// 对返回的数据格式进行处理(因为统一过接口返回格式)</span></span><br><span class="line">            <span class="keyword">return</span> res.data;</span><br><span class="line">        &#125;,</span><br><span class="line">        pageNumber: <span class="number">1</span>,                  <span class="comment">//初始化加载第一页，默认第一页,并记录</span></span><br><span class="line">        pageSize: <span class="number">5</span>,                    <span class="comment">//每页的记录行数（*）</span></span><br><span class="line">        pageList: [<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>],      <span class="comment">//可供选择的每页的行数（*）</span></span><br><span class="line"></span><br><span class="line">        striped: <span class="literal">true</span>,                  <span class="comment">//是否显示行间隔色</span></span><br><span class="line">        search: <span class="literal">true</span>,                   <span class="comment">//是否显示表格搜索</span></span><br><span class="line">        showRefresh: <span class="literal">true</span>,              <span class="comment">//是否显示刷新按钮</span></span><br><span class="line">        showColumns: <span class="literal">true</span>,              <span class="comment">//是否显示所有的列（选择显示的列）</span></span><br><span class="line">        clickToSelect: <span class="literal">true</span>,            <span class="comment">//是否启用点击选中行</span></span><br><span class="line">        showToggle: <span class="literal">true</span>,               <span class="comment">//是否显示详细视图和列表视图的切换按钮</span></span><br><span class="line">        cardView: <span class="literal">false</span>,                <span class="comment">//是否显示详细视图</span></span><br><span class="line">        showExport: <span class="literal">true</span>,               <span class="comment">//是否数据导出按钮</span></span><br><span class="line">        exportDataType: <span class="string">"all"</span>, </span><br><span class="line"></span><br><span class="line">        toolbar: <span class="string">'#toolbar'</span>,            <span class="comment">//指定工作栏</span></span><br><span class="line">        toolbarAlign: <span class="string">'right'</span>,          <span class="comment">//工具栏对齐方式</span></span><br><span class="line">        buttonsAlign: <span class="string">'right'</span>,          <span class="comment">//按钮对齐方式</span></span><br><span class="line"></span><br><span class="line">        columns: [</span><br><span class="line">            &#123;</span><br><span class="line">                checkbox: <span class="literal">true</span>,</span><br><span class="line">                width: <span class="number">25</span>,</span><br><span class="line">                align: <span class="string">'center'</span>,</span><br><span class="line">                valign: <span class="string">'middle'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'ID'</span>,</span><br><span class="line">                field: <span class="string">'id'</span>,</span><br><span class="line">                visible: <span class="literal">true</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'父级'</span>,</span><br><span class="line">                field: <span class="string">'pid'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'状态'</span>,</span><br><span class="line">                field: <span class="string">'status'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'名称'</span>,</span><br><span class="line">                field: <span class="string">'name'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'权限'</span>,</span><br><span class="line">                field: <span class="string">'permissionValue'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        locale: <span class="string">'zh-CN'</span>,<span class="comment">//中文支持,</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">operateFormatter</span>(<span class="params">value, row, index</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (value == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'&lt;i class="fa fa-lock" style="color:red"&gt;&lt;/i&gt;'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'&lt;i class="fa fa-unlock" style="color:green"&gt;&lt;/i&gt;'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'数据错误'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 前端查询，提交到服务器端的参数，可无</span></span><br><span class="line">    <span class="comment">// function queryParams(params) &#123;</span></span><br><span class="line">    <span class="comment">//     return &#123;</span></span><br><span class="line">    <span class="comment">//         // Name: $('#search_name').val(),</span></span><br><span class="line">    <span class="comment">//         // Tel: $('#search_tel').val()</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 前端分页</span></span><br><span class="line"><span class="comment"> * @author zz</span></span><br><span class="line"><span class="comment"> * @date 上午2:06 18-08-08</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化bootstrap-table的内容</span></span><br><span class="line">    <span class="keyword">var</span> queryUrl = <span class="string">'../../../json/tableHelpData-2.json'</span>;</span><br><span class="line">    $(<span class="string">'#tab-2'</span>).bootstrapTable(&#123;</span><br><span class="line">        method: <span class="string">'get'</span>,                  <span class="comment">//请求方式（*）</span></span><br><span class="line">        url: queryUrl,                  <span class="comment">//请求后台的URL（*）</span></span><br><span class="line">        <span class="comment">// height: 500,                 //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度</span></span><br><span class="line">        cache: <span class="literal">false</span>,                   <span class="comment">//是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）</span></span><br><span class="line">        pagination: <span class="literal">true</span>,               <span class="comment">//是否显示分页条（*）</span></span><br><span class="line">        sidePagination: <span class="string">'clinet'</span>,       <span class="comment">//分页方式：client客户端分页，server服务端分页（*）</span></span><br><span class="line">        <span class="comment">// queryParams: queryParams,</span></span><br><span class="line">        responseHandler: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">// 对返回的数据格式进行处理(因为统一过接口返回格式)</span></span><br><span class="line">            <span class="keyword">return</span> res.data;</span><br><span class="line">        &#125;,</span><br><span class="line">        pageNumber: <span class="number">1</span>,                  <span class="comment">//初始化加载第一页，默认第一页,并记录</span></span><br><span class="line">        pageSize: <span class="number">5</span>,                    <span class="comment">//每页的记录行数（*）</span></span><br><span class="line">        pageList: [<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>],      <span class="comment">//可供选择的每页的行数（*）</span></span><br><span class="line"></span><br><span class="line">        striped: <span class="literal">true</span>,                  <span class="comment">//是否显示行间隔色</span></span><br><span class="line">        search: <span class="literal">true</span>,                   <span class="comment">//是否显示表格搜索</span></span><br><span class="line">        showRefresh: <span class="literal">true</span>,              <span class="comment">//是否显示刷新按钮</span></span><br><span class="line">        showColumns: <span class="literal">true</span>,              <span class="comment">//是否显示所有的列（选择显示的列）</span></span><br><span class="line">        clickToSelect: <span class="literal">true</span>,            <span class="comment">//是否启用点击选中行</span></span><br><span class="line">        showToggle: <span class="literal">true</span>,               <span class="comment">//是否显示详细视图和列表视图的切换按钮</span></span><br><span class="line">        cardView: <span class="literal">false</span>,                <span class="comment">//是否显示详细视图</span></span><br><span class="line">        showExport: <span class="literal">true</span>,               <span class="comment">//是否数据导出按钮</span></span><br><span class="line">        exportDataType: <span class="string">"all"</span>,</span><br><span class="line"></span><br><span class="line">        toolbar: <span class="string">'#toolbar'</span>,            <span class="comment">//指定工作栏</span></span><br><span class="line">        toolbarAlign: <span class="string">'right'</span>,          <span class="comment">//工具栏对齐方式</span></span><br><span class="line">        buttonsAlign: <span class="string">'right'</span>,          <span class="comment">//按钮对齐方式</span></span><br><span class="line"></span><br><span class="line">        columns: [</span><br><span class="line">            &#123;</span><br><span class="line">                checkbox: <span class="literal">true</span>,</span><br><span class="line">                width: <span class="number">25</span>,</span><br><span class="line">                align: <span class="string">'center'</span>,</span><br><span class="line">                valign: <span class="string">'middle'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'ID'</span>,</span><br><span class="line">                field: <span class="string">'id'</span>,</span><br><span class="line">                visible: <span class="literal">true</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'父级'</span>,</span><br><span class="line">                field: <span class="string">'pid'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'状态'</span>,</span><br><span class="line">                field: <span class="string">'status'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'名称'</span>,</span><br><span class="line">                field: <span class="string">'name'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                title: <span class="string">'权限'</span>,</span><br><span class="line">                field: <span class="string">'permissionValue'</span>,</span><br><span class="line">                sortable: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        locale: <span class="string">'zh-CN'</span>,<span class="comment">//中文支持,</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">operateFormatter</span>(<span class="params">value, row, index</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (value == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'&lt;i class="fa fa-lock" style="color:red"&gt;&lt;/i&gt;'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'&lt;i class="fa fa-unlock" style="color:green"&gt;&lt;/i&gt;'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'数据错误'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 前端查询，提交到服务器端的参数，可无</span></span><br><span class="line">    <span class="comment">// function queryParams(params) &#123;</span></span><br><span class="line">    <span class="comment">//     return &#123;</span></span><br><span class="line">    <span class="comment">//         // Name: $('#search_name').val(),</span></span><br><span class="line">    <span class="comment">//         // Tel: $('#search_tel').val()</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="3-2、请求返回数据"><a href="#3-2、请求返回数据" class="headerlink" title="3.2、请求返回数据"></a>3.2、请求返回数据</h2><p>如下所示，前端分页返回的是一个JSON格式数组，服务端分页返回的是一个必须包含total和rows字段的JSON格式数据（其他说明字段酌情添加）。</p>
 <p>又由于我的接口统一过返回格式，故BootStrap-table接收数据后，需要做处理，添加如下代码。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#tab-1'</span>).bootstrapTable(&#123;</span><br><span class="line">    responseHandler: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">// 对返回的数据格式进行处理(因为统一过接口返回格式)</span></span><br><span class="line">        <span class="keyword">return</span> res.data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -308,7 +323,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Bootstrap-Table</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">分页组件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -372,18 +413,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/通过Web页面上传下载功能实现/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/国际化(i18n)应用/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          国际化(i18n)应用
         
       </div>
     </a>
   
   
-    <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Lombok使用方法简介/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/网页集成富文本编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Apache POI使用入门</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -424,7 +465,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现" data-title data-url="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现/"></div>
+	<div class="ds-thread" data-thread-key="[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现" data-title="基于Bootstrap-Table的分页查询功能实现" data-url="http://www.lapland.top/2019/03/12/[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -543,19 +584,819 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拦截器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">监听器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">相对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码评审</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Ionic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">混合开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速迭代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">业务逻辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象编程，SOLID原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术选型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口调用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">l引入公共页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Token</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">登录认证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">国际化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">i18n</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Apache POI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">log4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">下载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MyEclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sublime textn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动静分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Nginx安装配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动化运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发环境搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统瓶颈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XSS攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSRF攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">密码攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Shodan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP-IP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">正向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">破解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Crawler4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebMagic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ETL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+                <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发组现状</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Junit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">地理信息</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">行业分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电力项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">录像容量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Three.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">webGL</a>
               </li>
             
             <div class="clearfix"></div>

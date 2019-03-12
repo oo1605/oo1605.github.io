@@ -164,264 +164,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/网络爬虫/XPath 选择器简易教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC06 软件测试 &amp; 性能优化/代码评审" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/代码评审/">代码评审</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/代码评审/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>为了写爬虫，接触到 XPath 选择器，语法比较简单，谨以此文记录语法规则，便于查询。</p>
+        <p>CI持续集成系统环境—部署gerrit环境完整记录</p>
+<p>code review</p>
+<p>质量缺陷类型<br>空指针引用，资源泄漏，死锁，内存崩溃，安全缺陷/缓冲区溢出，API使用错误，未初始化变量，类层次结构不一致，性能效率低下，安全最佳实践违反，代码维护问题 ，程序挂起，错误处理问题，并行数据访问违规，竞态条件，错误表达，控制数据流问题，内存非法访问，不安全数据处理。</p>
+<p>Git之CodeReview流程</p>
 <ul>
-<li>XPath 是一门在XML文档中查找信息的语言。</li>
-<li>XPath 使用路径表达式在XML文档中进行导航；</li>
-<li>XPath 包含一个标准函数库；</li>
-<li>XPath 是XSLT中的主要元素；</li>
-<li>XPath 是一个 W3C 标准。</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/wenhx/p/How-We-Code-Review.html/" target="_blank" rel="noopener">我们是怎么做Code Review的</a></li>
 </ul>
-<h2 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.01.31</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿  </td>
-</tr>
-</tbody>
-</table>
-<h2 id="三、相关术语"><a href="#三、相关术语" class="headerlink" title="三、相关术语"></a>三、相关术语</h2><h3 id="3-1、XPath-节点"><a href="#3-1、XPath-节点" class="headerlink" title="3.1、XPath 节点"></a>3.1、XPath 节点</h3><p>在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档（根）节点。XML 文档是被作为节点树来对待的。树的根被称为文档节点或者根节点。</p>
-<ul>
-<li>基本值（Atomic value）</li>
-</ul>
-<p>基本值是无父或无子的节点。</p>
-<ul>
-<li>父（Parent）</li>
-</ul>
-<p>每个元素以及属性都有一个父。</p>
-<ul>
-<li>子（Children）</li>
-</ul>
-<p>元素节点可有零个、一个或多个子。</p>
-<ul>
-<li>同胞（Sibling）</li>
-</ul>
-<p>拥有相同的父的节点。</p>
-<ul>
-<li>先辈（Ancestor）</li>
-</ul>
-<p>某节点的父、父的父，等等。</p>
-<ul>
-<li>后代（Descendant）</li>
-</ul>
-<p>某个节点的子，子的子，等等。</p>
-<h3 id="3-2、XPath-语法"><a href="#3-2、XPath-语法" class="headerlink" title="3.2、XPath 语法"></a>3.2、XPath 语法</h3><p>XPath 使用路径表达式来选取 XML 文档中的节点或节点集。节点是通过沿着路径 (path) 或者步 (steps) 来选取的。</p>
-<h4 id="3-21、路径"><a href="#3-21、路径" class="headerlink" title="3.21、路径"></a>3.21、路径</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">路径表达式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">nodename</td>
-<td style="text-align:center">相对路径，选取此节点的所有子节点</td>
-</tr>
-<tr>
-<td style="text-align:center">/bookstore</td>
-<td style="text-align:center">绝对路径，从根节点选取bookstore</td>
-</tr>
-<tr>
-<td style="text-align:center">//book</td>
-<td style="text-align:center">选取属于 bookstore 的子元素的所有 book 元素</td>
-</tr>
-<tr>
-<td style="text-align:center">@lang</td>
-<td style="text-align:center">选取名为 lang 的所有属性</td>
-</tr>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">表示当前节点</td>
-</tr>
-<tr>
-<td style="text-align:center">..</td>
-<td style="text-align:center">表示当前节点的父节点</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-21、选取若干路径"><a href="#3-21、选取若干路径" class="headerlink" title="3.21、选取若干路径"></a>3.21、选取若干路径</h4><p>通过在路径表达式中使用”|”运算符，选取若干个路径。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">路径表达式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">//title</td>
-<td style="text-align:center">//price</td>
-<td>选取文档中的所有 title 和 price 元素。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-22、谓语"><a href="#3-22、谓语" class="headerlink" title="3.22、谓语"></a>3.22、谓语</h4><p>谓语用来查找某个特定的节点或者包含某个指定的值的节点。谓语被嵌在方括号中。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">路径表达式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">/bookstore/book[1]</td>
-<td style="text-align:center">选取属于 bookstore 子元素的第一个 book 元素</td>
-</tr>
-<tr>
-<td style="text-align:center">/bookstore/book[last()]</td>
-<td style="text-align:center">选取属于 bookstore 子元素的最后一个 book 元素</td>
-</tr>
-<tr>
-<td style="text-align:center">//title[@lang]</td>
-<td style="text-align:center">选取所有拥有名为 lang 的属性的 title 元素</td>
-</tr>
-<tr>
-<td style="text-align:center">/bookstore/book[price&gt;35.00]</td>
-<td style="text-align:center">选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-23、通配符"><a href="#3-23、通配符" class="headerlink" title="3.23、通配符"></a>3.23、通配符</h4><p>XPath 通配符可用来选取未知的 XML 元素。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">路径表达式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">/bookstore/*</td>
-<td style="text-align:center">选取bookstore元素的所有子元素</td>
-</tr>
-<tr>
-<td style="text-align:center">//*</td>
-<td style="text-align:center">选取文档中的所有元素</td>
-</tr>
-<tr>
-<td style="text-align:center">//title[@*]</td>
-<td style="text-align:center">选取所有带有属性的title元素</td>
-</tr>
-</tbody>
-</table>
-<h4 id="3-24、XPath-运算符"><a href="#3-24、XPath-运算符" class="headerlink" title="3.24、XPath 运算符"></a>3.24、XPath 运算符</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">路径表达式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td>计算两个节点集</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">加法 </td>
-</tr>
-<tr>
-<td style="text-align:center">-</td>
-<td style="text-align:center">减法 </td>
-</tr>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">乘法 </td>
-</tr>
-<tr>
-<td style="text-align:center">div</td>
-<td style="text-align:center">除法 </td>
-</tr>
-<tr>
-<td style="text-align:center">=</td>
-<td style="text-align:center">等于</td>
-</tr>
-<tr>
-<td style="text-align:center">!=</td>
-<td style="text-align:center">不等于</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;</td>
-<td style="text-align:center">小于</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;=</td>
-<td style="text-align:center">小于或等于    </td>
-</tr>
-<tr>
-<td style="text-align:center">&gt;</td>
-<td style="text-align:center">大于    </td>
-</tr>
-<tr>
-<td style="text-align:center">&gt;=</td>
-<td style="text-align:center">大于或等于</td>
-</tr>
-<tr>
-<td style="text-align:center">or</td>
-<td style="text-align:center">或    </td>
-</tr>
-<tr>
-<td style="text-align:center">and</td>
-<td style="text-align:center">与</td>
-</tr>
-<tr>
-<td style="text-align:center">mod</td>
-<td style="text-align:center">计算除法的余数</td>
-</tr>
-</tbody>
-</table>
-<h2 id="四、XML实例"><a href="#四、XML实例" class="headerlink" title="四、XML实例"></a>四、XML实例</h2><ul>
-<li>books.xml</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bookstore</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"COOKING"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>Everyday Italian<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>Giada De Laurentiis<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">year</span>&gt;</span>2005<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">price</span>&gt;</span>30.00<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"CHILDREN"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>Harry Potter<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>J K. Rowling<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">year</span>&gt;</span>2005<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">price</span>&gt;</span>29.99<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"WEB"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>XQuery Kick Start<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>James McGovern<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>Per Bothner<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>Kurt Cagle<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>James Linn<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>Vaidyanathan Nagarajan<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">year</span>&gt;</span>2003<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">price</span>&gt;</span>49.99<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"WEB"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>Learning XML<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">author</span>&gt;</span>Erik T. Ray<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">year</span>&gt;</span>2003<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">price</span>&gt;</span>39.95<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bookstore</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>加载XML文档</li>
-</ul>
-<p>所有现代浏览器都支持使用 XMLHttpRequest 来加载 XML 文档的方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlhttp=<span class="keyword">new</span> XMLHttpRequest()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>选取节点</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlDoc.evaluate(xpath, xmlDoc, <span class="literal">null</span>, XPathResult.ANY_TYPE,<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>选取所有 title</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bookstore/book/title</span><br></pre></td></tr></table></figure>
-<ul>
-<li>选取所有价格</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bookstore/book/price/text()</span><br></pre></td></tr></table></figure>
-<h2 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">CSS选择器简易教程</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">正则表达式器简易教程</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">jQuery选择器简易教程</a></li>
-</ul>
-<h2 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.runoob.com/xpath/xpath-tutorial.html" target="_blank" rel="noopener">XPath 教程</a> </li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/tina-cherish/p/7127812.htmll" target="_blank" rel="noopener">Xpath 与Css 定位方式的比较 </a> </li>
-</ul>
-<h2 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h2><p>毕竟不常用，不必花费太多时间研究，仅供个人参考。</p>
 
       
 
@@ -430,11 +199,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码评审</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/网络爬虫/XPath 选择器简易教程/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/代码评审/">展开全文 >></a>
         </p>
       
 
@@ -464,11 +255,31 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/网络爬虫/正则表达式器简易教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/README/">README</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/README/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><blockquote>
+<p>本项目是个人笔记的Git托管，并作为博客内容源。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/03/12/README/#more">more >></a>
         
       
 
@@ -477,11 +288,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/杂乱//" class="article-tag-list-link color3">杂乱</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/网络爬虫/正则表达式器简易教程/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/README/">展开全文 >></a>
         </p>
       
 
@@ -511,39 +344,30 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/大数据基础/浅谈ETL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC09 项目实战 &amp; 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/">Hexo配合GitHub搭建个人技术博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>ETL是将业务系统的数据经过抽取、清洗转换之后加载到数据仓库的过程，目的是将企业中的分散、零乱、标准不统一的数据整合到一起，为企业的决策提供分析依据。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.07.16</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、占位"><a href="#3-1、占位" class="headerlink" title="3.1、占位"></a>3.1、占位</h2><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/yjd_hycf_space/p/7772722.html" target="_blank" rel="noopener">ETL讲解（很详细！！！）</a></li>
+        <p>hexo搭建个人博客</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo - 官网</a></li>
 </ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
 
       
 
@@ -552,11 +376,41 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/项目实战-日常瞎折腾系列//" class="article-tag-list-link color5">项目实战 & 日常瞎折腾系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/大数据基础/浅谈ETL/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/">展开全文 >></a>
         </p>
       
 
@@ -586,481 +440,33 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/应用场景/数据可视化行业分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC10 移动端开发/Ionic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC10 移动端开发/Ionic/">Ionic</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC10 移动端开发/Ionic/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-  <html>
-    <head><meta name="generator" content="Hexo 3.8.0">
-      <title>数据可视化行业分析</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+        <p>安装Node.js和NPM<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure></p>
+<p>-配置npm国内镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.taobao.org/</span><br></pre></td></tr></table></figure></p>
+<p>安装最新版本的 cordova 和 ionic 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cordova ionic@3.12.0</span><br></pre></td></tr></table></figure></p>
+<p>更新:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g cordova ionic</span><br></pre></td></tr></table></figure></p>
+<p>启动Ionic<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic serve</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ionic info</span><br></pre></td></tr></table></figure>
 
-      <style> 
-      /**
- * prism.js Github theme based on GitHub's theme.
- * @author Sam Clarke
- */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #333;
-  background: none;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.4;
-
-  -moz-tab-size: 8;
-  -o-tab-size: 8;
-  tab-size: 8;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: .8em;
-  overflow: auto;
-  /* border: 1px solid #ddd; */
-  border-radius: 3px;
-  /* background: #fff; */
-  background: #f5f5f5;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-  background: #f5f5f5;
-}
-
-.token.comment,
-.token.blockquote {
-  color: #969896;
-}
-
-.token.cdata {
-  color: #183691;
-}
-
-.token.doctype,
-.token.punctuation,
-.token.variable,
-.token.macro.property {
-  color: #333;
-}
-
-.token.operator,
-.token.important,
-.token.keyword,
-.token.rule,
-.token.builtin {
-  color: #a71d5d;
-}
-
-.token.string,
-.token.url,
-.token.regex,
-.token.attr-value {
-  color: #183691;
-}
-
-.token.property,
-.token.number,
-.token.boolean,
-.token.entity,
-.token.atrule,
-.token.constant,
-.token.symbol,
-.token.command,
-.token.code {
-  color: #0086b3;
-}
-
-.token.tag,
-.token.selector,
-.token.prolog {
-  color: #63a35c;
-}
-
-.token.function,
-.token.namespace,
-.token.pseudo-element,
-.token.class,
-.token.class-name,
-.token.pseudo-class,
-.token.id,
-.token.url-reference .token.variable,
-.token.attr-name {
-  color: #795da3;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.title,
-.token.title .token.punctuation {
-  font-weight: bold;
-  color: #1d3e81;
-}
-
-.token.list {
-  color: #ed6a43;
-}
-
-.token.inserted {
-  background-color: #eaffea;
-  color: #55a532;
-}
-
-.token.deleted {
-  background-color: #ffecec;
-  color: #bd2c00;
-}
-
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-
-/* JSON */
-.language-json .token.property {
-  color: #183691;
-}
-
-.language-markup .token.tag .token.punctuation {
-  color: #333;
-}
-
-/* CSS */
-code.language-css,
-.language-css .token.function {
-  color: #0086b3;
-}
-
-/* YAML */
-.language-yaml .token.atrule {
-  color: #63a35c;
-}
-
-code.language-yaml {
-  color: #183691;
-}
-
-/* Ruby */
-.language-ruby .token.function {
-  color: #333;
-}
-
-/* Markdown */
-.language-markdown .token.url {
-  color: #795da3;
-}
-
-/* Makefile */
-.language-makefile .token.symbol {
-  color: #795da3;
-}
-
-.language-makefile .token.variable {
-  color: #183691;
-}
-
-.language-makefile .token.builtin {
-  color: #0086b3;
-}
-
-/* Bash */
-.language-bash .token.keyword {
-  color: #0086b3;
-}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
- 
-      </style>
-    </head>
-    <body for="html-export">
-      <div class="mume markdown-preview   ">
-      <div><ul>
-<li><a href="#%E4%B8%80-%E5%89%8D%E8%A8%80">一、前言</a></li>
-<li><a href="#%E4%BA%8C-%E7%89%88%E6%9C%AC">二、版本</a></li>
-<li><a href="#%E4%B8%89-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">三、应用场景</a></li>
-<li><a href="#%E5%9B%9B-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A0%88">四、数据可视化技术栈</a></li>
-<li><a href="#%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%8E%82%E5%95%86%E5%88%86%E6%9E%90">五、可视化解决方案厂商分析</a></li>
-<li><a href="#%E5%85%AD-%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%98%93%E5%B8%82%E5%9C%BA">六、大数据交易市场</a></li>
-<li><a href="#%E4%B8%83-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86">七、大数据采集</a></li>
-<li><a href="#%E5%85%AB-%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E6%A1%88%E4%BE%8B">八、交互技术案例</a></li>
-<li><a href="#%E4%B9%9D-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">九、参考资料</a></li>
-<li><a href="#%E5%8D%81-%E5%90%8E%E8%AE%B0">十、后记</a></li>
-</ul>
-<h1 class="mume-header" id="%E4%B8%80-%E5%89%8D%E8%A8%80">一、前言</h1>
-
-<p>用数据讲故事</p>
-<p>关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台</p>
-<h1 class="mume-header" id="%E4%BA%8C-%E7%89%88%E6%9C%AC">二、版本</h1>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.05.06</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 class="mume-header" id="%E4%B8%89-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">三、应用场景</h1>
-
-<ul>
-<li>
-<p>智慧城市</p>
-<ul>
-<li>智能停车场</li>
-<li>智慧交通</li>
-</ul>
-</li>
-<li>
-<p>行业应用</p>
-<ul>
-<li>电力行业</li>
-<li>交通行业</li>
-<li>机房运维可视化 / 建筑 3D仿真
-<ul>
-<li>3D设计图纸：更准确描绘设计思路，直观审视设计成果</li>
-<li>电子沙盘：3D立体化互动式电子沙盘，创新的园区和建筑展示介绍</li>
-<li>互动式导航：动态线路指引，用于园区、大型建筑的3D地图式导航</li>
-</ul>
-</li>
-<li>工业组态软件
-<ul>
-<li>电信网络拓扑和设备管理</li>
-<li>电力、燃气等工业自动化(HMI/SCADA)领域</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 class="mume-header" id="%E5%9B%9B-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%80%E6%9C%AF%E6%A0%88">四、数据可视化技术栈</h1>
-
-<p><img src="http://img.cdn.lapland.top/Image%201516372887.png" alt="image"></p>
-<h1 class="mume-header" id="%E4%BA%94-%E5%8F%AF%E8%A7%86%E5%8C%96%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%8E%82%E5%95%86%E5%88%86%E6%9E%90">五、可视化解决方案厂商分析</h1>
-
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.digihail.com/" target="_blank" rel="noopener">数字冰雹</a></li>
-</ul>
-<blockquote>
-<p>大屏可视化及BI商业智能领域。3D建模及渲染能力较强，支持数据分析。<br>
-使用技术3ds max、C# 、WPF。<br>
-官网有较多解决方案，相关硬件及性能参数，有新浪/CSND博客。<br>
-完全定制，不支持组件及模板开发。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.vtron.com/mIndex.html" target="_blank" rel="noopener">威创</a></li>
-</ul>
-<blockquote>
-<p>显示设备硬件服务商，专注大屏可视化。<br>
-前端使用WPF框架，服务端使用C#。<br>
-官网有较多解决方案，相关硬件及性能参数，没有技术方面资料。<br>
-完全定制，不支持组件及模板开发。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.poya.com.cn/contact/" target="_blank" rel="noopener">铂亚信息技术有限公司</a></li>
-</ul>
-<blockquote>
-<p>官网有较多解决方案。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.twinflag.com/index.shtml" target="_blank" rel="noopener">双旗科技</a></li>
-</ul>
-<blockquote>
-<p>显示设备硬件服务商，专注大屏可视化。<br>
-官网案例和信息较少</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.bocom.cn/" target="_blank" rel="noopener">博康智能</a></li>
-</ul>
-<blockquote>
-<p>官网有很多较详细的解决方案</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.hydata.cc/" target="_blank" rel="noopener">海云数据</a></li>
-</ul>
-<blockquote>
-<p>侧重与数据分析。<br>
-官网界面写的不错。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.powerbi.com.cn/" target="_blank" rel="noopener">奥威</a></li>
-</ul>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。有大屏可视化应用<br>
-支持组件化/模板化开发，布局自适应。<br>
-官网有较多在线Demo，但比较粗糙。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.finebi.com/" target="_blank" rel="noopener">FindBI</a></li>
-</ul>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。<br>
-支持组件化/模板化开发，布局自适应。<br>
-官网有较多在线Demo。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.finebi.com/" target="_blank" rel="noopener">海致BDP</a></li>
-</ul>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。<br>
-支持组件化/模板化开发，布局自适应。<br>
-个人免费使用在线版。官网功能产品介绍 - 特点部分可作为参考。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://www.ruisitech.com/product.html" target="_blank" rel="noopener">睿思BI</a></li>
-</ul>
-<blockquote>
-<p>开源商业智能系统。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.fanruan.com/" target="_blank" rel="noopener">帆软</a></li>
-</ul>
-<blockquote>
-<p>大屏可视化及BI商业智能领域。<br>
-支持组件化/模板化开发。<br>
-官网有较多案例、并有帆软开发论坛。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://data.aliyun.com/visual/datav" target="_blank" rel="noopener">阿里云 - DataV</a></li>
-</ul>
-<blockquote>
-<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>
-支持组件化/模板化开发。<br>
-官网有相关教程、API文档。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://di.baidu.com/product/habo" target="_blank" rel="noopener">百度云  - Habo</a></li>
-</ul>
-<blockquote>
-<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>
-支持组件化/模板化开发。<br>
-开放资源比较少。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://cloud.tencent.com/product/RayData" target="_blank" rel="noopener">腾讯云 - RayData</a></li>
-</ul>
-<blockquote>
-<p>支持组件化/模板化开发。<br>
-开放资源比较少。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="https://www.baidu.com/s?wd=%E4%B8%87%E5%8D%9A%E6%80%9D%E5%9B%BE" target="_blank" rel="noopener">万博思图</a></li>
-</ul>
-<blockquote>
-<p>侧重BI商业智能。<br>
-支持组件化开发。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.uinnova.cn/signup" target="_blank" rel="noopener">优诺科技</a></li>
-</ul>
-<blockquote>
-<p>3D仿真/机房运维可视化应用场景能力比较强。<br>
-有可视化三维模型创建功能，支持CAD底图导入，及模型导出。<br>
-使用的WebGL框架为three.js 及 Unity3D 引擎技术。<br>
-官网有相关Demo及教程。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.servasoft.com/index.html" target="_blank" rel="noopener">赛瓦软件TWaver</a></li>
-</ul>
-<blockquote>
-<p>3D仿真/机房运维可视化领域应用场景能力比较强。<br>
-使用的 Canvas, WebGL技术。<br>
-官网有相关Demo、教程、API文档、论坛。</p>
-</blockquote>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.hightopo.com" target="_blank" rel="noopener">Hightopo 图扑软件</a></li>
-</ul>
-<blockquote>
-<p>3D仿真/机房运维可视化/工业组态应用场景能力比较强。<br>
-使用技术不详。<br>
-官网有相关Demo、教程、API文档、技术博客。</p>
-</blockquote>
-<h1 class="mume-header" id="%E5%85%AD-%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%98%93%E5%B8%82%E5%9C%BA">六、大数据交易市场</h1>
-
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.moojnn.com/" target="_blank" rel="noopener">国云数据 - 魔镜</a></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.chinadatatrading.com/" target="_blank" rel="noopener">东湖大数据交易中心</a></li>
-</ul>
-<h1 class="mume-header" id="%E4%B8%83-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86">七、大数据采集</h1>
-
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.54spider.com/" target="_blank" rel="noopener">军犬采集</a></li>
-</ul>
-<h1 class="mume-header" id="%E5%85%AB-%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E6%A1%88%E4%BE%8B">八、交互技术案例</h1>
-
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.pjtime.com/2011/2/89588953_all.shtml" target="_blank" rel="noopener">途拓 炫影-交互显示平台--让大屏幕动起来!</a></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://lcd.zol.com.cn/416/4168437.html" target="_blank" rel="noopener">清投T-Show超高清信息可视化交互系统</a></li>
-</ul>
-<blockquote>
-<p>更多厂商查看天眼查竞品信息。</p>
-</blockquote>
-<h1 class="mume-header" id="%E4%B9%9D-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">九、参考资料</h1>
-
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked> <a href="http://www.ck365.cn/news/10/45276.html" target="_blank" rel="noopener">智能停车领域的应用场景及行业痛点</a></li>
-</ul>
-<h1 class="mume-header" id="%E5%8D%81-%E5%90%8E%E8%AE%B0">十、后记</h1>
-
-<blockquote>
-<p>未完待续</p>
-</blockquote>
-</div>
-      </div>
-      
-      
-    </body>
-    
-    
-    
-    
-    
-    
-    
-  </html>
       
 
       
@@ -1068,11 +474,37 @@ code.language-yaml {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Ionic</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">移动端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/移动端开发//" class="article-tag-list-link color1">移动端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/数据可视化行业分析/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC10 移动端开发/Ionic/">展开全文 >></a>
         </p>
       
 
@@ -1102,271 +534,31 @@ code.language-yaml {
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/应用场景/数据可视化行业分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC10 移动端开发/混合开发模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>用数据讲故事</p>
-<p>关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.05.06</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h1><ul>
-<li><p>智慧城市</p>
-<ul>
-<li>智能停车场</li>
-<li>智慧交通</li>
-</ul>
-</li>
-<li><p>行业应用</p>
-<ul>
-<li>电力行业</li>
-<li>交通行业</li>
-<li>机房运维可视化 / 建筑 3D仿真<ul>
-<li>3D设计图纸：更准确描绘设计思路，直观审视设计成果</li>
-<li>电子沙盘：3D立体化互动式电子沙盘，创新的园区和建筑展示介绍</li>
-<li>互动式导航：动态线路指引，用于园区、大型建筑的3D地图式导航</li>
-</ul>
-</li>
-<li>工业组态软件<ul>
-<li>电信网络拓扑和设备管理</li>
-<li>电力、燃气等工业自动化(HMI/SCADA)领域</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="四、数据可视化技术栈"><a href="#四、数据可视化技术栈" class="headerlink" title="四、数据可视化技术栈"></a>四、数据可视化技术栈</h1><p><img src="http://img.cdn.lapland.top/Image%201516372887.png" alt="image"></p>
-<h1 id="五、可视化解决方案厂商分析"><a href="#五、可视化解决方案厂商分析" class="headerlink" title="五、可视化解决方案厂商分析"></a>五、可视化解决方案厂商分析</h1><ul>
-<li><p>[x] <a href="http://www.digihail.com/" target="_blank" rel="noopener">数字冰雹</a></p>
-<blockquote>
-<p>大屏可视化及BI商业智能领域。3D建模及渲染能力较强，支持数据分析。<br>使用技术3ds max、C# 、WPF。<br>官网有较多解决方案，相关硬件及性能参数，有新浪/CSND博客。<br>完全定制，不支持组件及模板开发。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.vtron.com/mIndex.html" target="_blank" rel="noopener">威创</a></p>
-<blockquote>
-<p>显示设备硬件服务商，专注大屏可视化。<br>前端使用WPF框架，服务端使用C#。<br>官网有较多解决方案，相关硬件及性能参数，没有技术方面资料。<br>完全定制，不支持组件及模板开发。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.poya.com.cn/contact/" target="_blank" rel="noopener">铂亚信息技术有限公司</a></p>
-<blockquote>
-<p>官网有较多解决方案。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.twinflag.com/index.shtml" target="_blank" rel="noopener">双旗科技</a></p>
-<blockquote>
-<p>显示设备硬件服务商，专注大屏可视化。<br>官网案例和信息较少</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.bocom.cn/" target="_blank" rel="noopener">博康智能</a></p>
-<blockquote>
-<p>官网有很多较详细的解决方案</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.hydata.cc/" target="_blank" rel="noopener">海云数据</a></p>
-<blockquote>
-<p>侧重与数据分析。<br>官网界面写的不错。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.powerbi.com.cn/" target="_blank" rel="noopener">奥威</a></p>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。有大屏可视化应用<br>支持组件化/模板化开发，布局自适应。<br>官网有较多在线Demo，但比较粗糙。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.finebi.com/" target="_blank" rel="noopener">FindBI</a></p>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。<br>支持组件化/模板化开发，布局自适应。<br>官网有较多在线Demo。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.finebi.com/" target="_blank" rel="noopener">海致BDP</a></p>
-<blockquote>
-<p>侧重与数据分析和BI商业智能领域。<br>支持组件化/模板化开发，布局自适应。<br>个人免费使用在线版。官网功能产品介绍 - 特点部分可作为参考。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://www.ruisitech.com/product.html" target="_blank" rel="noopener">睿思BI</a></p>
-<blockquote>
-<p> 开源商业智能系统。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.fanruan.com/" target="_blank" rel="noopener">帆软</a></p>
-<blockquote>
-<p>大屏可视化及BI商业智能领域。<br>支持组件化/模板化开发。<br>官网有较多案例、并有帆软开发论坛。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://data.aliyun.com/visual/datav" target="_blank" rel="noopener">阿里云 - DataV</a></p>
-<blockquote>
-<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>支持组件化/模板化开发。<br>官网有相关教程、API文档。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://di.baidu.com/product/habo" target="_blank" rel="noopener">百度云  - Habo</a></p>
-<blockquote>
-<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>支持组件化/模板化开发。<br>开放资源比较少。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://cloud.tencent.com/product/RayData" target="_blank" rel="noopener">腾讯云 - RayData</a></p>
-<blockquote>
-<p>支持组件化/模板化开发。<br>开放资源比较少。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="https://www.baidu.com/s?wd=%E4%B8%87%E5%8D%9A%E6%80%9D%E5%9B%BE" target="_blank" rel="noopener">万博思图</a></p>
-<blockquote>
-<p>侧重BI商业智能。<br>支持组件化开发。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.uinnova.cn/signup" target="_blank" rel="noopener">优诺科技</a></p>
-<blockquote>
-<p>3D仿真/机房运维可视化应用场景能力比较强。<br>有可视化三维模型创建功能，支持CAD底图导入，及模型导出。<br>使用的WebGL框架为three.js 及 Unity3D 引擎技术。<br>官网有相关Demo及教程。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.servasoft.com/index.html" target="_blank" rel="noopener">赛瓦软件TWaver</a></p>
-<blockquote>
-<p>3D仿真/机房运维可视化领域应用场景能力比较强。<br>使用的 Canvas, WebGL技术。<br>官网有相关Demo、教程、API文档、论坛。</p>
-</blockquote>
-</li>
-<li><p>[x] <a href="http://www.hightopo.com" target="_blank" rel="noopener">Hightopo 图扑软件</a></p>
-<blockquote>
-<p>3D仿真/机房运维可视化/工业组态应用场景能力比较强。<br>使用技术不详。<br>官网有相关Demo、教程、API文档、技术博客。</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="六、大数据交易市场"><a href="#六、大数据交易市场" class="headerlink" title="六、大数据交易市场"></a>六、大数据交易市场</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.moojnn.com/" target="_blank" rel="noopener">国云数据 - 魔镜</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.chinadatatrading.com/" target="_blank" rel="noopener">东湖大数据交易中心</a></li>
-</ul>
-<h1 id="七、大数据采集"><a href="#七、大数据采集" class="headerlink" title="七、大数据采集"></a>七、大数据采集</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.54spider.com/" target="_blank" rel="noopener">军犬采集</a></li>
-</ul>
-<h1 id="八、交互技术案例"><a href="#八、交互技术案例" class="headerlink" title="八、交互技术案例"></a>八、交互技术案例</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.pjtime.com/2011/2/89588953_all.shtml" target="_blank" rel="noopener">途拓 炫影-交互显示平台–让大屏幕动起来!</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://lcd.zol.com.cn/416/4168437.html" target="_blank" rel="noopener">清投T-Show超高清信息可视化交互系统</a></li>
-</ul>
-<blockquote>
-<p>更多厂商查看天眼查竞品信息。</p>
-</blockquote>
-<h1 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.ck365.cn/news/10/45276.html" target="_blank" rel="noopener">智能停车领域的应用场景及行业痛点</a></li>
-</ul>
-<h1 id="十、后记"><a href="#十、后记" class="headerlink" title="十、后记"></a>十、后记</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/数据可视化行业分析/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/应用场景/电力项目中大数据技术的典型应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/电力项目中大数据技术的典型应用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC10 移动端开发/混合开发模式/">混合开发模式</a>
+    </h1>
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/地理信息/地理信息GIS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC10 移动端开发/混合开发模式/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://download.csdn.net/download/thethinboy/10146645?web=web" target="_blank" rel="noopener">百度离线地图API V2.1 内含示例Demo，亲测可用</a></li>
-</ul>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://download.csdn.net/download/a576597636/9393941" target="_blank" rel="noopener">基于JavaScript的三维地图程序（仿e都市gis）</a></li>
+<li><p>[x] <a href="https://zhuanlan.zhihu.com/p/41900859" target="_blank" rel="noopener">最火跨平台React Native+weex+Flutter</a></p>
+</li>
+<li><p>[x] <a href="https://reactnative.cn/" target="_blank" rel="noopener">React Native中文网</a></p>
+</li>
 </ul>
 
       
@@ -1376,11 +568,37 @@ code.language-yaml {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">混合开发模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IntelliJ IDEA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/移动端开发//" class="article-tag-list-link color1">移动端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/地理信息/地理信息GIS/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC10 移动端开发/混合开发模式/">展开全文 >></a>
         </p>
       
 
@@ -1410,11 +628,29 @@ code.language-yaml {
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/WebGL编程/Three.js初探" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC100 Windows &amp; Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/">快速批量提取文件夹中次级文件夹及文件名称的技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>想对某个文件夹做个内容列表，把文件名字一个个复制，再粘贴到文本文档——太麻烦了！怎么办？</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/#more">more >></a>
         
       
 
@@ -1423,11 +659,33 @@ code.language-yaml {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Office</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Windows-Office-使用//" class="article-tag-list-link color5">Windows & Office 使用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Three.js初探/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/">展开全文 >></a>
         </p>
       
 
@@ -1457,51 +715,205 @@ code.language-yaml {
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC00 文章导读/Lapland 建站日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC00 文章导读/Lapland 建站日记/">Lapland 建站日记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC00 文章导读/Lapland 建站日记/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>最近公司的项目需要集成多路监控摄像头，要求我们在web端实现一些功能：</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p><a href="http://www.lapland.top/">Lapland</a> 是作者尝试搭建的第一个个人网站，初步构想网站主体内容为”技术博客“和”个人思维体系建设“两大模块，如有需要会将”人工智障研究中心模块“作为子域名单独划分出。<br><br>本文作为”Lapland开发实录”系列文章的开篇和索引，以日志的形式记录网站的整个发展历程。</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC00 文章导读/Lapland 建站日记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">导读</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/文章导读//" class="article-tag-list-link color5">文章导读</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC00 文章导读/Lapland 建站日记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 博客文章/小贴士/小贴士 - 前端开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/小贴士/小贴士 - 前端开发/">小贴士 - 前端开发</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/小贴士/小贴士 - 前端开发/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、-为什么要在根目录下放-index-html"><a href="#1、-为什么要在根目录下放-index-html" class="headerlink" title="1、 为什么要在根目录下放 index.html ?"></a>1、 为什么要在根目录下放 index.html ?</h2><blockquote>
+<p>答案：假设网站的默认首页是home/www/项目名/web/home.html。在开发环境中静态网页的没有根目录，当前目录为home.html，页面的跳转采用相对路径。然而生产环境，在nginx代理时设置根目录home/www/项目名，主页设置为/web/home.html，打开域名时，当前目录为根目录，则页面的跳转就会出现问题。加一层index.html放在根目录下，做自动跳转，则可以避免这个问题。</p>
 <ul>
-<li>不小于四路实时监控</li>
-<li>高清影像保存不小于一个月</li>
-<li>支持视频回放</li>
-<li>灵活调用</li>
+<li>index代码如下<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0.1;url=web/home.html"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>正在跳转，请稍后...<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>现利用海康SDK+OpenCV，不通过NVR（网络硬盘录像机）/DVR（数字视频录像机）管理。介绍其开发过程。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.05.10</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li><p>[x] <a href="https://blog.csdn.net/kahhy/article/details/55505499" target="_blank" rel="noopener">java调用dll动态库文件的一般总结</a></p>
+</blockquote>
+<h2 id="2、JavaScript中的标签语句"><a href="#2、JavaScript中的标签语句" class="headerlink" title="2、JavaScript中的标签语句"></a>2、JavaScript中的标签语句</h2><p>即给一条语句起一个名字，这样在程序的任何地方都可以使用这个名字来引用它，可以标记任何语句。如条件循环，回调语句等。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/小贴士//" class="article-tag-list-link color4">小贴士</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/小贴士/小贴士 - 前端开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-[置顶] 思维体系/几点思考 - 生活/诗词欣赏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/诗词欣赏/">诗词欣赏</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/诗词欣赏/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="诗词欣赏"><a href="#诗词欣赏" class="headerlink" title="诗词欣赏"></a><center><font color="6600CC">诗词欣赏</font></center></h1><ul>
+<li><font color="6600CC"><strong>临江仙·滚滚长江东逝水  [明·杨慎]</strong></font>
+
 </li>
-<li><p>[x] <a href="https://gitee.com/zhing/vmc" target="_blank" rel="noopener">码云-海康威视SDK</a></p>
-</li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/search?l=Java&amp;q=%E6%B5%B7%E5%BA%B7sdk&amp;type=Repositories" target="_blank" rel="noopener">GitHub-海康威视SDK</a><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1></li>
 </ul>
 <blockquote>
-<p>未完待续</p>
+<p>滚滚长江东逝水，浪花淘尽英雄。<br><br>是非成败转头空。<br><br>青山依旧在，几度夕阳红。<br><br>白发渔樵江渚上，惯看秋月春风。<br><br>一壶浊酒喜相逢。<br><br>古今多少事，都付笑谈中。</p>
 </blockquote>
-
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/诗词欣赏/#more">more >></a>
+        
       
 
       
@@ -1509,11 +921,33 @@ code.language-yaml {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">诗词欣赏</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/思维体系//" class="article-tag-list-link color5">思维体系</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/诗词欣赏/">展开全文 >></a>
         </p>
       
 
@@ -1543,24 +977,30 @@ code.language-yaml {
 
 
   
-    <article id="post-[置顶] 博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/WebGL编程/几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 思维体系/几点思考 - 生活/胡思乱想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/胡思乱想/">语录摘抄</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/胡思乱想/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.hightopo.com/cn-index.html" target="_blank" rel="noopener">Canvas</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.hightopo.com/cn-index.html" target="_blank" rel="noopener">HT for Web</a></li>
-</ul>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/WebGL/592485?fr=aladdin" target="_blank" rel="noopener">百度百科 - WebGL</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://techbrood.com/threejs/docs/" target="_blank" rel="noopener">Three.js 中文教程</a></li>
-</ul>
-<p>Echarts &amp; HighChart.js  &amp;   Three.js  &amp; D3.js</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://get.webgl.org/" target="_blank" rel="noopener">测试浏览器是否只支持WebGL</a></li>
-</ul>
-
+        <h1 id="一、导读"><a href="#一、导读" class="headerlink" title="一、导读"></a>一、导读</h1><p>本文记录日常生活中的所思所想，或转瞬即逝的灵感，记录下来，有待深入思考。</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/胡思乱想/#more">more >></a>
+        
       
 
       
@@ -1568,11 +1008,33 @@ code.language-yaml {
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">语录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/思维体系//" class="article-tag-list-link color5">思维体系</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 思维体系/几点思考 - 生活/胡思乱想/">展开全文 >></a>
         </p>
       
 
@@ -1604,7 +1066,7 @@ code.language-yaml {
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -1700,19 +1162,819 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拦截器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">监听器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">相对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码评审</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Ionic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">混合开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速迭代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">业务逻辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象编程，SOLID原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术选型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口调用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">l引入公共页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Token</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">登录认证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">国际化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">i18n</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Apache POI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">log4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">下载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MyEclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sublime textn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动静分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Nginx安装配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动化运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发环境搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统瓶颈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XSS攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSRF攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">密码攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Shodan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP-IP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">正向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">破解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Crawler4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebMagic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ETL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+                <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发组现状</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Junit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">地理信息</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">行业分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电力项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">录像容量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Three.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">webGL</a>
               </li>
             
             <div class="clearfix"></div>

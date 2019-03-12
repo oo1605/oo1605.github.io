@@ -164,92 +164,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/各种中文乱码问题的解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC  注解解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC  注解解析/">SpringMVC  注解解析</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC  注解解析/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>[TOC]
-</code></pre><h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2018.07.20</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><p>–&gt; 凡是非二进制文件均有编码方式.</p>
-<p>–&gt; 本地环境简介:</p>
-<pre><code>计算机的系统编码:GBK,(cmd--chcp,936为GBK,1252为ANSI)
-浏览器编码格式 : GBK
-TXT文件保存默认格式: ANSI
-Java的内核和class文件是基于unicode的
-    System.getProperty(&quot;file.encoding&quot;)--&gt;main()所在的类文件文件的保存编码(一般认为JVM的默认编码)
-JVM 默认为系统编码方式
-</code></pre><p>–&gt; Java中编码方式的设置:<br>    java–&gt; encoding=”utf-8”；<br>    html–&gt;charset=utf-8 ,css–&gt; @charset “utf-8”；<br>    jsp–&gt;pageEncoding是jsp文件本身的编码 ontentType的charset是指服务器发送给客户端时的内容编码（转码后发送）  URIEncoding=”utf-8”是连接编码格式。</p>
-<p>–&gt; 常见字符集有：ASCII字符集、ISO-8859-1字符集(兼容ASCII) 、GB2312字符集(兼容ASCII) 、GBK字符集(兼容GB2312)、BIG5字符集、GB18030字符集(兼容GBK)、Unicode(兼容ISO-8859-1)字符集等。</p>
-<p>–&gt; 产生乱码的两种原因:</p>
-<ol>
-<li><p>文件存储<br> Java 把源文件 存储/编译成二进制文件,等到运行时再进行解码运行或显示.</p>
-</li>
-<li><p>文件传递<br> Java 文件传递的是二进制文件,故需要发送端把源文进行编码成二进制,然后接收端根据发送端的编码方式进行解码.</p>
-</li>
-</ol>
-<p>–&gt; 解决思路:</p>
-<ol>
-<li>本地设置的一般是文件的编码方式,接收端文件的编码方式不能对接收的文件进行解码,就会出现乱码</li>
-<li>当解码方式不兼容编码方式时,便会显示乱码.(就像高版本word可以打开低版本,反之不行)</li>
-<li>根据上述条件分析产生乱码的环节.</li>
-</ol>
-<ol>
-<li>MyEclipse</li>
-</ol>
-<p>–&gt; 控制台输入输出乱码<br>    run as configurations –&gt; common –&gt;讲编码改为GBK</p>
-<p>–&gt; 文件输入输出乱码</p>
-<ol start="2">
-<li>MySql 数据库编码方式(设置成UTF-8后),cmd输出乱码</li>
-</ol>
-<p>–&gt; CMD 显示输出乱码<br>+————————–+——————————————-+<br>| Variable_name            | Value                                     |<br>+————————–+——————————————-+<br>| character_set_client     | gbk                                       |<br>| character_set_connection | gbk                                       |<br>| character_set_database   | utf8                                      |<br>| character_set_results    | gbk                                       |<br>| character_set_server     | utf8                                      |<br>| character_set_system     | utf8                                      |<br>| character_sets_dir       | D:\MySQL\MySQL Server 5.0\share\charsets\ |<br>+————————–+——————————————-+</p>
-<p>解 : cmd–set names gbk (本地系统编码格式为gbk)<br>或者 cmd - chcp 65001设置cmd编码格式;(不建议,因为虚拟机也得跟着设置)</p>
-<p>–&gt; 以文件形式导出乱码</p>
-<ol start="3">
-<li>TomCat 服务端编码, 编码方式设置成UTF-8后,浏览器端乱码</li>
-</ol>
-<p>–&gt; JSP 输出乱码</p>
-<p>解:<br>    // 乱码原因: tomcat默认以ISO-8859-1的编码方式进行编码,JSP一般设置UTF-8</p>
-<pre><code>// method =&quot;post&quot; ,以from表单和 URL表头 的形式传输
-request.setCharacterEncoding(&quot;UTF-8&quot;);
-// 设置接收请求(表单)的解码方式
-response.setCharacterEncoding(&quot;UTF-8&quot;);
-// 设置响应(发送表单)的编码方式,可省,与 page: chatset=&quot;utf-8&quot;相同
-String username  = request.getParameter(&quot;username&quot;);
-
-// method =&quot;get&quot;,以 URL表头 的形式传输
-// String username  = request.getParameter(&quot;username&quot;); // TomCat默认以ISO-8895-1接收储存
-// String un = new String(username.getBytes(&quot;iso-8859-1&quot;),&quot;utf-8&quot;); // 转码
-// method =&quot;get&quot;或者
-// conf 配置 --&gt; server.xml
-// &lt;Connector&gt; 语句中 添加 URIEncoding=&quot;utf-8&quot;针对get,提交路径参数中包含中文
-// 注:修改配置后须重启服务
-</code></pre><h1 id="六、相关术语"><a href="#六、相关术语" class="headerlink" title="六、相关术语"></a>六、相关术语</h1><h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.ibm.com/developerworks/cn/java/analysis-and-summary-of-common-random-code-problems/index.html/" target="_blank" rel="noopener">常见乱码问题分析和总结</a></li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>未完待续</p>
-</blockquote>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC  注解解析/#more">more >></a>
+        
       
 
       
@@ -257,11 +195,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/各种中文乱码问题的解决/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC  注解解析/">展开全文 >></a>
         </p>
       
 
@@ -291,79 +251,30 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/JavaWeb中的相对路径和绝对路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法/">SpringMVC  注解解析</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h1><ul>
-<li>绝对路径：绝对路径就是你的主页上的文件或目录在硬盘上真正的路径。</li>
-<li>相对路径：相对与某个基准目录的路径。例如：”/“代表根目录，”./“ 或不写代表当前目录，”../“代表父级目录。</li>
-</ul>
-<ul>
-<li>服务端的根目录：服务端的根目录是你的web应用的地址，即 <a href="http://192.168.0.1/webapp/。" target="_blank" rel="noopener">http://192.168.0.1/webapp/。</a></li>
-<li>客户端的的根目录：客户端的的根目录是服务器根目录，即 <a href="http://192.168.0.1/。" target="_blank" rel="noopener">http://192.168.0.1/。</a></li>
-</ul>
-<h1 id="三、相对路径会遇到的一些情况"><a href="#三、相对路径会遇到的一些情况" class="headerlink" title="三、相对路径会遇到的一些情况"></a>三、相对路径会遇到的一些情况</h1><ul>
-<li>在服务端解析的文件路径会相对于服务端根目录。在客户端解析的文件路径会相对于客户端根目录。</li>
-<li><p>javascript、jquery、html、css等在客户端解析，后台语言在服务器端解析，如php、asp、jsp等。</p>
-</li>
-<li><p>相对路径会因为服务端解析还是客户端解析而导致不同，因此建议使用绝对路径。</p>
-</li>
-</ul>
-<h1 id="四、绝对路径的定义和使用"><a href="#四、绝对路径的定义和使用" class="headerlink" title="四、绝对路径的定义和使用"></a>四、绝对路径的定义和使用</h1><ul>
-<li>定义 - common_tag.jsp</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><br><span class="line"><span class="tag">// 相对路径, <span class="attr">path</span> = <span class="string">"/SmartCity/"</span>          服务器才有根路径的概念</span></span><br><span class="line"><span class="tag"><span class="attr">String</span> <span class="attr">path</span> = <span class="string">request.getContextPath()+</span>"/";</span></span><br><span class="line"><span class="tag">// 绝对路径, <span class="attr">basePath</span>=<span class="string">"http://localhost:8080/SmartCity/"</span></span></span><br><span class="line"><span class="tag"><span class="attr">String</span> <span class="attr">basePath</span> = <span class="string">request.getScheme()+</span>"<span class="attr">:</span>//"+<span class="attr">request.getServerName</span>()+"<span class="attr">:</span>"+<span class="attr">request.getServerPort</span>()+<span class="attr">path</span>;</span></span><br><span class="line"><span class="tag">%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"&lt;%=basePath%&gt;"</span> &gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>引用 - index.jsp</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">include</span> <span class="attr">file</span>=<span class="string">"/WEB-INF/jsp/common/common_tag.jsp"</span>%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"static/styles/custom/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>或者</p>
-</li>
-<li><p>定义 - common_tag.jsp</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span>%&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 相对路径, baseurl = "/SmartCity/" --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">c:set</span> <span class="attr">var</span>=<span class="string">"baseurl"</span> <span class="attr">value</span>=<span class="string">"$&#123;pageContext.request.contextPath&#125;/"</span>&gt;</span><span class="tag">&lt;/<span class="name">c:set</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>引用 - index.jsp</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">include</span> <span class="attr">file</span>=<span class="string">"/WEB-INF/jsp/common/common_tag.jsp"</span>%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"$&#123;baseurl&#125;static/styles/custom/style.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="五、controller及配置文件中的路径"><a href="#五、controller及配置文件中的路径" class="headerlink" title="五、controller及配置文件中的路径"></a>五、controller及配置文件中的路径</h1><ul>
-<li>controller中的路径是根据SpringMVC中视图解析器的定义来决定的。</li>
-<li>而SpringMVC等配置文件的地址一般相对于服务端的根目录或用classpath来定义。</li>
-</ul>
-<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><blockquote>
-<p>拦截器拦截与不拦截的区别，及客户端（浏览器）与服务端解析区别，有待后续完善。</p>
-</blockquote>
-<h1 id="七、参考文章"><a href="#七、参考文章" class="headerlink" title="七、参考文章"></a>七、参考文章</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.blogjava.net/simie/archive/2007/07/29/133094.html" target="_blank" rel="noopener">java中相对路径，绝对路径问题总结</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/wym19830218/article/details/5503533/" target="_blank" rel="noopener">JSP、Servlet中的相对路径和绝对路径 页面跳转问题</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/zhangminghui/p/4122821.html" target="_blank" rel="noopener">JSP之项目路径问题（${pageContext.request.contextPath},&lt;%=request.getContextPath()%&gt;以及绝对路径获取）</a></li>
-</ul>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法/#more">more >></a>
+        
       
 
       
@@ -371,11 +282,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/JavaWeb中的相对路径和绝对路径/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 中获取Session的几种方法/">展开全文 >></a>
         </p>
       
 
@@ -405,13 +338,30 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/软件架构/模块化设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/">SpringMVC  注解解析</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">代码框架设计</span><br><span class="line">楼主认为框架设计的目的是：</span><br><span class="line">1. 将整个项目合理的拆分为许多模块，各个模块功能职责明确，降低各个模块的依赖，耦合；做到想用某一个模块时就用，不用时就去除掉，并且不影响其他模块</span><br><span class="line">2. 合理设计类与类之间的继承关系，接口的实现关系，和利用java的public、private、protected、default权限，来掩藏代码内部逻辑，争取做到只暴露外部开发接口，完全掩藏内部逻辑</span><br><span class="line">楼主认为：</span><br><span class="line">以功能为单位划分模块，无论功能大小均划分成模块，方便后期代码升级可以进行添加；</span><br><span class="line">模块设计准则：</span><br><span class="line">a.模块设计准则：在一个功能模块下，放于同一个package下，根据功能点为这个模块创建一个接口，创建两个功能管理类并实现前面的该接口，一个用于对外部模块开放接口，另一个用于控制模块内部逻辑。最后，在将模块内部真正实现的代码逻辑类全部设置为default权限，保证package以外的无法访问；如下图：</span><br><span class="line">模块设计</span><br><span class="line">b. 类与类的继承、接口实现；如果有多个相同的功能的代码块，都为其写一个基类，子类来继承即可；接口方面，如果多个类有相同的功能，但实现不一样则就用接口来实现</span><br></pre></td></tr></table></figure>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Spring Web MVC是一种基于Java的实现了Web MVC设计模式的请求驱动类型的轻量级Web框架，即使用了MVC架构模式的思想，将web层进行职责解耦，基于请求驱动指的就是使用请求-响应模型，框架的目的就是帮助我们简化开发，Spring Web MVC也是要简化我们日常Web开发的。</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/#more">more >></a>
+        
       
 
       
@@ -419,11 +369,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/">展开全文 >></a>
         </p>
       
 
@@ -453,15 +425,30 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/软件架构/架构设计和技术选型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型/">SpringMVC 返回类型</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/yl2isoft/article/details/53217833" target="_blank" rel="noopener">架构设计和技术选型的思路总结</a></li>
-</ul>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>SpringMVC处理方法支持如下的返回方式：ModelAndView， Model，ModelMap，Map，View，String，void。</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型/#more">more >></a>
+        
       
 
       
@@ -469,11 +456,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/架构设计和技术选型/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型/">展开全文 >></a>
         </p>
       
 
@@ -503,18 +512,30 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/浅谈怎样写业务逻辑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序/">Spring AOP增强织入顺序</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>可以获取那些元素</li>
-<li>需要实现那些功能</li>
-<li>如何实现</li>
-<li>需要判断那些逻辑</li>
-</ol>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序/#more">more >></a>
+        
       
 
       
@@ -522,11 +543,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/浅谈怎样写业务逻辑/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP增强织入顺序/">展开全文 >></a>
         </p>
       
 
@@ -556,14 +599,30 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/术业有专攻 - 前后端工程师专注方向" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring AOP统一处理异常和日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP统一处理异常和日志/">Spring AOP统一处理异常和日志</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP统一处理异常和日志/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对于后端java工程师：<br>把精力放在java基础，设计模式，jvm原理，spring+springmvc原理及源码，linux，mysql事务隔离与锁机制，mongodb，http/tcp，多线程，分布式架构（dubbo，dubbox，spring cloud），弹性计算架构，微服务架构（springboot+zookeeper+docker+jenkins），java性能优化，以及相关的项目管理等等。<br>后端追求的是：三高（高并发，高可用，高性能），安全，存储，业务等等。</p>
-<p>对于前端工程师：<br>把精力放在html5，css3，jquery，angularjs，bootstrap，reactjs，vuejs，webpack，less/sass，gulp，nodejs，Google V8引擎，javascript多线程，模块化，面向切面编程，设计模式，浏览器兼容性，性能优化等等。<br>前端追求的是：页面表现，速度流畅，兼容性，用户体验等等。</p>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP统一处理异常和日志/#more">more >></a>
+        
       
 
       
@@ -571,11 +630,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/术业有专攻 - 前后端工程师专注方向/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP统一处理异常和日志/">展开全文 >></a>
         </p>
       
 
@@ -605,15 +686,30 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/抽象，软件设计设计的灵魂" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSH" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSH/">Spring 基础框架整合SSH</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSH/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>封装与映射（面向对象的设计思想）</li>
-</ul>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSH/#more">more >></a>
+        
       
 
       
@@ -621,11 +717,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/抽象，软件设计设计的灵魂/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSH/">展开全文 >></a>
         </p>
       
 
@@ -655,11 +773,29 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/以快速迭代与敏捷开发应对客户不断变化的需求" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSM/">Mybatis 框架概述</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSM/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSM/#more">more >></a>
         
       
 
@@ -668,11 +804,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/以快速迭代与敏捷开发应对客户不断变化的需求/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 基础框架整合SSM/">展开全文 >></a>
         </p>
       
 
@@ -702,11 +860,29 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/面向接口开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring 控制反转IoC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 控制反转IoC/">Spring 控制反转IoC</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 控制反转IoC/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 控制反转IoC/#more">more >></a>
         
       
 
@@ -715,11 +891,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 控制反转IoC/">展开全文 >></a>
         </p>
       
 
@@ -749,163 +947,31 @@ String username  = request.getParameter(&quot;username&quot;);
 
 
   
-    <article id="post-[置顶] 博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/面向对象编程SOLID原则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/Web框架/Spring学习笔记系列/Spring 框架概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 框架概述/">Spring 框架概述</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 框架概述/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>SOLID 是面向对象设计和编程(OOD &amp; OOP)中几个重要编码原则(Programming Priciple)的首字母缩写。</p>
-<p>目的： 解耦、复用、易拓展</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">缩写</th>
-<th style="text-align:center">全称</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">SRP</td>
-<td style="text-align:center">The Single Responsibility Principle</td>
-<td style="text-align:center">单一责任原则</td>
-</tr>
-<tr>
-<td style="text-align:center">OCP</td>
-<td style="text-align:center">The Open Closed Principle</td>
-<td style="text-align:center">开放封闭原则</td>
-</tr>
-<tr>
-<td style="text-align:center">LSP</td>
-<td style="text-align:center">The Liskov Substitution Principle</td>
-<td style="text-align:center">里氏替换原则</td>
-</tr>
-<tr>
-<td style="text-align:center">DIP</td>
-<td style="text-align:center">The Dependency Inversion Principle</td>
-<td style="text-align:center">依赖倒置原则</td>
-</tr>
-<tr>
-<td style="text-align:center">ISP</td>
-<td style="text-align:center">The Interface Segregation Principle</td>
-<td style="text-align:center">接口分离原则</td>
-</tr>
-</tbody>
-</table>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.04.22</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、面向对象概述"><a href="#三、面向对象概述" class="headerlink" title="三、面向对象概述"></a>三、面向对象概述</h1><h2 id="3-1、如何理解面向对象的编程思想"><a href="#3-1、如何理解面向对象的编程思想" class="headerlink" title="3.1、如何理解面向对象的编程思想"></a>3.1、如何理解面向对象的编程思想</h2><h3 id="3-11、定义"><a href="#3-11、定义" class="headerlink" title="3.11、定义"></a>3.11、定义</h3><p>对世界万物的状态与行为进行归纳与分类，以此分析个体与个体间的相互作用与影响方法。</p>
-<h3 id="3-12、一句话描述面向对象"><a href="#3-12、一句话描述面向对象" class="headerlink" title="3.12、一句话描述面向对象"></a>3.12、一句话描述面向对象</h3><p>把一组数据结构和处理它们的方法组成对象（object），把相同行为的对象归纳为类（class），通过类的封装（encapsulation）隐藏内部细节，通过继承（inheritance）实现类的特化（specialization）／泛化（generalization），通过多态（polymorphism）实现基于对象类型的动态分派  （dynamic dispatch）。</p>
-<h3 id="3-13、知乎关于这个问题的回答"><a href="#3-13、知乎关于这个问题的回答" class="headerlink" title="3.13、知乎关于这个问题的回答"></a>3.13、知乎关于这个问题的回答</h3><blockquote>
-<p>面向对象：妈，我饿。<br>面向过程：《生猪养殖技术》《大棚蔬菜栽培实用技术 》《家常菜谱大全》</p>
-</blockquote>
-<blockquote>
-<p> 编年体史书是面向过程的，纪传体史书是面向对象的。</p>
-</blockquote>
-<blockquote>
-<p> 把面向过程中功能的实现交给某个服务者就是面向对象了。<br> 面向过程是自己做，面向对象是叫别人做。</p>
-</blockquote>
-<blockquote>
-<p> 面向过程，侧重于解决一个问题。面向对象，侧重于解决一类问题。</p>
-</blockquote>
-<blockquote>
-<p> 面向过程是，从上到下，逐行写函数来实现功能<br> 面向对象是，封装函数实现的这个功能代码，想要使用的时候直接调用就可以<br> 面向对象 是对 面向过程 的进一步抽象。</p>
-</blockquote>
-<blockquote>
-<p> 区别在于抽象层级高低。无非就是抽象的程度不一样罢了。把面向过程一般化模块化不关注不重要的细节那就是面向对象。实际上面向对象，到底层都是面向过程，面向对象底层还是面向过程。</p>
-</blockquote>
-<ul>
-<li>面向过程<br>优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源;比如单片机、嵌入式开发、Linux/Unix等一般采用面向过程开发，性能是最重要的因素。　　<br>缺点：没有面向对象易维护、易复用、易扩展　　<br><br></li>
-<li>面向对象　　<br>优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护　　<br>缺点：性能比面向过程低</li>
-</ul>
-<h2 id="3-2、面向对象核心思想是抽象"><a href="#3-2、面向对象核心思想是抽象" class="headerlink" title="3.2、面向对象核心思想是抽象"></a>3.2、面向对象核心思想是抽象</h2><p>面向对象将程序的各个行为化为对象，而又用抽象的办法将这些对象归类（抽象），从而将错综复杂的事情简化为几个主要的有机组合。</p>
-<h2 id="3-21、抽象的两个原则"><a href="#3-21、抽象的两个原则" class="headerlink" title="3.21、抽象的两个原则"></a>3.21、抽象的两个原则</h2><ul>
-<li>最少承诺原则：对象的接口只提供它的基本行为。</li>
-<li>最少惊奇原则：抽象捕捉了某个对象的全部行为，不多也不少，并且不提供抽象之外的惊奇效果和副作用</li>
-</ul>
-<h2 id="3-22、评判抽象的品质"><a href="#3-22、评判抽象的品质" class="headerlink" title="3.22、评判抽象的品质"></a>3.22、评判抽象的品质</h2><ul>
-<li>耦合：模块之间的关联强度应该是比较弱的，即低耦合。</li>
-<li>内聚：模块内的各个元素的联系时紧密的，即高内聚。</li>
-<li>充分性：类或模块应该记录某个抽象足够多的特征，从而允许有意义的、有效的交互。</li>
-<li>完整性：类和模块的接口记录了它的全部特征。</li>
-<li>基础性：只有访问该抽象的底层表现形式才能够有效的实现那些操作。</li>
-</ul>
-<h2 id="3-3、方法是分解和成组"><a href="#3-3、方法是分解和成组" class="headerlink" title="3.3、方法是分解和成组"></a>3.3、方法是分解和成组</h2><h2 id="3-4、手段有封装、继承和多态"><a href="#3-4、手段有封装、继承和多态" class="headerlink" title="3.4、手段有封装、继承和多态"></a>3.4、手段有封装、继承和多态</h2><h1 id="四、面向对象三大基本原则"><a href="#四、面向对象三大基本原则" class="headerlink" title="四、面向对象三大基本原则"></a>四、面向对象三大基本原则</h1><h2 id="4-1、封装变化点"><a href="#4-1、封装变化点" class="headerlink" title="4.1、封装变化点"></a>4.1、封装变化点</h2><p>将系统中经常变化的部分和稳定的部分隔离，有助于增加复用性，并降低系统耦合度。</p>
-<h2 id="4-2、针对接口编程而不是实现编程"><a href="#4-2、针对接口编程而不是实现编程" class="headerlink" title="4.2、针对接口编程而不是实现编程"></a>4.2、针对接口编程而不是实现编程</h2><p>这里“接口”的含义表示的程序设计语言中的interface ,或者abstract class。对接口编程的一个好处在于客户端程序并不需要了解具体的实现，而只需要了解接口中声明的方法。更大的好处在于能够使用多态性执行动态性的行为。</p>
-<h2 id="4-3、多使用组合而不是继承"><a href="#4-3、多使用组合而不是继承" class="headerlink" title="4.3、多使用组合而不是继承"></a>4.3、多使用组合而不是继承</h2><p>多使用组合，而不是继承。Has-a关系要比Is-a关系更好。因为继承是静态行为，也就是编译时行为。这种设计缺乏灵活度，并且具有比组合更高的耦合度。而组合是动态行为，即运行时行为。可以通过使用组合的方式在设计上获得更高的灵活性。</p>
-<h1 id="五、面向对象七大细则"><a href="#五、面向对象七大细则" class="headerlink" title="五、面向对象七大细则"></a>五、面向对象七大细则</h1><h2 id="5-1、单一职责原则（Single-Responsibility-Principle）"><a href="#5-1、单一职责原则（Single-Responsibility-Principle）" class="headerlink" title="5.1、单一职责原则（Single Responsibility Principle）"></a>5.1、单一职责原则（Single Responsibility Principle）</h2><p>就一个类而言，应该仅有一个引起它变化的原因。通俗的说，即一个类只负责一项职责。</p>
-<p>如果一个类承担的职责过多，就等于把这些职责耦合在一起，一个职责的变化可能会削弱或抑制这个类完成其他职责的能力。同时，一个类承担过多职责，会加大代码编写、阅读以及维护的难度。</p>
-<p>所谓职责扩散，就是因为某种原因，职责P被分化为粒度更细的职责P1和P2。所以记住，在职责扩散到我们无法控制的程度之前，立刻对代码进行重构。</p>
-<p>例如内存、CPU、硬盘责任单一。</p>
-<h2 id="5-2、里氏替换原则（Liskov-Substitution-Principle）"><a href="#5-2、里氏替换原则（Liskov-Substitution-Principle）" class="headerlink" title="5.2、里氏替换原则（Liskov Substitution Principle）"></a>5.2、里氏替换原则（Liskov Substitution Principle）</h2><p>里氏替换原则通俗来讲就是：<br>子类可以扩展父类的功能，但不能改变父类原有的功能。或者说<br>子类必须能够替换掉他们的父类型。</p>
-<p>只有当子类可以替换掉父类，软件功能不受影响的时候，父类才能真正被复用，而子类也能在父类的基础上增加新的行为．假如子类不做重写，那么它调用父类方法的时候其实就是多态的体现（向上转型）。</p>
-<p>由于子类型的可替换性才使得父类类型的模块在无需修改的情况下就可以拓展，才使得开放－封闭原则成为了可能。</p>
-<p>它包含以下4层含义：</p>
-<ul>
-<li>子类可以实现父类的抽象方法，但不能覆盖父类的非抽象方法。</li>
-<li>子类中可以增加自己特有的方法。</li>
-<li>当子类的方法重载父类的方法时，方法的前置条件（即方法的形参）要比父类方法的输入参数更宽松。</li>
-<li>当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值）要比父类更严格。</li>
-</ul>
-<h2 id="5-3、依赖倒置原则（Dependence-Inversion-Principle）"><a href="#5-3、依赖倒置原则（Dependence-Inversion-Principle）" class="headerlink" title="5.3、依赖倒置原则（Dependence Inversion Principle）"></a>5.3、依赖倒置原则（Dependence Inversion Principle）</h2><p>解耦最重要的原则就是依赖倒置：<br>设计要依赖于抽象（接口或抽象类）而不是具体实现。针对接口编程，不针对实现编程。</p>
-<p>依赖倒转其实可以说是面向对象设计的标志，用哪种语言来描写程序不重要，如果编写时考虑的都是如何针对抽象编程而不是针对细节编程，即程序中所有的依赖关系都是终止于抽象类或者接口，那就是面向对象的设计，反之那就是过程化的设计了。</p>
-<p>相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建起来的架构比以细节为基础搭建起来的架构要稳定的多。使用接口或者抽象类的目的是制定好规范和契约，而不去涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成。</p>
-<p>尽量做到：</p>
-<ul>
-<li>任何变量都不应该持有一个指向具体类的引用。</li>
-<li>任何类都不应该从具体类派生。</li>
-<li>任何方法都不应该覆写它的任何基类中的已经实现的方法。</li>
-</ul>
-<p>《资本论》中都曾阐释依赖倒转原则 – 在商品经济的萌芽时期，出现了物物交换。假设你要买一个IPhone，卖IPhone的老板让你拿一头猪跟他换，可是你并没有养猪，你只会编程。所以你找到一位养猪户，说给他做一个养猪的APP来换他一头猪，他说换猪可以，但是得用一条金项链来换 – 所以这里就出现了一连串的对象依赖，从而造成了严重的耦合灾难。解决这个问题的最好的办法就是，买卖双发都依赖于抽象 – 也就是货币 – 来进行交换，这样一来耦合度就大为降低了。</p>
-<p>采用依赖倒置原则可以减少类间的耦合性，提高系统的稳定性，减少并行开发引起的风险，提高代码的可读性和可维护性，面对接口（抽象）编程，是降低耦合，实现易拓展的必要条件。。</p>
-<h2 id="5-4、接口隔离原则（Interface-Segregation-Principle）"><a href="#5-4、接口隔离原则（Interface-Segregation-Principle）" class="headerlink" title="5.4、接口隔离原则（Interface Segregation Principle）"></a>5.4、接口隔离原则（Interface Segregation Principle）</h2><p>提供尽可能小的单独接口，而不要提供大的总接口。不应该强迫客户依赖于它们不用的方法，会使一个软件系统功能扩展时，修改的压力不会传到别的对象那里。</p>
-<p>如何实现接口隔离原则：</p>
-<ul>
-<li>利用委托分离接口。</li>
-<li><p><del>利用多继承分离接口</del></p>
-<p>利用接口提供子类行为 ： 继承父类抽象行为，各自表述。<br>针对接口编程，父类调用的是接口（中的方法）。方法与接口绑定，与具体类解耦。<br>用if else 的地方就考虑是否可以用抽象、接口、泛型，由子类实现</p>
-</li>
-</ul>
-<h2 id="5-5、迪米特法则（最少知道原则）（Law-Of-Demeter）"><a href="#5-5、迪米特法则（最少知道原则）（Law-Of-Demeter）" class="headerlink" title="5.5、迪米特法则（最少知道原则）（Law Of Demeter）"></a>5.5、迪米特法则（最少知道原则）（Law Of Demeter）</h2><p>  迪米特法则根本思想，是强调了类之间的松耦合，类之间的耦合越弱,越有利于复用，一个处在弱耦合的类被修改，不会对有关系的类造成影响，也就是说，信息的隐藏促进了软件的复用。</p>
-<p>类与类之间的关系越密切，耦合度也就越来越大，只有尽量降低类与类之间的耦合才符合设计模式。在一个类里能少用多少其他类就少用多少，尤其是局部变量的依赖类，如果其中一个类需要调用另一个类的某一方法的话，可以通过第三者转发这个调用。</p>
-<p>通俗的来讲，就是一个类对自己依赖的类知道的越少越好。也就是说，对于被依赖的类来说，无论逻辑多么复杂，都尽量地的将逻辑封装在类的内部，对外除了提供的public方法，不对外泄漏任何信息。迪米特法则还有一个更简单的定义：只与直接的朋友通信。首先来解释一下什么是直接的朋友：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多，依赖、关联、组合、聚合等。其中，我们称出现成员变量、方法参数、方法返回值中的类为直接的朋友，而出现在局部变量中的类则不是直接的朋友。也就是说，陌生的类最好不要作为局部变量的形式出现在类的内部。</p>
-<h2 id="5-6、开放-关闭原则（Open-Close-Principle）"><a href="#5-6、开放-关闭原则（Open-Close-Principle）" class="headerlink" title="5.6、开放 - 关闭原则（Open Close Principle）"></a>5.6、开放 - 关闭原则（Open Close Principle）</h2><p>对拓展开放（通过接口，拓展功能），对修改关闭（封装到类）。</p>
-<p>猜测最有可能发生变换的类，构造抽象来隔离变化。面对需求，程序是通过增加新的代码进行的，而不是更改现有的代码。在面向对象设计中，不允许更改的是系统的抽象层，而允许扩展的是系统的实现层。换言之，定义一个一劳永逸的抽象设计层，允许尽可能多的行为在实现层被实现。</p>
-<h2 id="5-7、组合-聚合复用原则（Composite-Aggregate-Reuse-Principle-CARP）"><a href="#5-7、组合-聚合复用原则（Composite-Aggregate-Reuse-Principle-CARP）" class="headerlink" title="5.7、组合/聚合复用原则（Composite/Aggregate Reuse Principle CARP）"></a>5.7、组合/聚合复用原则（Composite/Aggregate Reuse Principle CARP）</h2><p>如果新对象的某些功能在别的已经创建好的对象里面已经实现，那么尽量使用别的对象提供的功能，使之成为新对象的一部分，而不要自己再重新创建。新对象通过向这些对象的委派达到复用已有功能的。<br>简而言之，要尽量使用合成/聚合，尽量不要使用继承。<br>如果为了复用，便使用继承的方式将两个不相干的类联系在一起，违反里氏代换原则，继承复用破坏数据封装性，将基类的实现细节全部暴露给了派生类，基类的内部细节常常对派生类是透明的，白箱复用；虽然简单，但不安全，不能在程序的运行过程中随便改变；基类的实现发生了改变，派生类的实现也不得不改变；从基类继承而来的派生类是静态的，不可能在运行时间内发生改变，因此没有足够的灵活性。</p>
-<h1 id="六、23种设计模式"><a href="#六、23种设计模式" class="headerlink" title="六、23种设计模式"></a>六、23种设计模式</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> 详见 <a href="www.lapland.top">23种设计模式</a></li>
-</ul>
-<h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><p>面向过程、面向对象、面向资源、面向接口</p>
-<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zhihu.com/question/19854505" target="_blank" rel="noopener">如何用一句话说明什么是面向对象思想？</a><ul>
-<li style="list-style: none"><input type="checkbox"> <a href="https://blog.csdn.net/csh624366188/article/details/7459918" target="_blank" rel="noopener">大话设计模式（一）设计模式遵循的七大原则</a><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1></li>
-</ul>
-</li>
-</ul>
-<p>极限编程<br>先写测试类，后写实现</p>
-<blockquote>
-<p>未完待续</p>
-</blockquote>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Spring是一个非常活跃的开源框架；它是一个基于Core来构架多层JavaEE系统的框架,它的主要目地是简化企业开发。<br></p>
+<p>Spring以一种非侵入式的方式来管理你的代码，Spring提倡”最少侵入”，这也就意味着你可以适当的时候安装或卸载Spring。</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 框架概述/#more">more >></a>
+        
       
 
       
@@ -913,11 +979,33 @@ String username  = request.getParameter(&quot;username&quot;);
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向对象编程SOLID原则/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring 框架概述/">展开全文 >></a>
         </p>
       
 
@@ -949,7 +1037,7 @@ String username  = request.getParameter(&quot;username&quot;);
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/18/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/20/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/18/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/20/">Next &raquo;</a>
     </nav>
   
 
@@ -1045,19 +1133,819 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拦截器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">监听器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">相对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码评审</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Ionic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">混合开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速迭代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">业务逻辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象编程，SOLID原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术选型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口调用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">l引入公共页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Token</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">登录认证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">国际化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">i18n</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Apache POI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">log4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">下载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MyEclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sublime textn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动静分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Nginx安装配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动化运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发环境搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统瓶颈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XSS攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSRF攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">密码攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Shodan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP-IP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">正向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">破解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Crawler4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebMagic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ETL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+                <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发组现状</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Junit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">地理信息</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">行业分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电力项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">录像容量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Three.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">webGL</a>
               </li>
             
             <div class="clearfix"></div>

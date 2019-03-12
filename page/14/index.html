@@ -164,71 +164,35 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Lombok使用方法简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC06 软件测试 &amp; 性能优化/性能优化/网站性能测试工具Yslow使用教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/性能优化/网站性能测试工具Yslow使用教程/">网站性能测试工具Yslow使用教程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/性能优化/网站性能测试工具Yslow使用教程/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Lombok是一个可以通过注解的形式来帮助我们简化 Java 代码的工具。它可以帮助我们在编译生成getter / setter、构造函数、toString()、hashcode()等一些常用的方法的字节码文件，而在源码中不必写这些代码。</p>
-<p>本文主要介绍如何使用Lombok插件来简化代码。 测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。</p>
+        <p> [x] <a href="https://baike.baidu.com/item/YSLOW/10384699?fr=aladdin" target="_blank" rel="noopener">百度百科 - yslow</a></p>
 <ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://projectlombok.org/" target="_blank" rel="noopener">官网地址</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://github.com/rzwitserloot/lombok" target="_blank" rel="noopener">Github地址</a></li>
+<li><p>[x] <a href="https://gtmetrix.com/" target="_blank" rel="noopener">gtmetrix</a></p>
+</li>
+<li><p>[x] <a href="http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/" target="_blank" rel="noopener">7 天打造前端性能监控系统</a></p>
+</li>
+<li><p>[x] <a href="https://www.cnblogs.com/chuaWeb/p/PerformanceMonitoring.htm" target="_blank" rel="noopener">前端性能——监控起步</a></p>
+</li>
 </ul>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.06.25</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、Lombok配置"><a href="#三、Lombok配置" class="headerlink" title="三、Lombok配置"></a>三、Lombok配置</h1><h2 id="3-1、添加Lombok依赖"><a href="#3-1、添加Lombok依赖" class="headerlink" title="3.1、添加Lombok依赖"></a>3.1、添加Lombok依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- model生成其构造器、getter、setter、equals、hashcode、toString方法 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.18.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2、添加IDEA插件"><a href="#3-2、添加IDEA插件" class="headerlink" title="3.2、添加IDEA插件"></a>3.2、添加IDEA插件</h2><p><img src="http://img.cdn.lapland.top/Image%201529916441.png" alt="image"></p>
-<h2 id="3-3、启用Annotation编译"><a href="#3-3、启用Annotation编译" class="headerlink" title="3.3、启用Annotation编译"></a>3.3、启用Annotation编译</h2><blockquote>
-<p>File –&gt; Settings –&gt; Builder，Execution，Deployment –&gt; Compiler –&gt; Annotation Processors。<br>选中下图中复选框 , 重启服务器。</p>
-</blockquote>
-<p><img src="http://img.cdn.lapland.top/Image%201529916236.png" alt="image"></p>
-<h1 id="四、Lombok使用"><a href="#四、Lombok使用" class="headerlink" title="四、Lombok使用"></a>四、Lombok使用</h1><h2 id="4-1、Lombok注解"><a href="#4-1、Lombok注解" class="headerlink" title="4.1、Lombok注解"></a>4.1、Lombok注解</h2><p>下面只是介绍了几个常用的注解，更多的请参见<a href="https://projectlombok.org/features/index.html。" target="_blank" rel="noopener">https://projectlombok.org/features/index.html。</a></p>
-<h3 id="4-111、-Getter-Setter"><a href="#4-111、-Getter-Setter" class="headerlink" title="4.111、@Getter / @Setter"></a>4.111、@Getter / @Setter</h3><p>可以作用在类上和属性上，放在类上，会对所有的非静态(non-static)属性生成Getter/Setter方法，放在属性上，会对该属性生成Getter/Setter方法。并可以指定Getter/Setter方法的访问级别。</p>
-<h3 id="4-112、-EqualsAndHashCode"><a href="#4-112、-EqualsAndHashCode" class="headerlink" title="4.112、@EqualsAndHashCode"></a>4.112、@EqualsAndHashCode</h3><p>默认情况下，会使用所有非瞬态(non-transient)和非静态(non-static)字段来生成equals和hascode方法，也可以指定具体使用哪些属性。</p>
-<h3 id="4-113、-ToString"><a href="#4-113、-ToString" class="headerlink" title="4.113、@ToString"></a>4.113、@ToString</h3><p>生成toString方法，默认情况下，会输出类名、所有属性，属性会按照顺序输出，以逗号分割。</p>
-<h3 id="4-114、-NoArgsConstructor，-RequiredArgsConstructor，-AllArgsConstructor"><a href="#4-114、-NoArgsConstructor，-RequiredArgsConstructor，-AllArgsConstructor" class="headerlink" title="4.114、@NoArgsConstructor，@RequiredArgsConstructor，@AllArgsConstructor"></a>4.114、@NoArgsConstructor，@RequiredArgsConstructor，@AllArgsConstructor</h3><p>无参构造器、部分参数构造器、全参构造器，当我们需要重载多个构造器的时候，Lombok就无能为力了。</p>
-<ul>
-<li>@NoArgsConstructor</li>
-</ul>
-<p>生成一个无参数的构造方法</p>
-<ul>
-<li>@RequiredArgsConstructor</li>
-</ul>
-<p>会生成构造方法（可能带参数也可能不带参数），如果带参数，这参数只能是以final修饰的未经初始化的字段，或者是以@NonNull注解的未经初始化的字段。</p>
-<ul>
-<li>@AllArgsConstructor</li>
-</ul>
-<p>会生成一个包含所有变量，同时如果变量使用了NotNull annotation ， 会进行是否为空的校验。</p>
-<h3 id="4-115、-Data"><a href="#4-115、-Data" class="headerlink" title="4.115、@Data"></a>4.115、@Data</h3><p>自动为所有字段添加@ToString, @EqualsAndHashCode, @Getter方法，为非final字段添加@Setter,和@RequiredArgsConstructor。</p>
-<h3 id="4-116、-Log4j"><a href="#4-116、-Log4j" class="headerlink" title="4.116、@Log4j"></a>4.116、@Log4j</h3><p>注解在类上；提供一个 属性名为log 的 log4j 日志对象，调用 log.info(xxxx)；</p>
-<h1 id="五、参考资料"><a href="#五、参考资料" class="headerlink" title="五、参考资料"></a>五、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.jianshu.com/p/365ea41b3573" target="_blank" rel="noopener">lombok</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/ghsau/article/details/52334762" target="_blank" rel="noopener">Java奇淫巧技之Lombok</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/lvshuchangyin/article/details/68065775" target="_blank" rel="noopener">Lombok 之 Constructor</a></li>
-</ul>
-<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><blockquote>
-<p>待补充实例</p>
-</blockquote>
 
       
 
@@ -237,11 +201,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Yslow</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Lombok使用方法简介/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/性能优化/网站性能测试工具Yslow使用教程/">展开全文 >></a>
         </p>
       
 
@@ -271,49 +261,30 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/国际化(i18n)应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC06 软件测试 &amp; 性能优化/软件测试/Web性能优化实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/软件测试/Web性能优化实践/">Web性能优化实践</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/软件测试/Web性能优化实践/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>国际化（internationalization）是设计和制造容易适应不同区域要求的产品的一种方式。它要求从产品中抽离所有的与语言，国家／地区和文化相关的元素。换言之，应用程序的功能和代码设计考虑在不同地区运行的需要，其代码简化了不同本地版本的生产。开发这样的程序的过程，就称为国际化。</p>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2018.07.22</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h1 id="四、示例"><a href="#四、示例" class="headerlink" title="四、示例"></a>四、示例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lapland.utils.i18n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.MessageFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.NumberFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.GregorianCalendar;</span><br><span class="line"><span class="keyword">import</span> java.util.Locale;</span><br><span class="line"><span class="keyword">import</span> java.util.ResourceBundle;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * i18n_Test</span></span><br><span class="line"><span class="comment"> * jdk转换命令 -native2ascii（中文转Ascii编码）</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zz</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 上午4:10 18-7-20</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">i18n_Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** logger日志 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(i18n_Test.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据资源包基名和语言环境加载对应的语言资源文件</span></span><br><span class="line">        ResourceBundle bundler = ResourceBundle.getBundle(<span class="string">"resources.MessageResource"</span>, Locale.CHINA);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"username"</span>));</span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"password"</span>));</span><br><span class="line">        LOGGER.info(bundler.getString(<span class="string">"email"</span>)+<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Locale locale = Locale.getDefault();</span><br><span class="line">        <span class="comment">//Locale locale = new Locale("zh", "CN");</span></span><br><span class="line">        <span class="comment">//Locale locale = new Locale("en", "US");</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 数值，货币格式化</span></span><br><span class="line">        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);</span><br><span class="line">        <span class="keyword">double</span> i = <span class="number">123456.78</span>;</span><br><span class="line">        LOGGER.info(numberFormat.format(i) + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 日期，时间格式化</span></span><br><span class="line">        Date date = <span class="keyword">new</span> Date();</span><br><span class="line">        DateFormat dateFormat_0 = DateFormat.getDateInstance(DateFormat.LONG, locale);</span><br><span class="line">        DateFormat dateFormat_1 = DateFormat.getTimeInstance(DateFormat.FULL, locale);</span><br><span class="line">        DateFormat dateFormat_2 = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(dateFormat_0.format(date));</span><br><span class="line">        LOGGER.info(dateFormat_1.format(date));</span><br><span class="line">        LOGGER.info(dateFormat_2.format(date) + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文本格式化</span></span><br><span class="line">        String pattern1 = <span class="string">"&#123;0&#125;，你好！你于 &#123;1&#125; 在工商银行存入 &#123;2&#125; 元。"</span>;</span><br><span class="line">        String pattern2 = <span class="string">"At &#123;1,time,short&#125; On &#123;1,date,long&#125;，&#123;0&#125; paid &#123;2,number, currency&#125;."</span>;</span><br><span class="line"></span><br><span class="line">        Object[] params_1 = &#123;<span class="string">"John"</span>, <span class="keyword">new</span> GregorianCalendar().getTime(), <span class="number">1.0E3</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用默认本地化对象格式化信息</span></span><br><span class="line">        String msg1 = MessageFormat.format(pattern1, params_1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用指定的本地化对象格式化信息</span></span><br><span class="line">        MessageFormat mf = <span class="keyword">new</span> MessageFormat(pattern2, Locale.US);</span><br><span class="line">        String msg2 = mf.format(params_1);</span><br><span class="line"></span><br><span class="line">        LOGGER.info(msg1);</span><br><span class="line">        LOGGER.info(msg2 + <span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 资源文件动态文本格式化</span></span><br><span class="line">        String pattern_A = bundler.getString(<span class="string">"message"</span>);</span><br><span class="line">        Object[] params_A = &#123;dateFormat_0.format(date), <span class="number">99</span>, <span class="number">100000000</span>&#125;;</span><br><span class="line"></span><br><span class="line">        MessageFormat format_A = <span class="keyword">new</span> MessageFormat(pattern_A, Locale.CHINA);</span><br><span class="line">        String msg_A = format_A.format(params_A);</span><br><span class="line">        LOGGER.info(msg_A);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="五、拓展阅读"><a href="#五、拓展阅读" class="headerlink" title="五、拓展阅读"></a>五、拓展阅读</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/lcore/article/details/42126299" target="_blank" rel="noopener">Spring MVC异常统一处理(异常信息的国际化,日志记录)</a></li>
-</ul>
-<h1 id="六、参考资料"><a href="#六、参考资料" class="headerlink" title="六、参考资料"></a>六、参考资料</h1><ul>
-<li><p>[x] <a href="https://blog.csdn.net/yerenyuan_pku/article/details/52234742" target="_blank" rel="noopener">国际化(i18n)</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/m0_37355951/article/details/77895585" target="_blank" rel="noopener">jquery-i18n-properties国际化</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/ethan_fu/article/details/45621337" target="_blank" rel="noopener">深入理解spring国际化</a></p>
-</li>
-</ul>
-<h1 id="七、结语"><a href="#七、结语" class="headerlink" title="七、结语"></a>七、结语</h1><blockquote>
-<p>此篇仅为测试代码，须继续在实际项目中验证完善。</p>
+        <h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><blockquote>
+<p>最高效的网络请求是那些不使用网络的请求。换句话说，重用已缓存的响应结果的能力能够显著地改善应用的性能。</p>
 </blockquote>
-
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2>
       
 
       
@@ -321,11 +292,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">系统瓶颈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/国际化(i18n)应用/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/软件测试/Web性能优化实践/">展开全文 >></a>
         </p>
       
 
@@ -355,8 +352,23 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Redis缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC06 软件测试 &amp; 性能优化/软件测试/jmeter性能测试和接口测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/软件测试/jmeter性能测试和接口测试/">jmeter性能测试和接口测试</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/软件测试/jmeter性能测试和接口测试/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -368,11 +380,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">系统瓶颈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Redis缓存/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC06 软件测试 & 性能优化/软件测试/jmeter性能测试和接口测试/">展开全文 >></a>
         </p>
       
 
@@ -402,11 +440,29 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/OSWorkFlow工作流框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/Web安全/web开发常见安全问题（SQL注入、XSS攻击、CSRF攻击）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/Web安全/web开发常见安全问题（SQL注入、XSS攻击、CSRF攻击）/">web开发常见安全问题（SQL注入、XSS攻击、CSRF攻击）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/Web安全/web开发常见安全问题（SQL注入、XSS攻击、CSRF攻击）/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/Web安全/web开发常见安全问题（SQL注入、XSS攻击、CSRF攻击）/#more">more >></a>
         
       
 
@@ -415,11 +471,45 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL注入</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">XSS攻击</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSRF攻击</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/OSWorkFlow工作流框架/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/Web安全/web开发常见安全问题（SQL注入、XSS攻击、CSRF攻击）/">展开全文 >></a>
         </p>
       
 
@@ -449,69 +539,30 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/渗透测试/Kali Linux渗透测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali Linux渗透测试/">使用Maltego进行互联网情报收集</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali Linux渗透测试/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.12.18</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2018.11.30</td>
-<td style="text-align:center">1.1</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">更新quartz.xml</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、概念解析"><a href="#三、概念解析" class="headerlink" title="三、概念解析"></a>三、概念解析</h1><h2 id="3-1、占位"><a href="#3-1、占位" class="headerlink" title="3.1、占位"></a>3.1、占位</h2><ul>
-<li>scheduler：任务调度器</li>
-<li>trigger：触发器，用于定义任务调度时间规则</li>
-<li>job：任务，即被调度的任务</li>
-<li>misfire：错过的，指本来应该被执行但实际没有被执行的任务调度</li>
-</ul>
-<font color="6600CC"><center><strong>Quartz 组件关系图</strong></center></font>
-
-<p><img src="http://img.cdn.lapland.top/Image%20220.png" alt="image"></p>
-<h1 id="四、正文"><a href="#四、正文" class="headerlink" title="四、正文"></a>四、正文</h1><ul>
-<li>spring-context-quartz.xml</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置quartz定时任务 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SchedulerFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"triggers"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"simpleTrigger_init"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"simpleTrigger_6h"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"cronTrigger_6h"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"simpleTrigger_20min"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"cronTrigger_20min"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Trigger - 单位:ms， 配置项目启动后任务就执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"simpleTrigger_init"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"Job_init"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"startDelay"</span> <span class="attr">value</span>=<span class="string">"1000"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"repeatInterval"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"repeatCount"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Job - 初始化 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"Job_init"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetObject"</span> <span class="attr">ref</span>=<span class="string">"job_init"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetMethod"</span> <span class="attr">value</span>=<span class="string">"execute"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Trigger - 单位:ms， 配置项目启动后任务就执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"simpleTrigger_20min"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"Job_20min"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"startDelay"</span> <span class="attr">value</span>=<span class="string">"1000"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"repeatInterval"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"repeatCount"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Trigger - 每隔20min执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cronTrigger_20min"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.CronTriggerFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"Job_20min"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cronExpression"</span> <span class="attr">value</span>=<span class="string">"0 0/20 * * * ?"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Job - 每隔20min执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"Job_20min"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetObject"</span> <span class="attr">ref</span>=<span class="string">"job_20min"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetMethod"</span> <span class="attr">value</span>=<span class="string">"execute"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"concurrent"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Trigger - 单位:ms， 配置项目启动后任务就执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"simpleTrigger_6h"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"Job_6h"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"startDelay"</span> <span class="attr">value</span>=<span class="string">"1000"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"repeatInterval"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"repeatCount"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Trigger - 每隔6小时执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cronTrigger_6h"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.CronTriggerFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"Job_6h"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cronExpression"</span> <span class="attr">value</span>=<span class="string">"0 0 0/6 * * ?"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Job - 每隔6小时执行一次 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"Job_6h"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetObject"</span> <span class="attr">ref</span>=<span class="string">"job_6h"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetMethod"</span> <span class="attr">value</span>=<span class="string">"execute"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Job_6h.java</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(<span class="string">"job_6h"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Job_6h</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger LOGGER = LoggerFactory.getLogger(Job_6h.class);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        LOGGER.info(<span class="string">"+++++++ 6h定时任务执行Start +++++"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li><p>[x] <a href="http://cron.qqe2.com/" target="_blank" rel="noopener">在线Cron表达式生成器</a></p>
-</li>
-<li><p>[x] <a href="http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/" target="_blank" rel="noopener">Quartz - 官方文档</a></p>
-</li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/drift-ice/p/3817269.html" target="_blank" rel="noopener">Quartz使用总结</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/LiuChunfu/p/5598610.html" target="_blank" rel="noopener">Quartz总结</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/u013824562/article/details/78618356" target="_blank" rel="noopener">Quartz定时任务（附demo）</a><h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1></li>
-</ul>
-<blockquote>
-<p>未完待续</p>
-</blockquote>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali Linux渗透测试/#more">more >></a>
+        
       
 
       
@@ -519,11 +570,41 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">渗透测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Maltego</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会工程学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali Linux渗透测试/">展开全文 >></a>
         </p>
       
 
@@ -553,219 +634,30 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]浅谈Java项目日志记录和分析 (基于log4j介绍)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/渗透测试/Kali密码攻击工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali密码攻击工具/">Kali密码攻击工具</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali密码攻击工具/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。</p>
-<p>一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：</p>
-<ul>
-<li>对程序运行情况的记录和监控；</li>
-<li>在必要时可详细了解程序内部的运行状态；</li>
-<li>对系统性能的影响尽量小。</li>
-</ul>
-<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿 </td>
-</tr>
-</tbody>
-</table>
-<h1 id="二、日志基础"><a href="#二、日志基础" class="headerlink" title="二、日志基础"></a>二、日志基础</h1><h2 id="1、日志组件"><a href="#1、日志组件" class="headerlink" title="1、日志组件"></a>1、日志组件</h2><blockquote>
-<p>Java日志API由以下三个核心组件组成：</p>
-</blockquote>
-<ul>
-<li><strong>Loggers</strong>：负责捕捉事件并将其发送给合适的Appender。</li>
-<li><strong>Appenders</strong>：也称为Handlers，它负责接收日志事件，使用Layout格式化，然后输出到指定位置。</li>
-<li><strong>Layouts</strong>：也被称为Formatters，它负责对日志事件中的数据进行转换和格式化。</li>
-</ul>
-<h2 id="2、日志框架"><a href="#2、日志框架" class="headerlink" title="2、日志框架"></a>2、日志框架</h2><p>在Java中，输出日志需要使用一个或者多个日志框架，这些框架提供了必要的对象、方法和配置来传输消息。Java在java.util.logging包中提供了一个默认的框架。除此之外，还有很多其它第三方框架，包括Log4j、Logback以及tinylog。还有其它一些开发包，例如SLF4J和Apache Commons Logging，它们提供了一些抽象层，对你的代码和日志框架进行解耦，从而允许你在不同的日志框架中进行切换。</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> Java Logging API  （Oracle）             Java默认的日志框架</li>
-<li style="list-style: none"><input type="checkbox" checked> Log4j             （Apache）             开源日志框架</li>
-<li style="list-style: none"><input type="checkbox" checked> Logback           （Logback Project）    开源项目，被设计成Log4j版本1的后续版本</li>
-<li style="list-style: none"><input type="checkbox" checked> tinylog           （tinylog）            轻量级开源logger</li>
-</ul>
-<h2 id="3、日志抽象层"><a href="#3、日志抽象层" class="headerlink" title="3、日志抽象层"></a>3、日志抽象层</h2><p>诸如SLF4J这样的抽象层，会将你的应用程序从日志框架中解耦。应用程序可以在运行时选择绑定到一个特定的日志框架（例如java.util.logging、Log4j或者Logback），这通过在应用程序的类路径中添加对应的日志框架来实现。<br><br>如果在类路径中配置的日志框架不可用，抽象层就会立刻取消调用日志的相应逻辑。抽象层可以让我们更加容易地改变项目现有的日志框架，或者集成那些使用了不同日志框架的项目。</p>
-<h2 id="4、日志配置"><a href="#4、日志配置" class="headerlink" title="4、日志配置"></a>4、日志配置</h2><p>尽管所有的Java日志框架都可以通过代码进行配置，但是大部分配置还是通过外部配置文件完成的。这些文件决定了日志消息在何时通过什么方式进行处理，日志框架可以在运行时加载这些文件。</p>
-<h3 id="4-1、配置实例"><a href="#4-1、配置实例" class="headerlink" title="4.1、配置实例"></a>4.1、配置实例</h3><p>Log4j支持两种配置文件格式，一种是XML格式的文件，一种是properties格式的文件。比较常用的是properties文件。</p>
-<ul>
-<li>properties格式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># ====================================================================== #</span><br><span class="line"># 配置根 logger (日志级别, 输出位置)</span><br><span class="line">log4j.rootLogger=INFO, fileI, fileE, Console</span><br><span class="line"># ====================================================================== #</span><br><span class="line"># 控制台输出 Console</span><br><span class="line">log4j.appender.Console=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.Console.Target=System.out</span><br><span class="line">log4j.appender.Console.layout=$&#123;log4j.log.layout&#125;</span><br><span class="line">log4j.appender.Console.layout.ConversionPattern=$&#123;log4j.log.layout.pattern&#125;</span><br><span class="line"># ====================================================================== #</span><br><span class="line"># 文件输出 fileInfo</span><br><span class="line">log4j.appender.fileI=org.apache.log4j.DailyRollingFileAppender</span><br><span class="line">log4j.appender.fileI.Threshold = INFO</span><br><span class="line">log4j.appender.fileI.DatePattern = &apos;.&apos;yyyy-MM-dd</span><br><span class="line">log4j.appender.fileI.File=$&#123;log4j.log.layout.baseFile&#125;_info.log</span><br><span class="line">log4j.appender.fileI.layout=$&#123;log4j.log.layout&#125;</span><br><span class="line">log4j.appender.fileI.layout.ConversionPattern=$&#123;log4j.log.layout.pattern&#125;</span><br><span class="line"># ====================================================================== #</span><br><span class="line"># 文件输出 fileError</span><br><span class="line">log4j.appender.fileE=org.apache.log4j.DailyRollingFileAppender</span><br><span class="line">log4j.appender.fileE.Threshold = ERROR</span><br><span class="line">log4j.appender.fileE.DatePattern = &apos;.&apos;yyyy-MM-dd</span><br><span class="line">log4j.appender.fileE.File=$&#123;log4j.log.layout.baseFile&#125;_error.log</span><br><span class="line">log4j.appender.fileE.layout=$&#123;log4j.log.layout&#125;</span><br><span class="line">log4j.appender.fileE.layout.ConversionPattern=$&#123;log4j.log.layout.pattern&#125;</span><br><span class="line"># ====================================================================== #</span><br><span class="line"># 配置参数</span><br><span class="line">log4j.log.encoding=UTF-8</span><br><span class="line">log4j.log.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.log.layout.pattern=[%-5p] [%-21t:%r] - %m%n</span><br><span class="line">log4j.log.layout.baseFile=D\://apache-tomcat-7.0.70_log/AnjiOnline</span><br><span class="line"># ====================================================================== #</span><br></pre></td></tr></table></figure>
-<ul>
-<li>XML格式</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">log4j:configuration</span> <span class="attr">xmlns:log4j</span>=<span class="string">"http://jakarta.apache.org/log4j/"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"RollingAppender"</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.DailyRollingFileAppender"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"File"</span> <span class="attr">value</span>=<span class="string">"logs/info.log"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"Encoding"</span> <span class="attr">value</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"DatePattern"</span> <span class="attr">value</span>=<span class="string">"'.'yyyy-MM-dd"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">"org.apache.log4j.PatternLayout"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"ConversionPattern"</span> <span class="attr">value</span>=<span class="string">"[%p] %d %c %M - %m%n"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">priority</span> <span class="attr">value</span>=<span class="string">"DEBUG"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"RollingAppender"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">log4j:configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-2、配置说明"><a href="#4-2、配置说明" class="headerlink" title="4.2、配置说明"></a>4.2、配置说明</h3><h4 id="4-2-1、rootLogger"><a href="#4-2-1、rootLogger" class="headerlink" title="4.2.1、rootLogger"></a>4.2.1、rootLogger</h4><ul>
-<li>log4j.rootLogger = [ level ] , appenderName, appenderName, …</li>
-</ul>
-<blockquote>
-<p><strong>level</strong>：是log4j的日志级别，优先级从高到低分别是ERROR、WARN、INFO、DEBUG。<br><br><strong>appenderName</strong>：就是指定日志信息输出到哪个地方。可同时指定多个输出目的地。</p>
-</blockquote>
-<h4 id="4-2-2、配置日志信息输出目的地Appender，其语法为："><a href="#4-2-2、配置日志信息输出目的地Appender，其语法为：" class="headerlink" title="4.2.2、配置日志信息输出目的地Appender，其语法为："></a>4.2.2、配置日志信息输出目的地Appender，其语法为：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">log4j.appender.appenderName = fully.qualified.name.of.appender.class</span><br><span class="line">log4j.appender.appenderName.option1 = value1</span><br><span class="line">...</span><br><span class="line">log4j.appender.appenderName.optionN = valueN</span><br><span class="line"></span><br><span class="line"># 其中,Log4j提供的appender有以下几种:</span><br><span class="line">org.apache.log4j.ConsoleAppender（控制台）;</span><br><span class="line">org.apache.log4j.FileAppender（文件）;</span><br><span class="line">org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件）;</span><br><span class="line">org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）;</span><br><span class="line">org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）</span><br></pre></td></tr></table></figure>
-<h4 id="4-2-3、置好appender后，针对appender的配置"><a href="#4-2-3、置好appender后，针对appender的配置" class="headerlink" title="4.2.3、置好appender后，针对appender的配置"></a>4.2.3、置好appender后，针对appender的配置</h4><h4 id="4-2-3-1、-ConsoleAppender选项"><a href="#4-2-3-1、-ConsoleAppender选项" class="headerlink" title="4.2.3.1、.ConsoleAppender选项"></a>4.2.3.1、.ConsoleAppender选项</h4><ul>
-<li><strong>Threshold=WARN</strong>：指定日志消息的输出最低层次。</li>
-<li><strong>ImmediateFlush=true</strong>：默认值是true,意谓着所有的消息都会被立即输出。</li>
-<li><strong>Target=System.err</strong>：默认情况下是：System.out,指定输出控制台</li>
-</ul>
-<h4 id="4-2-3-2、-FileAppender-选项"><a href="#4-2-3-2、-FileAppender-选项" class="headerlink" title="4.2.3.2、.FileAppender 选项"></a>4.2.3.2、.FileAppender 选项</h4><ul>
-<li><strong>Threshold=WARN</strong>：指定日志消息的输出最低层次。</li>
-<li><strong>ImmediateFlush=true</strong>：默认值是true,意谓着所有的消息都会被立即输出。</li>
-<li><strong>File=mylog.txt</strong>：指定消息输出到mylog.txt文件。</li>
-<li><strong>Append=false</strong>：默认值是true,即将消息增加到指定文件中，false指将消息覆盖指定的文件内容。</li>
-</ul>
-<h4 id="4-2-3-3、-DailyRollingFileAppender-选项"><a href="#4-2-3-3、-DailyRollingFileAppender-选项" class="headerlink" title="4.2.3.3、.DailyRollingFileAppender 选项"></a>4.2.3.3、.DailyRollingFileAppender 选项</h4><ul>
-<li><strong>Threshold=WARN</strong>：指定日志消息的输出最低层次。</li>
-<li><strong>ImmediateFlush=true</strong>：默认值是true,意谓着所有的消息都会被立即输出。</li>
-<li><strong>File=mylog.txt</strong>：指定消息输出到mylog.txt文件。</li>
-<li><strong>Append=false</strong>：默认值是true,即将消息增加到指定文件中，false指将消息覆盖指定的文件内容。</li>
-<li><strong>DatePattern=’.’yyyy-ww</strong>：每周滚动一次文件，即每周产生一个新的文件。当然也可以指定按月、周、天、时和分。即对应的格式如下：<ul>
-<li>‘.’yyyy-MM：每月</li>
-<li>‘.’yyyy-ww: 每周</li>
-<li>‘.’yyyy-MM-dd: 每天</li>
-<li>‘.’yyyy-MM-dd-a: 每天两次</li>
-<li>‘.’yyyy-MM-dd-HH: 每小时</li>
-<li>‘.’yyyy-MM-dd-HH-mm: 每分钟</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-2-3-4、-RollingFileAppender-选项"><a href="#4-2-3-4、-RollingFileAppender-选项" class="headerlink" title="4.2.3.4、.RollingFileAppender 选项"></a>4.2.3.4、.RollingFileAppender 选项</h4><ul>
-<li><strong>Threshold=WARN</strong>：指定日志消息的输出最低层次。</li>
-<li><strong>ImmediateFlush=true</strong>：默认值是true,意谓着所有的消息都会被立即输出。</li>
-<li><strong>File=mylog.txt</strong>：指定消息输出到mylog.txt文件。</li>
-<li><strong>Append=false</strong>：默认值是true,即将消息增加到指定文件中，false指将消息覆盖指定的文件内容。</li>
-<li><strong>MaxFileSize=100KB</strong>：后缀可以是KB, MB 或者是 GB. 在日志文件到达该大小时，将会自动滚动，即将原来的内容移到mylog.log.1文件</li>
-<li><strong>MaxBackupIndex=2</strong>：指定可以产生的滚动文件的最大数。</li>
-</ul>
-<h4 id="4-2-4、配置日志信息的布局，其语法为："><a href="#4-2-4、配置日志信息的布局，其语法为：" class="headerlink" title="4.2.4、配置日志信息的布局，其语法为："></a>4.2.4、配置日志信息的布局，其语法为：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class</span><br><span class="line">log4j.appender.appenderName.layout.option1 = value1</span><br><span class="line">...</span><br><span class="line">log4j.appender.appenderName.layout.option = valueN</span><br><span class="line"></span><br><span class="line"># 其中，Log4j提供的layout有以下几种：</span><br><span class="line">org.apache.log4j.HTMLLayout（以HTML表格形式布局），</span><br><span class="line">org.apache.log4j.PatternLayout（可以灵活地指定布局模式），</span><br><span class="line">org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串），</span><br><span class="line">org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）</span><br></pre></td></tr></table></figure>
-<h4 id="4-2-5、打印参数如下："><a href="#4-2-5、打印参数如下：" class="headerlink" title="4.2.5、打印参数如下："></a>4.2.5、打印参数如下：</h4><ul>
-<li>%d：输出日志时间点的日期或时间，默认格式为ISO8601。</li>
-<li>%t：输出产生该日志线程的线程名。</li>
-<li>%c：输出所属的类目，通常就是所在类的全名。</li>
-<li>%p：输出日志级别。</li>
-<li>%m：输出代码中指定的消息。</li>
-<li>%n：输出一个回车换行符。</li>
-<li>%r：输入自应用启动到输出该log信息耗费的毫秒数。</li>
-<li>%l：输出日志事件发生的位置，包括类名、线程名，以及所在代码的行数。</li>
-</ul>
-<h3 id="4-3、日志级别"><a href="#4-3、日志级别" class="headerlink" title="4.3、日志级别"></a>4.3、日志级别</h3><p>SLF4J把Log由高到低分成了Error，Warn，Info，Debug和Trace五个级别。我们可以分成用户级别和开发级别。</p>
-<h4 id="4-3-1-用户级别"><a href="#4-3-1-用户级别" class="headerlink" title="4.3.1 用户级别"></a>4.3.1 用户级别</h4><p>Error、Warn和Info这三个级别的Log会出现在生产环境上，他们必须是运维人员能阅读明白的</p>
-<h5 id="4-3-1-1-Error"><a href="#4-3-1-1-Error" class="headerlink" title="4.3.1.1 Error"></a>4.3.1.1 Error</h5><ul>
-<li>影响到程序正常运行、当前请求正常运行的异常情况,例如：<ul>
-<li>打开配置文件失败</li>
-<li>第三方应用网络连接异常</li>
-<li>SQLException</li>
-</ul>
-</li>
-<li>不应该出现的情况，例如：<ul>
-<li>某个Service方法返回的List里面应该有元素的时候缺获得一个空List</li>
-<li>做字符转换的时候居然报错说没有GBK字符集</li>
-</ul>
-</li>
-</ul>
-<h5 id="4-3-1-2-Warn"><a href="#4-3-1-2-Warn" class="headerlink" title="4.3.1.2 Warn"></a>4.3.1.2 Warn</h5><ul>
-<li>不应该出现但是不影响程序、当前请求正常运行的异常情况，例如：<ul>
-<li>有容错机制的时候出现的错误情况</li>
-<li>找不到配置文件，但是系统能自动创建配置文件</li>
-</ul>
-</li>
-<li>即将接近临界值的时候，例如：<ul>
-<li>缓存池占用达到警告线</li>
-</ul>
-</li>
-</ul>
-<h5 id="4-3-1-3-Info"><a href="#4-3-1-3-Info" class="headerlink" title="4.3.1.3 Info"></a>4.3.1.3 Info</h5><ul>
-<li>系统运行信息<ul>
-<li>Service方法的出入口</li>
-<li>主要逻辑中的分步骤</li>
-</ul>
-</li>
-<li>外部接口部分<ul>
-<li>客户端请求参数和返回给客户端的结果</li>
-<li>调用第三方时的调用参数和调用结果</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-3-2-开发级别"><a href="#4-3-2-开发级别" class="headerlink" title="4.3.2 开发级别"></a>4.3.2 开发级别</h4><p>Debug和Trace这俩个级别主要是在开发期间使用或者当系统出现问题后开发人员介入调试的时候用的，需要有助于提供详细的信息。</p>
-<h5 id="4-3-2-1-Debug"><a href="#4-3-2-1-Debug" class="headerlink" title="4.3.2.1 Debug"></a>4.3.2.1 Debug</h5><ul>
-<li>用于记录程序变量，例如：<ul>
-<li>多次迭代中的变量</li>
-</ul>
-</li>
-<li>用于替代代码中的注释</li>
-</ul>
-<h5 id="4-3-2-2-Trace"><a href="#4-3-2-2-Trace" class="headerlink" title="4.3.2.2 Trace"></a>4.3.2.2 Trace</h5><p>主要用于记录系统运行中的完整信息，比如完整的HTTP Request和Http Response</p>
-<h2 id="5、调用实例"><a href="#5、调用实例" class="headerlink" title="5、调用实例"></a>5、调用实例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 日志管理的Demo</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoggingDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">private</span> Integer b = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> String name = <span class="string">"图灵"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建LOGGER</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger LOGGER = LoggerFactory.getLogger(LoggingDemo.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">LoggingDemo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            LOGGER.debug(<span class="string">"读取被除数b的值为[&#123;&#125;]"</span>, b);</span><br><span class="line">            LOGGER.info(<span class="string">"读取配置文件[&#123;&#125;]"</span>, <span class="string">"/src/main/resources/config.properties"</span>);</span><br><span class="line">            LOGGER.warn(<span class="string">"添加[&#123;&#125;]为管理员"</span>, name);</span><br><span class="line">            a = a / b;</span><br><span class="line">            System.out.println(<span class="string">"--&gt;出现异常后,try内异常后面的代码不再执行,所以try范围不能过大"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArithmeticException e) &#123;</span><br><span class="line">            <span class="comment">// e.printStackTrace();</span></span><br><span class="line">            LOGGER.error(<span class="string">"被除数不能为0"</span>, e);</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"--&gt; finally内的代码始终被执行"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"--&gt; 异常捕获后,try外的代码正常执行"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="三、日志记录的注意点"><a href="#三、日志记录的注意点" class="headerlink" title="三、日志记录的注意点"></a>三、日志记录的注意点</h1><p>通常情况下在程序日志里记录一些比较有意义的状态数据：程序启动，退出的时间点；程序运行消耗时间；耗时程序的执行进度；重要变量的状态变化。</p>
-<ul>
-<li><strong>如何正确的写日志</strong><ul>
-<li>合理使用日志分级；</li>
-<li>正确的使用输出模式；</li>
-<li>尽量带入上下文的信息；</li>
-<li>尽量不要包含敏感信息；</li>
-<li>变量用[]与普通文本区分开来；</li>
-<li>日志信息应该简洁,易读,易解析；</li>
-<li>不允许出现printStackTrace、println语句。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong>那些地方需要写日志</strong><ul>
-<li>任何业务异常都应该记下来完整的异常信息；</li>
-<li>非预期执行，为程序在“有可能”执行到的地方打印日志；</li>
-<li>程序中对外部系统与模块的依赖调用前后都记下日志，方便接口调试；</li>
-<li>程序中重要的状态信息的变化应该记录下来，方便查问题时还原现场，推断程序运行过程；</li>
-<li>系统入口与出口，这个粒度可以是重要方法级或模块级。记录它的输入与输出，方便定位。</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>具体参考：<a href="http://blog.csdn.net/qq_19701185/article/details/55056748/" target="_blank" rel="noopener">阿里巴巴JAVA编程规范之异常日志</a></p>
-</blockquote>
-<h1 id="四、pom-xml参考模板"><a href="#四、pom-xml参考模板" class="headerlink" title="四、pom.xml参考模板"></a>四、pom.xml参考模板</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- log4j版本号 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slf4j.version</span>&gt;</span>1.7.5<span class="tag">&lt;/<span class="name">slf4j.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">log4j.version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">log4j.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- log start --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;log4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;slf4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;slf4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- log end --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="五、配置过程中遇到的问题"><a href="#五、配置过程中遇到的问题" class="headerlink" title="五、配置过程中遇到的问题"></a>五、配置过程中遇到的问题</h1><ul>
-<li><a href="http://blog.csdn.net/zypzilong/article/details/77763520/" target="_blank" rel="noopener">如何以json格式输出日志</a></li>
-<li><a href="https://wenku.baidu.com/view/8248a2b3cfc789eb172dc8e4.html/" target="_blank" rel="noopener">日志输出路径没有权限的问题</a></li>
-<li><a href="http://yingjunjia.iteye.com/blog/860554/" target="_blank" rel="noopener">如何把日志写入数据库或发送邮件</a></li>
-</ul>
-<h1 id="六、日志分析工具"><a href="#六、日志分析工具" class="headerlink" title="六、日志分析工具"></a>六、日志分析工具</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://wupuyuan.iteye.com/blog/1270575/" target="_blank" rel="noopener">一个Java写的日志分析工具</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://my.oschina.net/itblog/blog/547250/" target="_blank" rel="noopener">ELK(ElasticSearch, Logstash, Kibana)搭建实时日志分析平台</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://storysky.blog.51cto.com/628458/1158707/" target="_blank" rel="noopener">用Kibana和logstash快速搭建实时日志查询、收集与分析系统</a></li>
-</ul>
-<h1 id="七、拓展阅读"><a href="#七、拓展阅读" class="headerlink" title="七、拓展阅读"></a>七、拓展阅读</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://note.youdao.com/" target="_blank" rel="noopener">使用AOP与注解记录Java日志的方法</a></li>
-</ul>
-<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.importnew.com/16331.html/" target="_blank" rel="noopener">Java日志终极指南</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.slf4j.org/faq.html#logging_performance/" target="_blank" rel="noopener">Slf4j提供的最佳实践</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://macrochen.iteye.com/blog/1399082/" target="_blank" rel="noopener">正确使用日志的10个技巧</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://blog.csdn.net/qq_19701185/article/details/55056748/" target="_blank" rel="noopener">阿里巴巴JAVA编程规范之异常日志</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.infoq.com/cn/articles/why-and-how-log/" target="_blank" rel="noopener">程序那些事：日志记录的作用和方法</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/crazyacking/p/5456347.html/" target="_blank" rel="noopener">JAVA - 优雅的记录日志（log4j实战篇）</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.blogjava.net/justfly/archive/2014/08/13/416925.html/" target="_blank" rel="noopener">Java程序员修炼之道 之 Logging(2/3) - 怎么写Log</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.blogjava.net/daiyongzhi/archive/2014/04/13/412364.html/" target="_blank" rel="noopener">java日志组件介绍（common-logging，log4j，slf4j，logback ）</a></li>
-</ul>
-<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
-<p>本文缺少日志分析和源码分析部分内容，仅适用于小型项目应用参考，有待后续完善。</p>
-</blockquote>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali密码攻击工具/#more">more >></a>
+        
       
 
       
@@ -773,11 +665,41 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会工程学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Kali</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">密码攻击</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/[已发布]浅谈Java项目日志记录和分析 (基于log4j介绍)/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Kali密码攻击工具/">展开全文 >></a>
         </p>
       
 
@@ -807,122 +729,36 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]跨域问题的几种解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/渗透测试/Shodan &amp; zoomeye 搜索引擎" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Shodan & zoomeye 搜索引擎/">Shodan &amp; Shodan 搜索引擎</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Shodan & zoomeye 搜索引擎/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h1><h1 id="二、-版本"><a href="#二、-版本" class="headerlink" title="二、 版本"></a>二、 版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> 1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿</td>
-</tr>
-<tr>
-<td style="text-align:center"> 2</td>
-<td style="text-align:center">2017.12.26</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">完善 CORS + Demo</td>
-</tr>
-</tbody>
-</table>
-<h1 id="三、为什么会产生跨域问题"><a href="#三、为什么会产生跨域问题" class="headerlink" title="三、为什么会产生跨域问题"></a>三、为什么会产生跨域问题</h1><p>域名、协议、端口者都相同就是同一个域，否则就是跨域。</p>
-<p><font color="6600CC"><strong>JavaScript</strong></font>出于安全方面的考虑，采取了<font color="6600CC"><strong>同源策略</strong></font>，即当前域的客户端脚本不允许在没有明确授权的情况下，读取其他域的资源。如果没有同源策略，那么一旦误执行了恶意网站的js脚本，该js脚本便可以随意获取其他域页面document、session、cookie等信息，很不安全。</p>
-<p>然而我们经常把网站的一些脚本、图片或其他资源放到静态服务器，页面可以更快的加载，而且减少了Web服务器的压力。或者系统间接口调用。这时就产生了跨域问题。</p>
-<ul>
-<li>eg：console 报错如下（端口不同）：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XMLHttpRequest cannot load http://localhost:8888/other/index.jsp. No &apos;Access-Control-Allow-Origin&apos; header is present on the requested resource. Origin &apos;http://localhost:8080&apos; is therefore not allowed access.</span><br></pre></td></tr></table></figure>
-<h1 id="四、如何解决跨域问题"><a href="#四、如何解决跨域问题" class="headerlink" title="四、如何解决跨域问题"></a>四、如何解决跨域问题</h1><h2 id="4-1、代理服务器"><a href="#4-1、代理服务器" class="headerlink" title="4.1、代理服务器"></a>4.1、代理服务器</h2><p>一种简单的办法，就是把跨域的工作交给服务器，从后台获取其他站点的数据再返回给前台，也就是跨域代理（Cross Domain Proxy）。这种方法似乎蛮简单的，改动也不太大。不过就是http请求多了些，响应慢了些，服务器的负载重了些。</p>
-<h2 id="4-2、通过jQuery实现JSONP的方式实现跨域"><a href="#4-2、通过jQuery实现JSONP的方式实现跨域" class="headerlink" title="4.2、通过jQuery实现JSONP的方式实现跨域"></a>4.2、通过jQuery实现JSONP的方式实现跨域</h2><blockquote>
-<p>JSONP 是 JSON with padding（填充式 JSON 或参数式 JSON）的简写。</p>
-</blockquote>
-<blockquote>
-<p>JSONP实现跨域请求的原理是动态创建<script>标签，然后利用<script>的src 不受同源策略约束来跨域获取数据。</p>
-</blockquote>
-<blockquote>
-<p>JSONP 由两部分组成：回调函数和数据。<font color=6600CC><strong>回调函数是当响应到来时应该在页面中调用的函数。</strong></font>回调函数的名字一般是在请求中指定的。而数据就是传入回调函数中的 JSON 数据。</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><blockquote>
+<p>基于物联网的搜索引擎。</p>
 </blockquote>
 <ul>
-<li>前端ajax请求：</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.shodan.io/" target="_blank" rel="noopener">Shodan官网</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zoomeye.org/" target="_blank" rel="noopener">Zoome官网</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/Shodan/1349900?fr=aladdin" target="_blank" rel="noopener">百度百科 - Shodan</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/ZoomEye/7685443?fr=aladdin" target="_blank" rel="noopener">百度百科 - Zoome</a></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn_jsonp"</span> <span class="attr">onclick</span>=<span class="string">"jsonp_function()"</span>&gt;</span>HttpApi - JSONP点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span> = <span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">jsonp_function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// $("#btn").click(function() &#123;</span></span></span><br><span class="line"><span class="javascript">                $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">async</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                    url: <span class="string">"http://localhost:8080/ApiDemo_Yshow/Student/getStudentList"</span>,</span></span><br><span class="line"><span class="javascript">                    type: <span class="string">"GET"</span>,</span></span><br><span class="line"><span class="javascript">                        dataType : <span class="string">"jsonp"</span>, <span class="comment">// 返回的数据类型，设置为JSONP方式</span></span></span><br><span class="line"><span class="javascript">                        jsonp : <span class="string">'callback'</span>,  <span class="comment">// 回调函数名形参 url?callback = call_back</span></span></span><br><span class="line"><span class="javascript">                        jsonpCallback: <span class="string">'call_back'</span>, <span class="comment">// 回调函数名实参</span></span></span><br><span class="line"><span class="javascript">                    success: <span class="function"><span class="keyword">function</span>(<span class="params">data, status</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(<span class="string">'状态为：'</span> + status);</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="undefined">                &#125;);</span></span><br><span class="line"><span class="javascript">            <span class="comment">// &#125;);</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>服务端处理请求：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.api.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.api.common.ListResponse;</span><br><span class="line"><span class="keyword">import</span> com.api.model.Student;</span><br><span class="line"><span class="keyword">import</span> com.api.service.StudentService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/Student/"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    StudentService studentService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getStudentList"</span>, produces=<span class="string">"text/html;charset=UTF-8"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStudentList</span><span class="params">(String callback)</span> </span>&#123; <span class="comment">// 回调函数名也可以写死</span></span><br><span class="line">	ListResponse&lt;Student&gt; studentList = studentService.getStudentList();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> callback+<span class="string">"("</span>+JSON.toJSONString(studentList)+<span class="string">")"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>服务端返回的数据格式如下：</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">call_back(&#123;</span><br><span class="line">    "items": [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">21</span>,</span><br><span class="line">            <span class="attr">"classes"</span>: <span class="string">"173521班"</span>,</span><br><span class="line">            <span class="attr">"id"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"张敏"</span>,</span><br><span class="line">            <span class="attr">"sex"</span>: <span class="string">"女"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">21</span>,</span><br><span class="line">            <span class="attr">"classes"</span>: <span class="string">"173521班"</span>,</span><br><span class="line">            <span class="attr">"id"</span>: <span class="number">2</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"江南"</span>,</span><br><span class="line">            <span class="attr">"sex"</span>: <span class="string">"男"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>如上述代码所示jQuery实现jsonp调用的步骤是：<ul>
-<li>浏览器端定义回调函数作为url参数传送到服务端。url?callback = call_back。</li>
-<li>服务端接收到参数后根据参数名+data数据封装成js函数格式的数据返回到浏览器端。</li>
-<li>浏览器端接受到数据后执行回调函数，Jquery中为success函数。执行返回的js代码。</li>
-<li>从而得到data数据。</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>JSONP是较为常用的一种跨域方式，不受浏览器兼容性的限制，然而它支持GET请求，RESTful架构并不适用。</p>
-</blockquote>
-<h2 id="4-3、通过CORS实现跨域（推荐）"><a href="#4-3、通过CORS实现跨域（推荐）" class="headerlink" title="4.3、通过CORS实现跨域（推荐）"></a>4.3、通过CORS实现跨域<font color=6600CC>（推荐）</font></h2><blockquote>
-<p>跨域资源共享（Cross-Origin Resource Sharing）是由W3C提出的一个用于浏览器以XMLHttpRequest方式向其他源的服务器发起请求的规范。不同于JSONP，CORS是以Ajax方式进行跨域请求，需要服务端与客户端的同时支持。目前CORS在绝大部分现代浏览器中都是支持的。</p>
-</blockquote>
-<ul>
-<li>前端ajax请求：</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn_cors"</span> <span class="attr">onclick</span>=<span class="string">"CORS_function()"</span>&gt;</span>HttpApi - CORS点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn_cors"</span> <span class="attr">onclick</span>=<span class="string">"RESTCORS_function()"</span>&gt;</span>RESTApi - GET - CORS点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--HttpApi - CORS解决跨域，简单请求--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">CORS_function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">async</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">            url: <span class="string">"http://localhost:8080/ApiDemo_Yshow/Student/getStudentByName"</span>,</span></span><br><span class="line"><span class="javascript">            type: <span class="string">"POST"</span>,</span></span><br><span class="line"><span class="javascript">            dataType: <span class="string">"json"</span>,</span></span><br><span class="line"><span class="undefined">            data: &#123;</span></span><br><span class="line"><span class="javascript">                <span class="string">"name"</span>: <span class="string">"江南"</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="javascript">            success: <span class="function"><span class="keyword">function</span>(<span class="params">data, status</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'状态为：'</span> + status);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> data = <span class="built_in">JSON</span>.stringify(data,<span class="literal">null</span>,<span class="number">4</span>);</span></span><br><span class="line"><span class="javascript">                $(<span class="string">"#backData"</span>).html(data);</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="javascript">            error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">"#backData"</span>).html(<span class="string">" 数据请求失败!"</span>);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--RESTApi - CORS解决跨域--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">RESTCORS_function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">async</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">            url: <span class="string">"http://localhost:8080/ApiDemo_Yshow/user/"</span>,</span></span><br><span class="line"><span class="javascript">            type: <span class="string">"GET"</span>,</span></span><br><span class="line"><span class="javascript">            dataType: <span class="string">"json"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="comment">//contentType: "application/json", // 提交数据类型，application/json编码默认UTF-8</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">//data: &#123;</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">//    "name": "江南"</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">//&#125;,</span></span></span><br><span class="line"><span class="javascript">            success: <span class="function"><span class="keyword">function</span>(<span class="params">data, status</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'状态为：'</span> + status);</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> data = <span class="built_in">JSON</span>.stringify(data,<span class="literal">null</span>,<span class="number">4</span>);</span></span><br><span class="line"><span class="javascript">                $(<span class="string">"#backData"</span>).html(data);</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="javascript">            error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $(<span class="string">"#backData"</span>).html(<span class="string">" 数据请求失败!"</span>);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>服务端处理请求 - 方法1 - setHearder：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.api.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.api.common.SingleResponse;</span><br><span class="line"><span class="keyword">import</span> com.api.service.StudentService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/Student/"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    StudentService studentService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"getStudentByName"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SingleResponse <span class="title">getStudentByName</span><span class="params">(@RequestParam(value = <span class="string">"name"</span>, required = <span class="keyword">false</span>)</span> String name,<span class="comment">//</span></span></span><br><span class="line"><span class="function">	    HttpServletResponse response) </span>&#123;</span><br><span class="line">	SingleResponse student = studentService.getStudentByName(name);</span><br><span class="line">	response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">	response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH"</span>);</span><br><span class="line">	<span class="keyword">return</span> student;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>服务端处理请求 - 方法2 - @CrossOrigin 注释（SpringMVC4.2以上）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package com.api.controller;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.CrossOrigin;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line">import org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line">import com.api.common.SingleResponse;</span><br><span class="line">import com.api.service.StudentService;</span><br><span class="line"></span><br><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;/Student/&quot;)</span><br><span class="line">public class StudentController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    StudentService studentService;</span><br><span class="line"></span><br><span class="line">    @CrossOrigin(origins = &quot;*&quot;, maxAge = 3600)</span><br><span class="line">    @RequestMapping(value = &quot;getStudentByName&quot;,method = RequestMethod.POST)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public SingleResponse getStudentByName(String name) &#123;</span><br><span class="line"></span><br><span class="line">	SingleResponse student = studentService.getStudentByName(name);</span><br><span class="line">	return student;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>服务端处理请求-方法3 - 自定义CORSFilter - web.xml</p>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CorsFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.restApi.configuration.CORSFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CorsFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.restApi.configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.Filter;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterChain;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterConfig;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CORSFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">		HttpServletResponse response = (HttpServletResponse) res;</span><br><span class="line">		response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">		response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"POST, GET, PUT, OPTIONS, DELETE"</span>);</span><br><span class="line">		response.setHeader(<span class="string">"Access-Control-Max-Age"</span>, <span class="string">"3600"</span>);</span><br><span class="line">		response.setHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"x-requested-with"</span>);</span><br><span class="line">		chain.doFilter(req, res);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>服务端处理请求-方法4 - 第三方CORSFilter - web.xml</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CorsFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.apache.catalina.filters.CorsFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.allowed.origins<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.allowed.methods<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>GET,POST,HEAD,OPTIONS,PUT<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.allowed.headers<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,自定义header<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.exposed.headers<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>Access-Control-Allow-Origin,Access-Control-Allow-Credentials<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.support.credentials<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.preflight.maxage<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>10<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CorsFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="五、参考资料"><a href="#五、参考资料" class="headerlink" title="五、参考资料"></a>五、参考资料</h1><ul>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="http://blog.csdn.net/saytime/article/details/51540876">Jsonp解决ajax跨域问题</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="http://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="http://blog.csdn.net/mggwct/article/details/47355323">ajax jsonp跨域乱码解决方案</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="http://blog.csdn.net/wuliyun88/article/details/50521725/">解决ajax跨域的方法原理详解_cnsd</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="http://www.cnblogs.com/pandang/p/5341250.html/">Ajax跨域问题的两种解决方法 _博客园</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="https://kb.cnblogs.com/page/139725/">说说JSON和JSONP，也许你会豁然开朗</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="https://www.jianshu.com/p/d05303d34222">SpringMVC开启CORS支持</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="https://www.jianshu.com/p/0c67823550d6">java 服务端设置跨域</a></li>
-<li style="list-style: none"><input type="checkbox" checked></input> <a href="http://blog.csdn.net/saytime/article/details/51549888">CORS解决ajax跨域问题</a></li>
-</ul>
-<h1 id="六、结语"><a href="#六、结语" class="headerlink" title="六、结语"></a>六、结语</h1><blockquote>
-<p>本文仅用于学习笔记。初始版本比较粗糙,后续会不断完善。</p>
-</blockquote>
-<h1 id="六、遗留问题"><a href="#六、遗留问题" class="headerlink" title="六、遗留问题"></a>六、遗留问题</h1><ul>
-<li>OPTIONS 403 (Forbidden)</li>
-</ul>
-</script></p></blockquote>
+
       
 
       
@@ -930,11 +766,41 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">渗透测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会工程学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Shodan</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/[已发布]跨域问题的几种解决方法/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/Shodan & zoomeye 搜索引擎/">展开全文 >></a>
         </p>
       
 
@@ -964,11 +830,29 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/websocket总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/渗透测试/使用Maltego进行互联网情报收集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/使用Maltego进行互联网情报收集/">使用Maltego进行互联网情报收集</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/使用Maltego进行互联网情报收集/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Maltego是一款十分适合渗透测试人员和取证分析人员的优秀工具，其主要功能是开源情报收集和取证。</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/使用Maltego进行互联网情报收集/#more">more >></a>
         
       
 
@@ -977,11 +861,41 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">渗透测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Maltego</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会工程学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/websocket总结/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/使用Maltego进行互联网情报收集/">展开全文 >></a>
         </p>
       
 
@@ -1011,13 +925,30 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/网页集成富文本编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/渗透测试/记一次渗透测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/记一次渗透测试/">记一次渗透测试</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/记一次渗透测试/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ck<br>kindEditor</p>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/记一次渗透测试/#more">more >></a>
+        
       
 
       
@@ -1025,11 +956,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">渗透测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/网页集成富文本编辑器/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/渗透测试/记一次渗透测试/">展开全文 >></a>
         </p>
       
 
@@ -1059,107 +1012,30 @@
 
 
   
-    <article id="post-[置顶] 博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/[已发布]Java加密部署，使用自定义的classloader解密的方法实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-[置顶] 博客文章/SC07 网络技术 &amp; Web安全/网络基础/Cisco Packet Tracer模拟器使用教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/网络基础/Cisco Packet Tracer模拟器使用教程/">Cisco Packet Tracer模拟器使用教程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/网络基础/Cisco Packet Tracer模拟器使用教程/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">修改日期</th>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">修改人</th>
-<th style="text-align:center">修改说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2017.09.24</td>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">ZZ</td>
-<td style="text-align:center">初稿 </td>
-</tr>
-</tbody>
-</table>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>使用jfinalQ-encrypt开源软件。对项目的class文件加密，防止反编译，可自定义加密解密算法，支持tomcat部署。</p>
-<h2 id="2-jfinalQ-encrypt-项目结构"><a href="#2-jfinalQ-encrypt-项目结构" class="headerlink" title="2.jfinalQ-encrypt 项目结构"></a>2.jfinalQ-encrypt 项目结构</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505893688_9592.png" alt="image"></p>
-<h2 id="3-流程"><a href="#3-流程" class="headerlink" title="3. 流程"></a>3. 流程</h2><blockquote>
-<p>2.1 首先将class文件进行字节流加密；<br><br>2.2 然后自定义tomcat的ClassLoader；<br><br>2.3 最后通过自定义的ClassLoader解密并加载class。</p>
-</blockquote>
-<h1 id="二、加密"><a href="#二、加密" class="headerlink" title="二、加密"></a>二、加密</h1><p>本节以Test项目为例，对其class文件进行加密。并用自定义的classloader进行解密。</p>
-<h2 id="1-Test项目目录结构"><a href="#1-Test项目目录结构" class="headerlink" title="1. Test项目目录结构"></a>1. Test项目目录结构</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505895167_6951.png" alt="image"></p>
-<h3 id="1-1-web-xml-配置"><a href="#1-1-web-xml-配置" class="headerlink" title="1.1 web.xml 配置"></a>1.1 web.xml 配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.demo.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/HelloServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-HelloServlet代码"><a href="#1-2-HelloServlet代码" class="headerlink" title="1.2 HelloServlet代码"></a>1.2 HelloServlet代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 请求地址 ：http://localhost:8080/Test/HelloServlet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// handle post request</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">	</span><br><span class="line">	String name = request.getParameter(<span class="string">"userName"</span>);</span><br><span class="line">	</span><br><span class="line">	response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">	response.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">	</span><br><span class="line">	PrintWriter out = response.getWriter();</span><br><span class="line">	out.println(<span class="string">"欢迎你: "</span>+<span class="keyword">new</span> String(name.getBytes(<span class="string">"ISO-8859-1"</span>), <span class="string">"UTF-8"</span>)+ <span class="string">"!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// destroy</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-3-前端页面代码"><a href="#1-3-前端页面代码" class="headerlink" title="1.3 前端页面代码"></a>1.3 前端页面代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">contentType</span>=<span class="string">"text/html;charset=UTF-8"</span> <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">language</span>=<span class="string">"java"</span>%&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 请求地址： localhost:8080/Test/index.jsp --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"HelloServlet"</span> <span class="attr">name</span>=<span class="string">"form"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">		姓名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"userName"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">			<span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>此时部署成功后经测试，tomcat下class文件可以轻松反编译，JSP页面可正常访问servlet文件。接下来对class文件进行加密。</p>
-</blockquote>
-<h2 id="2-加密解密算法，可修改"><a href="#2-加密解密算法，可修改" class="headerlink" title="2. 加密解密算法，可修改"></a>2. 加密解密算法，可修改</h2><p><img src="http://img.my.csdn.net/uploads/201709/20/1505894738_7972.png" alt="image"></p>
-<h2 id="3-运行QEncryptFrame-java文件"><a href="#3-运行QEncryptFrame-java文件" class="headerlink" title="3. 运行QEncryptFrame.java文件"></a>3. 运行QEncryptFrame.java文件</h2><ul>
-<li>选择需要加密的文件</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505895997_8647.png" alt="image"></p>
-<ul>
-<li>加密成功后显示</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505896220_6708.png" alt="image"></p>
-<h2 id="4-把生成的加密后的class文件拷贝到源class文件的位置。"><a href="#4-把生成的加密后的class文件拷贝到源class文件的位置。" class="headerlink" title="4. 把生成的加密后的class文件拷贝到源class文件的位置。"></a>4. 把生成的加密后的class文件拷贝到源class文件的位置。</h2><blockquote>
-<p>覆盖完成后，不要做修改代码，clean等操作，否则加密后的class会被再次覆盖。</p>
-</blockquote>
-<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h2><ul>
-<li>此时再对class文件进行反编译，则如下报错</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505896972_4328.png" alt="image"></p>
-<ul>
-<li>并且JSP文件不可正常请求servlet</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505898081_6329.png" alt="image"></p>
-<ul>
-<li>点击登录后返回</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505897627_2120.png" alt="image"></p>
-<h1 id="三、解密"><a href="#三、解密" class="headerlink" title="三、解密"></a>三、解密</h1><h2 id="1-配置-loader-properties-文件"><a href="#1-配置-loader-properties-文件" class="headerlink" title="1. 配置 loader.properties 文件"></a>1. 配置 loader.properties 文件</h2><blockquote>
-<p>此配置文件指定了自定义的ClassLoader需要进行解析的classs文件范围。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">encrypted_package=com.demo</span><br><span class="line">encrypted_class_path=D\:/apache-tomcat-7.0.70/webapps/Test/WEB-INF/classes/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>encrypted_package       需要进行解密的包，多个包名用逗号分隔；</li>
-<li>encrypted_class_path    tomcat中项目的classess文件夹路径。</li>
-</ul>
-<h2 id="2-打包自定义classloader文件"><a href="#2-打包自定义classloader文件" class="headerlink" title="2. 打包自定义classloader文件"></a>2. 打包自定义classloader文件</h2><blockquote>
-<p>将jfinalQ-encrypt中的loader包和QClassUtil打为一个jar，并命名为++classloaderQ.jar++，如下图所示：</p>
-</blockquote>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505898422_5153.png" alt="image"></p>
-<h2 id="3-更改tomcat的默认loader，改为自定义classloader"><a href="#3-更改tomcat的默认loader，改为自定义classloader" class="headerlink" title="3. 更改tomcat的默认loader，改为自定义classloader"></a>3. 更改tomcat的默认loader，改为自定义classloader</h2><ul>
-<li>修改tomcat/conf/context.xml文件，添加如下代码：</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Loader</span> <span class="attr">loaderClass</span>=<span class="string">"com.uikoo9.loader.QClassLoader"</span> <span class="attr">delegate</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">Loader</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-替换jar包"><a href="#4-替换jar包" class="headerlink" title="4. 替换jar包"></a>4. 替换jar包</h2><blockquote>
-<p>把classloaderQ.jar放到Tomcat的lib（D:\apache-tomcat-7.0.70\lib）文件夹下面。</p>
-</blockquote>
-<h2 id="5-测试-1"><a href="#5-测试-1" class="headerlink" title="5. 测试"></a>5. 测试</h2><ul>
-<li>对class文件进行反编译，报错</li>
-<li>JSP文件可正常请求servlet.</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505905760_5556.png" alt="image"></p>
-<ul>
-<li>点击登录后返回页面</li>
-</ul>
-<p><img src="http://img.my.csdn.net/uploads/201709/20/1505905761_5042.png" alt="image"></p>
-<ul>
-<li>测试成功</li>
-</ul>
-<h1 id="四、源码"><a href="#四、源码" class="headerlink" title="四、源码"></a>四、源码</h1><ul>
-<li><a href="https://github.com/uikoo9/jfinalQ-encrypt/" target="_blank" rel="noopener">源码下载</a></li>
-</ul>
-<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><blockquote>
-<p>由于时间原因，jfinalQ-encrypt源代码没能细读，只能做到初步应用，此文有待逐步后续完善。</p>
-</blockquote>
-
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Deepin - GNS3</p>
+        
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/网络基础/Cisco Packet Tracer模拟器使用教程/#more">more >></a>
+        
       
 
       
@@ -1167,11 +1043,41 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">渗透测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Maltego</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会工程学</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC03 Web开发 & Web框架/第三方组件应用/[已发布]Java加密部署，使用自定义的classloader解密的方法实例/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/[置顶] 博客文章/SC07 网络技术 & Web安全/网络基础/Cisco Packet Tracer模拟器使用教程/">展开全文 >></a>
         </p>
       
 
@@ -1203,7 +1109,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/13/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/15/">Next &raquo;</a>
     </nav>
   
 
@@ -1299,19 +1205,819 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">元注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拦截器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">监听器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">相对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">上下文对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码评审</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Ionic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">混合开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速迭代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">业务逻辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象编程，SOLID原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术选型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口调用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">架构风格</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">l引入公共页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Token</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">登录认证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">国际化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">i18n</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Apache POI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">log4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">下载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MyEclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sublime textn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动静分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">负载均衡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Nginx安装配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动化运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">开发环境搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统瓶颈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XSS攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSRF攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">密码攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Shodan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP-IP协议</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内网穿透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">正向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">破解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Crawler4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WebMagic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ETL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">后端开发</a>
+                <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发组现状</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Junit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">地理信息</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">行业分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电力项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">流媒体服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">录像容量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Three.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">webGL</a>
               </li>
             
             <div class="clearfix"></div>
