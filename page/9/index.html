@@ -164,19 +164,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前后端分离与RESTful风格及接口设计/前后端分离架构模式的实践（附完整Demo）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/前后端分离架构模式的实践（附完整Demo）/">前后端分离架构模式的实践（附完整Demo）</a>
+      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">使用Swagger或Postman接口文档管理</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/前后端分离架构模式的实践（附完整Demo）/" class="archive-article-date">
+        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/" class="archive-article-date">
   	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
 </a>
         
@@ -184,11 +184,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><blockquote>
-<p>本文是<a href="http://note.youdao.com/" target="_blank" rel="noopener">浅谈REST架构风格</a>和<a href="http://note.youdao.com/" target="_blank" rel="noopener">API接口设计指南</a>的总结实践性文章。着重介绍前后端分离项目所会涉及到和所须注意的内容。</p>
-</blockquote>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。</p>
+<p>本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看，使用Postman测试接口文档。</p>
+<p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新 。接口的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。Swagger 让部署管理和使用功能强大的API从未如此简单。</p>
+<p>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。</p>
+<p>测试环境：JDK 1.8  + Maven 3.5.1 + Tomcat 7 + IDEA</p>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/前后端分离架构模式的实践（附完整Demo）/#more">more >></a>
+          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/#more">more >></a>
         
       
 
@@ -227,7 +229,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/前后端分离架构模式的实践（附完整Demo）/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">展开全文 >></a>
         </p>
       
 
@@ -1216,11 +1218,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1228,11 +1230,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1928,11 +1930,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebMagic</a>
+                <a href="javascript:void(0)" class="js-tag color5">Crawler4j</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Crawler4j</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebMagic</a>
               </li>
              
               <li class="article-tag-list-item">
