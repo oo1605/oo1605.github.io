@@ -367,18 +367,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro安全框架/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Spring学习笔记系列/Spring AOP统一处理异常和日志/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Shiro安全框架
+          Spring AOP统一处理异常和日志
         
       </div>
     </a>
   
   
-    <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/第三方组件应用/浅谈Java项目日志记录和分析 (基于log4j介绍)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">浅谈Java项目日志记录和分析 (基于log4j介绍)</div>
+    <a href="/2017/09/24/博客文章/SC07 网络技术 & Web安全/网络基础/正向代理和反向代理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正向代理和反向代理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -430,6 +430,41 @@
     });
 </script>
 
+
+<style>
+/* 畅言评论框透明背景，自定义按钮，去版权 mlwei.com */
+#SOHUCS #SOHU_MAIN .module-cmt-list .wrap-build-gw .build-floor-gw {
+ padding: 4px 4px 6px;
+ border: 1px solid #dee4e9;
+ background-color: #00c5f200;
+ position: relative;
+ z-index: 2;
+}
+#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a .btn-fw {
+ width: 102px;
+ height: 30px;
+ overflow: hidden;
+ border: 0;
+ padding: 0;
+ margin: 0;
+ cursor: pointer;
+ background-image: url(/wp-content/themes/dux/img/post-btn.png);
+ background-repeat: no-repeat;
+ background-color: transparent;
+}
+#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a .btn-fw:hover {
+ background-image: url(/wp-content/themes/dux/img/post-btn1.png);
+}
+#SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-main {
+ margin: 0 8px;
+ height: 96px;
+ border-bottom: 1px solid #4398ed;
+ background-image: url();
+ background-repeat: no-repeat;
+ background-position: center;
+}
+#SOHUCS #SOHU_MAIN .module-cmt-footer .section-service-w, #SOHUCS #SOHU_MAIN .module-cmt-footer .section-service-w .service-wrap-w, #SOHUCS #SOHU_MAIN .module-cmt-footer .section-service-w .service-wrap-w a{display:none!important;}
+</style>
   
 
   
@@ -532,10 +567,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">导读</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -556,15 +587,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导读</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,15 +819,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,18 +868,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,6 +1187,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
               </li>
              
@@ -1165,18 +1212,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1304,7 +1339,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1312,7 +1347,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
