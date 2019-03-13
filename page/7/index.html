@@ -164,19 +164,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/6 - 软件工程与设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 速查表/常用JS代码片段-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">6 - 软件工程与设计模式</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-1/">常用JS代码片段-1</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-1/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -184,10 +184,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
-        
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/#more">more >></a>
-        
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">debugger</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"====TEST===="</span>);</span><br><span class="line"><span class="built_in">console</span>.log(data);</span><br><span class="line"><span class="built_in">console</span>.log(event);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> event);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> addressDate = loadAddress(data[i].addrid);</span><br><span class="line">$(span3).html(addressDate.name);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> addressDate = loadAddress(data[i].addrid);</span><br><span class="line"><span class="keyword">var</span> coor = addressDate.coord.split(<span class="string">','</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定时更新图表</span></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    loadTourCharts();</span><br><span class="line">    loadWorkMessage();</span><br><span class="line">    loadVolumeStatictics();</span><br><span class="line">    loadDigital();</span><br><span class="line">    loadAccident();</span><br><span class="line"></span><br><span class="line">    loadDistributed();</span><br><span class="line">&#125;, <span class="number">30000</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AJAX请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadAir</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type: <span class="string">"get"</span>,</span><br><span class="line">        url: DBServiceURI + <span class="string">"order/getAir.do"</span>,</span><br><span class="line">        <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> data = data.data;</span><br><span class="line">            <span class="keyword">var</span> AirData = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">                <span class="keyword">var</span> subData = [];</span><br><span class="line">                subData[<span class="number">0</span>] = data[i].id;</span><br><span class="line">                subData[<span class="number">1</span>] = data[i].value;</span><br><span class="line">                AirData.push(subData);</span><br><span class="line">            &#125;</span><br><span class="line">            air(AirData);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -200,11 +200,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS代码片段</a>
         		</li>
       		
 		</ul>
@@ -216,7 +212,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
         		</li>
       		
 		</ul>
@@ -225,7 +221,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-1/">展开全文 >></a>
         </p>
       
 
@@ -341,19 +337,19 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/7 - J2EE部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 速查表/端口及配置索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/">7 - J2EE部分</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/">常用端口及配置索引</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -363,7 +359,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/#more">more >></a>
         
       
 
@@ -377,11 +373,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常用端口</a>
         		</li>
       		
 		</ul>
@@ -393,7 +385,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
         		</li>
       		
 		</ul>
@@ -402,7 +394,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/">展开全文 >></a>
         </p>
       
 
@@ -432,19 +424,19 @@
 
 
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 速查表/常用网络命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">使用Swagger或Postman接口文档管理</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用网络命令/">常用网络命令</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC00 速查表/常用网络命令/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -452,200 +444,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。</p>
-<p>本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看，使用Postman测试接口文档。</p>
-<p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新 。接口的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。Swagger 让部署管理和使用功能强大的API从未如此简单。</p>
-<p>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。</p>
-<p>测试环境：JDK 1.8  + Maven 3.5.1 + Tomcat 7 + IDEA</p>
-        
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前后端分离</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/8 - websevice部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/">8 - websevice部分</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/" class="archive-article-date">
-  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
-        
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/小贴士/小贴士 - 前端开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/小贴士/小贴士 - 前端开发/">小贴士 - 前端开发</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/博客文章/小贴士/小贴士 - 前端开发/" class="archive-article-date">
-  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、-为什么要在根目录下放-index-html"><a href="#1、-为什么要在根目录下放-index-html" class="headerlink" title="1、 为什么要在根目录下放 index.html ?"></a>1、 为什么要在根目录下放 index.html ?</h2><blockquote>
-<p>答案：假设网站的默认首页是home/www/项目名/web/home.html。在开发环境中静态网页的没有根目录，当前目录为home.html，页面的跳转采用相对路径。然而生产环境，在nginx代理时设置根目录home/www/项目名，主页设置为/web/home.html，打开域名时，当前目录为根目录，则页面的跳转就会出现问题。加一层index.html放在根目录下，做自动跳转，则可以避免这个问题。</p>
-<ul>
-<li>index代码如下<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0.1;url=web/home.html"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>正在跳转，请稍后...<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h3 id="mstsc-131-1-3-100"><a href="#mstsc-131-1-3-100" class="headerlink" title="mstsc 131.1.3.100"></a>mstsc 131.1.3.100</h3><blockquote>
+<p>Windowns 远程命令</p>
 </blockquote>
-<h2 id="2、JavaScript中的标签语句"><a href="#2、JavaScript中的标签语句" class="headerlink" title="2、JavaScript中的标签语句"></a>2、JavaScript中的标签语句</h2><p>即给一条语句起一个名字，这样在程序的任何地方都可以使用这个名字来引用它，可以标记任何语句。如条件循环，回调语句等。</p>
+<h3 id="telnet-131-1-3-100-8888"><a href="#telnet-131-1-3-100-8888" class="headerlink" title="telnet 131.1.3.100 8888"></a>telnet 131.1.3.100 8888</h3><blockquote>
+<p>测试端口是否可用</p>
+</blockquote>
+<h3 id="curl-1-1-1-2-8880"><a href="#curl-1-1-1-2-8880" class="headerlink" title="curl  1.1.1.2:8880"></a>curl  1.1.1.2:8880</h3><blockquote>
+<p>Http请求</p>
+</blockquote>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><blockquote>
+<p>Linux下载</p>
+</blockquote>
+<h3 id="ps-ef-grep-mysql"><a href="#ps-ef-grep-mysql" class="headerlink" title="ps -ef | grep mysql"></a>ps -ef | grep mysql</h3><blockquote>
+<p>查看mysql进程</p>
+</blockquote>
+<h3 id="rpm-qa-grep-mysql"><a href="#rpm-qa-grep-mysql" class="headerlink" title="rpm -qa | grep mysql"></a>rpm -qa | grep mysql</h3><blockquote>
+<p>查看mysql进程</p>
+</blockquote>
 
       
 
@@ -659,7 +475,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小贴士</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">快捷键</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络命令</a>
         		</li>
       		
 		</ul>
@@ -671,7 +491,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/小贴士//" class="article-tag-list-link color4">小贴士</a>
+        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
         		</li>
       		
 		</ul>
@@ -680,7 +500,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/小贴士/小贴士 - 前端开发/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用网络命令/">展开全文 >></a>
         </p>
       
 
@@ -710,19 +530,19 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/9 - 算法与编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/5- 流行的框架与新技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/">9 - 算法与编程</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">5- 流行的框架与新技术</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -732,7 +552,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/#more">more >></a>
         
       
 
@@ -771,7 +591,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">展开全文 >></a>
         </p>
       
 
@@ -913,19 +733,19 @@
 
 
   
-    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/代码评审" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/">Intellij IDEA集成JProfiler性能分析神器</a>
+      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/代码评审/">代码评审</a>
     </h1>
   
 
         
-        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/" class="archive-article-date">
+        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/代码评审/" class="archive-article-date">
   	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
 </a>
         
@@ -933,7 +753,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Intellij IDEA集成JProfiler性能分析神器</p>
+        <p>CI持续集成系统环境—部署gerrit环境完整记录</p>
+<p>code review</p>
+<p>质量缺陷类型<br>空指针引用，资源泄漏，死锁，内存崩溃，安全缺陷/缓冲区溢出，API使用错误，未初始化变量，类层次结构不一致，性能效率低下，安全最佳实践违反，代码维护问题 ，程序挂起，错误处理问题，并行数据访问违规，竞态条件，错误表达，控制数据流问题，内存非法访问，不安全数据处理。</p>
+<p>Git之CodeReview流程</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/wenhx/p/How-We-Code-Review.html/" target="_blank" rel="noopener">我们是怎么做Code Review的</a></li>
+</ul>
 
       
 
@@ -947,11 +773,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能分析</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JProfiler</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码评审</a>
         		</li>
       		
 		</ul>
@@ -972,7 +794,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/代码评审/">展开全文 >></a>
         </p>
       
 
@@ -1002,19 +824,19 @@
 
 
   
-    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/Tomcat并发连接数优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/网站性能测试工具Yslow使用教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Tomcat并发连接数优化/">Tomcat并发连接数优化</a>
+      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/网站性能测试工具Yslow使用教程/">网站性能测试工具Yslow使用教程</a>
     </h1>
   
 
         
-        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Tomcat并发连接数优化/" class="archive-article-date">
+        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/网站性能测试工具Yslow使用教程/" class="archive-article-date">
   	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
 </a>
         
@@ -1022,20 +844,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>设计需求系统最大并发数为1100左右。此系统在一台服务器上可支持150万左右的用户数。</p>
+        <p> [x] <a href="https://baike.baidu.com/item/YSLOW/10384699?fr=aladdin" target="_blank" rel="noopener">百度百科 - yslow</a></p>
 <ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/jtlgb/p/5955996.html/" target="_blank" rel="noopener">Tomcat 7最大并发连接数的正确修改方法</a></li>
-</ul>
-<ul>
-<li><p>[x] <a href="https://www.gonet.com.cn/webduirshow-153.html/" target="_blank" rel="noopener">1000个并发到底最大能承载多少用户？</a></p>
+<li><p>[x] <a href="https://gtmetrix.com/" target="_blank" rel="noopener">gtmetrix</a></p>
 </li>
-<li><p>[x] <a href="https://blog.csdn.net/potatobeancox55555/article/details/79712324/" target="_blank" rel="noopener">各种技术的并发量与服务器个数</a></p>
+<li><p>[x] <a href="http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/" target="_blank" rel="noopener">7 天打造前端性能监控系统</a></p>
 </li>
-<li><p>[x] <a href="https://wenku.baidu.com/view/90e706e8aeaad1f346933f3f.html/" target="_blank" rel="noopener">各种技术的并发量与服务器个数</a></p>
-</li>
-<li><p>[x] <a href="http://www.ha97.com/5095.html/" target="_blank" rel="noopener">系统吞吐量（TPS）、用户并发量、性能测试概念和公式</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/hel12he/article/details/77561718/" target="_blank" rel="noopener">Web开发中，什么级别才算是高并发</a></p>
+<li><p>[x] <a href="https://www.cnblogs.com/chuaWeb/p/PerformanceMonitoring.htm" target="_blank" rel="noopener">前端性能——监控起步</a></p>
 </li>
 </ul>
 
@@ -1051,11 +866,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">连接数优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Yslow</a>
         		</li>
       		
 		</ul>
@@ -1076,7 +891,189 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Tomcat并发连接数优化/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/网站性能测试工具Yslow使用教程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/浅谈Web缓存技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/浅谈Web缓存技术/">浅谈Web缓存技术</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/浅谈Web缓存技术/" class="archive-article-date">
+  	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>广义来说，凡是位于速度相差较大的两种硬件/服务之间的，用于协调两者数据传输速度差异的结构或者服务，均可称之为 缓存Cache。缓存复制了频繁使用的数据以利于快速访问，属于典型的用空间换时间的方法。</p>
+<p>一个优秀的缓存策略可以缩短网页请求资源的路径，减少延迟。并且由于缓存文件可以重复利用，还可以减少带宽消耗，降低服务器压力。</p>
+<p>Web缓存分为浏览器缓存、CDN、Web（反向代理）服务器缓存、数据库缓存等。</p>
+<p>关键字：CDN，静态资源缓存控制。后端缓存技术（Redis,Memcache，EhCache）</p>
+        
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/浅谈Web缓存技术/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/浅谈Web缓存技术/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/Web性能优化实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Web性能优化实践/">Web性能优化实践</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Web性能优化实践/" class="archive-article-date">
+  	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web项目系统瓶颈测试</p>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><blockquote>
+<p>最高效的网络请求是那些不使用网络的请求。换句话说，重用已缓存的响应结果的能力能够显著地改善应用的性能。</p>
+</blockquote>
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">系统瓶颈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Web性能优化实践/">展开全文 >></a>
         </p>
       
 
@@ -1108,7 +1105,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -1208,6 +1205,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导读</a>
               </li>
              
@@ -1216,19 +1225,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1244,7 +1249,91 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主从热备</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">外键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">注解切换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据库恢复</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">连接密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">关系型数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">非关系型数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码评审</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Ionic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">混合开发模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Office</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1256,6 +1345,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">元注解</a>
               </li>
              
@@ -1264,11 +1357,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1316,6 +1409,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字典表</a>
               </li>
              
@@ -1324,95 +1421,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">异常处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注解切换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主从热备</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">外键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">连接密码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">数据库恢复</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">关系型数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">非关系型数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码评审</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ionic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">移动端开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">混合开发模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Office</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1420,47 +1429,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">语录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">习题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1480,11 +1449,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1496,19 +1461,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1528,179 +1481,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">API</a>
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">接口调用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">架构风格</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">引入公共页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Shiro</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Token</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">登录认证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CAS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java加密</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码加密</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">国际化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">i18n</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">log4j</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Apache POI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">下载</a>
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1708,39 +1497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">系统瓶颈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jmeter</a>
+                <a href="javascript:void(0)" class="js-tag color5">MyEclipse</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MyEclipse</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1776,10 +1537,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">运维概念</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
               </li>
              
@@ -1812,6 +1569,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">运维概念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">版本管理</a>
               </li>
              
@@ -1825,6 +1586,42 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jmeter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统瓶颈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1868,7 +1665,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
+                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1876,11 +1673,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
+                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1980,59 +1777,191 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发组现状</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">框架</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color4">API</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">接口调用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+                <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+                <a href="javascript:void(0)" class="js-tag color5">架构风格</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Solr</a>
+                <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">连接数据库</a>
+                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">引入公共页面</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Token</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">登录认证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码加密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">国际化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">i18n</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">log4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Apache POI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">下载</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2044,10 +1973,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Three.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web3D</a>
               </li>
              
@@ -2056,15 +1981,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">webGL</a>
+                <a href="javascript:void(0)" class="js-tag color4">Three.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2077,6 +1994,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2105,6 +2026,70 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">直播系统开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">webGL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
             
             <div class="clearfix"></div>
