@@ -336,19 +336,19 @@
 
 
   
-    <article id="post-博客文章/SC00 速查表/常用JS代码片段-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 速查表/Linux常用命令速查表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-2/">常用JS代码片段-2</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/Linux常用命令速查表/">Linux常用命令速查表</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-2/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC00 速查表/Linux常用命令速查表/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -356,8 +356,97 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 操作 document - 1</span></span><br><span class="line"><span class="keyword">var</span> time1 = <span class="built_in">document</span>.getElementById(<span class="string">"time1"</span>); <span class="comment">// 获取节点</span></span><br><span class="line">time1.innerHTML = ndate1; <span class="comment">// 填充数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'button'</span>)[<span class="number">0</span>];</span><br><span class="line">iframe.src = url;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文章列表</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadArticleList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    type: <span class="string">"get"</span>,</span><br><span class="line">    url: <span class="string">"../../json/blog.json"</span>,</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> data = data.data;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> parentDiv = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"bloglist"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> childDiv_1 = $(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">            childDiv_1.appendTo(parentDiv[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> childDiv_2 = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);</span><br><span class="line">            childDiv_2.addClass(<span class="string">'arrow_box'</span>);</span><br><span class="line">            childDiv_2.appendTo(childDiv_1);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 三角形</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_3 = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);</span><br><span class="line">            childDiv_3.addClass(<span class="string">'ti'</span>);</span><br><span class="line">            childDiv_3.appendTo(childDiv_2);</span><br><span class="line">            <span class="comment">// 圆形</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_4 = $(<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>);</span><br><span class="line">            childDiv_4.addClass(<span class="string">'ci'</span>);</span><br><span class="line">            childDiv_4.appendTo(childDiv_2);</span><br><span class="line">            <span class="comment">// 标题</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_5 = $(<span class="string">'&lt;h2&gt;&lt;/h2&gt;'</span>);</span><br><span class="line">            childDiv_5.addClass(<span class="string">'title'</span>);</span><br><span class="line">            <span class="keyword">var</span> childDiv_5_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_5_1.text(data[i].title);</span><br><span class="line">            childDiv_5_1.attr(<span class="string">'href'</span>, data[i].url);</span><br><span class="line">            childDiv_5_1.appendTo(childDiv_5);</span><br><span class="line">            childDiv_5.appendTo(childDiv_2);</span><br><span class="line">            <span class="comment">// 摘要</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_6 = $(<span class="string">'&lt;ul&gt;&lt;/ul&gt;'</span>);</span><br><span class="line">            childDiv_6.addClass(<span class="string">'abstract'</span>);</span><br><span class="line">            childDiv_6.appendTo(childDiv_2);</span><br><span class="line">            <span class="keyword">var</span> childDiv_6_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_6_1.attr(<span class="string">'href'</span>, data[i].url);</span><br><span class="line">            childDiv_6_1.appendTo(childDiv_6);</span><br><span class="line">            <span class="keyword">var</span> childDiv_6_1_1 = $(<span class="string">'&lt;img&gt;'</span>);</span><br><span class="line">            childDiv_6_1_1.attr(<span class="string">'src'</span>, data[i].img_url);</span><br><span class="line">            childDiv_6_1_1.appendTo(childDiv_6_1);</span><br><span class="line">            <span class="keyword">var</span> childDiv_6_2 = $(<span class="string">'&lt;p&gt;&lt;/p&gt;'</span>);</span><br><span class="line">            childDiv_6_2.text(data[i].abstract);</span><br><span class="line">            childDiv_6_2.appendTo(childDiv_6);</span><br><span class="line">            <span class="comment">// 文章信息</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_7 = $(<span class="string">'&lt;ul&gt;&lt;/ul&gt;'</span>);</span><br><span class="line">            childDiv_7.addClass(<span class="string">'details'</span>);</span><br><span class="line">            childDiv_7.appendTo(childDiv_2);</span><br><span class="line">            <span class="comment">// 发布/更新日期</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_7_1 = $(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">            childDiv_7_1.appendTo(childDiv_7);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_1_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_7_1_1.attr(<span class="string">'href'</span>, <span class="string">''</span>);</span><br><span class="line">            childDiv_7_1_1.attr(<span class="string">'title'</span>, <span class="string">'发布日期：'</span> + data[i].details.update_date);</span><br><span class="line">            childDiv_7_1_1.appendTo(childDiv_7_1);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_1_1_1 = $(<span class="string">'&lt;i&gt;&lt;/i&gt;'</span>);</span><br><span class="line">            childDiv_7_1_1_1.addClass(<span class="string">'fa fa-clock-o'</span>);</span><br><span class="line">            childDiv_7_1_1_1.appendTo(childDiv_7_1_1);</span><br><span class="line">            $(childDiv_7_1_1_1).after(data[i].details.update_date);</span><br><span class="line">            <span class="comment">// 作者</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_7_2 = $(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">            childDiv_7_2.appendTo(childDiv_7);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_2_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_7_2_1.attr(<span class="string">'href'</span>, <span class="string">''</span>);</span><br><span class="line">            childDiv_7_2_1.attr(<span class="string">'title'</span>, <span class="string">'作者：'</span> + data[i].details.author);</span><br><span class="line">            childDiv_7_2_1.appendTo(childDiv_7_2);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_2_1_1 = $(<span class="string">'&lt;i&gt;&lt;/i&gt;'</span>);</span><br><span class="line">            childDiv_7_2_1_1.addClass(<span class="string">'fa fa-user'</span>);</span><br><span class="line">            childDiv_7_2_1_1.appendTo(childDiv_7_2_1);</span><br><span class="line">            $(childDiv_7_2_1_1).after(data[i].details.author);</span><br><span class="line">            <span class="comment">// 评论数</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_7_3 = $(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">            childDiv_7_3.appendTo(childDiv_7);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_3_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_7_3_1.attr(<span class="string">'href'</span>, <span class="string">''</span>);</span><br><span class="line">            childDiv_7_3_1.attr(<span class="string">'title'</span>, <span class="string">'已有'</span> + data[i].details.comment_num + <span class="string">'条评论'</span>);</span><br><span class="line">            childDiv_7_3_1.appendTo(childDiv_7_3);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_3_1_1 = $(<span class="string">'&lt;i&gt;&lt;/i&gt;'</span>);</span><br><span class="line">            childDiv_7_3_1_1.addClass(<span class="string">'fa fa-commenting'</span>);</span><br><span class="line">            childDiv_7_3_1_1.appendTo(childDiv_7_3_1);</span><br><span class="line">            $(childDiv_7_3_1_1).after(data[i].details.comment_num);</span><br><span class="line">            <span class="comment">// 阅览数</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_7_4 = $(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">            childDiv_7_4.appendTo(childDiv_7);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_4_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_7_4_1.attr(<span class="string">'href'</span>, <span class="string">''</span>);</span><br><span class="line">            childDiv_7_4_1.attr(<span class="string">'title'</span>, <span class="string">'已有'</span> + data[i].details.look_num + <span class="string">'次浏览'</span>);</span><br><span class="line">            childDiv_7_4_1.appendTo(childDiv_7_4);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_4_1_1 = $(<span class="string">'&lt;i&gt;&lt;/i&gt;'</span>);</span><br><span class="line">            childDiv_7_4_1_1.addClass(<span class="string">'fa fa-eye'</span>);</span><br><span class="line">            childDiv_7_4_1_1.appendTo(childDiv_7_4_1);</span><br><span class="line">            $(childDiv_7_4_1_1).after(data[i].details.look_num);</span><br><span class="line">            <span class="comment">// 分类</span></span><br><span class="line">            <span class="keyword">var</span> childDiv_7_5 = $(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line">            childDiv_7_5.appendTo(childDiv_7);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_5_1 = $(<span class="string">'&lt;a&gt;&lt;/a&gt;'</span>);</span><br><span class="line">            childDiv_7_5_1.attr(<span class="string">'href'</span>, <span class="string">''</span>);</span><br><span class="line">            childDiv_7_5_1.attr(<span class="string">'title'</span>, <span class="string">'分类：'</span> + data[i].details.category);</span><br><span class="line">            childDiv_7_5_1.appendTo(childDiv_7_5);</span><br><span class="line">            <span class="keyword">var</span> childDiv_7_5_1_1 = $(<span class="string">'&lt;i&gt;&lt;/i&gt;'</span>);</span><br><span class="line">            childDiv_7_5_1_1.addClass(<span class="string">'fa fa-th-list'</span>);</span><br><span class="line">            childDiv_7_5_1_1.appendTo(childDiv_7_5_1);</span><br><span class="line">            $(childDiv_7_5_1_1).after(data[i].details.category);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"数据请求失败！"</span> + data.msg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 操作 document - 2</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    getLogs();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLogs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type: <span class="string">"get"</span>,</span><br><span class="line">        url: <span class="string">"http://localhost:8080/SmartCity-Service/monitor/monitor-logger"</span>,</span><br><span class="line">        <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> data = data.data;</span><br><span class="line">            <span class="keyword">var</span> div_1 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'tbody'</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> div_1_1 = $(<span class="string">'&lt;tr&gt;&lt;/tr&gt;'</span>);</span><br><span class="line">                div_1_1.addClass(<span class="string">'tr-row1'</span>);</span><br><span class="line">                div_1_1.attr(<span class="string">'align'</span>, <span class="string">"center"</span>);</span><br><span class="line">                div_1_1.appendTo(div_1);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> div_1_1_0 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_1 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_2 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_3 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_4 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_5 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_6 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_7 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_8 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_9 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line">                <span class="keyword">var</span> div_1_1_10 = $(<span class="string">'&lt;td&gt;&lt;/td&gt;'</span>);</span><br><span class="line"></span><br><span class="line">                div_1_1_0.text(data[i].id);</span><br><span class="line">                div_1_1_1.text(data[i].title);</span><br><span class="line">                div_1_1_2.text(data[i].level);</span><br><span class="line">                div_1_1_3.text(data[i].userName);</span><br><span class="line">                div_1_1_4.text(formatUnixtimestamp(data[i].operTime));</span><br><span class="line">                div_1_1_5.text(data[i].reqIp);</span><br><span class="line">                div_1_1_6.text(data[i].reqUri);</span><br><span class="line">                div_1_1_7.text(data[i].method);</span><br><span class="line">                div_1_1_8.text(data[i].operEvent);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (<span class="number">1</span> == data[i].operStatus) &#123;</span><br><span class="line">                    div_1_1_9.text(<span class="string">'操作成功'</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    div_1_1_9.text(<span class="string">'操作失败'</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> div_1_1_10_1 = $(<span class="string">'&lt;bottom&gt;&lt;/bottom&gt;'</span>);</span><br><span class="line">                div_1_1_10_1.addClass(<span class="string">'btn btn-primary btn-sm'</span>);</span><br><span class="line">                div_1_1_10_1.text(<span class="string">'删除'</span>);</span><br><span class="line">                div_1_1_10_1.attr(<span class="string">'onclick'</span>, <span class="string">'deleteLogById('</span> + data[i].id + <span class="string">')'</span>);</span><br><span class="line">                div_1_1_10_1.appendTo(div_1_1_10);</span><br><span class="line"></span><br><span class="line">                div_1_1_0.appendTo(div_1_1);</span><br><span class="line">                div_1_1_1.appendTo(div_1_1);</span><br><span class="line">                div_1_1_2.appendTo(div_1_1);</span><br><span class="line">                div_1_1_3.appendTo(div_1_1);</span><br><span class="line">                div_1_1_4.appendTo(div_1_1);</span><br><span class="line">                div_1_1_5.appendTo(div_1_1);</span><br><span class="line">                div_1_1_6.appendTo(div_1_1);</span><br><span class="line">                div_1_1_7.appendTo(div_1_1);</span><br><span class="line">                div_1_1_8.appendTo(div_1_1);</span><br><span class="line">                div_1_1_9.appendTo(div_1_1);</span><br><span class="line">                div_1_1_10.appendTo(div_1_1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 时间戳转 YYYY-MM-dd HH:mm:ss</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatUnixtimestamp</span>(<span class="params">unixtimestamp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> unixtimestamp = <span class="keyword">new</span> <span class="built_in">Date</span>(unixtimestamp);</span><br><span class="line">    <span class="keyword">var</span> year = <span class="number">1900</span> + unixtimestamp.getYear();</span><br><span class="line">    <span class="keyword">var</span> month = <span class="string">"0"</span> + (unixtimestamp.getMonth() + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> date = <span class="string">"0"</span> + unixtimestamp.getDate();</span><br><span class="line">    <span class="keyword">var</span> hour = <span class="string">"0"</span> + unixtimestamp.getHours();</span><br><span class="line">    <span class="keyword">var</span> minute = <span class="string">"0"</span> + unixtimestamp.getMinutes();</span><br><span class="line">    <span class="keyword">var</span> second = <span class="string">"0"</span> + unixtimestamp.getSeconds();</span><br><span class="line">    <span class="keyword">return</span> year + <span class="string">"-"</span> + month.substring(month.length - <span class="number">2</span>, month.length) + <span class="string">"-"</span> + date.substring(date.length - <span class="number">2</span>, date.length)</span><br><span class="line">        + <span class="string">" "</span> + hour.substring(hour.length - <span class="number">2</span>, hour.length) + <span class="string">":"</span></span><br><span class="line">        + minute.substring(minute.length - <span class="number">2</span>, minute.length) + <span class="string">":"</span></span><br><span class="line">        + second.substring(second.length - <span class="number">2</span>, second.length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteLogById</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = confirm(<span class="string">"是否确认删除"</span>);</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="literal">true</span>) &#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: <span class="string">"post"</span>,</span><br><span class="line">            url: <span class="string">"http://localhost:8080/SmartCity-Service/monitor/deleteLogById"</span>,</span><br><span class="line">            <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                id: id</span><br><span class="line">            &#125;,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">window</span>.location.reload();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteLogAll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = confirm(<span class="string">"是否确认清空日志"</span>);</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="literal">true</span>) &#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: <span class="string">"get"</span>,</span><br><span class="line">            url: <span class="string">"http://localhost:8080/SmartCity-Service/monitor/deleteLogAll"</span>,</span><br><span class="line">            <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">window</span>.location.reload();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="3-1、软件安装"><a href="#3-1、软件安装" class="headerlink" title="3.1、软件安装"></a>3.1、软件安装</h2><p>deepin系统使用包管理工具apt-get。</p>
+<h3 id="3-11、常用的APT命令参数"><a href="#3-11、常用的APT命令参数" class="headerlink" title="3.11、常用的APT命令参数"></a>3.11、常用的APT命令参数</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">apt-cache search package</td>
+<td style="text-align:left">搜索包</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-cache show package</td>
+<td style="text-align:left">获取包的相关信息</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get install package</td>
+<td style="text-align:left">安装包</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get install package – reinstall</td>
+<td style="text-align:left">重新安装包</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get -f install</td>
+<td style="text-align:left">修复安装”-f = –fix-missing”</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get remove package</td>
+<td style="text-align:left">删除包</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get remove package – purge</td>
+<td style="text-align:left">删除包，包括删除配置文件等</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get update</td>
+<td style="text-align:left">更新源</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get upgrade</td>
+<td style="text-align:left">更新已安装的包</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get dist-upgrade</td>
+<td style="text-align:left">升级系统</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get dselect-upgrade</td>
+<td style="text-align:left">使用 dselect 升级</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-cache depends package</td>
+<td style="text-align:left">了解使用依赖</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-cache rdepends package</td>
+<td style="text-align:left">是查看该包被哪些包依赖</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get build-dep package</td>
+<td style="text-align:left">安装相关的编译环境</td>
+</tr>
+<tr>
+<td style="text-align:left">apt-get source package</td>
+<td style="text-align:left">下载该包的源代码</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get clean &amp;&amp; sudo apt-get autoclean</td>
+<td style="text-align:left">清理无用的包</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo apt-get check</td>
+<td style="text-align:left">检查是否有损坏的依赖</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">whereis java</span><br><span class="line"></span><br><span class="line">ifconfig</span><br><span class="line"></span><br><span class="line">top</span><br><span class="line"></span><br><span class="line">ps -ef | grep java</span><br><span class="line"></span><br><span class="line">wget url</span><br><span class="line"></span><br><span class="line">yum install java</span><br><span class="line"></span><br><span class="line">sudo apt-get install java</span><br><span class="line"></span><br><span class="line">curl www.baidu.com</span><br><span class="line"></span><br><span class="line">find . -type f -name *设计模式*</span><br><span class="line"></span><br><span class="line">sudo vim /etc/profile</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br><span class="line"></span><br><span class="line">sudo cp -R mysql/* /home/zz/Desktop/mysql-data-backup</span><br><span class="line"></span><br><span class="line">zip -r test.zip test.exe</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装软件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> wget:类似于迅雷，是一种下载工具，通过HTTP、HTTPS、FTP三个最常见的TCP/IP协议下载，并可以使用HTTP代理名字是World Wide Web”与“get”的结合。</span><br><span class="line"></span><br><span class="line">yum:是redhat, centos 系统下的软件安装方式，基于Linux，全称为 Yellow dog Updater, Modified，是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包。</span><br><span class="line"></span><br><span class="line">rpm:软件管理; redhat的软件格式 rpm  r=redhat  p=package   m=management用于安装 卸载 .rpm软件</span><br><span class="line"></span><br><span class="line">使用wget下载一个 rpm包, 然后用 rpm -ivh  xxx.rpm  安装这个软件，嫌麻烦的话，就可以直接用  yum  install  sqoop   来自动下载和安装依赖的rpm软件。</span><br><span class="line"></span><br><span class="line">&gt; ap-get:是ubuntu下的一个软件安装方式，它是基于debain。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>[x] <a href="https://www.cnblogs.com/snowbook/p/5663007.html/" target="_blank" rel="noopener">让你真正了解chmod和chown命令的用法</a></p>
+</li>
+<li><p>CentOS如何查看端口是被哪个应用/进程占用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">一、检查端口被哪个进程占用</span><br><span class="line">netstat -lnp|grep 8088</span><br><span class="line"></span><br><span class="line">二、查看进程的详细信息</span><br><span class="line">ps 1777</span><br><span class="line"></span><br><span class="line">杀掉进程</span><br><span class="line">kill -9 1777</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
 
@@ -371,7 +460,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS代码片段</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -392,7 +481,215 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-2/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/Linux常用命令速查表/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/9 - 算法与编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/">9 - 算法与编程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/" class="archive-article-date">
+  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
+        
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC00 速查表/SQL常用语句速查表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/SQL常用语句速查表/">SQL常用语句速查表</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/博客文章/SC00 速查表/SQL常用语句速查表/" class="archive-article-date">
+  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  创建表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`sys_dict`</span> (</span><br><span class="line">	<span class="string">`id`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'主键id'</span>,</span><br><span class="line">	<span class="string">`dict_type`</span> <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'字典类型'</span>,</span><br><span class="line">	<span class="string">`dict_key`</span> <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'字典key'</span>,</span><br><span class="line">	<span class="string">`dict_value`</span> <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'字典value'</span>,</span><br><span class="line">	<span class="string">`sort`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'字典排序值'</span>,</span><br><span class="line">	<span class="string">`add_uid`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'添加人'</span>,</span><br><span class="line">	<span class="string">`update_uid`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'更新人'</span>,</span><br><span class="line">	<span class="string">`add_time`</span> <span class="built_in">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'创建时间'</span>,</span><br><span class="line">	<span class="string">`update_time`</span> <span class="built_in">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'更新时间'</span>,</span><br><span class="line">	<span class="string">`del_flag`</span> <span class="built_in">TINYINT</span> (<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'删除标记'</span>,</span><br><span class="line">	<span class="string">`remark`</span> <span class="built_in">VARCHAR</span> (<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'备注'</span>,</span><br><span class="line">	PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>),</span><br><span class="line">	<span class="keyword">UNIQUE</span> <span class="string">`uniq_dict_type`</span> (<span class="string">`dict_type`</span>),</span><br><span class="line">	<span class="keyword">KEY</span> <span class="string">`idx_dict_key`</span> (<span class="string">`dict_key`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span> = <span class="keyword">INNODB</span> <span class="keyword">CHARSET</span> = utf8 <span class="keyword">COMMENT</span> <span class="string">'数据字典表'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 随机填充</span></span><br><span class="line"><span class="keyword">UPDATE</span> syn_case_type</span><br><span class="line"><span class="keyword">SET</span> case_num = <span class="keyword">ceiling</span>(<span class="keyword">rand</span>() * <span class="number">60</span> + <span class="number">20</span>)</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	(<span class="keyword">id</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询并去重</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">	<span class="keyword">COUNT</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	url_1 <span class="keyword">IS</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询字典表替换法院名称</span></span><br><span class="line"><span class="keyword">UPDATE</span> dict_depart s,</span><br><span class="line"> dict_court d</span><br><span class="line"><span class="keyword">SET</span> s.court_name = d.court_name</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	s.court_id = d.id</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># case_num第13个字符为数字并且fydm不等于1315B20</span></span><br><span class="line"><span class="keyword">UPDATE</span> zx_case_info</span><br><span class="line"><span class="keyword">SET</span> zzh =<span class="number">0</span></span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">substring</span>(case_num, <span class="number">13</span>,<span class="number">1</span>) REGEXP <span class="string">'[^0-9.]'</span></span><br><span class="line"><span class="keyword">AND</span> fydm != <span class="string">'1315B20'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模糊查询</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="keyword">COUNT</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	zx_case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	case_num <span class="keyword">LIKE</span> <span class="string">'%执字%'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 区间查询</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	wfycatj</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">type</span> <span class="keyword">IN</span> (</span><br><span class="line">		<span class="string">'WFYKTSLSC'</span>,</span><br><span class="line">		<span class="string">'WSYWFYKTSLAJS'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式化时间，获取本月数据</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	wfycatj</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">TYPE</span> <span class="keyword">IN</span> (</span><br><span class="line">		<span class="string">'WFYMSSAJ'</span>,</span><br><span class="line">		<span class="string">'WFYXSAJ'</span></span><br><span class="line">	)</span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">DATE_FORMAT</span>(STARTTIME, <span class="string">'%Y-%m'</span>) = <span class="keyword">DATE_FORMAT</span>(<span class="keyword">CURDATE</span>(), <span class="string">'%Y-%m'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  创建表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`sys_dict`</span> (</span><br><span class="line">	<span class="string">`id`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'主键id'</span>,</span><br><span class="line">	<span class="string">`dict_type`</span> <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'字典类型'</span>,</span><br><span class="line">	<span class="string">`dict_key`</span> <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'字典key'</span>,</span><br><span class="line">	<span class="string">`dict_value`</span> <span class="built_in">VARCHAR</span> (<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'字典value'</span>,</span><br><span class="line">	<span class="string">`sort`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'字典排序值'</span>,</span><br><span class="line">	<span class="string">`add_uid`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'添加人'</span>,</span><br><span class="line">	<span class="string">`update_uid`</span> <span class="built_in">INT</span> (<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'更新人'</span>,</span><br><span class="line">	<span class="string">`add_time`</span> <span class="built_in">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'创建时间'</span>,</span><br><span class="line">	<span class="string">`update_time`</span> <span class="built_in">TIMESTAMP</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">COMMENT</span> <span class="string">'更新时间'</span>,</span><br><span class="line">	<span class="string">`del_flag`</span> <span class="built_in">TINYINT</span> (<span class="number">4</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'0'</span> <span class="keyword">COMMENT</span> <span class="string">'删除标记'</span>,</span><br><span class="line">	<span class="string">`remark`</span> <span class="built_in">VARCHAR</span> (<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span> <span class="keyword">COMMENT</span> <span class="string">'备注'</span>,</span><br><span class="line">	PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>),</span><br><span class="line">	<span class="keyword">UNIQUE</span> <span class="string">`uniq_dict_type`</span> (<span class="string">`dict_type`</span>),</span><br><span class="line">	<span class="keyword">KEY</span> <span class="string">`idx_dict_key`</span> (<span class="string">`dict_key`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span> = <span class="keyword">INNODB</span> <span class="keyword">CHARSET</span> = utf8 <span class="keyword">COMMENT</span> <span class="string">'数据字典表'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计制定法院时间段内的立案类型</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	case_type,</span><br><span class="line">	<span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> opencourt_time &gt; <span class="string">'2018-08-01 '</span></span><br><span class="line"><span class="keyword">AND</span> opencourt_time &lt; <span class="string">'2018-08-31'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	case_type</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="keyword">COUNT</span>(*) <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 随机填充</span></span><br><span class="line"><span class="keyword">UPDATE</span> syn_case_type</span><br><span class="line"><span class="keyword">SET</span> case_num = <span class="keyword">ceiling</span>(<span class="keyword">rand</span>() * <span class="number">60</span> + <span class="number">20</span>)</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	(<span class="keyword">id</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询并去重</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">	<span class="keyword">COUNT</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	url_1 <span class="keyword">IS</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询字典表替换法院名称</span></span><br><span class="line"><span class="keyword">UPDATE</span> dict_depart s,</span><br><span class="line"> dict_court d</span><br><span class="line"><span class="keyword">SET</span> s.court_name = d.court_name</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	s.court_id = d.id</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># case_num第13个字符为数字并且fydm不等于1315B20</span></span><br><span class="line"><span class="keyword">UPDATE</span> zx_case_info</span><br><span class="line"><span class="keyword">SET</span> zzh =<span class="number">0</span></span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">substring</span>(case_num, <span class="number">13</span>,<span class="number">1</span>) REGEXP <span class="string">'[^0-9.]'</span></span><br><span class="line"><span class="keyword">AND</span> fydm != <span class="string">'1315B20'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模糊查询</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="keyword">COUNT</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	zx_case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	case_num <span class="keyword">LIKE</span> <span class="string">'%执字%'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 区间查询</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	wfycatj</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">type</span> <span class="keyword">IN</span> (</span><br><span class="line">		<span class="string">'WFYKTSLSC'</span>,</span><br><span class="line">		<span class="string">'WSYWFYKTSLAJS'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式化时间</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	wfycatj</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">DATE_FORMAT</span>(STARTTIME, <span class="string">'%Y-%m'</span>) = <span class="keyword">DATE_FORMAT</span>(<span class="keyword">CURDATE</span>(), <span class="string">'%Y-%m'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 插入遗留的案件</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> zx_case_info(case_id)  <span class="keyword">SELECT</span></span><br><span class="line">	s.AJBS</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	sjxx s</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	s.YYSJ &gt;= <span class="string">'2018-01-01'</span></span><br><span class="line"><span class="keyword">AND</span> s.YYSJ &lt; <span class="string">'2018-11-01'</span></span><br><span class="line"><span class="keyword">AND</span> s.TYPE = <span class="string">'YysF'</span></span><br><span class="line"><span class="keyword">AND</span> s.SP_ZX = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">AND</span> s.AJBS <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		z.case_id</span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		zx_case_info z</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计运用时间段内sjxx数据	（优化）</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span> <span class="keyword">AS</span> <span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span> <span class="keyword">AS</span> <span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span> <span class="keyword">AS</span> <span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span> <span class="keyword">AS</span> <span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SFBS`</span> <span class="keyword">AS</span> <span class="string">`SFBH`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span> <span class="keyword">AS</span> <span class="string">`SP_ZX`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SSDW`</span> <span class="keyword">AS</span> <span class="string">`SSDW`</span>,</span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">CASE</span> <span class="string">`s`</span>.<span class="string">`TYPE`</span></span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'FgYys'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Yys'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'YysF'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Zsyfdsr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'zxSqr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'zxBzxr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Bg'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Dsr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`SFBS`</span>)</span><br><span class="line">		<span class="keyword">ELSE</span></span><br><span class="line">			<span class="keyword">sum</span>(<span class="string">`s`</span>.<span class="string">`NUM`</span>)</span><br><span class="line">		<span class="keyword">END</span></span><br><span class="line">	) <span class="keyword">AS</span> <span class="string">`sum`</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="string">`sjxx`</span> <span class="string">`s`</span></span><br><span class="line">		<span class="keyword">JOIN</span> <span class="string">`case_info`</span> <span class="string">`c`</span> <span class="keyword">ON</span> ((<span class="string">`s`</span>.<span class="string">`AJBS`</span> = <span class="string">`c`</span>.<span class="string">`case_id`</span>))</span><br><span class="line">	)</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	(</span><br><span class="line">		(<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &gt;= <span class="string">'2018-10-01'</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &lt; <span class="string">'2018-11-01'</span>)</span><br><span class="line">	)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SSDW`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SFBS`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当事人地图统计</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	dc.id <span class="keyword">id</span>,</span><br><span class="line">	dc.court_name courtName,</span><br><span class="line">	dp.province_name province,</span><br><span class="line">	<span class="keyword">SUM</span>(s.NUM) litigantCount</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			AJBS,</span><br><span class="line">			SFBS,</span><br><span class="line">			<span class="keyword">TYPE</span>,</span><br><span class="line">			<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> SFBS, AJBS) <span class="keyword">NUM</span>,</span><br><span class="line">			YYSJ</span><br><span class="line">		<span class="keyword">FROM</span></span><br><span class="line">			sjxx</span><br><span class="line">		<span class="keyword">WHERE</span></span><br><span class="line">			<span class="keyword">TYPE</span> = <span class="string">'Dsr'</span></span><br><span class="line">		<span class="keyword">AND</span> YYSJ &gt;= <span class="string">'2018-09-01'</span></span><br><span class="line">		<span class="keyword">AND</span> YYSJ &lt; <span class="string">'2018-10-01'</span></span><br><span class="line">		<span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">			AJBS</span><br><span class="line">	) <span class="keyword">AS</span> s,</span><br><span class="line">	dict_court dc,</span><br><span class="line">	dict_province dp</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	dc.court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">LEFT</span> (s.AJBS, <span class="number">4</span>) = dc.id</span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">LEFT</span> (s.SFBS, <span class="number">2</span>) = dp.id</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="keyword">LEFT</span> (s.AJBS, <span class="number">4</span>),</span><br><span class="line">	<span class="keyword">LEFT</span> (s.SFBS, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当事人汇总 - 联合字段去重</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span> <span class="keyword">AS</span> <span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span> <span class="keyword">AS</span> <span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span> <span class="keyword">AS</span> <span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span> <span class="keyword">AS</span> <span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span> <span class="keyword">AS</span> <span class="string">`SP_ZX`</span>,</span><br><span class="line">	<span class="keyword">count</span>(</span><br><span class="line">		<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`SFBS`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`AJBS`</span></span><br><span class="line">	) <span class="keyword">AS</span> <span class="string">`sum`</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="string">`sjxx`</span> <span class="string">`s`</span></span><br><span class="line">		<span class="keyword">JOIN</span> <span class="string">`case_info`</span> <span class="string">`c`</span></span><br><span class="line">	)</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	(</span><br><span class="line">		(<span class="string">`s`</span>.<span class="string">`AJBS`</span> = <span class="string">`c`</span>.<span class="string">`case_id`</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`TYPE`</span> = <span class="string">'Dsr'</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &gt;= <span class="string">'2018-10-01'</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &lt; <span class="string">'2018-11-01'</span>)</span><br><span class="line">	)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`court_name`</span> <span class="keyword">AS</span> <span class="string">`court_name`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`organizer`</span> <span class="keyword">AS</span> <span class="string">`organizer`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`judge`</span> <span class="keyword">AS</span> <span class="string">`judge`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`TYPE`</span> <span class="keyword">AS</span> <span class="string">`TYPE`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`SP_ZX`</span> <span class="keyword">AS</span> <span class="string">`SP_ZX`</span>,</span><br><span class="line">		<span class="keyword">count</span>(</span><br><span class="line">			<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`SFBS`</span>,</span><br><span class="line">			<span class="string">`s`</span>.<span class="string">`AJBS`</span></span><br><span class="line">		) <span class="keyword">AS</span> <span class="string">`sum`</span></span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		(</span><br><span class="line">			<span class="string">`sjxx`</span> <span class="string">`s`</span></span><br><span class="line">			<span class="keyword">JOIN</span> <span class="string">`zx_case_info`</span> <span class="string">`c`</span></span><br><span class="line">		)</span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		(</span><br><span class="line">			(<span class="string">`s`</span>.<span class="string">`AJBS`</span> = <span class="string">`c`</span>.<span class="string">`case_id`</span>)</span><br><span class="line">			<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`TYPE`</span> = <span class="string">'Dsr'</span>)</span><br><span class="line">			<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &gt;= <span class="string">'2018-10-01'</span>)</span><br><span class="line">			<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &lt; <span class="string">'2018-11-01'</span>)</span><br><span class="line">		)</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`court_name`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`organizer`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`judge`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`TYPE`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`SP_ZX`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询效率测试</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> (</span><br><span class="line">	url_2 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_3 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_4 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_5 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_6 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># ORDER BY opencourt_time DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>,<span class="number">4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计制定法院时间段内的立案类型</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	case_type,</span><br><span class="line">	<span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> opencourt_time &gt; <span class="string">'2018-08-01 '</span></span><br><span class="line"><span class="keyword">AND</span> opencourt_time &lt; <span class="string">'2018-08-31'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	case_type</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="keyword">COUNT</span>(*) <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 插入遗留的案件</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> zx_case_info(case_id)  <span class="keyword">SELECT</span></span><br><span class="line">	s.AJBS</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	sjxx s</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	s.YYSJ &gt;= <span class="string">'2018-01-01'</span></span><br><span class="line"><span class="keyword">AND</span> s.YYSJ &lt; <span class="string">'2018-11-01'</span></span><br><span class="line"><span class="keyword">AND</span> s.TYPE = <span class="string">'YysF'</span></span><br><span class="line"><span class="keyword">AND</span> s.SP_ZX = <span class="string">'2'</span></span><br><span class="line"><span class="keyword">AND</span> s.AJBS <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		z.case_id</span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		zx_case_info z</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计运用时间段内sjxx数据	（优化）</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span> <span class="keyword">AS</span> <span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span> <span class="keyword">AS</span> <span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span> <span class="keyword">AS</span> <span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span> <span class="keyword">AS</span> <span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SFBS`</span> <span class="keyword">AS</span> <span class="string">`SFBH`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span> <span class="keyword">AS</span> <span class="string">`SP_ZX`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SSDW`</span> <span class="keyword">AS</span> <span class="string">`SSDW`</span>,</span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">CASE</span> <span class="string">`s`</span>.<span class="string">`TYPE`</span></span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'FgYys'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Yys'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'YysF'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Zsyfdsr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'zxSqr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'zxBzxr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Bg'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`AJBS`</span>)</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="string">'Dsr'</span> <span class="keyword">THEN</span></span><br><span class="line">			<span class="keyword">count</span>(<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`SFBS`</span>)</span><br><span class="line">		<span class="keyword">ELSE</span></span><br><span class="line">			<span class="keyword">sum</span>(<span class="string">`s`</span>.<span class="string">`NUM`</span>)</span><br><span class="line">		<span class="keyword">END</span></span><br><span class="line">	) <span class="keyword">AS</span> <span class="string">`sum`</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="string">`sjxx`</span> <span class="string">`s`</span></span><br><span class="line">		<span class="keyword">JOIN</span> <span class="string">`case_info`</span> <span class="string">`c`</span> <span class="keyword">ON</span> ((<span class="string">`s`</span>.<span class="string">`AJBS`</span> = <span class="string">`c`</span>.<span class="string">`case_id`</span>))</span><br><span class="line">	)</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	(</span><br><span class="line">		(<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &gt;= <span class="string">'2018-10-01'</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &lt; <span class="string">'2018-11-01'</span>)</span><br><span class="line">	)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SSDW`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SFBS`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当事人地图统计</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	dc.id <span class="keyword">id</span>,</span><br><span class="line">	dc.court_name courtName,</span><br><span class="line">	dp.province_name province,</span><br><span class="line">	<span class="keyword">SUM</span>(s.NUM) litigantCount</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">SELECT</span></span><br><span class="line">			AJBS,</span><br><span class="line">			SFBS,</span><br><span class="line">			<span class="keyword">TYPE</span>,</span><br><span class="line">			<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> SFBS, AJBS) <span class="keyword">NUM</span>,</span><br><span class="line">			YYSJ</span><br><span class="line">		<span class="keyword">FROM</span></span><br><span class="line">			sjxx</span><br><span class="line">		<span class="keyword">WHERE</span></span><br><span class="line">			<span class="keyword">TYPE</span> = <span class="string">'Dsr'</span></span><br><span class="line">		<span class="keyword">AND</span> YYSJ &gt;= <span class="string">'2018-09-01'</span></span><br><span class="line">		<span class="keyword">AND</span> YYSJ &lt; <span class="string">'2018-10-01'</span></span><br><span class="line">		<span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">			AJBS</span><br><span class="line">	) <span class="keyword">AS</span> s,</span><br><span class="line">	dict_court dc,</span><br><span class="line">	dict_province dp</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	dc.court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">LEFT</span> (s.AJBS, <span class="number">4</span>) = dc.id</span><br><span class="line"><span class="keyword">AND</span> <span class="keyword">LEFT</span> (s.SFBS, <span class="number">2</span>) = dp.id</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="keyword">LEFT</span> (s.AJBS, <span class="number">4</span>),</span><br><span class="line">	<span class="keyword">LEFT</span> (s.SFBS, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当事人汇总 - 联合字段去重</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span> <span class="keyword">AS</span> <span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span> <span class="keyword">AS</span> <span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span> <span class="keyword">AS</span> <span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span> <span class="keyword">AS</span> <span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span> <span class="keyword">AS</span> <span class="string">`SP_ZX`</span>,</span><br><span class="line">	<span class="keyword">count</span>(</span><br><span class="line">		<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`SFBS`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`AJBS`</span></span><br><span class="line">	) <span class="keyword">AS</span> <span class="string">`sum`</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	(</span><br><span class="line">		<span class="string">`sjxx`</span> <span class="string">`s`</span></span><br><span class="line">		<span class="keyword">JOIN</span> <span class="string">`case_info`</span> <span class="string">`c`</span></span><br><span class="line">	)</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	(</span><br><span class="line">		(<span class="string">`s`</span>.<span class="string">`AJBS`</span> = <span class="string">`c`</span>.<span class="string">`case_id`</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`TYPE`</span> = <span class="string">'Dsr'</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &gt;= <span class="string">'2018-10-01'</span>)</span><br><span class="line">		<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &lt; <span class="string">'2018-11-01'</span>)</span><br><span class="line">	)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`court_name`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`organizer`</span>,</span><br><span class="line">	<span class="string">`c`</span>.<span class="string">`judge`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`TYPE`</span>,</span><br><span class="line">	<span class="string">`s`</span>.<span class="string">`SP_ZX`</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`court_name`</span> <span class="keyword">AS</span> <span class="string">`court_name`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`organizer`</span> <span class="keyword">AS</span> <span class="string">`organizer`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`judge`</span> <span class="keyword">AS</span> <span class="string">`judge`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`TYPE`</span> <span class="keyword">AS</span> <span class="string">`TYPE`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`SP_ZX`</span> <span class="keyword">AS</span> <span class="string">`SP_ZX`</span>,</span><br><span class="line">		<span class="keyword">count</span>(</span><br><span class="line">			<span class="keyword">DISTINCT</span> <span class="string">`s`</span>.<span class="string">`SFBS`</span>,</span><br><span class="line">			<span class="string">`s`</span>.<span class="string">`AJBS`</span></span><br><span class="line">		) <span class="keyword">AS</span> <span class="string">`sum`</span></span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		(</span><br><span class="line">			<span class="string">`sjxx`</span> <span class="string">`s`</span></span><br><span class="line">			<span class="keyword">JOIN</span> <span class="string">`zx_case_info`</span> <span class="string">`c`</span></span><br><span class="line">		)</span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		(</span><br><span class="line">			(<span class="string">`s`</span>.<span class="string">`AJBS`</span> = <span class="string">`c`</span>.<span class="string">`case_id`</span>)</span><br><span class="line">			<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`TYPE`</span> = <span class="string">'Dsr'</span>)</span><br><span class="line">			<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &gt;= <span class="string">'2018-10-01'</span>)</span><br><span class="line">			<span class="keyword">AND</span> (<span class="string">`s`</span>.<span class="string">`YYSJ`</span> &lt; <span class="string">'2018-11-01'</span>)</span><br><span class="line">		)</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`court_name`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`organizer`</span>,</span><br><span class="line">		<span class="string">`c`</span>.<span class="string">`judge`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`TYPE`</span>,</span><br><span class="line">		<span class="string">`s`</span>.<span class="string">`SP_ZX`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询效率测试</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> (</span><br><span class="line">	url_2 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_3 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_4 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_5 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">	<span class="keyword">OR</span> url_6 <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">)</span><br><span class="line"><span class="comment"># ORDER BY opencourt_time DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>,<span class="number">4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计制定法院时间段内的立案类型</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	case_type,</span><br><span class="line">	<span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	case_info</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	court_name = <span class="string">'宁波市中级人民法院'</span></span><br><span class="line"><span class="keyword">AND</span> opencourt_time &gt; <span class="string">'2018-08-01 '</span></span><br><span class="line"><span class="keyword">AND</span> opencourt_time &lt; <span class="string">'2018-08-31'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	case_type</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	<span class="keyword">COUNT</span>(*) <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/SQL常用语句速查表/">展开全文 >></a>
         </p>
       
 
@@ -514,106 +811,19 @@
 
 
   
-    <article id="post-博客文章/SC00 速查表/常用JS代码片段-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/8 - websevice部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-1/">常用JS代码片段-1</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/">8 - websevice部分</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-1/" class="archive-article-date">
-  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">debugger</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"====TEST===="</span>);</span><br><span class="line"><span class="built_in">console</span>.log(data);</span><br><span class="line"><span class="built_in">console</span>.log(event);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> event);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> addressDate = loadAddress(data[i].addrid);</span><br><span class="line">$(span3).html(addressDate.name);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> addressDate = loadAddress(data[i].addrid);</span><br><span class="line"><span class="keyword">var</span> coor = addressDate.coord.split(<span class="string">','</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定时更新图表</span></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    loadTourCharts();</span><br><span class="line">    loadWorkMessage();</span><br><span class="line">    loadVolumeStatictics();</span><br><span class="line">    loadDigital();</span><br><span class="line">    loadAccident();</span><br><span class="line"></span><br><span class="line">    loadDistributed();</span><br><span class="line">&#125;, <span class="number">30000</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AJAX请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadAir</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type: <span class="string">"get"</span>,</span><br><span class="line">        url: DBServiceURI + <span class="string">"order/getAir.do"</span>,</span><br><span class="line">        <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> data = data.data;</span><br><span class="line">            <span class="keyword">var</span> AirData = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">                <span class="keyword">var</span> subData = [];</span><br><span class="line">                subData[<span class="number">0</span>] = data[i].id;</span><br><span class="line">                subData[<span class="number">1</span>] = data[i].value;</span><br><span class="line">                AirData.push(subData);</span><br><span class="line">            &#125;</span><br><span class="line">            air(AirData);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS代码片段</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JS代码片段-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC00 速查表/端口及配置索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/">常用端口及配置索引</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -623,94 +833,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常用端口</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/端口及配置索引/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/1- Java基础部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/1- Java基础部分/">1- Java基础部分</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/1- Java基础部分/" class="archive-article-date">
-  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p> 基础部分的顺序：基本语法，类相关的语法，内部类的语法，继承相关的语法，异常的语法，线程的语法，集合的语法，IO的语法，虚拟机方面的语法。</p>
-        
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/1- Java基础部分/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/#more">more >></a>
         
       
 
@@ -749,7 +872,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/1- Java基础部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/">展开全文 >></a>
         </p>
       
 
@@ -779,19 +902,19 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/10 - Java代码查错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/7 - J2EE部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/">10 - Java代码查错</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/">7 - J2EE部分</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -801,7 +924,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/#more">more >></a>
         
       
 
@@ -840,7 +963,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/">展开全文 >></a>
         </p>
       
 
@@ -870,19 +993,19 @@
 
 
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 速查表/常用JAVA代码片段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">使用Swagger或Postman接口文档管理</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">常用JAVA代码片段</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -890,119 +1013,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。</p>
-<p>本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看，使用Postman测试接口文档。</p>
-<p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新 。接口的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。Swagger 让部署管理和使用功能强大的API从未如此简单。</p>
-<p>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。</p>
-<p>测试环境：JDK 1.8  + Maven 3.5.1 + Tomcat 7 + IDEA</p>
-        
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前后端分离</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC00 速查表/常用网络命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用网络命令/">常用网络命令</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/博客文章/SC00 速查表/常用网络命令/" class="archive-article-date">
-  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mstsc-131-1-3-100"><a href="#mstsc-131-1-3-100" class="headerlink" title="mstsc 131.1.3.100"></a>mstsc 131.1.3.100</h3><blockquote>
-<p>Windowns 远程命令</p>
-</blockquote>
-<h3 id="telnet-131-1-3-100-8888"><a href="#telnet-131-1-3-100-8888" class="headerlink" title="telnet 131.1.3.100 8888"></a>telnet 131.1.3.100 8888</h3><blockquote>
-<p>测试端口是否可用</p>
-</blockquote>
-<h3 id="curl-1-1-1-2-8880"><a href="#curl-1-1-1-2-8880" class="headerlink" title="curl  1.1.1.2:8880"></a>curl  1.1.1.2:8880</h3><blockquote>
-<p>Http请求</p>
-</blockquote>
-<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><blockquote>
-<p>Linux下载</p>
-</blockquote>
-<h3 id="ps-ef-grep-mysql"><a href="#ps-ef-grep-mysql" class="headerlink" title="ps -ef | grep mysql"></a>ps -ef | grep mysql</h3><blockquote>
-<p>查看mysql进程</p>
-</blockquote>
-<h3 id="rpm-qa-grep-mysql"><a href="#rpm-qa-grep-mysql" class="headerlink" title="rpm -qa | grep mysql"></a>rpm -qa | grep mysql</h3><blockquote>
-<p>查看mysql进程</p>
-</blockquote>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非空判断</span></span><br><span class="line">List：</span><br><span class="line">CollectionUtils.isNotEmpty(caseInfoList)</span><br><span class="line"></span><br><span class="line">String：</span><br><span class="line">StringUtils.isNotEmpty(flag)</span><br><span class="line">StringUtils.isBlank(courtName)</span><br><span class="line"></span><br><span class="line">Object ：</span><br><span class="line"><span class="keyword">null</span>！= object</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、日期类操作，获取当前年月日</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getToday</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">     Calendar calendar = Calendar.getInstance();</span><br><span class="line">     <span class="keyword">int</span> year = calendar.get(Calendar.YEAR);</span><br><span class="line">     <span class="keyword">int</span> month = calendar.get(Calendar.MONTH);</span><br><span class="line">     <span class="keyword">int</span> date = calendar.get(Calendar.DATE);</span><br><span class="line">     Date today_1 = calendar.getTime();</span><br><span class="line">     String time_1 = sdf.format(today_1);</span><br><span class="line"></span><br><span class="line">     System.out.println(year + month + date + time_1);</span><br><span class="line"></span><br><span class="line">     Date today_2 = <span class="keyword">new</span> Date();</span><br><span class="line">     String time_2 = sdf.format(today_2);</span><br><span class="line">     System.out.println(time_2);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2、日期类操作</span></span><br><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line">c.add(Calendar.MONTH, -<span class="number">1</span>);</span><br><span class="line">Date date = c.getTime();</span><br><span class="line">String lastMonth = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、日期类操作</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">Date date = <span class="keyword">new</span> Date();</span><br><span class="line">String today = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、日期类操作</span></span><br><span class="line">Calendar ca = Calendar.getInstance();<span class="comment">// 得到一个Calendar的实例</span></span><br><span class="line"><span class="comment">//ca.setTime(new Date()); // 设置时间为当前时间</span></span><br><span class="line">ca.set(<span class="number">2011</span>, <span class="number">11</span>, <span class="number">17</span>);<span class="comment">// 月份是从0开始的，所以11表示12月</span></span><br><span class="line">ca.add(Calendar.YEAR, -<span class="number">1</span>); <span class="comment">// 年份减1</span></span><br><span class="line">ca.add(Calendar.MONTH, -<span class="number">1</span>);<span class="comment">// 月份减1</span></span><br><span class="line">ca.add(Calendar.DATE, -<span class="number">1</span>);<span class="comment">// 日期减1</span></span><br><span class="line">Date resultDate = ca.getTime(); <span class="comment">// 结果</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">System.out.println(sdf.format(resultDate));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询超长 - 分页</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCaseList</span><span class="params">(Integer pageSize)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pageNum = spbzkMapper.count() / pageSize;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> pageIndex = <span class="number">0</span>; pageIndex &lt;= pageNum; pageIndex++) &#123;</span><br><span class="line">        <span class="comment">// 处理分页索引</span></span><br><span class="line">        Integer offset = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != pageSize) &#123;</span><br><span class="line">            offset = pageSize * (pageIndex - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Spbzk&gt; spbzkList = spbzkMapper.selectAll(offset, pageSize);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Spbzk spbzk : spbzkList) &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  读取json文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getJson</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">    String laststr = <span class="string">""</span>;</span><br><span class="line">    File file = <span class="keyword">new</span> File(path);<span class="comment">// 打开文件</span></span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        FileInputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in, <span class="string">"UTF-8"</span>));<span class="comment">// 读取文件</span></span><br><span class="line">        String tempString = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> ((tempString = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            laststr = laststr + tempString;</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                reader.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException el) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> laststr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间解析</span></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : timeMap.entrySet()) &#123;</span><br><span class="line">    String startTime = entry.getKey();</span><br><span class="line">    String endTime = entry.getValue();</span><br><span class="line">    Date date = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        date = df.parse(startTime);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">        LOGGER.error(<span class="string">"日期格式解析错误"</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line">    Calendar calendar = Calendar.getInstance();</span><br><span class="line">    calendar.setTime(date);</span><br><span class="line">    <span class="comment">//获取年份和月份</span></span><br><span class="line">    String year = String.valueOf(calendar.get(Calendar.YEAR));</span><br><span class="line">    String month = String.valueOf(calendar.get(Calendar.MONTH) + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// List添加</span></span><br><span class="line">List&lt;Wfycatj&gt; wfycatjList = wfycatjMapper.selectCaBywfyType();/</span><br><span class="line">List&lt;Wfycatj&gt; ljList = wfycatjMapper.selectLjBywfyType();</span><br><span class="line">wfycatjList.addAll(ljList);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//筛选List</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;CaseListInfo&gt; <span class="title">checkDepart</span><span class="params">(List&lt;CaseListInfo&gt; caseListInfoList, String departType)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Iterator&lt;CaseListInfo&gt; iterator = caseListInfoList.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        CaseListInfo caseListInfoItem = iterator.next();</span><br><span class="line">        DictDepart dictDepartList = dictDepartMapper.selectDepartByCourtNameAndDepartName(</span><br><span class="line">                caseListInfoItem.getCourtName(), caseListInfoItem.getDepartName(), departType);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != dictDepartList) &#123;</span><br><span class="line">            caseListInfoItem.setDepartName(dictDepartList.getDepartShowName());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            iterator.remove();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> caseListInfoList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 代码中发送http请求，非法字符错误</span></span><br><span class="line"><span class="comment">*   产生原因：url中有汉字或特殊字符(非字母和数字的字符)，没有转码。</span></span><br><span class="line"><span class="comment">*   解决办法：将带有特殊字符或汉字的参数进行转码，再放入url发送即可。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">param1 = URLEncoder.encode(param1, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
 
       
 
@@ -1016,11 +1035,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络命令</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">快捷键</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JAVA代码片段</a>
         		</li>
       		
 		</ul>
@@ -1041,7 +1056,98 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用网络命令/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/6 - 软件工程与设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">6 - 软件工程与设计模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/" class="archive-article-date">
+  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
+        
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">展开全文 >></a>
         </p>
       
 
@@ -1173,6 +1279,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -1193,11 +1303,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1205,15 +1315,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">导读</a>
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1385,35 +1491,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">语录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1425,11 +1503,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1437,15 +1519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1474,6 +1548,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1793,18 +1879,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
               </li>
              
@@ -1818,6 +1892,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1942,6 +2028,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
               </li>
              
               <li class="article-tag-list-item">
