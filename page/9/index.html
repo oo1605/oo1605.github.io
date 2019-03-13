@@ -164,406 +164,609 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">使用Swagger或Postman接口文档管理</a>
+      <a class="article-title" href="/2018/05/10/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）/">海康威视网络摄像机 SDK二次开发（JavaWeb）</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2018/05/10/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）/" class="archive-article-date">
+  	<time datetime="2018-05-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。</p>
-<p>本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看，使用Postman测试接口文档。</p>
-<p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新 。接口的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。Swagger 让部署管理和使用功能强大的API从未如此简单。</p>
-<p>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。</p>
-<p>测试环境：JDK 1.8  + Maven 3.5.1 + Tomcat 7 + IDEA</p>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前后端分离</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前端/CSS 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/">CSS 布局</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>display:block<br>    block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。<br>    block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。<br>    block元素可以设置margin和padding属性。</p>
-<p>display:inline<br>    inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。<br>    inline元素设置width,height属性无效。<br>    inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。</p>
-<p>display:inline-block<br>    简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。</p>
-<p>浮动：</p>
-<p>行内元素浮动之后会变成块级元素</p>
-<p>相对定位和绝对定位</p>
-<p>position: relative;<br>相对定位：相对定位是“相对于”元素（本身）在文档流中的初始位置；<br>position: absolute;<br>绝对定位是“相对于”距离它最近的已定位祖先元素（即设置了position样式属性的祖先元素），如果不存在已定位的祖先元素，那么相对于初始包含块（即浏览器）。</p>
-<p>对普通文档流的影响</p>
-<p>在使用相对定位是，无论是否移动，元素仍然占据原来的空间。<br>而与之相反，绝对定位使元素的位置与文档流无关，因此不占据空间。普通文档流中其它元素的布局就像绝对定位的元素不存在时一样。</p>
-<p>position:absolute，float会隐式地改变display的类型（display：none除外）。即是当元素设置position:absolute、float:left、float:right中任意一个时，都会让元素以display:inline-block的方式显示（特点是：可以设置长宽，默认宽度不占满父元素）。这时，即使故意设置display:inline; display:block都是无效的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSS 布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前端/Html引入公共页面的几种方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/Html引入公共页面的几种方法/">Html引入公共页面的几种方法</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/Html引入公共页面的几种方法/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。</p>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/Html引入公共页面的几种方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">l引入公共页面</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/前端/Html引入公共页面的几种方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/微服务/SpringCloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/">SpringCloud</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">SpringCloud</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/权限控制/Shiro+Token实现APP、Web统一登录认证和权限管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro+Token实现APP、Web统一登录认证和权限管理/">Shiro+Token实现APP、Web统一登录认证和权限管理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro+Token实现APP、Web统一登录认证和权限管理/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司原来项目的技术架构是JSP + SpringMVC + Shiro，使用SpringMVC做页面跳转路由，Shiro做用户认证和用户鉴权。现在要改造成前后端分离架构，同样使用Shiro来做权限管理，则会遇到如下不同情况。</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>最近公司的项目需要集成多路监控摄像头，要求我们在web端实现一些功能：</p>
 <ul>
-<li>基于session的认证（JSP+ SpringMVC + Shiro）：</li>
+<li>不小于四路实时监控</li>
+<li>高清影像保存不小于一个月</li>
+<li>支持视频回放</li>
+<li>灵活调用</li>
 </ul>
-<p>Web前端把username和password，提交到服务端的登录api，服务端验证正确后，生成一个token，并把token和userId，存在缓存里（推荐redis数据库）；前端将session加密后存在cookie中，每次请求浏览器自动把cookie放入header中，从而实现会话验证。</p>
+<p>现利用海康SDK+OpenCV，不通过NVR（网络硬盘录像机）/DVR（数字视频录像机）管理。介绍其开发过程。</p>
+        
+          <a class="article-more-a" href="/2018/05/10/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">流媒体服务器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/10/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/海康威视网络摄像机 SDK二次开发（JavaWeb）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/视频直播技术/监控录像容量计算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控录像容量计算/">监控录像容量计算</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控录像容量计算/" class="archive-article-date">
+  	<time datetime="2018-05-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司项目需求，需要保存4路高清监控素材1个月，这里就要计算需要多大容量的硬盘。计算方法如下所示。</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.05.09</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、相关概念"><a href="#三、相关概念" class="headerlink" title="三、相关概念"></a>三、相关概念</h1><p>720P = 1280×720（高清，921600像素，百万像素分辨率，码流为4M，码率为4*1024=4096Kbps）<br>1080p = 1920×1080（全高清，2073600像素，200万像素分辨率，码流为8M）<br>4K = 3840×2160（码流为10M)<br>8K = 7680x4320</p>
+<h1 id="八、计算方法"><a href="#八、计算方法" class="headerlink" title="八、计算方法"></a>八、计算方法</h1><p>监控产生的录像容量，和如下几个参数有关系：</p>
 <ul>
-<li>基于session的认证（Html + SpringMVC + Shiro）：</li>
+<li>1、摄像头清晰度。</li>
+<li>2、摄像头数目。</li>
+<li>3、录像配置码率。</li>
+<li>4、其他。</li>
 </ul>
-<p>前后端分离后，Web端的Shiro认证也是基于上面的思路，然而还会有自己特殊的问题，那就是需要解决跨域产生的ajax是无法携带cookie信息的问题。</p>
+<p>公式：</p>
+<blockquote>
+<p>录像容量（天）（G） = 码率（Kbps）×3600×24÷8÷1024÷1024</p>
+</blockquote>
+<blockquote>
+<p>根据公式计算得出 A = 4096 <em> 0.0103 </em> 30（天） <em> 4（路）= 42G </em> 30 *4=  5040G</p>
+</blockquote>
+<h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li><p>[x] <a href="http://www.sohu.com/a/127280457_609710" target="_blank" rel="noopener">监控录像能保存多久计算方法</a></p>
+</li>
+<li><p>[x] <a href="http://www.sohu.com/a/132086244_609710" target="_blank" rel="noopener">网络监控安装 一个交换机能带几台摄像头？</a></p>
+</li>
+</ul>
+<h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
+<p>计算的出，4路监控要存储720P的高清素材需要硬盘容量大于5T。实际上现在的监控摄像头都带有动态捕捉功能，只有动态的画面才会别储存。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">录像容量</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控录像容量计算/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/视频直播技术/监控系统 &amp; 视频直播系统开发基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控系统 & 视频直播系统开发基础/">监控系统 &amp; 视频直播系统开发基础</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控系统 & 视频直播系统开发基础/" class="archive-article-date">
+  	<time datetime="2018-05-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        
+          <a class="article-more-a" href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控系统 & 视频直播系统开发基础/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">监控系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">直播系统开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/09/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/视频直播技术/监控系统 & 视频直播系统开发基础/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/数据可视化的设计原则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/数据可视化的设计原则/">数据可视化的设计原则</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/数据可视化的设计原则/" class="archive-article-date">
+  	<time datetime="2018-05-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>[x] <a href="https://cloud.tencent.com/developer/article/1005260" target="_blank" rel="noopener">遇见大数据可视化：可视化系统搭建</a></p>
+</li>
+<li><p>[x] <a href="http://www.xadzwl.com/content/?2015.html" target="_blank" rel="noopener">最新最全移动端界面设计UI尺寸规范-2018年初版</a></p>
+</li>
+<li><p>[x] <a href="http://www.moke8.com/article-22037-1.html" target="_blank" rel="noopener">关于优秀UI设计的7条准则</a></p>
+</li>
+<li><p>[x] <a href="http://www.lanlanwork.com/blog/?post=4276" target="_blank" rel="noopener">大屏ui设计系列之五——大屏设计语言分析 大屏数据可视化设计方法论</a></p>
+</li>
+<li><p>[x] <a href="https://blog.csdn.net/u014514254/article/details/78026233" target="_blank" rel="noopener">4步教你玩转可视化大屏设计｜内附实际操作</a></p>
+</li>
+<li><p>[x] <a href="https://blog.csdn.net/u014514254/article/details/77297245" target="_blank" rel="noopener">大屏做成这样，领导不重视你都难！</a></p>
+</li>
+<li><p>[x] <a href="http://blog.jobbole.com/95748/" target="_blank" rel="noopener">3个技巧搞定可视化信息图的色彩搭配</a></p>
+</li>
+<li><p>[x] <a href="http://baijiahao.baidu.com/s?id=1596159307441736130&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">大数据数据可视化的设计原则</a></p>
+</li>
+<li><p>[x] <a href="http://www.uimaker.com/uimakerhtml/uistudy/uiphotoshop/2018/0528/130560.html" target="_blank" rel="noopener">数据信息可视化界面设计总结</a></p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据可视化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计原则</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/数据可视化的设计原则/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/应用场景/数据可视化行业分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/数据可视化行业分析/">数据可视化行业分析</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/数据可视化行业分析/" class="archive-article-date">
+  	<time datetime="2018-05-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>用数据讲故事</p>
+<p>关键字：智慧城市，大屏 ，BigScreen ，可视化，指挥调度平台</p>
+<h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">修改日期</th>
+<th style="text-align:center">版本号</th>
+<th style="text-align:center">修改人</th>
+<th style="text-align:center">修改说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"> 1</td>
+<td style="text-align:center">2018.05.06</td>
+<td style="text-align:center">1.0</td>
+<td style="text-align:center">ZZ</td>
+<td style="text-align:center">初稿</td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h1><ul>
+<li><p>智慧城市</p>
 <ul>
-<li>基于token的鉴权机制：</li>
+<li>智能停车场</li>
+<li>智慧交通</li>
 </ul>
-<p>APP前端把username和password，提交到服务端的登录api，服务端验证正确后，生成一个token，并把token和userId，存在缓存里（推荐redis数据库）；然后把token返回给前端。让APP保存在本地，每次请求把该token放入header中，从而实现会话验证。又由于APP把token保存在本地，存在安全问题，因此需要对token进行加密。</p>
-<p>关键字：SpringMVC + shiro + JWT</p>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro+Token实现APP、Web统一登录认证和权限管理/#more">more >></a>
-        
+</li>
+<li><p>行业应用</p>
+<ul>
+<li>电力行业</li>
+<li>交通行业</li>
+<li>机房运维可视化 / 建筑 3D仿真<ul>
+<li>3D设计图纸：更准确描绘设计思路，直观审视设计成果</li>
+<li>电子沙盘：3D立体化互动式电子沙盘，创新的园区和建筑展示介绍</li>
+<li>互动式导航：动态线路指引，用于园区、大型建筑的3D地图式导航</li>
+</ul>
+</li>
+<li>工业组态软件<ul>
+<li>电信网络拓扑和设备管理</li>
+<li>电力、燃气等工业自动化(HMI/SCADA)领域</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="四、数据可视化技术栈"><a href="#四、数据可视化技术栈" class="headerlink" title="四、数据可视化技术栈"></a>四、数据可视化技术栈</h1><p><img src="http://img.cdn.lapland.top/Image%201516372887.png" alt="image"></p>
+<h1 id="五、可视化解决方案厂商分析"><a href="#五、可视化解决方案厂商分析" class="headerlink" title="五、可视化解决方案厂商分析"></a>五、可视化解决方案厂商分析</h1><ul>
+<li><p>[x] <a href="http://www.digihail.com/" target="_blank" rel="noopener">数字冰雹</a></p>
+<blockquote>
+<p>大屏可视化及BI商业智能领域。3D建模及渲染能力较强，支持数据分析。<br>使用技术3ds max、C# 、WPF。<br>官网有较多解决方案，相关硬件及性能参数，有新浪/CSND博客。<br>完全定制，不支持组件及模板开发。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.vtron.com/mIndex.html" target="_blank" rel="noopener">威创</a></p>
+<blockquote>
+<p>显示设备硬件服务商，专注大屏可视化。<br>前端使用WPF框架，服务端使用C#。<br>官网有较多解决方案，相关硬件及性能参数，没有技术方面资料。<br>完全定制，不支持组件及模板开发。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.poya.com.cn/contact/" target="_blank" rel="noopener">铂亚信息技术有限公司</a></p>
+<blockquote>
+<p>官网有较多解决方案。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.twinflag.com/index.shtml" target="_blank" rel="noopener">双旗科技</a></p>
+<blockquote>
+<p>显示设备硬件服务商，专注大屏可视化。<br>官网案例和信息较少</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.bocom.cn/" target="_blank" rel="noopener">博康智能</a></p>
+<blockquote>
+<p>官网有很多较详细的解决方案</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.hydata.cc/" target="_blank" rel="noopener">海云数据</a></p>
+<blockquote>
+<p>侧重与数据分析。<br>官网界面写的不错。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.powerbi.com.cn/" target="_blank" rel="noopener">奥威</a></p>
+<blockquote>
+<p>侧重与数据分析和BI商业智能领域。有大屏可视化应用<br>支持组件化/模板化开发，布局自适应。<br>官网有较多在线Demo，但比较粗糙。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.finebi.com/" target="_blank" rel="noopener">FindBI</a></p>
+<blockquote>
+<p>侧重与数据分析和BI商业智能领域。<br>支持组件化/模板化开发，布局自适应。<br>官网有较多在线Demo。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.finebi.com/" target="_blank" rel="noopener">海致BDP</a></p>
+<blockquote>
+<p>侧重与数据分析和BI商业智能领域。<br>支持组件化/模板化开发，布局自适应。<br>个人免费使用在线版。官网功能产品介绍 - 特点部分可作为参考。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="https://www.ruisitech.com/product.html" target="_blank" rel="noopener">睿思BI</a></p>
+<blockquote>
+<p> 开源商业智能系统。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.fanruan.com/" target="_blank" rel="noopener">帆软</a></p>
+<blockquote>
+<p>大屏可视化及BI商业智能领域。<br>支持组件化/模板化开发。<br>官网有较多案例、并有帆软开发论坛。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="https://data.aliyun.com/visual/datav" target="_blank" rel="noopener">阿里云 - DataV</a></p>
+<blockquote>
+<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>支持组件化/模板化开发。<br>官网有相关教程、API文档。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://di.baidu.com/product/habo" target="_blank" rel="noopener">百度云  - Habo</a></p>
+<blockquote>
+<p>技术比较全面，数据分析，人工智能，云服务（IAAS / PAAS / SAAS）均支持。<br>支持组件化/模板化开发。<br>开放资源比较少。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="https://cloud.tencent.com/product/RayData" target="_blank" rel="noopener">腾讯云 - RayData</a></p>
+<blockquote>
+<p>支持组件化/模板化开发。<br>开放资源比较少。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="https://www.baidu.com/s?wd=%E4%B8%87%E5%8D%9A%E6%80%9D%E5%9B%BE" target="_blank" rel="noopener">万博思图</a></p>
+<blockquote>
+<p>侧重BI商业智能。<br>支持组件化开发。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.uinnova.cn/signup" target="_blank" rel="noopener">优诺科技</a></p>
+<blockquote>
+<p>3D仿真/机房运维可视化应用场景能力比较强。<br>有可视化三维模型创建功能，支持CAD底图导入，及模型导出。<br>使用的WebGL框架为three.js 及 Unity3D 引擎技术。<br>官网有相关Demo及教程。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.servasoft.com/index.html" target="_blank" rel="noopener">赛瓦软件TWaver</a></p>
+<blockquote>
+<p>3D仿真/机房运维可视化领域应用场景能力比较强。<br>使用的 Canvas, WebGL技术。<br>官网有相关Demo、教程、API文档、论坛。</p>
+</blockquote>
+</li>
+<li><p>[x] <a href="http://www.hightopo.com" target="_blank" rel="noopener">Hightopo 图扑软件</a></p>
+<blockquote>
+<p>3D仿真/机房运维可视化/工业组态应用场景能力比较强。<br>使用技术不详。<br>官网有相关Demo、教程、API文档、技术博客。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="六、大数据交易市场"><a href="#六、大数据交易市场" class="headerlink" title="六、大数据交易市场"></a>六、大数据交易市场</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.moojnn.com/" target="_blank" rel="noopener">国云数据 - 魔镜</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.chinadatatrading.com/" target="_blank" rel="noopener">东湖大数据交易中心</a></li>
+</ul>
+<h1 id="七、大数据采集"><a href="#七、大数据采集" class="headerlink" title="七、大数据采集"></a>七、大数据采集</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.54spider.com/" target="_blank" rel="noopener">军犬采集</a></li>
+</ul>
+<h1 id="八、交互技术案例"><a href="#八、交互技术案例" class="headerlink" title="八、交互技术案例"></a>八、交互技术案例</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.pjtime.com/2011/2/89588953_all.shtml" target="_blank" rel="noopener">途拓 炫影-交互显示平台–让大屏幕动起来!</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://lcd.zol.com.cn/416/4168437.html" target="_blank" rel="noopener">清投T-Show超高清信息可视化交互系统</a></li>
+</ul>
+<blockquote>
+<p>更多厂商查看天眼查竞品信息。</p>
+</blockquote>
+<h1 id="九、参考资料"><a href="#九、参考资料" class="headerlink" title="九、参考资料"></a>九、参考资料</h1><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.ck365.cn/news/10/45276.html" target="_blank" rel="noopener">智能停车领域的应用场景及行业痛点</a></li>
+</ul>
+<h1 id="十、后记"><a href="#十、后记" class="headerlink" title="十、后记"></a>十、后记</h1><blockquote>
+<p>未完待续</p>
+</blockquote>
+
       
 
       
@@ -576,19 +779,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Shiro</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Token</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">登录认证</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">权限管理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据可视化.行业分析</a>
         		</li>
       		
 		</ul>
@@ -600,7 +791,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
         		</li>
       		
 		</ul>
@@ -609,7 +800,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro+Token实现APP、Web统一登录认证和权限管理/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/应用场景/数据可视化行业分析/">展开全文 >></a>
         </p>
       
 
@@ -639,32 +830,44 @@
 
 
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/权限控制/Shiro安全框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/WebGL编程/Web HTML5 3D机房尝试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro安全框架/">Shiro安全框架</a>
+      <a class="article-title" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Web HTML5 3D机房尝试/">Web HTML5 3D机房尝试</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro安全框架/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Web HTML5 3D机房尝试/" class="archive-article-date">
+  	<time datetime="2018-05-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Apache Shiro是一个强大易用的Java安全框架，提供了认证、授权、加密和会话管理等功能：</p>
-<p>基本上涉及到用户参与的系统都要进行权限管理，权限管理属于系统安全的范畴，权限管理实现对用户访问系统的控制，按照安全规则或者安全策略控制用户可以访问而且只能访问自己被授权的资源。</p>
-<p>权限管理包括用户身份认证和授权两部分，简称认证授权。对于需要访问控制的资源用户首先经过身份认证，认证通过后用户具有该资源的访问权限方可访问。</p>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro安全框架/#more">more >></a>
-        
+        <ul>
+<li><p>[x]  <a href="https://www.baidu.com/s?tn=99006304_1_oem_dg&amp;isource=infinity&amp;wd=html5%203d%E6%9C%BA%E6%88%BF%E5%BC%80%E6%BA%90" target="_blank" rel="noopener">html5 3d机房开源</a></p>
+</li>
+<li><p>[x]  <a href="https://blog.csdn.net/cyadyx/article/details/78341471" target="_blank" rel="noopener">Three.js呈现3D效果机房–初步方案</a></p>
+</li>
+<li><p>[x] <a href="https://www.cnblogs.com/twaver/p/4913749.html" target="_blank" rel="noopener">无插件纯Web HTML5 3D机房 终结篇（新增资产管理、动环监控等内容）</a></p>
+</li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://segmentfault.com/a/1190000009242021" target="_blank" rel="noopener">从3dMax导出供threeJS使用的带动作模型与加载（认真修改详尽版）</a></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.zhihu.com/question/19690014" target="_blank" rel="noopener">SVG 与 HTML5 的 canvas 各有什么优点，哪个更有前途？</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.runoob.com/svg/svg-tutorial.html" target="_blank" rel="noopener">SVG 教程</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://demo.qunee.com/svg2canvas/" target="_blank" rel="noopener">SVG to Canvas Converter</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://c.runoob.com/more/svgeditor/" target="_blank" rel="noopener">SVG在线编辑器</a></li>
+</ul>
+
       
 
       
@@ -677,11 +880,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Shiro</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Web3D</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全框架</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">机房</a>
         		</li>
       		
 		</ul>
@@ -693,7 +896,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
         		</li>
       		
 		</ul>
@@ -702,7 +905,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro安全框架/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Web HTML5 3D机房尝试/">展开全文 >></a>
         </p>
       
 
@@ -732,20 +935,299 @@
 
 
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/权限控制/前后端分离模式下的权限设计方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/WebGL编程/Three.js初探" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/前后端分离模式下的权限设计方案/">前后端分离模式下的权限设计方案</a>
+      <a class="article-title" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Three.js初探/">Three.js</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/前后端分离模式下的权限设计方案/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Three.js初探/" class="archive-article-date">
+  	<time datetime="2018-05-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Three.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/Three.js初探/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC08 人工智能 &amp; 数据挖掘与分析 &amp; loT/数据可视化/WebGL编程/几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)/">几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)/" class="archive-article-date">
+  	<time datetime="2018-05-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.hightopo.com/cn-index.html" target="_blank" rel="noopener">Canvas</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.hightopo.com/cn-index.html" target="_blank" rel="noopener">HT for Web</a></li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://baike.baidu.com/item/WebGL/592485?fr=aladdin" target="_blank" rel="noopener">百度百科 - WebGL</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://techbrood.com/threejs/docs/" target="_blank" rel="noopener">Three.js 中文教程</a></li>
+</ul>
+<p>Echarts &amp; HighChart.js  &amp;   Three.js  &amp; D3.js</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://get.webgl.org/" target="_blank" rel="noopener">测试浏览器是否只支持WebGL</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Web3D</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVG</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">webGL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/人工智能-数据挖掘与分析-loT//" class="article-tag-list-link color1">人工智能 & 数据挖掘与分析 & loT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/06/博客文章/SC08 人工智能 & 数据挖掘与分析 & loT/数据可视化/WebGL编程/几种Web3D技术比较(HTML5 canvas(Echart)、SVG、webGL)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/设计模式/工厂模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/工厂模式/">工厂模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/工厂模式/" class="archive-article-date">
+  	<time datetime="2018-04-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>从设计模式的类型上来说简单工厂模式（Simple Factory）、抽象工厂模式(Abstract Factory)、工厂方法模式(Factory Method)同属创建型设计模式。但简单工厂模式不属于23种GOF设计模式之一。</p>
+        
+          <a class="article-more-a" href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/工厂模式/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程思想-设计模式-架构//" class="article-tag-list-link color2">编程思想 & 设计模式 & 架构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/工厂模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/设计模式/单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/单例模式/">策略模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/单例模式/" class="archive-article-date">
+  	<time datetime="2018-04-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
 </a>
         
       </header>
@@ -754,7 +1236,7 @@
       
         <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/前后端分离模式下的权限设计方案/#more">more >></a>
+          <a class="article-more-a" href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/单例模式/#more">more >></a>
         
       
 
@@ -768,11 +1250,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前后端分离</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">权限设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -784,7 +1262,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        			<a href="/categories/编程思想-设计模式-架构//" class="article-tag-list-link color2">编程思想 & 设计模式 & 架构</a>
         		</li>
       		
 		</ul>
@@ -793,276 +1271,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/前后端分离模式下的权限设计方案/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/权限控制/单点登录CAS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/单点登录CAS/">单点登录CAS</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/单点登录CAS/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/单点登录CAS/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单点登录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CAS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/单点登录CAS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/权限控制/浅谈权限管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/">浅谈权限管理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">权限管理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Java加密部署，使用自定义的classloader解密的方法实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Java加密部署，使用自定义的classloader解密的方法实例/">Java加密部署，使用自定义的classloader解密的方法实例</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Java加密部署，使用自定义的classloader解密的方法实例/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Java加密部署，使用自定义的classloader解密的方法实例/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java加密</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码加密</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Java加密部署，使用自定义的classloader解密的方法实例/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/04/24/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/单例模式/">展开全文 >></a>
         </p>
       
 
@@ -1218,11 +1427,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1230,11 +1439,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1318,11 +1527,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1355,14 +1568,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">非关系型数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1426,15 +1631,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1463,6 +1664,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1578,15 +1787,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1690,10 +1899,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">SQL语句优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
               </li>
              
@@ -1783,6 +1988,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">SQL语句优化</a>
               </li>
              
               <li class="article-tag-list-item">

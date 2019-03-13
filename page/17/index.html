@@ -164,29 +164,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/13 - 优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/前后端分离与RESTful风格及接口设计/API接口设计指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/">13 - 优化</a>
+      <a class="article-title" href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/API接口设计指南/">API接口设计指南</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/API接口设计指南/" class="archive-article-date">
+  	<time datetime="2017-12-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>公司目前的产品的软件架构是JSP+SSM+Tomcat，前后端代码高度耦合。前端设计好HTML静态页面，后端转换成JSP，JSP文件中大量嵌入EL及JSTL表达式，甚至会涉及到CSS及JS文件的修改。不仅后端会做出很多不必要的工作，也让前端工程师需要更新修改时，望码兴叹，无从下手。</p>
+<p>前段时间，公司曾尝试运用AJAX+JSON形式的HTTP API 接口进行前后端交互，抛弃了JSP模式，从而初步实现了前后端的解耦。然而，由于没有规范性文件的指导，接口设计及接口文档的设计难免有一定的随意性。存在潜在隐患。</p>
+<p>为了解决公司接口设计及接口文档编写的规范性问题，节约前后端及模块间接口调用的协调成本，以及为后续的可能进行的前后端分离工作做准备。估拟定此API接口设计指南，作为公司接口设计及接口文档编写的指导性文件。</p>
+<p>本文会按照HTTP API和RESTful API两个分支编写，以适应公司产品技术架构演变的阶段性需求。正常情况下按照项目的实际情况选择其一分支即可。数据交换格式采用JSON。文章内容包括命名约定、数据交换格式约定、安全机制、以及实例讲解等方面。</p>
+<p>参考代码请移步<a href="http://note.youdao.com/" target="_blank" rel="noopener">前后端分离架构模式的实践（附完整Demo - ApiDemo_Yshow）</a>。</p>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/#more">more >></a>
+          <a class="article-more-a" href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/API接口设计指南/#more">more >></a>
         
       
 
@@ -200,11 +204,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">API</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">接口设计</a>
         		</li>
       		
 		</ul>
@@ -216,7 +220,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
         		</li>
       		
 		</ul>
@@ -225,7 +229,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/API接口设计指南/">展开全文 >></a>
         </p>
       
 
@@ -255,20 +259,20 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/2 - Html&amp;JavaScript&amp;ajax部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/">2 - Html&amp;JavaScript&amp;ajax部分</a>
+      <a class="article-title" href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务/">Quartz任务调度框架 - 实现动态定时任务</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务/" class="archive-article-date">
+  	<time datetime="2017-12-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
 </a>
         
       </header>
@@ -277,7 +281,7 @@
       
         <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/#more">more >></a>
+          <a class="article-more-a" href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务/#more">more >></a>
         
       
 
@@ -291,11 +295,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Quartz</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时任务</a>
         		</li>
       		
 		</ul>
@@ -307,7 +311,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
         		</li>
       		
 		</ul>
@@ -316,7 +320,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务/">展开全文 >></a>
         </p>
       
 
@@ -346,29 +350,26 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/3 - Java web部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC01 程序设计基础/JVM虚拟机/JVM 简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/3 - Java web部分/">3 - Java web部分</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC01 程序设计基础/JVM虚拟机/JVM 简介/">JVM 简介</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/3 - Java web部分/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC01 程序设计基础/JVM虚拟机/JVM 简介/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/3 - Java web部分/#more">more >></a>
         
       
 
@@ -382,11 +383,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
         		</li>
       		
 		</ul>
@@ -398,7 +395,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/程序设计基础//" class="article-tag-list-link color2">程序设计基础</a>
         		</li>
       		
 		</ul>
@@ -407,7 +404,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/3 - Java web部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC01 程序设计基础/JVM虚拟机/JVM 简介/">展开全文 >></a>
         </p>
       
 
@@ -437,20 +434,20 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/4 - 数据库部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC07 网络技术 &amp; Web安全/网络基础/TCP-IP协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/">4 - 数据库部分</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC07 网络技术 & Web安全/网络基础/TCP-IP协议/">TCP-IP协议</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC07 网络技术 & Web安全/网络基础/TCP-IP协议/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
@@ -459,7 +456,7 @@
       
         <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC07 网络技术 & Web安全/网络基础/TCP-IP协议/#more">more >></a>
         
       
 
@@ -473,11 +470,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP-IP协议</a>
         		</li>
       		
 		</ul>
@@ -489,7 +482,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/网络技术-Web安全//" class="article-tag-list-link color3">网络技术 & Web安全</a>
         		</li>
       		
 		</ul>
@@ -498,7 +491,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC07 网络技术 & Web安全/网络基础/TCP-IP协议/">展开全文 >></a>
         </p>
       
 
@@ -528,29 +521,29 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/5- 流行的框架与新技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC01 程序设计基础/Java多线程并发编程/Java多线程并发编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">5- 流行的框架与新技术</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC01 程序设计基础/Java多线程并发编程/Java多线程并发编程/">Java多线程并发编程</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC01 程序设计基础/Java多线程并发编程/Java多线程并发编程/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>开多线程增加了并发数，提高资源了的利用率。</p>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC01 程序设计基础/Java多线程并发编程/Java多线程并发编程/#more">more >></a>
         
       
 
@@ -564,11 +557,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
         		</li>
       		
 		</ul>
@@ -580,7 +573,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/程序设计基础//" class="article-tag-list-link color2">程序设计基础</a>
         		</li>
       		
 		</ul>
@@ -589,7 +582,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC01 程序设计基础/Java多线程并发编程/Java多线程并发编程/">展开全文 >></a>
         </p>
       
 
@@ -619,29 +612,29 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/6 - 软件工程与设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/浅谈Java异常处理机制及项目中的的规范处理方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">6 - 软件工程与设计模式</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Java异常处理机制及项目中的的规范处理方法/">浅谈Java异常处理机制及项目中的的规范处理方法</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Java异常处理机制及项目中的的规范处理方法/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。</p>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Java异常处理机制及项目中的的规范处理方法/#more">more >></a>
         
       
 
@@ -655,11 +648,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">异常处理</a>
         		</li>
       		
 		</ul>
@@ -671,7 +660,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
         		</li>
       		
 		</ul>
@@ -680,7 +669,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Java异常处理机制及项目中的的规范处理方法/">展开全文 >></a>
         </p>
       
 
@@ -710,30 +699,30 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/7 - J2EE部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/浅谈Ajax请求" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/">7 - J2EE部分</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Ajax请求/">浅谈Ajax请求</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Ajax请求/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
-        
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/#more">more >></a>
-        
+        <ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/huahua035/p/7922136.html" target="_blank" rel="noopener">Jquery的Ajax中contentType和dataType的区别</a></li>
+</ul>
+
       
 
       
@@ -746,11 +735,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
         		</li>
       		
 		</ul>
@@ -762,7 +747,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
         		</li>
       		
 		</ul>
@@ -771,7 +756,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/7 - J2EE部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Ajax请求/">展开全文 >></a>
         </p>
       
 
@@ -801,20 +786,20 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/8 - websevice部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/也谈上下文对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/">8 - websevice部分</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/也谈上下文对象/">也谈上下文对象</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/也谈上下文对象/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
@@ -823,7 +808,7 @@
       
         <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/也谈上下文对象/#more">more >></a>
         
       
 
@@ -837,11 +822,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">上下文对象</a>
         		</li>
       		
 		</ul>
@@ -853,7 +834,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
         		</li>
       		
 		</ul>
@@ -862,7 +843,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/8 - websevice部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/也谈上下文对象/">展开全文 >></a>
         </p>
       
 
@@ -892,20 +873,20 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/9 - 算法与编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/JavaWeb中的相对路径和绝对路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/">9 - 算法与编程</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/JavaWeb中的相对路径和绝对路径/">JavaWeb中的相对路径和绝对路径</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/JavaWeb中的相对路径和绝对路径/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
@@ -914,7 +895,7 @@
       
         <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1>
         
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/JavaWeb中的相对路径和绝对路径/#more">more >></a>
         
       
 
@@ -928,11 +909,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">相对路径</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">绝对路径</a>
         		</li>
       		
 		</ul>
@@ -944,7 +925,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
         		</li>
       		
 		</ul>
@@ -953,7 +934,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/博客文章/SC99 面试 & 笔试/Java面试宝典/9 - 算法与编程/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/JavaWeb中的相对路径和绝对路径/">展开全文 >></a>
         </p>
       
 
@@ -983,29 +964,29 @@
 
 
   
-    <article id="post-思维体系/几点思考 - 工作/年度总结/开发组现状与存在的问题之我的几点思考-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC100 Windows &amp; Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/思维体系/几点思考 - 工作/年度总结/开发组现状与存在的问题之我的几点思考-1/">开发组现状与存在的问题之我的几点思考-1</a>
+      <a class="article-title" href="/2017/09/24/博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/">快速批量提取文件夹中次级文件夹及文件名称的技巧</a>
     </h1>
   
 
         
-        <a href="/2019/03/12/思维体系/几点思考 - 工作/年度总结/开发组现状与存在的问题之我的几点思考-1/" class="archive-article-date">
-  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+        <a href="/2017/09/24/博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>来公司已近一年，接任开发组管理职务也有段时间了。针对我们公司及开发组所存在的一些问题，我想谈一谈我的看法。个人见解，水平有限，还望批评指正。</p>
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>想对某个文件夹做个内容列表，把文件名字一个个复制，再粘贴到文本文档——太麻烦了！怎么办？</p>
         
-          <a class="article-more-a" href="/2019/03/12/思维体系/几点思考 - 工作/年度总结/开发组现状与存在的问题之我的几点思考-1/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/#more">more >></a>
         
       
 
@@ -1019,11 +1000,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">开发组现状</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">年度总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Office</a>
         		</li>
       		
 		</ul>
@@ -1035,7 +1012,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/思维体系//" class="article-tag-list-link color5">思维体系</a>
+        			<a href="/categories/Windows-Office-使用//" class="article-tag-list-link color5">Windows & Office 使用</a>
         		</li>
       		
 		</ul>
@@ -1044,7 +1021,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/思维体系/几点思考 - 工作/年度总结/开发组现状与存在的问题之我的几点思考-1/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC100 Windows & Office 使用/快速批量提取文件夹中次级文件夹及文件名称的技巧/">展开全文 >></a>
         </p>
       
 
@@ -1200,11 +1177,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1212,11 +1189,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1300,11 +1277,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
+                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1337,14 +1318,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">非关系型数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">内外网隔离</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1408,15 +1381,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1445,6 +1414,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1560,15 +1537,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">单点登录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CAS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">权限设计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1672,10 +1649,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">SQL语句优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">InterliJ IDEA</a>
               </li>
              
@@ -1765,6 +1738,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">SQL语句优化</a>
               </li>
              
               <li class="article-tag-list-item">
