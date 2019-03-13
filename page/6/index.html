@@ -346,19 +346,19 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/6 - 软件工程与设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 速查表/常用JAVA代码片段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">6 - 软件工程与设计模式</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">常用JAVA代码片段</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -366,10 +366,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
-        
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/#more">more >></a>
-        
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非空判断</span></span><br><span class="line">List：</span><br><span class="line">CollectionUtils.isNotEmpty(caseInfoList)</span><br><span class="line"></span><br><span class="line">String：</span><br><span class="line">StringUtils.isNotEmpty(flag)</span><br><span class="line">StringUtils.isBlank(courtName)</span><br><span class="line"></span><br><span class="line">Object ：</span><br><span class="line"><span class="keyword">null</span>！= object</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、日期类操作，获取当前年月日</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getToday</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">     Calendar calendar = Calendar.getInstance();</span><br><span class="line">     <span class="keyword">int</span> year = calendar.get(Calendar.YEAR);</span><br><span class="line">     <span class="keyword">int</span> month = calendar.get(Calendar.MONTH);</span><br><span class="line">     <span class="keyword">int</span> date = calendar.get(Calendar.DATE);</span><br><span class="line">     Date today_1 = calendar.getTime();</span><br><span class="line">     String time_1 = sdf.format(today_1);</span><br><span class="line"></span><br><span class="line">     System.out.println(year + month + date + time_1);</span><br><span class="line"></span><br><span class="line">     Date today_2 = <span class="keyword">new</span> Date();</span><br><span class="line">     String time_2 = sdf.format(today_2);</span><br><span class="line">     System.out.println(time_2);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2、日期类操作</span></span><br><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line">c.add(Calendar.MONTH, -<span class="number">1</span>);</span><br><span class="line">Date date = c.getTime();</span><br><span class="line">String lastMonth = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、日期类操作</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">Date date = <span class="keyword">new</span> Date();</span><br><span class="line">String today = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、日期类操作</span></span><br><span class="line">Calendar ca = Calendar.getInstance();<span class="comment">// 得到一个Calendar的实例</span></span><br><span class="line"><span class="comment">//ca.setTime(new Date()); // 设置时间为当前时间</span></span><br><span class="line">ca.set(<span class="number">2011</span>, <span class="number">11</span>, <span class="number">17</span>);<span class="comment">// 月份是从0开始的，所以11表示12月</span></span><br><span class="line">ca.add(Calendar.YEAR, -<span class="number">1</span>); <span class="comment">// 年份减1</span></span><br><span class="line">ca.add(Calendar.MONTH, -<span class="number">1</span>);<span class="comment">// 月份减1</span></span><br><span class="line">ca.add(Calendar.DATE, -<span class="number">1</span>);<span class="comment">// 日期减1</span></span><br><span class="line">Date resultDate = ca.getTime(); <span class="comment">// 结果</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">System.out.println(sdf.format(resultDate));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询超长 - 分页</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCaseList</span><span class="params">(Integer pageSize)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pageNum = spbzkMapper.count() / pageSize;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> pageIndex = <span class="number">0</span>; pageIndex &lt;= pageNum; pageIndex++) &#123;</span><br><span class="line">        <span class="comment">// 处理分页索引</span></span><br><span class="line">        Integer offset = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != pageSize) &#123;</span><br><span class="line">            offset = pageSize * (pageIndex - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Spbzk&gt; spbzkList = spbzkMapper.selectAll(offset, pageSize);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Spbzk spbzk : spbzkList) &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  读取json文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getJson</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">    String laststr = <span class="string">""</span>;</span><br><span class="line">    File file = <span class="keyword">new</span> File(path);<span class="comment">// 打开文件</span></span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        FileInputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in, <span class="string">"UTF-8"</span>));<span class="comment">// 读取文件</span></span><br><span class="line">        String tempString = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> ((tempString = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            laststr = laststr + tempString;</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                reader.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException el) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> laststr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间解析</span></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : timeMap.entrySet()) &#123;</span><br><span class="line">    String startTime = entry.getKey();</span><br><span class="line">    String endTime = entry.getValue();</span><br><span class="line">    Date date = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        date = df.parse(startTime);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">        LOGGER.error(<span class="string">"日期格式解析错误"</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line">    Calendar calendar = Calendar.getInstance();</span><br><span class="line">    calendar.setTime(date);</span><br><span class="line">    <span class="comment">//获取年份和月份</span></span><br><span class="line">    String year = String.valueOf(calendar.get(Calendar.YEAR));</span><br><span class="line">    String month = String.valueOf(calendar.get(Calendar.MONTH) + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// List添加</span></span><br><span class="line">List&lt;Wfycatj&gt; wfycatjList = wfycatjMapper.selectCaBywfyType();/</span><br><span class="line">List&lt;Wfycatj&gt; ljList = wfycatjMapper.selectLjBywfyType();</span><br><span class="line">wfycatjList.addAll(ljList);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//筛选List</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;CaseListInfo&gt; <span class="title">checkDepart</span><span class="params">(List&lt;CaseListInfo&gt; caseListInfoList, String departType)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Iterator&lt;CaseListInfo&gt; iterator = caseListInfoList.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        CaseListInfo caseListInfoItem = iterator.next();</span><br><span class="line">        DictDepart dictDepartList = dictDepartMapper.selectDepartByCourtNameAndDepartName(</span><br><span class="line">                caseListInfoItem.getCourtName(), caseListInfoItem.getDepartName(), departType);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != dictDepartList) &#123;</span><br><span class="line">            caseListInfoItem.setDepartName(dictDepartList.getDepartShowName());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            iterator.remove();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> caseListInfoList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 代码中发送http请求，非法字符错误</span></span><br><span class="line"><span class="comment">*   产生原因：url中有汉字或特殊字符(非字母和数字的字符)，没有转码。</span></span><br><span class="line"><span class="comment">*   解决办法：将带有特殊字符或汉字的参数进行转码，再放入url发送即可。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">param1 = URLEncoder.encode(param1, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -382,11 +388,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JAVA代码片段</a>
         		</li>
       		
 		</ul>
@@ -398,7 +400,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
         		</li>
       		
 		</ul>
@@ -407,7 +409,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/6 - 软件工程与设计模式/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">展开全文 >></a>
         </p>
       
 
@@ -532,19 +534,19 @@
 
 
   
-    <article id="post-博客文章/SC00 速查表/常用JAVA代码片段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/5- 流行的框架与新技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">常用JAVA代码片段</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">5- 流行的框架与新技术</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -552,16 +554,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非空判断</span></span><br><span class="line">List：</span><br><span class="line">CollectionUtils.isNotEmpty(caseInfoList)</span><br><span class="line"></span><br><span class="line">String：</span><br><span class="line">StringUtils.isNotEmpty(flag)</span><br><span class="line">StringUtils.isBlank(courtName)</span><br><span class="line"></span><br><span class="line">Object ：</span><br><span class="line"><span class="keyword">null</span>！= object</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、日期类操作，获取当前年月日</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getToday</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">     Calendar calendar = Calendar.getInstance();</span><br><span class="line">     <span class="keyword">int</span> year = calendar.get(Calendar.YEAR);</span><br><span class="line">     <span class="keyword">int</span> month = calendar.get(Calendar.MONTH);</span><br><span class="line">     <span class="keyword">int</span> date = calendar.get(Calendar.DATE);</span><br><span class="line">     Date today_1 = calendar.getTime();</span><br><span class="line">     String time_1 = sdf.format(today_1);</span><br><span class="line"></span><br><span class="line">     System.out.println(year + month + date + time_1);</span><br><span class="line"></span><br><span class="line">     Date today_2 = <span class="keyword">new</span> Date();</span><br><span class="line">     String time_2 = sdf.format(today_2);</span><br><span class="line">     System.out.println(time_2);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2、日期类操作</span></span><br><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line">c.add(Calendar.MONTH, -<span class="number">1</span>);</span><br><span class="line">Date date = c.getTime();</span><br><span class="line">String lastMonth = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、日期类操作</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">Date date = <span class="keyword">new</span> Date();</span><br><span class="line">String today = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、日期类操作</span></span><br><span class="line">Calendar ca = Calendar.getInstance();<span class="comment">// 得到一个Calendar的实例</span></span><br><span class="line"><span class="comment">//ca.setTime(new Date()); // 设置时间为当前时间</span></span><br><span class="line">ca.set(<span class="number">2011</span>, <span class="number">11</span>, <span class="number">17</span>);<span class="comment">// 月份是从0开始的，所以11表示12月</span></span><br><span class="line">ca.add(Calendar.YEAR, -<span class="number">1</span>); <span class="comment">// 年份减1</span></span><br><span class="line">ca.add(Calendar.MONTH, -<span class="number">1</span>);<span class="comment">// 月份减1</span></span><br><span class="line">ca.add(Calendar.DATE, -<span class="number">1</span>);<span class="comment">// 日期减1</span></span><br><span class="line">Date resultDate = ca.getTime(); <span class="comment">// 结果</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">System.out.println(sdf.format(resultDate));</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询超长 - 分页</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCaseList</span><span class="params">(Integer pageSize)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pageNum = spbzkMapper.count() / pageSize;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> pageIndex = <span class="number">0</span>; pageIndex &lt;= pageNum; pageIndex++) &#123;</span><br><span class="line">        <span class="comment">// 处理分页索引</span></span><br><span class="line">        Integer offset = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != pageSize) &#123;</span><br><span class="line">            offset = pageSize * (pageIndex - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Spbzk&gt; spbzkList = spbzkMapper.selectAll(offset, pageSize);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Spbzk spbzk : spbzkList) &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  读取json文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getJson</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">    String laststr = <span class="string">""</span>;</span><br><span class="line">    File file = <span class="keyword">new</span> File(path);<span class="comment">// 打开文件</span></span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        FileInputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in, <span class="string">"UTF-8"</span>));<span class="comment">// 读取文件</span></span><br><span class="line">        String tempString = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> ((tempString = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            laststr = laststr + tempString;</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                reader.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException el) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> laststr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间解析</span></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : timeMap.entrySet()) &#123;</span><br><span class="line">    String startTime = entry.getKey();</span><br><span class="line">    String endTime = entry.getValue();</span><br><span class="line">    Date date = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        date = df.parse(startTime);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">        LOGGER.error(<span class="string">"日期格式解析错误"</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line">    Calendar calendar = Calendar.getInstance();</span><br><span class="line">    calendar.setTime(date);</span><br><span class="line">    <span class="comment">//获取年份和月份</span></span><br><span class="line">    String year = String.valueOf(calendar.get(Calendar.YEAR));</span><br><span class="line">    String month = String.valueOf(calendar.get(Calendar.MONTH) + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// List添加</span></span><br><span class="line">List&lt;Wfycatj&gt; wfycatjList = wfycatjMapper.selectCaBywfyType();/</span><br><span class="line">List&lt;Wfycatj&gt; ljList = wfycatjMapper.selectLjBywfyType();</span><br><span class="line">wfycatjList.addAll(ljList);</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//筛选List</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;CaseListInfo&gt; <span class="title">checkDepart</span><span class="params">(List&lt;CaseListInfo&gt; caseListInfoList, String departType)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Iterator&lt;CaseListInfo&gt; iterator = caseListInfoList.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        CaseListInfo caseListInfoItem = iterator.next();</span><br><span class="line">        DictDepart dictDepartList = dictDepartMapper.selectDepartByCourtNameAndDepartName(</span><br><span class="line">                caseListInfoItem.getCourtName(), caseListInfoItem.getDepartName(), departType);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != dictDepartList) &#123;</span><br><span class="line">            caseListInfoItem.setDepartName(dictDepartList.getDepartShowName());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            iterator.remove();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> caseListInfoList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 代码中发送http请求，非法字符错误</span></span><br><span class="line"><span class="comment">*   产生原因：url中有汉字或特殊字符(非字母和数字的字符)，没有转码。</span></span><br><span class="line"><span class="comment">*   解决办法：将带有特殊字符或汉字的参数进行转码，再放入url发送即可。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">param1 = URLEncoder.encode(param1, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
-
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
+        
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/#more">more >></a>
+        
       
 
       
@@ -574,7 +570,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JAVA代码片段</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
         		</li>
       		
 		</ul>
@@ -586,7 +586,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
+        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
         		</li>
       		
 		</ul>
@@ -595,7 +595,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">展开全文 >></a>
         </p>
       
 
@@ -1424,15 +1424,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1444,11 +1444,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1972,6 +1972,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
@@ -1981,14 +1989,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
