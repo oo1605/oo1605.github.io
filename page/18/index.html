@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/head.jpeg" class="js-avatar">
+			<img src="/assets/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">不系之舟</a></h1>
@@ -109,7 +109,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/head.jpeg" class="js-avatar">
+				<img src="/assets/img/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">不系之舟</h1>
@@ -339,6 +339,99 @@
 
 
   
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/Web框架/Mybatis学习笔记系列/Spring的mapper扫描器配置 及 mapper.xml映射文件语法解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Spring的mapper扫描器配置 及 mapper.xml映射文件语法解析/">Spring的mapper扫描器配置 及 mapper</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Spring的mapper扫描器配置 及 mapper.xml映射文件语法解析/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。</p>
+<p>mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的<mapper></mapper> 标签中的namespace属性实现绑定</p>
+<p>本文主要讲解如何写mapper.xml 映射文件，mapper扫描器配置仅是铺垫。</p>
+        
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Spring的mapper扫描器配置 及 mapper.xml映射文件语法解析/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Spring的mapper扫描器配置 及 mapper.xml映射文件语法解析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-博客文章/SC03 Web开发 &amp; Web框架/微服务/SpringCloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -397,97 +490,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/微服务/SpringCloud/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/Web框架/Mybatis学习笔记系列/Mybatis 框架概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Mybatis 框架概述/">Mybatis 框架概述</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Mybatis 框架概述/" class="archive-article-date">
-  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
-        
-          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Mybatis 框架概述/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Mybatis 框架概述/">展开全文 >></a>
         </p>
       
 
@@ -790,97 +792,6 @@
 
 
   
-    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/">SpringMVC  注解解析</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/" class="archive-article-date">
-  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>Spring Web MVC是一种基于Java的实现了Web MVC设计模式的请求驱动类型的轻量级Web框架，即使用了MVC架构模式的思想，将web层进行职责解耦，基于请求驱动指的就是使用请求-响应模型，框架的目的就是帮助我们简化开发，Spring Web MVC也是要简化我们日常Web开发的。</p>
-        
-          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -943,6 +854,97 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 返回类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC03 Web开发 &amp; Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/">SpringMVC  注解解析</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/" class="archive-article-date">
+  	<time datetime="2017-09-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>Spring Web MVC是一种基于Java的实现了Web MVC设计模式的请求驱动类型的轻量级Web框架，即使用了MVC架构模式的思想，将web层进行职责解耦，基于请求驱动指的就是使用请求-响应模型，框架的目的就是帮助我们简化开发，Spring Web MVC也是要简化我们日常Web开发的。</p>
+        
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC 框架概述/">展开全文 >></a>
         </p>
       
 
@@ -1189,11 +1191,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1453,15 +1455,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2025,15 +2027,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">地理信息</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
               </li>
              
               <li class="article-tag-list-item">
