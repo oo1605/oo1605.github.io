@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>Spring的mapper扫描器配置 及 mapper | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。 mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的 标签中的names">
+  <meta name="description" content="一、导语在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。 mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的 标签中的names">
 <meta name="keywords" content="框架,Mybatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring的mapper扫描器配置 及 mapper">
 <meta property="og:url" content="http://www.lapland.top/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/Mybatis学习笔记系列/Spring的mapper扫描器配置 及 mapper.xml映射文件语法解析/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。 mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的 标签中的names">
+<meta property="og:description" content="一、导语在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。 mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的 标签中的names">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201548344462.png">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201548346482.png">
-<meta property="og:updated_time" content="2019-03-13T02:30:24.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring的mapper扫描器配置 及 mapper">
-<meta name="twitter:description" content="一、前言在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。 mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的 标签中的names">
+<meta name="twitter:description" content="一、导语在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。 mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的 标签中的names">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/Image%201548344462.png">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>在SSM框架中，mybatis的mapper对象生成，往往是通过Spring的mapper扫描器来完成。只需要在spring配置文件中定义一个mapper扫描器，Spring容器启动时，会自动扫描包中的mapper接口（不须实现类），通过映射文件，生成代理对象。</p>
 <p>mapper.xml 是对 mapper.java 接口的实现。他们之间的关联通过mapper.xml 中的<mapper></mapper> 标签中的namespace属性实现绑定</p>
 <p>本文主要讲解如何写mapper.xml 映射文件，mapper扫描器配置仅是铺垫。</p>
 <a id="more"></a>
@@ -447,18 +447,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/24/博客文章/SC01 程序设计基础/JVM虚拟机/JVM 简介/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/18/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Quartz任务调度框架 - 实现动态定时任务/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JVM 简介
+          Quartz任务调度框架 - 实现动态定时任务
         
       </div>
     </a>
   
   
-    <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/Web框架/SpringMVC学习笔记系列/SpringMVC  注解解析/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringMVC  注解解析</div>
+    <a href="/2017/09/24/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/抽象，软件设计设计的灵魂/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">抽象，软件设计设计的灵魂</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -485,7 +485,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、mapper扫描器配置"><span class="toc-number">3.</span> <span class="toc-text">二、mapper扫描器配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、mapper-xml语法解析"><span class="toc-number">4.</span> <span class="toc-text">三、mapper.xml语法解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、一个实例"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、一个实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、属性解析"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、属性解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-21、-与-的区别"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.21、#{}与${}的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-22、resultType与resultMap的区别"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.22、resultType与resultMap的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、常用的动态语句标签"><span class="toc-number">4.3.</span> <span class="toc-text">3.3、常用的动态语句标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-31-if"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.31 if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-32-Where"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.32 Where</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-33-foreach"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.33 foreach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-34-set"><span class="toc-number">4.3.4.</span> <span class="toc-text">3.34 set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-35-choose-when-otherwise"><span class="toc-number">4.3.5.</span> <span class="toc-text">3.35 choose / when / otherwise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-36-Map映射"><span class="toc-number">4.3.6.</span> <span class="toc-text">3.36  Map映射</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、一对多、多对一、多对多映射关系"><span class="toc-number">5.</span> <span class="toc-text">四、一对多、多对一、多对多映射关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-顾客和订单的例子-一个顾客可以有多个订单-一个订单只对应一个顾客"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 顾客和订单的例子: 一个顾客可以有多个订单, 一个订单只对应一个顾客</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考资料"><span class="toc-number">6.</span> <span class="toc-text">五、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、结语"><span class="toc-number">7.</span> <span class="toc-text">六、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、mapper扫描器配置"><span class="toc-number">3.</span> <span class="toc-text">二、mapper扫描器配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、mapper-xml语法解析"><span class="toc-number">4.</span> <span class="toc-text">三、mapper.xml语法解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、一个实例"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、一个实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、属性解析"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、属性解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-21、-与-的区别"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.21、#{}与${}的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-22、resultType与resultMap的区别"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.22、resultType与resultMap的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、常用的动态语句标签"><span class="toc-number">4.3.</span> <span class="toc-text">3.3、常用的动态语句标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-31-if"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.31 if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-32-Where"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.32 Where</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-33-foreach"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.33 foreach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-34-set"><span class="toc-number">4.3.4.</span> <span class="toc-text">3.34 set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-35-choose-when-otherwise"><span class="toc-number">4.3.5.</span> <span class="toc-text">3.35 choose / when / otherwise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-36-Map映射"><span class="toc-number">4.3.6.</span> <span class="toc-text">3.36  Map映射</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、一对多、多对一、多对多映射关系"><span class="toc-number">5.</span> <span class="toc-text">四、一对多、多对一、多对多映射关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-顾客和订单的例子-一个顾客可以有多个订单-一个订单只对应一个顾客"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 顾客和订单的例子: 一个顾客可以有多个订单, 一个订单只对应一个顾客</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考资料"><span class="toc-number">6.</span> <span class="toc-text">五、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、结语"><span class="toc-number">7.</span> <span class="toc-text">六、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -630,14 +630,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -646,11 +638,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -854,15 +854,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -902,10 +902,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -919,6 +915,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1466,6 +1466,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1475,10 +1479,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

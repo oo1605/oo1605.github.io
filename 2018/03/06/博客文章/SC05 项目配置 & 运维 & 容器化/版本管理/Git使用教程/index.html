@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>Git使用教程 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。 二、版本">
+  <meta name="description" content="一、导语Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。 二、版本">
 <meta name="keywords" content="版本管理,GIT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git使用教程">
 <meta property="og:url" content="http://www.lapland.top/2018/03/06/博客文章/SC05 项目配置 & 运维 & 容器化/版本管理/Git使用教程/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。 二、版本">
+<meta property="og:description" content="一、导语Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。 二、版本">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201520385893.png">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201520406766.png">
@@ -36,10 +36,10 @@
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201520494737.png">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201520754241.png">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201520755017.png">
-<meta property="og:updated_time" content="2019-03-13T02:34:43.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git使用教程">
-<meta name="twitter:description" content="一、前言Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。 二、版本">
+<meta name="twitter:description" content="一、导语Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。 二、版本">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/Image%201520385893.png">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -204,7 +204,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>Git是一种分布式的版本控制工具。与传统的集中式（中心化）管理相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，即使没有网络你也可以提交变动到版本库（因为本地就有一个完整的版本库），Git的中心仓库（习惯命名为 origin）和SVN等传统版本控制系统不同，它不是一切的中心，也仅仅是一个副本，它的存在只是为了方便协作开发，大家方便提交变动和同步变动。</p>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
 <tr>
@@ -898,18 +898,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/08/博客文章/SC07 网络技术 & Web安全/破解/编程常用工具破解方案汇总/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/06/博客文章/SC05 项目配置 & 运维 & 容器化/版本管理/版本管理分支命名规范/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          编程常用工具破解方案汇总
+          版本管理分支命名规范
         
       </div>
     </a>
   
   
-    <a href="/2018/03/06/博客文章/SC05 项目配置 & 运维 & 容器化/版本管理/版本管理分支命名规范/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">版本管理分支命名规范</div>
+    <a href="/2018/02/28/博客文章/SC05 项目配置 & 运维 & 容器化/服务器配置及开发环境搭建/阿里云服务器配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里云服务器配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -936,7 +936,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Git安装及初始化"><span class="toc-number">3.</span> <span class="toc-text">三、Git安装及初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、安装Git服务端"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、安装Git服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、创建Git管理用户并设置密码"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、创建Git管理用户并设置密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-21、禁止git用户登录shell"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.21、禁止git用户登录shell</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、创建Git仓库存储目录和权限"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、创建Git仓库存储目录和权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、切换到git用户并建立项目"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、切换到git用户并建立项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Git-客户端操作"><span class="toc-number">4.</span> <span class="toc-text">四、Git 客户端操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、用户登录"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、用户登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-11、密码登录（基于口令的安全验证）"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.11、密码登录（基于口令的安全验证）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12、公钥登录（基于密匙的安全验证）"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.12、公钥登录（基于密匙的安全验证）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、Git基本操作"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、Git基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-21、命令行操作"><span class="toc-number">4.2.1.</span> <span class="toc-text">4.21、命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-211、新建代码库"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">4.211、新建代码库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-212、Git配置"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">4.212、Git配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-213、增加-删除文件"><span class="toc-number">4.2.1.3.</span> <span class="toc-text">4.213、增加/删除文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-214、代码提交"><span class="toc-number">4.2.1.4.</span> <span class="toc-text">4.214、代码提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-215、分支"><span class="toc-number">4.2.1.5.</span> <span class="toc-text">4.215、分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-216、标签"><span class="toc-number">4.2.1.6.</span> <span class="toc-text">4.216、标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-217、查看信息"><span class="toc-number">4.2.1.7.</span> <span class="toc-text">4.217、查看信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-218、远程同步"><span class="toc-number">4.2.1.8.</span> <span class="toc-text">4.218、远程同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-219、撤销"><span class="toc-number">4.2.1.9.</span> <span class="toc-text">4.219、撤销</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2110、其他"><span class="toc-number">4.2.1.10.</span> <span class="toc-text">4.2110、其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、图像化工具操作"><span class="toc-number">4.3.</span> <span class="toc-text">4.3、图像化工具操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-31、IntelliJ-IDEA绑定Git"><span class="toc-number">4.3.1.</span> <span class="toc-text">4.31、IntelliJ-IDEA绑定Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-311、版本控制的常用设置"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">4.311、版本控制的常用设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3111、配置git安装路径（windows为git-exe）"><span class="toc-number">4.3.1.1.1.</span> <span class="toc-text">4.3111、配置git安装路径（windows为git.exe）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3112、配置Github账号（按需）"><span class="toc-number">4.3.1.1.2.</span> <span class="toc-text">4.3112、配置Github账号（按需）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3113、其他配置"><span class="toc-number">4.3.1.1.3.</span> <span class="toc-text">4.3113、其他配置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-312、版本控制的主要操作"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">4.312、版本控制的主要操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3121、Clone项目从Github上"><span class="toc-number">4.3.1.2.1.</span> <span class="toc-text">4.3121、Clone项目从Github上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3122、选择项目，创建本地仓库"><span class="toc-number">4.3.1.2.2.</span> <span class="toc-text">4.3122、选择项目，创建本地仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3123、将本地项目上传到Github上"><span class="toc-number">4.3.1.2.3.</span> <span class="toc-text">4.3123、将本地项目上传到Github上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3124、Git工具栏操作按钮"><span class="toc-number">4.3.1.2.4.</span> <span class="toc-text">4.3124、Git工具栏操作按钮</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3125、Git-菜单选项"><span class="toc-number">4.3.1.2.5.</span> <span class="toc-text">4.3125、Git 菜单选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3126、Git-Commit操作面板"><span class="toc-number">4.3.1.2.6.</span> <span class="toc-text">4.3126、Git - Commit操作面板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3127、Git-Push操作面板"><span class="toc-number">4.3.1.2.7.</span> <span class="toc-text">4.3127、Git - Push操作面板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3128、项目分支设置的入口"><span class="toc-number">4.3.1.2.8.</span> <span class="toc-text">4.3128、项目分支设置的入口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3129、Version-Control-窗口"><span class="toc-number">4.3.1.2.9.</span> <span class="toc-text">4.3129、Version Control 窗口</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-32、使用Gitkraken操作Git"><span class="toc-number">4.3.2.</span> <span class="toc-text">4.32、使用Gitkraken操作Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-321、下载与安装"><span class="toc-number">4.3.2.1.</span> <span class="toc-text">4.321、下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-322、配置与使用"><span class="toc-number">4.3.2.2.</span> <span class="toc-text">4.322、配置与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3221、打开本地仓库"><span class="toc-number">4.3.2.2.1.</span> <span class="toc-text">4.3221、打开本地仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3222、Clone项目从远程仓库"><span class="toc-number">4.3.2.2.2.</span> <span class="toc-text">4.3222、Clone项目从远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3222、初始化本地或远程仓库"><span class="toc-number">4.3.2.2.3.</span> <span class="toc-text">4.3222、初始化本地或远程仓库</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-323、GitKraken面板介绍"><span class="toc-number">4.3.2.3.</span> <span class="toc-text">4.323、GitKraken面板介绍</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-33、使用SourceTree操作Git"><span class="toc-number">4.3.3.</span> <span class="toc-text">4.33、使用SourceTree操作Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-331、下载与安装"><span class="toc-number">4.3.3.1.</span> <span class="toc-text">4.331、下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-332、配置与使用"><span class="toc-number">4.3.3.2.</span> <span class="toc-text">4.332、配置与使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-34、使用SmartGit操作Git"><span class="toc-number">4.3.4.</span> <span class="toc-text">4.34、使用SmartGit操作Git</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Git进阶指南"><span class="toc-number">5.</span> <span class="toc-text">五、Git进阶指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、遇到冲突了怎么解决？"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、遇到冲突了怎么解决？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、参考资料"><span class="toc-number">6.</span> <span class="toc-text">六、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、结语"><span class="toc-number">7.</span> <span class="toc-text">七、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Git安装及初始化"><span class="toc-number">3.</span> <span class="toc-text">三、Git安装及初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、安装Git服务端"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、安装Git服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、创建Git管理用户并设置密码"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、创建Git管理用户并设置密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-21、禁止git用户登录shell"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.21、禁止git用户登录shell</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、创建Git仓库存储目录和权限"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、创建Git仓库存储目录和权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、切换到git用户并建立项目"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、切换到git用户并建立项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Git-客户端操作"><span class="toc-number">4.</span> <span class="toc-text">四、Git 客户端操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、用户登录"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、用户登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-11、密码登录（基于口令的安全验证）"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.11、密码登录（基于口令的安全验证）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-12、公钥登录（基于密匙的安全验证）"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.12、公钥登录（基于密匙的安全验证）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、Git基本操作"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、Git基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-21、命令行操作"><span class="toc-number">4.2.1.</span> <span class="toc-text">4.21、命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-211、新建代码库"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">4.211、新建代码库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-212、Git配置"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">4.212、Git配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-213、增加-删除文件"><span class="toc-number">4.2.1.3.</span> <span class="toc-text">4.213、增加/删除文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-214、代码提交"><span class="toc-number">4.2.1.4.</span> <span class="toc-text">4.214、代码提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-215、分支"><span class="toc-number">4.2.1.5.</span> <span class="toc-text">4.215、分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-216、标签"><span class="toc-number">4.2.1.6.</span> <span class="toc-text">4.216、标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-217、查看信息"><span class="toc-number">4.2.1.7.</span> <span class="toc-text">4.217、查看信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-218、远程同步"><span class="toc-number">4.2.1.8.</span> <span class="toc-text">4.218、远程同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-219、撤销"><span class="toc-number">4.2.1.9.</span> <span class="toc-text">4.219、撤销</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2110、其他"><span class="toc-number">4.2.1.10.</span> <span class="toc-text">4.2110、其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、图像化工具操作"><span class="toc-number">4.3.</span> <span class="toc-text">4.3、图像化工具操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-31、IntelliJ-IDEA绑定Git"><span class="toc-number">4.3.1.</span> <span class="toc-text">4.31、IntelliJ-IDEA绑定Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-311、版本控制的常用设置"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">4.311、版本控制的常用设置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3111、配置git安装路径（windows为git-exe）"><span class="toc-number">4.3.1.1.1.</span> <span class="toc-text">4.3111、配置git安装路径（windows为git.exe）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3112、配置Github账号（按需）"><span class="toc-number">4.3.1.1.2.</span> <span class="toc-text">4.3112、配置Github账号（按需）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3113、其他配置"><span class="toc-number">4.3.1.1.3.</span> <span class="toc-text">4.3113、其他配置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-312、版本控制的主要操作"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">4.312、版本控制的主要操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3121、Clone项目从Github上"><span class="toc-number">4.3.1.2.1.</span> <span class="toc-text">4.3121、Clone项目从Github上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3122、选择项目，创建本地仓库"><span class="toc-number">4.3.1.2.2.</span> <span class="toc-text">4.3122、选择项目，创建本地仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3123、将本地项目上传到Github上"><span class="toc-number">4.3.1.2.3.</span> <span class="toc-text">4.3123、将本地项目上传到Github上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3124、Git工具栏操作按钮"><span class="toc-number">4.3.1.2.4.</span> <span class="toc-text">4.3124、Git工具栏操作按钮</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3125、Git-菜单选项"><span class="toc-number">4.3.1.2.5.</span> <span class="toc-text">4.3125、Git 菜单选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3126、Git-Commit操作面板"><span class="toc-number">4.3.1.2.6.</span> <span class="toc-text">4.3126、Git - Commit操作面板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3127、Git-Push操作面板"><span class="toc-number">4.3.1.2.7.</span> <span class="toc-text">4.3127、Git - Push操作面板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3128、项目分支设置的入口"><span class="toc-number">4.3.1.2.8.</span> <span class="toc-text">4.3128、项目分支设置的入口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3129、Version-Control-窗口"><span class="toc-number">4.3.1.2.9.</span> <span class="toc-text">4.3129、Version Control 窗口</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-32、使用Gitkraken操作Git"><span class="toc-number">4.3.2.</span> <span class="toc-text">4.32、使用Gitkraken操作Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-321、下载与安装"><span class="toc-number">4.3.2.1.</span> <span class="toc-text">4.321、下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-322、配置与使用"><span class="toc-number">4.3.2.2.</span> <span class="toc-text">4.322、配置与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3221、打开本地仓库"><span class="toc-number">4.3.2.2.1.</span> <span class="toc-text">4.3221、打开本地仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3222、Clone项目从远程仓库"><span class="toc-number">4.3.2.2.2.</span> <span class="toc-text">4.3222、Clone项目从远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3222、初始化本地或远程仓库"><span class="toc-number">4.3.2.2.3.</span> <span class="toc-text">4.3222、初始化本地或远程仓库</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-323、GitKraken面板介绍"><span class="toc-number">4.3.2.3.</span> <span class="toc-text">4.323、GitKraken面板介绍</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-33、使用SourceTree操作Git"><span class="toc-number">4.3.3.</span> <span class="toc-text">4.33、使用SourceTree操作Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-331、下载与安装"><span class="toc-number">4.3.3.1.</span> <span class="toc-text">4.331、下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-332、配置与使用"><span class="toc-number">4.3.3.2.</span> <span class="toc-text">4.332、配置与使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-34、使用SmartGit操作Git"><span class="toc-number">4.3.4.</span> <span class="toc-text">4.34、使用SmartGit操作Git</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Git进阶指南"><span class="toc-number">5.</span> <span class="toc-text">五、Git进阶指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、遇到冲突了怎么解决？"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、遇到冲突了怎么解决？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、参考资料"><span class="toc-number">6.</span> <span class="toc-text">六、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、结语"><span class="toc-number">7.</span> <span class="toc-text">七、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -1081,14 +1081,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -1097,11 +1089,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,15 +1305,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,10 +1353,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -1370,6 +1366,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1917,6 +1917,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1926,10 +1930,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

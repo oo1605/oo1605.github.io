@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>浅谈Java异常处理机制及项目中的的规范处理方法 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。">
+  <meta name="description" content="一、导语本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。">
 <meta name="keywords" content="异常处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈Java异常处理机制及项目中的的规范处理方法">
 <meta property="og:url" content="http://www.lapland.top/2017/09/24/博客文章/SC03 Web开发 & Web框架/浅谈Java异常处理机制及项目中的的规范处理方法/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。">
+<meta property="og:description" content="一、导语本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/1507205634_8756.png">
 <meta property="og:image" content="http://img.cdn.lapland.top/1507224495_1036.png">
-<meta property="og:updated_time" content="2019-03-13T03:07:29.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Java异常处理机制及项目中的的规范处理方法">
-<meta name="twitter:description" content="一、前言本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。">
+<meta name="twitter:description" content="一、导语本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/1507205634_8756.png">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>本文主要讲述异常处理的机制和原理，以及探讨开发Java程序时，每一层如何进行异常处理？异常何时被抛出？何时被记录？如何记录？记录checked异常还是unChecked异常？异常是否应该呈现到前端页面？如何设计一个异常框架等问题。</p>
 <a id="more"></a>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
@@ -531,11 +531,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/24/博客文章/SC01 程序设计基础/Tomcat类加载机制/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/24/博客文章/SC02 编程思想 & 设计模式 & 架构/编程风格及命名规范/JSON语法及JSON定义规范化/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Tomcat类加载机制
+          JSON语法及JSON定义规范化
         
       </div>
     </a>
@@ -569,7 +569,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、基本概念"><span class="toc-number">3.</span> <span class="toc-text">二、基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、异常处理机制"><span class="toc-number">4.</span> <span class="toc-text">三、异常处理机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、抛出异常实例（throws-和-throw）"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、抛出异常实例（throws 和 throw）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、捕获异常实例（try-catch-和-finally）"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、捕获异常实例（try-catch 和 finally）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Java常见异常"><span class="toc-number">5.</span> <span class="toc-text">四、Java常见异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、Error"><span class="toc-number">5.1.</span> <span class="toc-text">4.1、Error</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、运行时异常（unChecked异常）"><span class="toc-number">5.2.</span> <span class="toc-text">4.2、运行时异常（unChecked异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、非运行时异常（checked异常）"><span class="toc-number">5.3.</span> <span class="toc-text">4.3、非运行时异常（checked异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4、Throwable类的主要方法"><span class="toc-number">5.4.</span> <span class="toc-text">4.4、Throwable类的主要方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、自定义异常实例"><span class="toc-number">6.</span> <span class="toc-text">五、自定义异常实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、Java异常处理的原则和技巧"><span class="toc-number">7.</span> <span class="toc-text">六、Java异常处理的原则和技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、异常的转换与异常链"><span class="toc-number">8.</span> <span class="toc-text">七、异常的转换与异常链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、异常统一处理"><span class="toc-number">9.</span> <span class="toc-text">七、异常统一处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、几点思考"><span class="toc-number">10.</span> <span class="toc-text">八、几点思考</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1、抛出异常的时机？"><span class="toc-number">10.1.</span> <span class="toc-text">8.1、抛出异常的时机？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2、IOException-为什么被声明为检查型异常？"><span class="toc-number">10.2.</span> <span class="toc-text">8.2、IOException 为什么被声明为检查型异常？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3、java为什么引入异常处理机制？"><span class="toc-number">10.3.</span> <span class="toc-text">8.3、java为什么引入异常处理机制？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、拓展阅读"><span class="toc-number">11.</span> <span class="toc-text">七、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">12.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">13.</span> <span class="toc-text">九、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、基本概念"><span class="toc-number">3.</span> <span class="toc-text">二、基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、异常处理机制"><span class="toc-number">4.</span> <span class="toc-text">三、异常处理机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、抛出异常实例（throws-和-throw）"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、抛出异常实例（throws 和 throw）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、捕获异常实例（try-catch-和-finally）"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、捕获异常实例（try-catch 和 finally）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Java常见异常"><span class="toc-number">5.</span> <span class="toc-text">四、Java常见异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、Error"><span class="toc-number">5.1.</span> <span class="toc-text">4.1、Error</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、运行时异常（unChecked异常）"><span class="toc-number">5.2.</span> <span class="toc-text">4.2、运行时异常（unChecked异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、非运行时异常（checked异常）"><span class="toc-number">5.3.</span> <span class="toc-text">4.3、非运行时异常（checked异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4、Throwable类的主要方法"><span class="toc-number">5.4.</span> <span class="toc-text">4.4、Throwable类的主要方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、自定义异常实例"><span class="toc-number">6.</span> <span class="toc-text">五、自定义异常实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、Java异常处理的原则和技巧"><span class="toc-number">7.</span> <span class="toc-text">六、Java异常处理的原则和技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、异常的转换与异常链"><span class="toc-number">8.</span> <span class="toc-text">七、异常的转换与异常链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、异常统一处理"><span class="toc-number">9.</span> <span class="toc-text">七、异常统一处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、几点思考"><span class="toc-number">10.</span> <span class="toc-text">八、几点思考</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1、抛出异常的时机？"><span class="toc-number">10.1.</span> <span class="toc-text">8.1、抛出异常的时机？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2、IOException-为什么被声明为检查型异常？"><span class="toc-number">10.2.</span> <span class="toc-text">8.2、IOException 为什么被声明为检查型异常？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3、java为什么引入异常处理机制？"><span class="toc-number">10.3.</span> <span class="toc-text">8.3、java为什么引入异常处理机制？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、拓展阅读"><span class="toc-number">11.</span> <span class="toc-text">七、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">12.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">13.</span> <span class="toc-text">九、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -714,14 +714,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -730,11 +722,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,15 +938,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -986,10 +986,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -1003,6 +999,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1550,6 +1550,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1559,10 +1563,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

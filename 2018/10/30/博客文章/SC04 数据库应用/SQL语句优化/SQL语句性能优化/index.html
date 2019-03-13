@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>SQL语句性能优化 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。 提高数据库检索速度的几个方案：1、优化SQL语句2、使用全文索引3、使用搜索引擎 建立索引的方法论为： 1、多数查询经常使用的列2、很少进行修改操作的列3、索引需要建立在数据差异化大的列上">
+  <meta name="description" content="一、导语目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。 提高数据库检索速度的几个方案：1、优化SQL语句2、使用全文索引3、使用搜索引擎 建立索引的方法论为： 1、多数查询经常使用的列2、很少进行修改操作的列3、索引需要建立在数据差异化大的列上">
 <meta name="keywords" content="数据库,SQL语句优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL语句性能优化">
 <meta property="og:url" content="http://www.lapland.top/2018/10/30/博客文章/SC04 数据库应用/SQL语句优化/SQL语句性能优化/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。 提高数据库检索速度的几个方案：1、优化SQL语句2、使用全文索引3、使用搜索引擎 建立索引的方法论为： 1、多数查询经常使用的列2、很少进行修改操作的列3、索引需要建立在数据差异化大的列上">
+<meta property="og:description" content="一、导语目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。 提高数据库检索速度的几个方案：1、优化SQL语句2、使用全文索引3、使用搜索引擎 建立索引的方法论为： 1、多数查询经常使用的列2、很少进行修改操作的列3、索引需要建立在数据差异化大的列上">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T02:33:19.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL语句性能优化">
-<meta name="twitter:description" content="一、前言目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。 提高数据库检索速度的几个方案：1、优化SQL语句2、使用全文索引3、使用搜索引擎 建立索引的方法论为： 1、多数查询经常使用的列2、很少进行修改操作的列3、索引需要建立在数据差异化大的列上">
+<meta name="twitter:description" content="一、导语目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。 提高数据库检索速度的几个方案：1、优化SQL语句2、使用全文索引3、使用搜索引擎 建立索引的方法论为： 1、多数查询经常使用的列2、很少进行修改操作的列3、索引需要建立在数据差异化大的列上">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>目前参加的项目在处理大数据量的查询时，遇到了效率问题，后来在不断探索优化下得到了优化改善，现将优化思路和解决策略总结如下。</p>
 <p>提高数据库检索速度的几个方案：<br>1、优化SQL语句<br>2、使用全文索引<br>3、使用搜索引擎</p>
 <p>建立索引的方法论为：</p>
 <p>1、多数查询经常使用的列<br>2、很少进行修改操作的列<br>3、索引需要建立在数据差异化大的列上</p>
@@ -402,7 +402,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、提高数据库检索速度的几个方案"><span class="toc-number">3.</span> <span class="toc-text">三、提高数据库检索速度的几个方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、优化SQL语句"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、优化SQL语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、使用全文索引"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、使用全文索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、使用搜索引擎"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、使用搜索引擎</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">4.</span> <span class="toc-text">八、参考资料</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、提高数据库检索速度的几个方案"><span class="toc-number">3.</span> <span class="toc-text">三、提高数据库检索速度的几个方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、优化SQL语句"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、优化SQL语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、使用全文索引"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、使用全文索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、使用搜索引擎"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、使用搜索引擎</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">4.</span> <span class="toc-text">八、参考资料</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -547,14 +547,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -563,11 +555,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -771,15 +771,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -819,10 +819,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -836,6 +832,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1383,6 +1383,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1392,10 +1396,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

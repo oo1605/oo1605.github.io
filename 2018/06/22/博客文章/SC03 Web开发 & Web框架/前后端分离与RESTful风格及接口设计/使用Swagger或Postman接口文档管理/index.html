@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>使用Swagger或Postman接口文档管理 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。 本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看">
+  <meta name="description" content="一、导语基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。 本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看">
 <meta name="keywords" content="前后端分离,架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Swagger或Postman接口文档管理">
 <meta property="og:url" content="http://www.lapland.top/2018/06/22/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/使用Swagger或Postman接口文档管理/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。 本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看">
+<meta property="og:description" content="一、导语基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。 本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/errno-404">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201529658396.png">
-<meta property="og:updated_time" content="2019-03-13T02:28:27.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Swagger或Postman接口文档管理">
-<meta name="twitter:description" content="一、前言基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。 本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看">
+<meta name="twitter:description" content="一、导语基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。 本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/errno-404">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>基于公司前后端分离项目的展开，后端开发为了方便的生成、提供和管理接口文档，与前端各团队（IOS开发、Android开发、Web开发等）有效协同。减少与其他团队沟通成本。故制定此接口文档管理方案，方便团队学习和使用。</p>
 <p>本文通过搭建一个Maven+SpringMVC+Swagger+Swagger-UI的示例，介绍了Swagger插件的整合步骤和使用方法。前端团队则使用Swagger-UI查看，使用Postman测试接口文档。</p>
 <p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新 。接口的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。Swagger 让部署管理和使用功能强大的API从未如此简单。</p>
 <p>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件。</p>
@@ -576,7 +576,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、SSM整合Swagger步骤"><span class="toc-number">3.</span> <span class="toc-text">三、SSM整合Swagger步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、搭建Maven管理的SSM项目"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、搭建Maven管理的SSM项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、整合Swagger"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、整合Swagger</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-21、添加Swagger2依赖"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.21、添加Swagger2依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-22、创建Swagger2配置类"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.22、创建Swagger2配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-23、注入Swagger2配置类Bean"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.23、注入Swagger2配置类Bean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-整合Swagger-ui"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 整合Swagger-ui</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-31-添加Swagger-ui依赖"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.31 添加Swagger-ui依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-32-配置对这些静态资源的访问"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.32 配置对这些静态资源的访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-测试"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Swagge注解说明"><span class="toc-number">4.</span> <span class="toc-text">四、Swagge注解说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、API常用注解"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、API常用注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-11、-ApiImplicitParam"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.11、@ApiImplicitParam</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、接口文档的编写实例"><span class="toc-number">5.</span> <span class="toc-text">五、接口文档的编写实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-controller接口"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 controller接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-实体类"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 实体类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、完成效果"><span class="toc-number">6.</span> <span class="toc-text">六、完成效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、Swagger-UI-接口测试"><span class="toc-number">7.</span> <span class="toc-text">七、Swagger-UI  接口测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、Postman-接口测试"><span class="toc-number">8.</span> <span class="toc-text">八、Postman 接口测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、参考资料"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、结语"><span class="toc-number">10.</span> <span class="toc-text">十、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、SSM整合Swagger步骤"><span class="toc-number">3.</span> <span class="toc-text">三、SSM整合Swagger步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、搭建Maven管理的SSM项目"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、搭建Maven管理的SSM项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、整合Swagger"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、整合Swagger</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-21、添加Swagger2依赖"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.21、添加Swagger2依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-22、创建Swagger2配置类"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.22、创建Swagger2配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-23、注入Swagger2配置类Bean"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.23、注入Swagger2配置类Bean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-整合Swagger-ui"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 整合Swagger-ui</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-31-添加Swagger-ui依赖"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.31 添加Swagger-ui依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-32-配置对这些静态资源的访问"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.32 配置对这些静态资源的访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-测试"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Swagge注解说明"><span class="toc-number">4.</span> <span class="toc-text">四、Swagge注解说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、API常用注解"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、API常用注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-11、-ApiImplicitParam"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.11、@ApiImplicitParam</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、接口文档的编写实例"><span class="toc-number">5.</span> <span class="toc-text">五、接口文档的编写实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-controller接口"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 controller接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-实体类"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 实体类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、完成效果"><span class="toc-number">6.</span> <span class="toc-text">六、完成效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、Swagger-UI-接口测试"><span class="toc-number">7.</span> <span class="toc-text">七、Swagger-UI  接口测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、Postman-接口测试"><span class="toc-number">8.</span> <span class="toc-text">八、Postman 接口测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、参考资料"><span class="toc-number">9.</span> <span class="toc-text">九、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、结语"><span class="toc-number">10.</span> <span class="toc-text">十、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -721,14 +721,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -737,11 +729,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -945,15 +945,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -993,10 +993,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -1010,6 +1006,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1557,6 +1557,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1566,10 +1570,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

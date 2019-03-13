@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>REST架构风格简介 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言REST全称是Representational State Transfer，中文意思是表述状态转移。 它首次出现在Roy Fielding的博士论文“架构风格与基于网络的软件架构设计”中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适">
+  <meta name="description" content="一、导语REST全称是Representational State Transfer，中文意思是表述状态转移。 它首次出现在Roy Fielding的博士论文“架构风格与基于网络的软件架构设计”中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适">
 <meta name="keywords" content="REST架构,架构风格">
 <meta property="og:type" content="article">
 <meta property="og:title" content="REST架构风格简介">
 <meta property="og:url" content="http://www.lapland.top/2017/12/20/博客文章/SC03 Web开发 & Web框架/前后端分离与RESTful风格及接口设计/REST架构风格简介/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言REST全称是Representational State Transfer，中文意思是表述状态转移。 它首次出现在Roy Fielding的博士论文“架构风格与基于网络的软件架构设计”中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适">
+<meta property="og:description" content="一、导语REST全称是Representational State Transfer，中文意思是表述状态转移。 它首次出现在Roy Fielding的博士论文“架构风格与基于网络的软件架构设计”中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T02:28:57.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="REST架构风格简介">
-<meta name="twitter:description" content="一、前言REST全称是Representational State Transfer，中文意思是表述状态转移。 它首次出现在Roy Fielding的博士论文“架构风格与基于网络的软件架构设计”中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适">
+<meta name="twitter:description" content="一、导语REST全称是Representational State Transfer，中文意思是表述状态转移。 它首次出现在Roy Fielding的博士论文“架构风格与基于网络的软件架构设计”中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>REST全称是Representational State Transfer，中文意思是表述状态转移。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>REST全称是Representational State Transfer，中文意思是表述状态转移。</p>
 <p>它首次出现在Roy Fielding的博士论文<a href="http://note.youdao.com/" target="_blank" rel="noopener">“架构风格与基于网络的软件架构设计”</a>中，Roy Fielding同时是也HTTP规范的主要编写者之一。他在论文中提到：”我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适宜通信的架构。” 虽然REST本身受Web技术的影响很深， 但是理论上REST架构风格并不是绑定在HTTP上，只不过目前HTTP是唯一与REST相关的实例。</p>
 <p>REST指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful风格。相对于基于SOAP采用的RPC架构是一种面向操作的架构风格，REST则是一种<strong>*面向资源</strong>的架构风格。</p>
 <p>实际应用中的具体表现用一句话来说就是<font color="6600CC"><strong>用 URI 来标识唯一的资源，用<a href="http://www.runoob.com/http/http-methods.html" target="_blank" rel="noopener">HTTP请求方法</a>（GET,POST,PUT,DELETE）描述操作</strong>。</font></p>
@@ -459,8 +459,8 @@
     </a>
   
   
-    <a href="/2017/12/20/博客文章/SC03 Web开发 & Web框架/权限控制/单点登录CAS/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">单点登录CAS</div>
+    <a href="/2017/12/20/博客文章/SC03 Web开发 & Web框架/权限控制/前后端分离模式下的权限设计方案/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前后端分离模式下的权限设计方案</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -487,7 +487,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、概念解析"><span class="toc-number">3.</span> <span class="toc-text">三、概念解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、REST-（资源）表述状态转移"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、REST - （资源）表述状态转移</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-11、资源与URI"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.11、资源与URI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-12、统一资源接口"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.12、统一资源接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-13、资源的表述"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.13、资源的表述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-14、状态的转移"><span class="toc-number">3.1.4.</span> <span class="toc-text">3.14、状态的转移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-15、超文本驱动"><span class="toc-number">3.1.5.</span> <span class="toc-text">3.15、超文本驱动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、RESTful的特性"><span class="toc-number">4.</span> <span class="toc-text">四、RESTful的特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、相关术语"><span class="toc-number">5.</span> <span class="toc-text">五、相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、幂等"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、幂等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、Web"><span class="toc-number">5.2.</span> <span class="toc-text">5.2、Web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3、超文本-超媒体（HyperText-HyperMedia）"><span class="toc-number">5.3.</span> <span class="toc-text">5.3、超文本/超媒体（HyperText/HyperMedia）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4、媒体类型"><span class="toc-number">5.4.</span> <span class="toc-text">5.4、媒体类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、拓展阅读"><span class="toc-number">6.</span> <span class="toc-text">六、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、参考资料"><span class="toc-number">7.</span> <span class="toc-text">七、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、结语"><span class="toc-number">8.</span> <span class="toc-text">八、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、概念解析"><span class="toc-number">3.</span> <span class="toc-text">三、概念解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、REST-（资源）表述状态转移"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、REST - （资源）表述状态转移</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-11、资源与URI"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.11、资源与URI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-12、统一资源接口"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.12、统一资源接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-13、资源的表述"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.13、资源的表述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-14、状态的转移"><span class="toc-number">3.1.4.</span> <span class="toc-text">3.14、状态的转移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-15、超文本驱动"><span class="toc-number">3.1.5.</span> <span class="toc-text">3.15、超文本驱动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、RESTful的特性"><span class="toc-number">4.</span> <span class="toc-text">四、RESTful的特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、相关术语"><span class="toc-number">5.</span> <span class="toc-text">五、相关术语</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、幂等"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、幂等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、Web"><span class="toc-number">5.2.</span> <span class="toc-text">5.2、Web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3、超文本-超媒体（HyperText-HyperMedia）"><span class="toc-number">5.3.</span> <span class="toc-text">5.3、超文本/超媒体（HyperText/HyperMedia）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4、媒体类型"><span class="toc-number">5.4.</span> <span class="toc-text">5.4、媒体类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、拓展阅读"><span class="toc-number">6.</span> <span class="toc-text">六、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、参考资料"><span class="toc-number">7.</span> <span class="toc-text">七、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、结语"><span class="toc-number">8.</span> <span class="toc-text">八、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -632,14 +632,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -648,11 +640,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -856,15 +856,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,10 +904,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -921,6 +917,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1468,6 +1468,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1477,10 +1481,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

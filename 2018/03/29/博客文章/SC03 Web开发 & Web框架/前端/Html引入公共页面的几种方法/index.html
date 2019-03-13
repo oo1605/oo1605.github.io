@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>Html引入公共页面的几种方法 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。">
+  <meta name="description" content="一、导语以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。">
 <meta name="keywords" content="引入公共页面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Html引入公共页面的几种方法">
 <meta property="og:url" content="http://www.lapland.top/2018/03/29/博客文章/SC03 Web开发 & Web框架/前端/Html引入公共页面的几种方法/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。">
+<meta property="og:description" content="一、导语以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T03:01:30.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Html引入公共页面的几种方法">
-<meta name="twitter:description" content="一、前言以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。">
+<meta name="twitter:description" content="一、导语以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>以前我们在引用公共页面是使用JSP的include()方法，后来前后端分离，不在使用JSP，故需要寻找Html的引用公共页面的方法。参考诸多博文，现总结如下，以作备忘。</p>
 <a id="more"></a>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
@@ -431,7 +431,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、常用的方法"><span class="toc-number">3.</span> <span class="toc-text">三、常用的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、jQuery的load-调用（推荐）"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、jQuery的load()调用（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、JS调用方法（推荐）"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、JS调用方法（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、iframe-嵌套（不推荐）"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、iframe 嵌套（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、Html子页面转换为JS，引用该JS"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、Html子页面转换为JS，引用该JS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5、shtml文件"><span class="toc-number">3.5.</span> <span class="toc-text">3.5、shtml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6、本地合并"><span class="toc-number">3.6.</span> <span class="toc-text">3.6、本地合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7、web服务器（比如IIS）中设定包含（不推荐）"><span class="toc-number">3.7.</span> <span class="toc-text">3.7、web服务器（比如IIS）中设定包含（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8、后台模板引擎处理-字符串拼接（不推荐）"><span class="toc-number">3.8.</span> <span class="toc-text">3.8、后台模板引擎处理 - 字符串拼接（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9、用图片、flash等外部资源做（不推荐）"><span class="toc-number">3.9.</span> <span class="toc-text">3.9、用图片、flash等外部资源做（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10、angular-js里的的使用（不推荐）"><span class="toc-number">3.10.</span> <span class="toc-text">3.10、angular js里的的使用（不推荐）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、拓展阅读"><span class="toc-number">4.</span> <span class="toc-text">四、拓展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、JSP引入公共JS-CSS的方法"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、JSP引入公共JS/CSS的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、Html引入公共JS-CSS的方法"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、Html引入公共JS/CSS的方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考资料"><span class="toc-number">5.</span> <span class="toc-text">五、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、结语"><span class="toc-number">6.</span> <span class="toc-text">六、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、常用的方法"><span class="toc-number">3.</span> <span class="toc-text">三、常用的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、jQuery的load-调用（推荐）"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、jQuery的load()调用（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、JS调用方法（推荐）"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、JS调用方法（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、iframe-嵌套（不推荐）"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、iframe 嵌套（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、Html子页面转换为JS，引用该JS"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、Html子页面转换为JS，引用该JS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5、shtml文件"><span class="toc-number">3.5.</span> <span class="toc-text">3.5、shtml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6、本地合并"><span class="toc-number">3.6.</span> <span class="toc-text">3.6、本地合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7、web服务器（比如IIS）中设定包含（不推荐）"><span class="toc-number">3.7.</span> <span class="toc-text">3.7、web服务器（比如IIS）中设定包含（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8、后台模板引擎处理-字符串拼接（不推荐）"><span class="toc-number">3.8.</span> <span class="toc-text">3.8、后台模板引擎处理 - 字符串拼接（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9、用图片、flash等外部资源做（不推荐）"><span class="toc-number">3.9.</span> <span class="toc-text">3.9、用图片、flash等外部资源做（不推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10、angular-js里的的使用（不推荐）"><span class="toc-number">3.10.</span> <span class="toc-text">3.10、angular js里的的使用（不推荐）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、拓展阅读"><span class="toc-number">4.</span> <span class="toc-text">四、拓展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、JSP引入公共JS-CSS的方法"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、JSP引入公共JS/CSS的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、Html引入公共JS-CSS的方法"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、Html引入公共JS/CSS的方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考资料"><span class="toc-number">5.</span> <span class="toc-text">五、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、结语"><span class="toc-number">6.</span> <span class="toc-text">六、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -576,14 +576,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -592,11 +584,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,15 +800,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -848,10 +848,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -865,6 +861,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1412,6 +1412,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1421,10 +1425,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

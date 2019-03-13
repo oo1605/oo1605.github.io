@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>浅谈Java项目日志记录和分析 (基于log4j介绍) | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。 一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：  对程序运行情况的记录和监控； 在必要时可详细了解程序内部的运行状态； 对系统性能的影响尽量小。">
+  <meta name="description" content="一、导语日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。 一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：  对程序运行情况的记录和监控； 在必要时可详细了解程序内部的运行状态； 对系统性能的影响尽量小。">
 <meta name="keywords" content="日志记录,log4j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈Java项目日志记录和分析 (基于log4j介绍)">
 <meta property="og:url" content="http://www.lapland.top/2017/09/24/博客文章/SC03 Web开发 & Web框架/第三方组件应用/浅谈Java项目日志记录和分析 (基于log4j介绍)/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。 一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：  对程序运行情况的记录和监控； 在必要时可详细了解程序内部的运行状态； 对系统性能的影响尽量小。">
+<meta property="og:description" content="一、导语日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。 一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：  对程序运行情况的记录和监控； 在必要时可详细了解程序内部的运行状态； 对系统性能的影响尽量小。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T02:26:50.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Java项目日志记录和分析 (基于log4j介绍)">
-<meta name="twitter:description" content="一、前言日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。 一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：  对程序运行情况的记录和监控； 在必要时可详细了解程序内部的运行状态； 对系统性能的影响尽量小。">
+<meta name="twitter:description" content="一、导语日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。 一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：  对程序运行情况的记录和监控； 在必要时可详细了解程序内部的运行状态； 对系统性能的影响尽量小。">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>日志记录是应用程序运行中必不可少的一部分。具有良好格式和完备信息的日志记录可以在程序出现问题时帮助开发人员迅速地定位错误的根源。记录日志只是有效地利用日志的第一步，更重要的是如何对程序运行时产生的日志进行处理和分析。</p>
 <p>一般来说日志分为两种：业务日志和异常日志。使用日志我们希望能达到以下目标：</p>
 <ul>
 <li>对程序运行情况的记录和监控；</li>
@@ -519,18 +519,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/24/博客文章/SC03 Web开发 & Web框架/权限控制/浅谈权限管理/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/24/博客文章/SC07 网络技术 & Web安全/网络基础/Cisco Packet Tracer模拟器使用教程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          浅谈权限管理
+          Cisco Packet Tracer模拟器使用教程
         
       </div>
     </a>
   
   
-    <a href="/2017/09/24/博客文章/SC01 程序设计基础/Tomcat类加载机制/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Tomcat类加载机制</div>
+    <a href="/2017/09/24/博客文章/SC02 编程思想 & 设计模式 & 架构/编程风格及命名规范/JSON语法及JSON定义规范化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JSON语法及JSON定义规范化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -557,7 +557,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、日志基础"><span class="toc-number">3.</span> <span class="toc-text">二、日志基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、日志组件"><span class="toc-number">3.1.</span> <span class="toc-text">1、日志组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、日志框架"><span class="toc-number">3.2.</span> <span class="toc-text">2、日志框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、日志抽象层"><span class="toc-number">3.3.</span> <span class="toc-text">3、日志抽象层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、日志配置"><span class="toc-number">3.4.</span> <span class="toc-text">4、日志配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1、配置实例"><span class="toc-number">3.4.1.</span> <span class="toc-text">4.1、配置实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2、配置说明"><span class="toc-number">3.4.2.</span> <span class="toc-text">4.2、配置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1、rootLogger"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">4.2.1、rootLogger</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2、配置日志信息输出目的地Appender，其语法为："><span class="toc-number">3.4.2.2.</span> <span class="toc-text">4.2.2、配置日志信息输出目的地Appender，其语法为：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3、置好appender后，针对appender的配置"><span class="toc-number">3.4.2.3.</span> <span class="toc-text">4.2.3、置好appender后，针对appender的配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-1、-ConsoleAppender选项"><span class="toc-number">3.4.2.4.</span> <span class="toc-text">4.2.3.1、.ConsoleAppender选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-2、-FileAppender-选项"><span class="toc-number">3.4.2.5.</span> <span class="toc-text">4.2.3.2、.FileAppender 选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-3、-DailyRollingFileAppender-选项"><span class="toc-number">3.4.2.6.</span> <span class="toc-text">4.2.3.3、.DailyRollingFileAppender 选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-4、-RollingFileAppender-选项"><span class="toc-number">3.4.2.7.</span> <span class="toc-text">4.2.3.4、.RollingFileAppender 选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-4、配置日志信息的布局，其语法为："><span class="toc-number">3.4.2.8.</span> <span class="toc-text">4.2.4、配置日志信息的布局，其语法为：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-5、打印参数如下："><span class="toc-number">3.4.2.9.</span> <span class="toc-text">4.2.5、打印参数如下：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3、日志级别"><span class="toc-number">3.4.3.</span> <span class="toc-text">4.3、日志级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-用户级别"><span class="toc-number">3.4.3.1.</span> <span class="toc-text">4.3.1 用户级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-1-Error"><span class="toc-number">3.4.3.1.1.</span> <span class="toc-text">4.3.1.1 Error</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-2-Warn"><span class="toc-number">3.4.3.1.2.</span> <span class="toc-text">4.3.1.2 Warn</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-3-Info"><span class="toc-number">3.4.3.1.3.</span> <span class="toc-text">4.3.1.3 Info</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-开发级别"><span class="toc-number">3.4.3.2.</span> <span class="toc-text">4.3.2 开发级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-1-Debug"><span class="toc-number">3.4.3.2.1.</span> <span class="toc-text">4.3.2.1 Debug</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-2-Trace"><span class="toc-number">3.4.3.2.2.</span> <span class="toc-text">4.3.2.2 Trace</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、调用实例"><span class="toc-number">3.5.</span> <span class="toc-text">5、调用实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、日志记录的注意点"><span class="toc-number">4.</span> <span class="toc-text">三、日志记录的注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、pom-xml参考模板"><span class="toc-number">5.</span> <span class="toc-text">四、pom.xml参考模板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、配置过程中遇到的问题"><span class="toc-number">6.</span> <span class="toc-text">五、配置过程中遇到的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、日志分析工具"><span class="toc-number">7.</span> <span class="toc-text">六、日志分析工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、拓展阅读"><span class="toc-number">8.</span> <span class="toc-text">七、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">9.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">10.</span> <span class="toc-text">九、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、日志基础"><span class="toc-number">3.</span> <span class="toc-text">二、日志基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、日志组件"><span class="toc-number">3.1.</span> <span class="toc-text">1、日志组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、日志框架"><span class="toc-number">3.2.</span> <span class="toc-text">2、日志框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、日志抽象层"><span class="toc-number">3.3.</span> <span class="toc-text">3、日志抽象层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、日志配置"><span class="toc-number">3.4.</span> <span class="toc-text">4、日志配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1、配置实例"><span class="toc-number">3.4.1.</span> <span class="toc-text">4.1、配置实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2、配置说明"><span class="toc-number">3.4.2.</span> <span class="toc-text">4.2、配置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1、rootLogger"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">4.2.1、rootLogger</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2、配置日志信息输出目的地Appender，其语法为："><span class="toc-number">3.4.2.2.</span> <span class="toc-text">4.2.2、配置日志信息输出目的地Appender，其语法为：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3、置好appender后，针对appender的配置"><span class="toc-number">3.4.2.3.</span> <span class="toc-text">4.2.3、置好appender后，针对appender的配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-1、-ConsoleAppender选项"><span class="toc-number">3.4.2.4.</span> <span class="toc-text">4.2.3.1、.ConsoleAppender选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-2、-FileAppender-选项"><span class="toc-number">3.4.2.5.</span> <span class="toc-text">4.2.3.2、.FileAppender 选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-3、-DailyRollingFileAppender-选项"><span class="toc-number">3.4.2.6.</span> <span class="toc-text">4.2.3.3、.DailyRollingFileAppender 选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-4、-RollingFileAppender-选项"><span class="toc-number">3.4.2.7.</span> <span class="toc-text">4.2.3.4、.RollingFileAppender 选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-4、配置日志信息的布局，其语法为："><span class="toc-number">3.4.2.8.</span> <span class="toc-text">4.2.4、配置日志信息的布局，其语法为：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-5、打印参数如下："><span class="toc-number">3.4.2.9.</span> <span class="toc-text">4.2.5、打印参数如下：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3、日志级别"><span class="toc-number">3.4.3.</span> <span class="toc-text">4.3、日志级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-用户级别"><span class="toc-number">3.4.3.1.</span> <span class="toc-text">4.3.1 用户级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-1-Error"><span class="toc-number">3.4.3.1.1.</span> <span class="toc-text">4.3.1.1 Error</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-2-Warn"><span class="toc-number">3.4.3.1.2.</span> <span class="toc-text">4.3.1.2 Warn</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-3-Info"><span class="toc-number">3.4.3.1.3.</span> <span class="toc-text">4.3.1.3 Info</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-开发级别"><span class="toc-number">3.4.3.2.</span> <span class="toc-text">4.3.2 开发级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-1-Debug"><span class="toc-number">3.4.3.2.1.</span> <span class="toc-text">4.3.2.1 Debug</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-2-Trace"><span class="toc-number">3.4.3.2.2.</span> <span class="toc-text">4.3.2.2 Trace</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、调用实例"><span class="toc-number">3.5.</span> <span class="toc-text">5、调用实例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、日志记录的注意点"><span class="toc-number">4.</span> <span class="toc-text">三、日志记录的注意点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、pom-xml参考模板"><span class="toc-number">5.</span> <span class="toc-text">四、pom.xml参考模板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、配置过程中遇到的问题"><span class="toc-number">6.</span> <span class="toc-text">五、配置过程中遇到的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、日志分析工具"><span class="toc-number">7.</span> <span class="toc-text">六、日志分析工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、拓展阅读"><span class="toc-number">8.</span> <span class="toc-text">七、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">9.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">10.</span> <span class="toc-text">九、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -702,14 +702,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -718,11 +710,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -926,15 +926,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -974,10 +974,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -991,6 +987,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1538,6 +1538,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1547,10 +1551,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">

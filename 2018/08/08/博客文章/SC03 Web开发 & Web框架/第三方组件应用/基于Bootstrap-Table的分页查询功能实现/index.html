@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>基于Bootstrap-Table的分页查询功能实现 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
+  <meta name="description" content="一、导语分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
 <meta name="keywords" content="Bootstrap-Table,分页组件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Bootstrap-Table的分页查询功能实现">
 <meta property="og:url" content="http://www.lapland.top/2018/08/08/博客文章/SC03 Web开发 & Web框架/第三方组件应用/基于Bootstrap-Table的分页查询功能实现/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
+<meta property="og:description" content="一、导语分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.cdn.lapland.top/Image%201533665654.png">
-<meta property="og:updated_time" content="2019-03-13T02:27:19.000Z">
+<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Bootstrap-Table的分页查询功能实现">
-<meta name="twitter:description" content="一、前言分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
+<meta name="twitter:description" content="一、导语分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。 Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。">
 <meta name="twitter:image" content="http://img.cdn.lapland.top/Image%201533665654.png">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>分页插件有许多种，比较常用的有Bootstrap Table  / Bootstrap Paginator / PageHelper等。本文介绍Bootstrap Table的使用。</p>
 <p>Bootstrap Table的分页可以分为 前端分页和后端分页，主要是看返回数据量的大小，比较常用的是后端分页。</p>
 <a id="more"></a>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
@@ -451,7 +451,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、实例"><span class="toc-number">3.</span> <span class="toc-text">三、实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、前端代码"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、前端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、请求返回数据"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、请求返回数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、服务端代码"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、服务端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、sql分页查询语句"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、sql分页查询语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、显示效果"><span class="toc-number">4.</span> <span class="toc-text">四、显示效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考项目"><span class="toc-number">5.</span> <span class="toc-text">五、参考项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考资料"><span class="toc-number">6.</span> <span class="toc-text">五、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、结语"><span class="toc-number">7.</span> <span class="toc-text">六、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、实例"><span class="toc-number">3.</span> <span class="toc-text">三、实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、前端代码"><span class="toc-number">3.1.</span> <span class="toc-text">3.1、前端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、请求返回数据"><span class="toc-number">3.2.</span> <span class="toc-text">3.2、请求返回数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3、服务端代码"><span class="toc-number">3.3.</span> <span class="toc-text">3.3、服务端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4、sql分页查询语句"><span class="toc-number">3.4.</span> <span class="toc-text">3.4、sql分页查询语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、显示效果"><span class="toc-number">4.</span> <span class="toc-text">四、显示效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考项目"><span class="toc-number">5.</span> <span class="toc-text">五、参考项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、参考资料"><span class="toc-number">6.</span> <span class="toc-text">五、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、结语"><span class="toc-number">7.</span> <span class="toc-text">六、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -596,14 +596,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -612,11 +604,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,15 +820,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -868,10 +868,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
@@ -885,6 +881,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">规范化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">面向接口开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1432,6 +1432,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">机房</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -1441,10 +1445,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">webGL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">机房</a>
               </li>
              
               <li class="article-tag-list-item">
