@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不系之舟">
 <meta property="og:description" content="一、导语 在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。   Hibernate Validator 的作用 验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度； 统一且规范的验证方式，无">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T07:06:05.000Z">
+<meta property="og:updated_time" content="2019-03-14T07:15:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springboot使用Hibernate-validator进行参数校验">
 <meta name="twitter:description" content="一、导语 在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。   Hibernate Validator 的作用 验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度； 统一且规范的验证方式，无">
@@ -214,11 +214,9 @@
 </tr>
 </tbody>
 </table>
-<h1 id="三、添加依赖"><a href="#三、添加依赖" class="headerlink" title="三、添加依赖"></a>三、添加依赖</h1><ul>
-<li><p>spring-boot-starter-web包里面有hibernate-validator包，不需要引用hibernate validator依赖。</p>
-</li>
-<li><p>非SpringBoot中的依赖为</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-validator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.9.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="三、添加依赖"><a href="#三、添加依赖" class="headerlink" title="三、添加依赖"></a>三、添加依赖</h1><p>spring-boot-starter-web包里面有hibernate-validator包，不需要引用hibernate validator依赖。</p>
+<ul>
+<li>非SpringBoot中的依赖为<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.hibernate<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hibernate-validator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.0.9.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="四、Hibernate-Validator-的使用"><a href="#四、Hibernate-Validator-的使用" class="headerlink" title="四、Hibernate Validator 的使用"></a>四、Hibernate Validator 的使用</h1><p>Hibernate Validator主要有 <strong>@Valid注解</strong> 和 <strong>封装工具类</strong> 两种进行入参校验方式</p>
@@ -235,7 +233,7 @@
 <h3 id="4-32、工具类的使用"><a href="#4-32、工具类的使用" class="headerlink" title="4.32、工具类的使用"></a>4.32、工具类的使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/saveAccount"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ResultResponse <span class="title">saveAccount</span><span class="params">(Account account)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 参数校验</span></span><br><span class="line">    ValidatorUtils.validateEntity(account, SaveGroup.class);</span><br><span class="line"></span><br><span class="line">    accountService.saveAccount(account);</span><br><span class="line">    <span class="keyword">return</span> ResultResponse.success();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="4-4、级联校验"><a href="#4-4、级联校验" class="headerlink" title="4.4、级联校验"></a>4.4、级联校验</h2><p>通过在属性上添加@Valid注解就可以进行级联校验了。如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">      <span class="meta">@NotNull</span></span><br><span class="line">      <span class="keyword">private</span> String manufacturer;</span><br><span class="line">      <span class="meta">@Valid</span></span><br><span class="line">      <span class="keyword">private</span> Driver driver;</span><br><span class="line">      <span class="comment">// getter setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-5、自定义constraint"><a href="#4-5、自定义constraint" class="headerlink" title="4.5、自定义constraint"></a>4.5、自定义constraint</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">## 五、拓展（其他参数校验方法）</span><br><span class="line"></span><br><span class="line">## 5.1、封装工具类</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">public abstract class   Assert &#123;</span><br><span class="line"></span><br><span class="line">    public static void isBlank(String str, String message) &#123;</span><br><span class="line">        if (StringUtils.isBlank(str)) &#123;</span><br><span class="line">            throw new RRException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void isNull(Object object, String message) &#123;</span><br><span class="line">        if (object == null) &#123;</span><br><span class="line">            throw new RRException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-5、自定义constraint"><a href="#4-5、自定义constraint" class="headerlink" title="4.5、自定义constraint"></a>4.5、自定义constraint</h2><h1 id="五、拓展（其他参数校验方法）"><a href="#五、拓展（其他参数校验方法）" class="headerlink" title="五、拓展（其他参数校验方法）"></a>五、拓展（其他参数校验方法）</h1><h2 id="5-1、封装工具类"><a href="#5-1、封装工具类" class="headerlink" title="5.1、封装工具类"></a>5.1、封装工具类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span>   <span class="title">Assert</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">isBlank</span><span class="params">(String str, String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isBlank(str)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RRException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">isNull</span><span class="params">(Object object, String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (object == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RRException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="5-2、工具类校验"><a href="#5-2、工具类校验" class="headerlink" title="5.2、工具类校验"></a>5.2、工具类校验</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/password/change"</span>, method = RequestMethod.POST)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ResultResponse <span class="title">changePassword</span><span class="params">(String password, String newPassword)</span> </span>&#123;</span><br><span class="line">    Assert.isBlank(newPassword, <span class="string">"新密码不为能空"</span>);</span><br><span class="line"></span><br><span class="line">    userService.changePassword(getUserId(), newPassword);</span><br><span class="line">    <span class="keyword">return</span> ResultResponse.success();高效使用hibernate-validator校验框架</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="六、Bean-Validation-中内置的-constraint"><a href="#六、Bean-Validation-中内置的-constraint" class="headerlink" title="六、Bean Validation 中内置的 constraint"></a>六、Bean Validation 中内置的 constraint</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Null</span>           被注释的元素必须为 <span class="keyword">null</span></span><br><span class="line"><span class="meta">@NotNull</span>        被注释的元素必须不为 <span class="keyword">null</span></span><br><span class="line"><span class="meta">@AssertTrue</span>     被注释的元素必须为 <span class="keyword">true</span></span><br><span class="line"><span class="meta">@AssertFalse</span>    被注释的元素必须为 <span class="keyword">false</span></span><br><span class="line"><span class="meta">@Min</span>(value)     被注释的元素必须是一个数字，其值必须大于等于指定的最小值</span><br><span class="line"><span class="meta">@Max</span>(value)     被注释的元素必须是一个数字，其值必须小于等于指定的最大值</span><br><span class="line"><span class="meta">@DecimalMin</span>(value)  被注释的元素必须是一个数字，其值必须大于等于指定的最小值</span><br><span class="line"><span class="meta">@DecimalMax</span>(value)  被注释的元素必须是一个数字，其值必须小于等于指定的最大值</span><br><span class="line"><span class="meta">@Size</span>(max=, min=)   被注释的元素的大小必须在指定的范围内</span><br><span class="line"><span class="meta">@Digits</span> (integer, fraction)     被注释的元素必须是一个数字，其值必须在可接受的范围内</span><br><span class="line"><span class="meta">@Past</span>                    被注释的元素必须是一个过去的日期</span><br><span class="line"><span class="meta">@Future</span>                  被注释的元素必须是一个将来的日期</span><br><span class="line"><span class="meta">@Pattern</span>(regex=,flag=)   被注释的元素必须符合指定的正则表达式</span><br><span class="line">Hibernate Validator      附加的 constraint</span><br><span class="line"><span class="meta">@NotBlank</span>(message =)     验证字符串非<span class="keyword">null</span>，且长度必须大于<span class="number">0</span></span><br><span class="line"><span class="meta">@Email</span>                   被注释的元素必须是电子邮箱地址</span><br><span class="line"><span class="meta">@Length</span>(min=,max=)       被注释的字符串的大小必须在指定的范围内</span><br><span class="line"><span class="meta">@NotEmpty</span>                被注释的字符串的必须非空</span><br><span class="line"><span class="meta">@Range</span>(min=,max=,message=)  被注释的元素必须在合适的范围内</span><br></pre></td></tr></table></figure>
 <ul>
@@ -387,11 +385,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/11/博客文章/SC03 Web开发 & Web框架/前端/产品设计及UI效果图/墨刀- 强大易用的原型设计与协同工具/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/11/博客文章/SC03 Web开发 & Web框架/前端/CSS 布局/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          墨刀- 强大易用的原型设计与协同工具
+          CSS 布局
         
       </div>
     </a>
@@ -425,7 +423,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、添加依赖"><span class="toc-number">3.</span> <span class="toc-text">三、添加依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Hibernate-Validator-的使用"><span class="toc-number">4.</span> <span class="toc-text">四、Hibernate Validator 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、Java对象添加约束注解"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、Java对象添加约束注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、-Valid注解进行入参校验"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、@Valid注解进行入参校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、封装工具类ValidatorUtils进行入参校验"><span class="toc-number">4.3.</span> <span class="toc-text">4.3、封装工具类ValidatorUtils进行入参校验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-31、工具类"><span class="toc-number">4.3.1.</span> <span class="toc-text">4.31、工具类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-32、分组校验的实现"><span class="toc-number">4.3.2.</span> <span class="toc-text">4.32、分组校验的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-32、工具类的使用"><span class="toc-number">4.3.3.</span> <span class="toc-text">4.32、工具类的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4、级联校验"><span class="toc-number">4.4.</span> <span class="toc-text">4.4、级联校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5、自定义constraint"><span class="toc-number">4.5.</span> <span class="toc-text">4.5、自定义constraint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、工具类校验"><span class="toc-number">4.6.</span> <span class="toc-text">5.2、工具类校验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、Bean-Validation-中内置的-constraint"><span class="toc-number">5.</span> <span class="toc-text">六、Bean Validation 中内置的 constraint</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">6.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">7.</span> <span class="toc-text">九、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、添加依赖"><span class="toc-number">3.</span> <span class="toc-text">三、添加依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Hibernate-Validator-的使用"><span class="toc-number">4.</span> <span class="toc-text">四、Hibernate Validator 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、Java对象添加约束注解"><span class="toc-number">4.1.</span> <span class="toc-text">4.1、Java对象添加约束注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、-Valid注解进行入参校验"><span class="toc-number">4.2.</span> <span class="toc-text">4.2、@Valid注解进行入参校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、封装工具类ValidatorUtils进行入参校验"><span class="toc-number">4.3.</span> <span class="toc-text">4.3、封装工具类ValidatorUtils进行入参校验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-31、工具类"><span class="toc-number">4.3.1.</span> <span class="toc-text">4.31、工具类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-32、分组校验的实现"><span class="toc-number">4.3.2.</span> <span class="toc-text">4.32、分组校验的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-32、工具类的使用"><span class="toc-number">4.3.3.</span> <span class="toc-text">4.32、工具类的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4、级联校验"><span class="toc-number">4.4.</span> <span class="toc-text">4.4、级联校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5、自定义constraint"><span class="toc-number">4.5.</span> <span class="toc-text">4.5、自定义constraint</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、拓展（其他参数校验方法）"><span class="toc-number">5.</span> <span class="toc-text">五、拓展（其他参数校验方法）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、封装工具类"><span class="toc-number">5.1.</span> <span class="toc-text">5.1、封装工具类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、工具类校验"><span class="toc-number">5.2.</span> <span class="toc-text">5.2、工具类校验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、Bean-Validation-中内置的-constraint"><span class="toc-number">6.</span> <span class="toc-text">六、Bean Validation 中内置的 constraint</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">7.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">8.</span> <span class="toc-text">九、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -558,26 +556,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">语录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导读</a>
               </li>
              
@@ -610,11 +588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -790,19 +768,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">几点思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">胡思乱想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">语录摘抄</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">那年那兔那些事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">习题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,6 +809,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -878,14 +880,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">API</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HttpClint</a>
               </li>
              
@@ -907,6 +901,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">API</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -962,15 +964,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1014,6 +1016,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
               </li>
              
@@ -1027,14 +1037,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1146,15 +1148,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命名规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1302,10 +1304,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
               </li>
              
@@ -1314,11 +1312,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1327,6 +1325,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1354,11 +1356,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
               </li>
              
               <li class="article-tag-list-item">
