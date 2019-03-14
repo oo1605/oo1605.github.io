@@ -160,19 +160,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/4 - 数据库部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/13 - 优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/">4 - 数据库部分</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/">13 - 优化</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -182,7 +182,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/#more">more >></a>
         
       
 
@@ -221,100 +221,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/4 - 数据库部分/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC00 速查表/常用JAVA代码片段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">常用JAVA代码片段</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/" class="archive-article-date">
-  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非空判断</span></span><br><span class="line">List：</span><br><span class="line">CollectionUtils.isNotEmpty(caseInfoList)</span><br><span class="line"></span><br><span class="line">String：</span><br><span class="line">StringUtils.isNotEmpty(flag)</span><br><span class="line">StringUtils.isBlank(courtName)</span><br><span class="line"></span><br><span class="line">Object ：</span><br><span class="line"><span class="keyword">null</span>！= object</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、日期类操作，获取当前年月日</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getToday</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">     Calendar calendar = Calendar.getInstance();</span><br><span class="line">     <span class="keyword">int</span> year = calendar.get(Calendar.YEAR);</span><br><span class="line">     <span class="keyword">int</span> month = calendar.get(Calendar.MONTH);</span><br><span class="line">     <span class="keyword">int</span> date = calendar.get(Calendar.DATE);</span><br><span class="line">     Date today_1 = calendar.getTime();</span><br><span class="line">     String time_1 = sdf.format(today_1);</span><br><span class="line"></span><br><span class="line">     System.out.println(year + month + date + time_1);</span><br><span class="line"></span><br><span class="line">     Date today_2 = <span class="keyword">new</span> Date();</span><br><span class="line">     String time_2 = sdf.format(today_2);</span><br><span class="line">     System.out.println(time_2);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2、日期类操作</span></span><br><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line">c.add(Calendar.MONTH, -<span class="number">1</span>);</span><br><span class="line">Date date = c.getTime();</span><br><span class="line">String lastMonth = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、日期类操作</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">Date date = <span class="keyword">new</span> Date();</span><br><span class="line">String today = sdf.format(date);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、日期类操作</span></span><br><span class="line">Calendar ca = Calendar.getInstance();<span class="comment">// 得到一个Calendar的实例</span></span><br><span class="line"><span class="comment">//ca.setTime(new Date()); // 设置时间为当前时间</span></span><br><span class="line">ca.set(<span class="number">2011</span>, <span class="number">11</span>, <span class="number">17</span>);<span class="comment">// 月份是从0开始的，所以11表示12月</span></span><br><span class="line">ca.add(Calendar.YEAR, -<span class="number">1</span>); <span class="comment">// 年份减1</span></span><br><span class="line">ca.add(Calendar.MONTH, -<span class="number">1</span>);<span class="comment">// 月份减1</span></span><br><span class="line">ca.add(Calendar.DATE, -<span class="number">1</span>);<span class="comment">// 日期减1</span></span><br><span class="line">Date resultDate = ca.getTime(); <span class="comment">// 结果</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">System.out.println(sdf.format(resultDate));</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询超长 - 分页</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateCaseList</span><span class="params">(Integer pageSize)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pageNum = spbzkMapper.count() / pageSize;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> pageIndex = <span class="number">0</span>; pageIndex &lt;= pageNum; pageIndex++) &#123;</span><br><span class="line">        <span class="comment">// 处理分页索引</span></span><br><span class="line">        Integer offset = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != pageSize) &#123;</span><br><span class="line">            offset = pageSize * (pageIndex - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Spbzk&gt; spbzkList = spbzkMapper.selectAll(offset, pageSize);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Spbzk spbzk : spbzkList) &#123;</span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  读取json文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getJson</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">    String laststr = <span class="string">""</span>;</span><br><span class="line">    File file = <span class="keyword">new</span> File(path);<span class="comment">// 打开文件</span></span><br><span class="line">    BufferedReader reader = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        FileInputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in, <span class="string">"UTF-8"</span>));<span class="comment">// 读取文件</span></span><br><span class="line">        String tempString = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> ((tempString = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            laststr = laststr + tempString;</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (reader != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                reader.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException el) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> laststr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间解析</span></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : timeMap.entrySet()) &#123;</span><br><span class="line">    String startTime = entry.getKey();</span><br><span class="line">    String endTime = entry.getValue();</span><br><span class="line">    Date date = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        date = df.parse(startTime);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">        LOGGER.error(<span class="string">"日期格式解析错误"</span>, e);</span><br><span class="line">    &#125;</span><br><span class="line">    Calendar calendar = Calendar.getInstance();</span><br><span class="line">    calendar.setTime(date);</span><br><span class="line">    <span class="comment">//获取年份和月份</span></span><br><span class="line">    String year = String.valueOf(calendar.get(Calendar.YEAR));</span><br><span class="line">    String month = String.valueOf(calendar.get(Calendar.MONTH) + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// List添加</span></span><br><span class="line">List&lt;Wfycatj&gt; wfycatjList = wfycatjMapper.selectCaBywfyType();/</span><br><span class="line">List&lt;Wfycatj&gt; ljList = wfycatjMapper.selectLjBywfyType();</span><br><span class="line">wfycatjList.addAll(ljList);</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//筛选List</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;CaseListInfo&gt; <span class="title">checkDepart</span><span class="params">(List&lt;CaseListInfo&gt; caseListInfoList, String departType)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Iterator&lt;CaseListInfo&gt; iterator = caseListInfoList.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        CaseListInfo caseListInfoItem = iterator.next();</span><br><span class="line">        DictDepart dictDepartList = dictDepartMapper.selectDepartByCourtNameAndDepartName(</span><br><span class="line">                caseListInfoItem.getCourtName(), caseListInfoItem.getDepartName(), departType);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != dictDepartList) &#123;</span><br><span class="line">            caseListInfoItem.setDepartName(dictDepartList.getDepartShowName());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            iterator.remove();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> caseListInfoList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 代码中发送http请求，非法字符错误</span></span><br><span class="line"><span class="comment">*   产生原因：url中有汉字或特殊字符(非字母和数字的字符)，没有转码。</span></span><br><span class="line"><span class="comment">*   解决办法：将带有特殊字符或汉字的参数进行转码，再放入url发送即可。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">param1 = URLEncoder.encode(param1, <span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JAVA代码片段</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/速查表//" class="article-tag-list-link color4">速查表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC00 速查表/常用JAVA代码片段/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/">展开全文 >></a>
         </p>
       
 
@@ -435,19 +342,19 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/2 - Html&amp;JavaScript&amp;ajax部分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/10 - Java代码查错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/">2 - Html&amp;JavaScript&amp;ajax部分</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/">10 - Java代码查错</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -457,7 +364,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/#more">more >></a>
         
       
 
@@ -496,7 +403,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/2 - Html&JavaScript&ajax部分/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/10 - Java代码查错/">展开全文 >></a>
         </p>
       
 
@@ -526,19 +433,19 @@
 
 
   
-    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/13 - 优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/11 - 问得稀里糊涂的题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/">13 - 优化</a>
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/11 - 问得稀里糊涂的题/">11 - 问得稀里糊涂的题</a>
     </h1>
   
 
         
-        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/" class="archive-article-date">
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/11 - 问得稀里糊涂的题/" class="archive-article-date">
   	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
 </a>
         
@@ -548,7 +455,7 @@
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
         
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/#more">more >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/11 - 问得稀里糊涂的题/#more">more >></a>
         
       
 
@@ -587,7 +494,98 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/13 - 优化/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/11 - 问得稀里糊涂的题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC99 面试 &amp; 笔试/Java面试宝典/5- 流行的框架与新技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">5- 流行的框架与新技术</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/" class="archive-article-date">
+  	<time datetime="2018-06-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1>
+        
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/面试-笔试//" class="article-tag-list-link color3">面试 & 笔试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/博客文章/SC99 面试 & 笔试/Java面试宝典/5- 流行的框架与新技术/">展开全文 >></a>
         </p>
       
 
@@ -700,199 +698,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/10/博客文章/SC03 Web开发 & Web框架/权限控制/Shiro+Token实现APP、Web统一登录认证和权限管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/">Intellij IDEA集成JProfiler性能分析神器</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/" class="archive-article-date">
-  	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Intellij IDEA集成JProfiler性能分析神器</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能分析</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JProfiler</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/Tomcat并发连接数优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Tomcat并发连接数优化/">Tomcat并发连接数优化</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Tomcat并发连接数优化/" class="archive-article-date">
-  	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>设计需求系统最大并发数为1100左右。此系统在一台服务器上可支持150万左右的用户数。</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/jtlgb/p/5955996.html/" target="_blank" rel="noopener">Tomcat 7最大并发连接数的正确修改方法</a></li>
-</ul>
-<ul>
-<li><p>[x] <a href="https://www.gonet.com.cn/webduirshow-153.html/" target="_blank" rel="noopener">1000个并发到底最大能承载多少用户？</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/potatobeancox55555/article/details/79712324/" target="_blank" rel="noopener">各种技术的并发量与服务器个数</a></p>
-</li>
-<li><p>[x] <a href="https://wenku.baidu.com/view/90e706e8aeaad1f346933f3f.html/" target="_blank" rel="noopener">各种技术的并发量与服务器个数</a></p>
-</li>
-<li><p>[x] <a href="http://www.ha97.com/5095.html/" target="_blank" rel="noopener">系统吞吐量（TPS）、用户并发量、性能测试概念和公式</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/hel12he/article/details/77561718/" target="_blank" rel="noopener">Web开发中，什么级别才算是高并发</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">连接数优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Tomcat并发连接数优化/">展开全文 >></a>
         </p>
       
 
@@ -1104,6 +909,186 @@
 
 
   
+    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/">Intellij IDEA集成JProfiler性能分析神器</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/" class="archive-article-date">
+  	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Intellij IDEA集成JProfiler性能分析神器</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能分析</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JProfiler</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/性能优化/Intellij IDEA集成JProfiler性能分析神器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC06 软件测试 &amp; 性能优化/代码评审" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/代码评审/">代码评审</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/代码评审/" class="archive-article-date">
+  	<time datetime="2018-05-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CI持续集成系统环境—部署gerrit环境完整记录</p>
+<p>code review</p>
+<p>质量缺陷类型<br>空指针引用，资源泄漏，死锁，内存崩溃，安全缺陷/缓冲区溢出，API使用错误，未初始化变量，类层次结构不一致，性能效率低下，安全最佳实践违反，代码维护问题 ，程序挂起，错误处理问题，并行数据访问违规，竞态条件，错误表达，控制数据流问题，内存非法访问，不安全数据处理。</p>
+<p>Git之CodeReview流程</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cnblogs.com/wenhx/p/How-We-Code-Review.html/" target="_blank" rel="noopener">我们是怎么做Code Review的</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码评审</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软件测试-性能优化//" class="article-tag-list-link color2">软件测试 & 性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/博客文章/SC06 软件测试 & 性能优化/代码评审/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -1222,7 +1207,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1230,7 +1215,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1238,7 +1223,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1338,15 +1323,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主从热备</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">注解切换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主从热备</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1418,6 +1403,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
               </li>
              
@@ -1426,19 +1423,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">语录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1450,11 +1435,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1642,15 +1635,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">国际化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">i18n</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1970,14 +1963,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
@@ -1990,11 +1975,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2002,11 +1987,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
               </li>
              
               <li class="article-tag-list-item">
