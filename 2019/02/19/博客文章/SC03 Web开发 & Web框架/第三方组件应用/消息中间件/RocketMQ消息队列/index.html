@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.lapland.top">
-  <title>Solr安装及应用 | 不系之舟</title>
+  <title>RocketMQ消息队列 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、导语消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介绍过的R">
-<meta name="keywords" content="Solr,搜索引擎">
+  <meta name="description" content="一、导语 消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。   而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介">
+<meta name="keywords" content="RocketMQ,消息队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Solr安装及应用">
+<meta property="og:title" content="RocketMQ消息队列">
 <meta property="og:url" content="http://www.lapland.top/2019/02/19/博客文章/SC03 Web开发 & Web框架/第三方组件应用/消息中间件/RocketMQ消息队列/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、导语消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介绍过的R">
+<meta property="og:description" content="一、导语 消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。   而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T03:11:42.000Z">
+<meta property="og:updated_time" content="2019-03-14T06:48:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Solr安装及应用">
-<meta name="twitter:description" content="一、导语消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介绍过的R">
+<meta name="twitter:title" content="RocketMQ消息队列">
+<meta name="twitter:description" content="一、导语 消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。   而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Solr安装及应用
+      RocketMQ消息队列
     </h1>
   
 
@@ -179,10 +179,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。<br>而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介绍过的RPC（当然单纯的http通讯也满足这个定义）；另一种方式称为延迟消息通讯，即消息从某一端发出后，首先进入一个容器进行临时存储，当达到某种条件后，再由这个容器发送给另一端。 这个容器的一种具体实现就是消息队列。</p>
-<p>当前使用较多的消息队列有RabbitMQ、RocketMQ、ActiveMQ、Kafka、ZeroMQ、MetaMq等，而部分数据库如Redis、Mysql以及phxsql也可实现消息队列的功能。</p>
-<p>本文主要选取RocketMQ来实现Web系统消息管理模块开发以介绍消息队列的的使用。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
+<p>消息即是信息的载体。为了让消息发送者和消息接收者都能够明白消息所承载的信息（消息发送者需要知道如何构造消息；消息接收者需要知道如何解析消息），它们就需要按照一种统一的格式描述消息，这种统一的格式称之为消息协议。</p>
+</blockquote>
+<blockquote>
+<p>而消息从发送者到接收者的方式也有两种。一种我们可以称为即时消息通讯，也就是说消息从一端发出后（消息发送者）立即就可以达到另一端（消息接收者），这种方式的具体实现就是我们已经介绍过的RPC（当然单纯的http通讯也满足这个定义）；另一种方式称为延迟消息通讯，即消息从某一端发出后，首先进入一个容器进行临时存储，当达到某种条件后，再由这个容器发送给另一端。 这个容器的一种具体实现就是消息队列。</p>
+</blockquote>
+<blockquote>
+<p>当前使用较多的消息队列有RabbitMQ、RocketMQ、ActiveMQ、Kafka、ZeroMQ、MetaMq等，而部分数据库如Redis、Mysql以及phxsql也可实现消息队列的功能。本文主要选取RocketMQ来实现Web系统消息管理模块开发以介绍消息队列的的使用。</p>
+</blockquote>
+<blockquote>
 <p>测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。</p>
+</blockquote>
 <a id="more"></a>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
@@ -477,10 +485,35 @@
 </li>
 </ul>
 <h2 id="5-4、生产者Producer"><a href="#5-4、生产者Producer" class="headerlink" title="5.4、生产者Producer"></a>5.4、生产者Producer</h2><p>将业务应用程序系统生成的消息发送给Broker，RocketMQ通过轮询所有队列的方式来确定消息被发送到哪一个队列。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">## 5.5、消费者Consumer</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"># 六、使用RocketMQ实现 Feed流 &amp; 通知模块</span><br><span class="line"></span><br><span class="line">Feed流是社交和信息推荐的App与网站中非常常见的功能，在众多产品中都有展现，通过Feed流可以把动态实时的传播给订阅者，是用户获取信息流的一种有效方式。比如我们每天都会用到的朋友圈，微博，就是一种非常典型的Feed流产品，很多App的都会有一个模块，要么叫动态，要么叫消息广场，这些也是Feed流产品，可以说，Feed流产品是遍布天下所有的App中。</span><br><span class="line"></span><br><span class="line">## 6.1、概念</span><br><span class="line"></span><br><span class="line">- Feed：Feed流中的每一条状态或者消息都是Feed，比如朋友圈中的一个状态就是一个Feed，微博中的一条微博就是一个Feed。</span><br><span class="line"></span><br><span class="line">- Feed流：持续更新并呈现给用户内容的信息流。每个人的朋友圈，微博关注页等等都是一个Feed流。</span><br><span class="line"></span><br><span class="line">- Timeline：按发布的时间顺序排序</span><br><span class="line"></span><br><span class="line">- Rank：按某个非时间的因子排序，一般是按照用户的喜好度排序</span><br><span class="line"></span><br><span class="line">- Aggregate：聚合类型</span><br><span class="line"></span><br><span class="line">- Notice：通知类型</span><br><span class="line"></span><br><span class="line">## 6.2、模块分析</span><br><span class="line"></span><br><span class="line">### 6.21、模实现功能介绍</span><br><span class="line"></span><br><span class="line">- 评论/回复/留言/私信/</span><br><span class="line">- 关注/转发</span><br><span class="line">- 应用通知/系统通知</span><br><span class="line"></span><br><span class="line">用户或管理员的以上行为均可构成一个Event事件，在事件分发中心被分发 事件分发可分为两类</span><br><span class="line"></span><br><span class="line">基于关注用户</span><br><span class="line"></span><br><span class="line">构造基于用户关系的Feed流需要如下表</span><br><span class="line">users: 用户表</span><br><span class="line">posts: 日志表</span><br><span class="line">followings: 关注/粉丝表</span><br><span class="line">events: 事件表</span><br><span class="line"></span><br><span class="line">基于关注标签</span><br><span class="line">tags：标签表</span><br><span class="line"></span><br><span class="line">优先级</span><br><span class="line">高：实时性消息</span><br><span class="line">中：服务器定时推送 Push</span><br><span class="line">低：客户端定时拉取 Pull</span><br><span class="line"></span><br><span class="line">- 句子结构分析</span><br></pre></td></tr></table></figure>
-<p>someone do something in someone’s something</p>
-<p>someone = 提醒的触发者，或者发送者，标记为sender<br>do something = 提醒的动作，评论、喜欢、关注都属于一个动作，标记为action<br>something = 提醒的动作作用对象，这就具体到是哪一篇文章，标记为target<br>someone’s = 提醒的动作作用对象的所有者，标记为targetOwner<br><code>`</code></p>
+<h2 id="5-5、消费者Consumer"><a href="#5-5、消费者Consumer" class="headerlink" title="5.5、消费者Consumer"></a>5.5、消费者Consumer</h2><h1 id="六、使用RocketMQ实现-Feed流-amp-通知模块"><a href="#六、使用RocketMQ实现-Feed流-amp-通知模块" class="headerlink" title="六、使用RocketMQ实现 Feed流 &amp; 通知模块"></a>六、使用RocketMQ实现 Feed流 &amp; 通知模块</h1><p>Feed流是社交和信息推荐的App与网站中非常常见的功能，在众多产品中都有展现，通过Feed流可以把动态实时的传播给订阅者，是用户获取信息流的一种有效方式。比如我们每天都会用到的朋友圈，微博，就是一种非常典型的Feed流产品，很多App的都会有一个模块，要么叫动态，要么叫消息广场，这些也是Feed流产品，可以说，Feed流产品是遍布天下所有的App中。</p>
+<h2 id="6-1、概念"><a href="#6-1、概念" class="headerlink" title="6.1、概念"></a>6.1、概念</h2><ul>
+<li><p>Feed：Feed流中的每一条状态或者消息都是Feed，比如朋友圈中的一个状态就是一个Feed，微博中的一条微博就是一个Feed。</p>
+</li>
+<li><p>Feed流：持续更新并呈现给用户内容的信息流。每个人的朋友圈，微博关注页等等都是一个Feed流。</p>
+</li>
+<li><p>Timeline：按发布的时间顺序排序</p>
+</li>
+<li><p>Rank：按某个非时间的因子排序，一般是按照用户的喜好度排序</p>
+</li>
+<li><p>Aggregate：聚合类型</p>
+</li>
+<li><p>Notice：通知类型</p>
+</li>
+</ul>
+<h2 id="6-2、模块分析"><a href="#6-2、模块分析" class="headerlink" title="6.2、模块分析"></a>6.2、模块分析</h2><h3 id="6-21、模实现功能介绍"><a href="#6-21、模实现功能介绍" class="headerlink" title="6.21、模实现功能介绍"></a>6.21、模实现功能介绍</h3><ul>
+<li>评论/回复/留言/私信/</li>
+<li>关注/转发</li>
+<li>应用通知/系统通知</li>
+</ul>
+<p>用户或管理员的以上行为均可构成一个Event事件，在事件分发中心被分发 事件分发可分为两类</p>
+<p>基于关注用户</p>
+<p>构造基于用户关系的Feed流需要如下表<br>users: 用户表<br>posts: 日志表<br>followings: 关注/粉丝表<br>events: 事件表</p>
+<p>基于关注标签<br>tags：标签表</p>
+<p>优先级<br>高：实时性消息<br>中：服务器定时推送 Push<br>低：客户端定时拉取 Pull</p>
+<ul>
+<li>句子结构分析</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">someone do something in someone’s something</span><br><span class="line"></span><br><span class="line">someone = 提醒的触发者，或者发送者，标记为sender</span><br><span class="line">do something = 提醒的动作，评论、喜欢、关注都属于一个动作，标记为action</span><br><span class="line">something = 提醒的动作作用对象，这就具体到是哪一篇文章，标记为target</span><br><span class="line">someone’s = 提醒的动作作用对象的所有者，标记为targetOwner</span><br></pre></td></tr></table></figure>
 <h3 id="6-22、消息管理模块实现的几种方法"><a href="#6-22、消息管理模块实现的几种方法" class="headerlink" title="6.22、消息管理模块实现的几种方法"></a>6.22、消息管理模块实现的几种方法</h3><ul>
 <li>短轮询</li>
 <li>长轮询</li>
@@ -546,11 +579,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Solr</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RocketMQ</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">搜索引擎</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">消息队列</a>
         		</li>
       		
 		</ul>
@@ -669,7 +702,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、应用场景"><span class="toc-number">3.</span> <span class="toc-text">三、应用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、消息模式"><span class="toc-number">4.</span> <span class="toc-text">三、消息模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、点对点模式（point-to-point，-queue）和发布-订阅模式（publish-subscribe，topic）。"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、点对点模式（point to point， queue）和发布/订阅模式（publish/subscribe，topic）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11、P2P模式"><span class="toc-number">4.2.</span> <span class="toc-text">3.11、P2P模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12、Pub-sub模式"><span class="toc-number">4.3.</span> <span class="toc-text">3.12、Pub/sub模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-2、推模式和拉模式：消息的更新者"><span class="toc-number">5.</span> <span class="toc-text">3.2、推模式和拉模式：消息的更新者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、MQ性能对比及选型"><span class="toc-number">6.</span> <span class="toc-text">四、MQ性能对比及选型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、SpringBoot集成RocketMQ"><span class="toc-number">7.</span> <span class="toc-text">五、SpringBoot集成RocketMQ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、专业术语"><span class="toc-number">7.1.</span> <span class="toc-text">5.1、专业术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、安装部署RocketMQ服务器"><span class="toc-number">7.2.</span> <span class="toc-text">5.2、安装部署RocketMQ服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-21、下载安装JDK"><span class="toc-number">7.2.1.</span> <span class="toc-text">5.21、下载安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-22、安装Maven"><span class="toc-number">7.2.2.</span> <span class="toc-text">5.22、安装Maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-24、下载RocketMQ源码并编译"><span class="toc-number">7.2.3.</span> <span class="toc-text">5.24、下载RocketMQ源码并编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-25、启动-name-server"><span class="toc-number">7.2.4.</span> <span class="toc-text">5.25、启动 name server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-26、启动-broker"><span class="toc-number">7.2.5.</span> <span class="toc-text">5.26、启动 broker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-27、关闭服务"><span class="toc-number">7.2.6.</span> <span class="toc-text">5.27、关闭服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-28、RocketMQ可视化监控界面"><span class="toc-number">7.2.7.</span> <span class="toc-text">5.28、RocketMQ可视化监控界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-29、参考资料"><span class="toc-number">7.2.8.</span> <span class="toc-text">5.29、参考资料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3、SpringBoot集成RocketMQ"><span class="toc-number">7.3.</span> <span class="toc-text">5.3、SpringBoot集成RocketMQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4、生产者Producer"><span class="toc-number">7.4.</span> <span class="toc-text">5.4、生产者Producer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-22、消息管理模块实现的几种方法"><span class="toc-number">7.4.1.</span> <span class="toc-text">6.22、消息管理模块实现的几种方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、拓展阅读"><span class="toc-number">8.</span> <span class="toc-text">七、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">9.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">10.</span> <span class="toc-text">九、结语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、导语"><span class="toc-number">1.</span> <span class="toc-text">一、导语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、版本"><span class="toc-number">2.</span> <span class="toc-text">二、版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、应用场景"><span class="toc-number">3.</span> <span class="toc-text">三、应用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、消息模式"><span class="toc-number">4.</span> <span class="toc-text">三、消息模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、点对点模式（point-to-point，-queue）和发布-订阅模式（publish-subscribe，topic）。"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、点对点模式（point to point， queue）和发布/订阅模式（publish/subscribe，topic）。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11、P2P模式"><span class="toc-number">4.2.</span> <span class="toc-text">3.11、P2P模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12、Pub-sub模式"><span class="toc-number">4.3.</span> <span class="toc-text">3.12、Pub/sub模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-2、推模式和拉模式：消息的更新者"><span class="toc-number">5.</span> <span class="toc-text">3.2、推模式和拉模式：消息的更新者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、MQ性能对比及选型"><span class="toc-number">6.</span> <span class="toc-text">四、MQ性能对比及选型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、SpringBoot集成RocketMQ"><span class="toc-number">7.</span> <span class="toc-text">五、SpringBoot集成RocketMQ</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1、专业术语"><span class="toc-number">7.1.</span> <span class="toc-text">5.1、专业术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2、安装部署RocketMQ服务器"><span class="toc-number">7.2.</span> <span class="toc-text">5.2、安装部署RocketMQ服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-21、下载安装JDK"><span class="toc-number">7.2.1.</span> <span class="toc-text">5.21、下载安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-22、安装Maven"><span class="toc-number">7.2.2.</span> <span class="toc-text">5.22、安装Maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-24、下载RocketMQ源码并编译"><span class="toc-number">7.2.3.</span> <span class="toc-text">5.24、下载RocketMQ源码并编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-25、启动-name-server"><span class="toc-number">7.2.4.</span> <span class="toc-text">5.25、启动 name server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-26、启动-broker"><span class="toc-number">7.2.5.</span> <span class="toc-text">5.26、启动 broker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-27、关闭服务"><span class="toc-number">7.2.6.</span> <span class="toc-text">5.27、关闭服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-28、RocketMQ可视化监控界面"><span class="toc-number">7.2.7.</span> <span class="toc-text">5.28、RocketMQ可视化监控界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-29、参考资料"><span class="toc-number">7.2.8.</span> <span class="toc-text">5.29、参考资料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3、SpringBoot集成RocketMQ"><span class="toc-number">7.3.</span> <span class="toc-text">5.3、SpringBoot集成RocketMQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4、生产者Producer"><span class="toc-number">7.4.</span> <span class="toc-text">5.4、生产者Producer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5、消费者Consumer"><span class="toc-number">7.5.</span> <span class="toc-text">5.5、消费者Consumer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、使用RocketMQ实现-Feed流-amp-通知模块"><span class="toc-number">8.</span> <span class="toc-text">六、使用RocketMQ实现 Feed流 &amp; 通知模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1、概念"><span class="toc-number">8.1.</span> <span class="toc-text">6.1、概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2、模块分析"><span class="toc-number">8.2.</span> <span class="toc-text">6.2、模块分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-21、模实现功能介绍"><span class="toc-number">8.2.1.</span> <span class="toc-text">6.21、模实现功能介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-22、消息管理模块实现的几种方法"><span class="toc-number">8.2.2.</span> <span class="toc-text">6.22、消息管理模块实现的几种方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、拓展阅读"><span class="toc-number">9.</span> <span class="toc-text">七、拓展阅读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、参考资料"><span class="toc-number">10.</span> <span class="toc-text">八、参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、结语"><span class="toc-number">11.</span> <span class="toc-text">九、结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -810,15 +843,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JAVA代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -830,11 +863,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -858,11 +891,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
+                <a href="javascript:void(0)" class="js-tag color5">回调函数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,15 +1067,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1074,10 +1107,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">业务逻辑</a>
               </li>
              
@@ -1087,6 +1116,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">SOLID原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1234,19 +1267,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">pringboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">websocket</a>
+                <a href="javascript:void(0)" class="js-tag color5">WebSocket</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1263,6 +1284,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate-validator</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1422,18 +1455,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
               </li>
              
@@ -1447,6 +1468,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1574,7 +1607,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1586,11 +1619,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1611,6 +1644,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RocketMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
