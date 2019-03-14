@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>DevOps 自动化运维 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、导语 本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：   代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC   测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。代码托管：码云云服务器：阿里云 CentOS 7">
+  <meta name="description" content="一、导语 本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：代码托管 –&amp;gt; 构建触发器（编译 - 测试 - 打包）–&amp;gt;  构建后部署到ESC。   测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。代码托管：码云云服务器：阿里云 CentOS 7">
 <meta name="keywords" content="持续集成,DevOps,自动化运维,CI&#x2F;CD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DevOps 自动化运维">
 <meta property="og:url" content="http://www.lapland.top/2019/03/10/博客文章/SC05 项目配置 & 运维 & 容器化/持续集成及自动化运维/DevOps 自动化运维/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、导语 本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：   代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC   测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。代码托管：码云云服务器：阿里云 CentOS 7">
+<meta property="og:description" content="一、导语 本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：代码托管 –&amp;gt; 构建触发器（编译 - 测试 - 打包）–&amp;gt;  构建后部署到ESC。   测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。代码托管：码云云服务器：阿里云 CentOS 7">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T04:20:49.000Z">
+<meta property="og:updated_time" content="2019-03-14T04:25:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DevOps 自动化运维">
-<meta name="twitter:description" content="一、导语 本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：   代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC   测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。代码托管：码云云服务器：阿里云 CentOS 7">
+<meta name="twitter:description" content="一、导语 本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：代码托管 –&amp;gt; 构建触发器（编译 - 测试 - 打包）–&amp;gt;  构建后部署到ESC。   测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。代码托管：码云云服务器：阿里云 CentOS 7">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -180,10 +180,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
-<p>本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：</p>
-</blockquote>
-<blockquote>
-<p>代码托管 - 构建触发器（编译 - 测试 - 打包） - 构建后部署到ESC</p>
+<p>本文讲述如何使用码云进行代码托管，并且使用阿里云 CodePipeline 服务构建并部署您托管在码云上的代码的过程。大致步骤如下：<br>代码托管 –&gt; 构建触发器（编译 - 测试 - 打包）–&gt;  构建后部署到ESC。</p>
 </blockquote>
 <blockquote>
 <p>测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。<br>代码托管：码云<br>云服务器：阿里云 CentOS 7</p>
@@ -543,19 +540,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,7 +548,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,6 +565,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,15 +584,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -763,18 +760,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">习题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
@@ -783,11 +768,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,10 +828,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">架构设计</a>
               </li>
              
@@ -844,6 +837,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,15 +876,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">引入公共页面</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1047,6 +1044,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
@@ -1060,10 +1061,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Nginx安装配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">云计算</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1311,11 +1308,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1323,11 +1320,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
+                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Struts2</a>
+                <a href="javascript:void(0)" class="js-tag color5">原型设计</a>
               </li>
              
               <li class="article-tag-list-item">
