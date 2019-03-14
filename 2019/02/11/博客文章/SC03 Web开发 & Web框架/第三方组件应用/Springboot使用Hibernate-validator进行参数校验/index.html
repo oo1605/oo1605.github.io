@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.lapland.top">
   <title>Springboot使用Hibernate-validator进行参数校验 | 不系之舟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、导语在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。  Hibernate Validator 的作用  验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度；统一且规范的验证方式，无需你">
+  <meta name="description" content="一、导语 在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。   Hibernate Validator 的作用 验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度； 统一且规范的验证方式，无">
 <meta name="keywords" content="Hibernate-validator,参数校验,Springboot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Springboot使用Hibernate-validator进行参数校验">
 <meta property="og:url" content="http://www.lapland.top/2019/02/11/博客文章/SC03 Web开发 & Web框架/第三方组件应用/Springboot使用Hibernate-validator进行参数校验/index.html">
 <meta property="og:site_name" content="不系之舟">
-<meta property="og:description" content="一、导语在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。  Hibernate Validator 的作用  验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度；统一且规范的验证方式，无需你">
+<meta property="og:description" content="一、导语 在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。   Hibernate Validator 的作用 验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度； 统一且规范的验证方式，无">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T06:37:30.000Z">
+<meta property="og:updated_time" content="2019-03-14T07:06:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springboot使用Hibernate-validator进行参数校验">
-<meta name="twitter:description" content="一、导语在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。  Hibernate Validator 的作用  验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度；统一且规范的验证方式，无需你">
+<meta name="twitter:description" content="一、导语 在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。   Hibernate Validator 的作用 验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度； 统一且规范的验证方式，无">
   
     <link rel="alternative" href="/atom.xml" title="不系之舟" type="application/atom+xml">
   
@@ -179,12 +179,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。</p>
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
+<p>在开发中经常需要字段校验，如字段非空，字段长度限制，邮箱格式验证等。如果这些都拿到业务中来 处理，则会使代码冗长，重复，并且此类的代码与主线业务逻辑关系不大，相互耦合在一起显得层结构不清。因此，我们选用Hibernate-validator框架进行参数校验。</p>
+</blockquote>
 <ul>
-<li>Hibernate Validator 的作用</li>
+<li>Hibernate Validator 的作用<ul>
+<li>验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度；</li>
+<li>统一且规范的验证方式，无需你再次编写重复的验证代码；</li>
+<li>你将更专注于你的业务，将这些繁琐的事情统统丢在一边。</li>
 </ul>
-<p>验证逻辑与业务逻辑之间进行了分离，降低了程序耦合度；<br>统一且规范的验证方式，无需你再次编写重复的验证代码；<br>你将更专注于你的业务，将这些繁琐的事情统统丢在一边。</p>
+</li>
+</ul>
+<blockquote>
 <p>测试环境：JDK1.8 + Maven 3.5.1 + Tomcat 7 + IDEA。</p>
+</blockquote>
 <a id="more"></a>
 <h1 id="二、版本"><a href="#二、版本" class="headerlink" title="二、版本"></a>二、版本</h1><table>
 <thead>
@@ -232,21 +240,16 @@
 <h1 id="六、Bean-Validation-中内置的-constraint"><a href="#六、Bean-Validation-中内置的-constraint" class="headerlink" title="六、Bean Validation 中内置的 constraint"></a>六、Bean Validation 中内置的 constraint</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Null</span>           被注释的元素必须为 <span class="keyword">null</span></span><br><span class="line"><span class="meta">@NotNull</span>        被注释的元素必须不为 <span class="keyword">null</span></span><br><span class="line"><span class="meta">@AssertTrue</span>     被注释的元素必须为 <span class="keyword">true</span></span><br><span class="line"><span class="meta">@AssertFalse</span>    被注释的元素必须为 <span class="keyword">false</span></span><br><span class="line"><span class="meta">@Min</span>(value)     被注释的元素必须是一个数字，其值必须大于等于指定的最小值</span><br><span class="line"><span class="meta">@Max</span>(value)     被注释的元素必须是一个数字，其值必须小于等于指定的最大值</span><br><span class="line"><span class="meta">@DecimalMin</span>(value)  被注释的元素必须是一个数字，其值必须大于等于指定的最小值</span><br><span class="line"><span class="meta">@DecimalMax</span>(value)  被注释的元素必须是一个数字，其值必须小于等于指定的最大值</span><br><span class="line"><span class="meta">@Size</span>(max=, min=)   被注释的元素的大小必须在指定的范围内</span><br><span class="line"><span class="meta">@Digits</span> (integer, fraction)     被注释的元素必须是一个数字，其值必须在可接受的范围内</span><br><span class="line"><span class="meta">@Past</span>                    被注释的元素必须是一个过去的日期</span><br><span class="line"><span class="meta">@Future</span>                  被注释的元素必须是一个将来的日期</span><br><span class="line"><span class="meta">@Pattern</span>(regex=,flag=)   被注释的元素必须符合指定的正则表达式</span><br><span class="line">Hibernate Validator      附加的 constraint</span><br><span class="line"><span class="meta">@NotBlank</span>(message =)     验证字符串非<span class="keyword">null</span>，且长度必须大于<span class="number">0</span></span><br><span class="line"><span class="meta">@Email</span>                   被注释的元素必须是电子邮箱地址</span><br><span class="line"><span class="meta">@Length</span>(min=,max=)       被注释的字符串的大小必须在指定的范围内</span><br><span class="line"><span class="meta">@NotEmpty</span>                被注释的字符串的必须非空</span><br><span class="line"><span class="meta">@Range</span>(min=,max=,message=)  被注释的元素必须在合适的范围内</span><br></pre></td></tr></table></figure>
 <ul>
 <li>@NotNull 和 @NotEmpty  和 @NotBlank 区别<ul>
-<li>@NotBlank    只用于String，不能为null且trim()之后size&gt;0<ul>
+<li>@NotBlank    只用于String，不能为null且trim()之后size&gt;0</li>
 <li>@NotNull      不能为null，但可以为empty，没有Size的约束，用在基本类型上</li>
 <li>@NotEmpty 不能为null，且Size&gt;0， 用在String类或集合类上面</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li><p>[x] <a href="http://hibernate.org/validator/documentation/" target="_blank" rel="noopener">官方文档</a></p>
-</li>
-<li><p>[x] <a href="https://www.cnblogs.com/hujunzheng/p/9952563.html" target="_blank" rel="noopener">高效使用hibernate-validator校验框架</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/quan20111992/article/details/80906334" target="_blank" rel="noopener">hibernate-validator</a></p>
-</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="http://hibernate.org/validator/documentation/" target="_blank" rel="noopener">官方文档</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://www.cnblogs.com/hujunzheng/p/9952563.html" target="_blank" rel="noopener">高效使用hibernate-validator校验框架</a></li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="https://blog.csdn.net/quan20111992/article/details/80906334" target="_blank" rel="noopener">hibernate-validator</a></li>
 </ul>
 <h1 id="九、结语"><a href="#九、结语" class="headerlink" title="九、结语"></a>九、结语</h1><blockquote>
 <p>文章仅作为个人学习总结之用，水平有限，欢迎批评指正。</p>
@@ -555,6 +558,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">语录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导读</a>
               </li>
              
@@ -579,15 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,11 +614,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
+                <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,30 +790,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">语录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
@@ -804,6 +803,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">习题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,15 +962,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">OSWorkFlow</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1011,14 +1014,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">日志记录</a>
               </li>
              
@@ -1032,6 +1027,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web Office</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Bootstrap-Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分页组件</a>
               </li>
              
               <li class="article-tag-list-item">
