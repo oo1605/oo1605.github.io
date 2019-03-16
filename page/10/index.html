@@ -338,95 +338,6 @@
 
 
   
-    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/软件架构/模块化设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">模块化设计</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/" class="archive-article-date">
-  	<time datetime="2018-04-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">代码框架设计</span><br><span class="line">楼主认为框架设计的目的是：</span><br><span class="line">1. 将整个项目合理的拆分为许多模块，各个模块功能职责明确，降低各个模块的依赖，耦合；做到想用某一个模块时就用，不用时就去除掉，并且不影响其他模块</span><br><span class="line">2. 合理设计类与类之间的继承关系，接口的实现关系，和利用java的public、private、protected、default权限，来掩藏代码内部逻辑，争取做到只暴露外部开发接口，完全掩藏内部逻辑</span><br><span class="line">楼主认为：</span><br><span class="line">以功能为单位划分模块，无论功能大小均划分成模块，方便后期代码升级可以进行添加；</span><br><span class="line">模块设计准则：</span><br><span class="line">a.模块设计准则：在一个功能模块下，放于同一个package下，根据功能点为这个模块创建一个接口，创建两个功能管理类并实现前面的该接口，一个用于对外部模块开放接口，另一个用于控制模块内部逻辑。最后，在将模块内部真正实现的代码逻辑类全部设置为default权限，保证package以外的无法访问；如下图：</span><br><span class="line">模块设计</span><br><span class="line">b. 类与类的继承、接口实现；如果有多个相同的功能的代码块，都为其写一个基类，子类来继承即可；接口方面，如果多个类有相同的功能，但实现不一样则就用接口来实现</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">架构设计</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">模块化设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程思想-设计模式-架构//" class="article-tag-list-link color2">编程思想 & 设计模式 & 架构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/浅谈怎样写业务逻辑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -645,6 +556,90 @@
 
 
   
+    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/面向接口开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/">面向接口开发</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/" class="archive-article-date">
+  	<time datetime="2018-04-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">面向接口开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程思想-设计模式-架构//" class="article-tag-list-link color2">编程思想 & 设计模式 & 架构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/以快速迭代与敏捷开发应对客户不断变化的需求" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -733,19 +728,19 @@
 
 
   
-    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/编程思想/面向接口开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/软件架构/模块化设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/">面向接口开发</a>
+      <a class="article-title" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">模块化设计</a>
     </h1>
   
 
         
-        <a href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/" class="archive-article-date">
+        <a href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/" class="archive-article-date">
   	<time datetime="2018-04-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
 </a>
         
@@ -753,7 +748,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">代码框架设计</span><br><span class="line">楼主认为框架设计的目的是：</span><br><span class="line">1. 将整个项目合理的拆分为许多模块，各个模块功能职责明确，降低各个模块的依赖，耦合；做到想用某一个模块时就用，不用时就去除掉，并且不影响其他模块</span><br><span class="line">2. 合理设计类与类之间的继承关系，接口的实现关系，和利用java的public、private、protected、default权限，来掩藏代码内部逻辑，争取做到只暴露外部开发接口，完全掩藏内部逻辑</span><br><span class="line">楼主认为：</span><br><span class="line">以功能为单位划分模块，无论功能大小均划分成模块，方便后期代码升级可以进行添加；</span><br><span class="line">模块设计准则：</span><br><span class="line">a.模块设计准则：在一个功能模块下，放于同一个package下，根据功能点为这个模块创建一个接口，创建两个功能管理类并实现前面的该接口，一个用于对外部模块开放接口，另一个用于控制模块内部逻辑。最后，在将模块内部真正实现的代码逻辑类全部设置为default权限，保证package以外的无法访问；如下图：</span><br><span class="line">模块设计</span><br><span class="line">b. 类与类的继承、接口实现；如果有多个相同的功能的代码块，都为其写一个基类，子类来继承即可；接口方面，如果多个类有相同的功能，但实现不一样则就用接口来实现</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -766,7 +762,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">面向接口开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">架构设计</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">模块化设计</a>
         		</li>
       		
 		</ul>
@@ -787,94 +787,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/编程思想/面向接口开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/设计模式/23种设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/">23种设计模式概述</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/" class="archive-article-date">
-  	<time datetime="2018-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>设计模式正是对面向对象设计原则的应用。从广义角度讲设计模式是可解决一类软件问题并能重复使用的设计方案。</p>
-        
-          <a class="article-more-a" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程思想-设计模式-架构//" class="article-tag-list-link color2">编程思想 & 设计模式 & 架构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/04/22/博客文章/SC02 编程思想 & 设计模式 & 架构/软件架构/模块化设计/">展开全文 >></a>
         </p>
       
 
@@ -962,6 +875,93 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/UML/UML 模型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC02 编程思想 &amp; 设计模式 &amp; 架构/设计模式/23种设计模式概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/">23种设计模式概述</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/" class="archive-article-date">
+  	<time datetime="2018-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><p>设计模式正是对面向对象设计原则的应用。从广义角度讲设计模式是可解决一类软件问题并能重复使用的设计方案。</p>
+        
+          <a class="article-more-a" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程思想-设计模式-架构//" class="article-tag-list-link color2">编程思想 & 设计模式 & 架构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/21/博客文章/SC02 编程思想 & 设计模式 & 架构/设计模式/23种设计模式概述/">展开全文 >></a>
         </p>
       
 
@@ -1185,14 +1185,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -1201,11 +1193,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS代码片段</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1213,15 +1209,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">常用端口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串操作</a>
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1257,14 +1257,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
               </li>
              
@@ -1274,6 +1266,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">监听器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,19 +1305,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL习题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">注解切换</a>
+                <a href="javascript:void(0)" class="js-tag color5">SqlServer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1326,6 +1318,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">外键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">多数据源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">注解切换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1393,27 +1393,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">几点思考</a>
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">胡思乱想</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">语录摘抄</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">那年那兔那些事</a>
+                <a href="javascript:void(0)" class="js-tag color3">并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1433,11 +1417,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">并发</a>
+                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1445,7 +1425,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">系统开发手册</a>
+                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1454,10 +1434,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">敏捷开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抽象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1477,7 +1453,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
+                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1485,7 +1461,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程风格</a>
+                <a href="javascript:void(0)" class="js-tag color2">JSON定义</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1777,15 +1753,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能分析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JProfiler</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">连接数优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1798,10 +1774,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Yslow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jmeter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1818,6 +1790,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jmeter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1845,7 +1821,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
+                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1853,11 +1829,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
+                <a href="javascript:void(0)" class="js-tag color4">rarcrack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">压缩包</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1890,14 +1866,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1945,6 +1913,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Android开发环境</a>
               </li>
              
@@ -1957,7 +1933,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color5">几点思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">胡思乱想</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">语录摘抄</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">那年那兔那些事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1965,7 +1965,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1973,11 +1973,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2041,6 +2041,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">行业分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电力项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ArcGIS</a>
               </li>
              
@@ -2050,14 +2058,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">行业分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电力项目</a>
               </li>
              
               <li class="article-tag-list-item">
