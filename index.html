@@ -160,30 +160,87 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-博客文章/JC00 船舶专业/JC02 AM 系统管理/Tribon建工程大致过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/JC00 船舶专业/JC02 AM系统管理/AM数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM 系统管理/Tribon建工程大致过程/">Tribon建工程大致过程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM 系统管理/Tribon建工程大致过程/" class="archive-article-date">
-  	<time datetime="2019-05-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
-<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/51233488" target="_blank" rel="noopener">Tribon建工程大致过程</a></p>
+        <h1 id="七、AM数据库"><a href="#七、AM数据库" class="headerlink" title="七、AM数据库"></a>七、AM数据库</h1><p>Tribon/AM 数据库名字的含义</p>
+<table>
+<thead>
+<tr>
+<th>数据库名</th>
+<th>Tribon环境变量</th>
+<th>内容描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>船体型线数据库</td>
+<td>SB_CGDB</td>
+<td>船体外型信息 型表面，船体曲线，板缝</td>
+</tr>
+<tr>
+<td>船体结构数据库</td>
+<td>SB_OGDB</td>
+<td>船体模型信息</td>
+</tr>
+<tr>
+<td>船体模型信息</td>
+<td>SB_PLDB</td>
+<td>从船体模型抽取的板材零件生产信息</td>
+</tr>
+<tr>
+<td>型材数据库</td>
+<td>SB_PROFDB</td>
+<td>从船体模型抽取的型材零件生产数据</td>
+</tr>
+<tr>
+<td>板材套料数据库</td>
+<td>SB_NPL</td>
+<td>套料的板材和切割草图</td>
+</tr>
+<tr>
+<td>套料标准数据库</td>
+<td>SB_NSTD</td>
+<td>为板材套料提供标准板，引割点，切割草图图框等</td>
+</tr>
+<tr>
+<td>型材套料数据库</td>
+<td>SBH_NEST_PROFDB</td>
+<td>套料的型材</td>
+</tr>
+<tr>
+<td>型材套料图形数据库</td>
+<td>SB_PDB</td>
+<td>型材套料生成的图形和草图</td>
+</tr>
+<tr>
+<td>图形数据库</td>
+<td>SDB_PICT</td>
+<td>视图，板架的图形</td>
+</tr>
+<tr>
+<td>装配计划数据库</td>
+<td>SB_ASSDB</td>
+<td>装配计划数据</td>
+</tr>
+<tr>
+<td>生产数据库</td>
+<td>Oracle databank</td>
+<td>为用户编写提供零件的生产信息</td>
+</tr>
+<tr>
+<td>标准数据库</td>
+<td>SBD_STD</td>
+<td>标准图框，等等</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-4、参考资料"><a href="#8-4、参考资料" class="headerlink" title="8.4、参考资料"></a>8.4、参考资料</h2><ul>
+<li><p>[x] <a href="http://www.docin.com/p-1336869038.html" target="_blank" rel="noopener">AVEVA Marine 工程船体数据库架构浅析</a></p>
 </li>
-<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/53524918" target="_blank" rel="noopener">Tribon的网络版(TriWeb)上线啦</a></p>
+<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/50858617#comments" target="_blank" rel="noopener">Tribon数据库结构研究</a></p>
 </li>
 </ul>
 
@@ -194,37 +251,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">系统管理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tribon</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AM-系统管理//" class="article-tag-list-link color3">AM 系统管理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM 系统管理/Tribon建工程大致过程/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/02/博客文章/JC00 船舶专业/JC02 AM系统管理/AM数据库/">展开全文 >></a>
         </p>
       
 
@@ -254,19 +285,19 @@
 
 
   
-    <article id="post-博客文章/JC00 船舶专业/JC02 AM 系统管理/AM安装激活和配置过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/JC00 船舶专业/JC02 AM系统管理/AM安装激活和配置过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM 系统管理/AM安装激活和配置过程/">AM安装激活和配置过程</a>
+      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM系统管理/AM安装激活和配置过程/">AM安装激活和配置过程</a>
     </h1>
   
 
         
-        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM 系统管理/AM安装激活和配置过程/" class="archive-article-date">
+        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM系统管理/AM安装激活和配置过程/" class="archive-article-date">
   	<time datetime="2019-05-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
 </a>
         
@@ -321,7 +352,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/AM-系统管理//" class="article-tag-list-link color3">AM 系统管理</a>
+        			<a href="/categories/AM系统管理//" class="article-tag-list-link color2">AM系统管理</a>
         		</li>
       		
 		</ul>
@@ -330,7 +361,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM 系统管理/AM安装激活和配置过程/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM系统管理/AM安装激活和配置过程/">展开全文 >></a>
         </p>
       
 
@@ -360,19 +391,19 @@
 
 
   
-    <article id="post-博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML二次开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/JC00 船舶专业/JC02 AM系统管理/Tribon建工程大致过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML二次开发/">PML二次开发</a>
+      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM系统管理/Tribon建工程大致过程/">Tribon建工程大致过程</a>
     </h1>
   
 
         
-        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML二次开发/" class="archive-article-date">
+        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM系统管理/Tribon建工程大致过程/" class="archive-article-date">
   	<time datetime="2019-05-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
 </a>
         
@@ -380,24 +411,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="8-1、开发工具"><a href="#8-1、开发工具" class="headerlink" title="8.1、开发工具"></a>8.1、开发工具</h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href>AVEVA PML Studio 1.1（PDMS官方的PML开发工具）</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href>AVEVA PML Publisher 1.0.SP1</a></li>
-<li style="list-style: none"><input type="checkbox" checked> <a href="https://pmlrecovery.com/" target="_blank" rel="noopener">加密PML程序恢复</a></li>
-</ul>
-<h2 id="8-1、参考文档"><a href="#8-1、参考文档" class="headerlink" title="8.1、参考文档"></a>8.1、参考文档</h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> <a href="http://www.cppblog.com/eryar/archive/2014/12/25/209307.html" target="_blank" rel="noopener">AVEVA PMLNet Guide</a></li>
-</ul>
-<h2 id="8-1、几个小的例子"><a href="#8-1、几个小的例子" class="headerlink" title="8.1、几个小的例子"></a>8.1、几个小的例子</h2><ul>
-<li><p>[x] <a href="https://blog.csdn.net/u014653497/article/details/24305357" target="_blank" rel="noopener">AVEVA MARINE 二次开发学习总结</a></p>
+        <h1 id="八、参考资料"><a href="#八、参考资料" class="headerlink" title="八、参考资料"></a>八、参考资料</h1><ul>
+<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/51233488" target="_blank" rel="noopener">Tribon建工程大致过程</a></p>
 </li>
-<li><p>[x] <a href="https://blog.csdn.net/eryar/article/details/4457056" target="_blank" rel="noopener">AVEVA MARINE 中用PML写管支架程序</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/50858331" target="_blank" rel="noopener">AM中使用PML语言标注船体结构</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/51233424" target="_blank" rel="noopener">Tribon图层的理解</a></p>
-</li>
-<li><p>[x] <a href="https://www.cnblogs.com/jevon1982/p/9529116.html" target="_blank" rel="noopener">PML调用PDMS内核命令研究</a></p>
+<li><p>[x] <a href="https://blog.csdn.net/drinktonton/article/details/53524918" target="_blank" rel="noopener">Tribon的网络版(TriWeb)上线啦</a></p>
 </li>
 </ul>
 
@@ -413,19 +430,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">系统管理</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二次开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVEVA Marine</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tribon</a>
         		</li>
       		
 		</ul>
@@ -437,7 +446,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/AM二次开发//" class="article-tag-list-link color2">AM二次开发</a>
+        			<a href="/categories/AM系统管理//" class="article-tag-list-link color2">AM系统管理</a>
         		</li>
       		
 		</ul>
@@ -446,7 +455,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML二次开发/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC02 AM系统管理/Tribon建工程大致过程/">展开全文 >></a>
         </p>
       
 
@@ -476,351 +485,19 @@
 
 
   
-    <article id="post-博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML编程基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML编程基础语法/">PML编程基础语法</a>
+      <a class="article-title" href="/2019/04/11/README/">博客文章目录</a>
     </h1>
   
 
         
-        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML编程基础语法/" class="archive-article-date">
-  	<time datetime="2019-05-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
-<p>Programmable Macro Language 可编程宏语言。通常的PML开发包括两部分, 一部分是PML宏，脚本语言; 另一部分是PML2，面向对象的解释型语言。</p>
-</blockquote>
-<blockquote>
-<p>PML对象有成员变量和成员函数，及属性和方法。没有私有的概念。 PML 函数参数都是传引用而不是传值。</p>
-</blockquote>
-<blockquote>
-<p>测试环境：Win10 +.Net Framework 4.0 + EditPlus。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML编程基础语法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二次开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVEVA Marine</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AM二次开发//" class="article-tag-list-link color2">AM二次开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/PML二次开发/PML编程基础语法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/JC00 船舶专业/JC01 AM二次开发/Vitesse(Python)二次开发/Vitesse(Python)二次开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/Vitesse(Python)二次开发/Vitesse(Python)二次开发/">Vitesse(Python)二次开发</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/Vitesse(Python)二次开发/Vitesse(Python)二次开发/" class="archive-article-date">
-  	<time datetime="2019-05-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>[x] <a href="https://blog.csdn.net/forevermemory/article/details/54710016" target="_blank" rel="noopener">Tribon Vitesse二次开发环境搭建</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/forevermemory/article/details/54710018" target="_blank" rel="noopener">Tribon Vitesse二次开发技术路线</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/forevermemory/article/details/54710082" target="_blank" rel="noopener">Vitesse2DLL文档</a></p>
-</li>
-</ul>
-<ul>
-<li><p>[x] <a href="https://blog.csdn.net/forevermemory/article/details/54710078" target="_blank" rel="noopener">Tribon Vitesse程序pyc文件反</a></p>
-</li>
-<li><p>[x] <a href="https://blog.csdn.net/forevermemory/article/details/54710081" target="_blank" rel="noopener">Vitesse2Dll程序下载</a></p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二次开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVEVA Marine</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Vitesse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AM二次开发//" class="article-tag-list-link color2">AM二次开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/10/博客文章/JC00 船舶专业/JC01 AM二次开发/Vitesse(Python)二次开发/Vitesse(Python)二次开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/JC00 船舶专业/JC01 AM二次开发/导读-AM二次开发概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/07/博客文章/JC00 船舶专业/JC01 AM二次开发/导读-AM二次开发概述/">AVEVA Marine 二次开发概述</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/07/博客文章/JC00 船舶专业/JC01 AM二次开发/导读-AM二次开发概述/" class="archive-article-date">
-  	<time datetime="2019-05-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
-<p>AVEVA Marine是一款用于船舶生产设计的软件，是Tribon的升级版。</p>
-</blockquote>
-<blockquote>
-<p>本文介绍AM二次开发的方法和AM软件开发设计到的基础概念。</p>
-</blockquote>
-<blockquote>
-<p>测试环境：Win10 +.Net Framework 4.0 + Visual Studio 2017。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/05/07/博客文章/JC00 船舶专业/JC01 AM二次开发/导读-AM二次开发概述/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二次开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVEVA Marine</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">船舶，生产设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/AM-二次开发//" class="article-tag-list-link color3">AM 二次开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/07/博客文章/JC00 船舶专业/JC01 AM二次开发/导读-AM二次开发概述/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章/JC00 船舶专业/JC01 AM二次开发/C#二次开发/C#二次开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/博客文章/JC00 船舶专业/JC01 AM二次开发/C#二次开发/C#二次开发/">C#二次开发</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/11/博客文章/JC00 船舶专业/JC01 AM二次开发/C#二次开发/C#二次开发/" class="archive-article-date">
+        <a href="/2019/04/11/README/" class="archive-article-date">
   	<time datetime="2019-04-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
@@ -828,22 +505,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Customize</p>
-<ul>
-<li><p>[x] <a href="http://www.it610.com/article/4051280.htm" target="_blank" rel="noopener">AVEVA .Net Quick Start Guide</a></p>
-</li>
-<li><p>[x] <a href="http://www.cppblog.com/eryar/archive/2012/11/11/195036.html" target="_blank" rel="noopener">AVEVA .NET快速入门引导</a></p>
-</li>
-<li><p>[x] <a href="https://wenku.baidu.com/view/7ee8fa23842458fb770bf78a6529647d272834f8.html" target="_blank" rel="noopener">PDMS二次开发介绍-基于NetC平台</a></p>
-</li>
-</ul>
-<h2 id="8-1、几个小的例子"><a href="#8-1、几个小的例子" class="headerlink" title="8.1、几个小的例子"></a>8.1、几个小的例子</h2><ul>
-<li><p>[x] <a href="https://blog.csdn.net/woaipaoche/article/details/84949925" target="_blank" rel="noopener">PDMS如何进入子交互模式，鼠标拾取模型的方法</a></p>
-</li>
-<li><p>[x] <a href="https://www.cnblogs.com/jevon1982/p/9531659.html" target="_blank" rel="noopener">PDMS数据库快速索引查询</a></p>
-</li>
-</ul>
-
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
+<p>本项目是个人笔记的Git托管，并作为博客内容源。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/04/11/README/#more">more >></a>
+        
       
 
       
@@ -856,19 +523,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二次开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AVEVA Marine</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C#</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
         		</li>
       		
 		</ul>
@@ -889,7 +544,100 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/11/博客文章/JC00 船舶专业/JC01 AM二次开发/C#二次开发/C#二次开发/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/11/README/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC00 软件开发专业/SC03 Web开发 &amp; Web框架/网络编程/Netty基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/">Netty基础</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/" class="archive-article-date">
+  	<time datetime="2019-04-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
+<p>Netty是 一个异步事件驱动的网络应用程序框架，用于快速开发可维护的高性能协议服务器和客户端。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Netty</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/">展开全文 >></a>
         </p>
       
 
@@ -1118,20 +866,20 @@
 
 
   
-    <article id="post-博客文章/SC00 软件开发专业/SC03 Web开发 &amp; Web框架/网络编程/Netty基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-博客文章/SC00 软件开发专业/SC04 数据库应用/存储过程基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/">Netty基础</a>
+      <a class="article-title" href="/2019/04/09/博客文章/SC00 软件开发专业/SC04 数据库应用/存储过程基础/">存储过程基础</a>
     </h1>
   
 
         
-        <a href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/" class="archive-article-date">
-  	<time datetime="2019-04-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
+        <a href="/2019/04/09/博客文章/SC00 软件开发专业/SC04 数据库应用/存储过程基础/" class="archive-article-date">
+  	<time datetime="2019-04-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-09</time>
 </a>
         
       </header>
@@ -1139,10 +887,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
-<p>Netty是 一个异步事件驱动的网络应用程序框架，用于快速开发可维护的高性能协议服务器和客户端。</p>
+<p>存储过程 (Stored Procedure) 。<br>测试环境：mysql</p>
 </blockquote>
         
-          <a class="article-more-a" href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/09/博客文章/SC00 软件开发专业/SC04 数据库应用/存储过程基础/#more">more >></a>
         
       
 
@@ -1156,11 +904,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Netty</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">后端开发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">招聘</a>
         		</li>
       		
 		</ul>
@@ -1172,7 +928,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Web开发-Web框架//" class="article-tag-list-link color4">Web开发 & Web框架</a>
+        			<a href="/categories/杂乱//" class="article-tag-list-link color3">杂乱</a>
         		</li>
       		
 		</ul>
@@ -1181,7 +937,203 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/11/博客文章/SC00 软件开发专业/SC03 Web开发 & Web框架/网络编程/Netty基础/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/09/博客文章/SC00 软件开发专业/SC04 数据库应用/存储过程基础/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC00 软件开发专业/SC05 项目配置 &amp; 运维 &amp; 容器化/Docker/Docker环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/01/博客文章/SC00 软件开发专业/SC05 项目配置 & 运维 & 容器化/Docker/Docker环境搭建/">Docker容器服务搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/01/博客文章/SC00 软件开发专业/SC05 项目配置 & 运维 & 容器化/Docker/Docker环境搭建/" class="archive-article-date">
+  	<time datetime="2019-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
+<p>Docker 是一个开源的应用容器引擎，从狭义上来讲就是一个进程，从广义上来讲是一个虚拟容器。Docker 让开发者可以打包他们的应用以及依赖环境（jdk、tomcat、ngnix等）到一个可移植的容器中，然后发布到任何流行的 Linux 或Windows系统上，便可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
+</blockquote>
+<blockquote>
+<p>本文主要讲述如何利用docker容器搭建Web应用环境，以及docker的常用操作 。以实现项目的快速部署。<br>测试环境：Deepin。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/04/01/博客文章/SC00 软件开发专业/SC05 项目配置 & 运维 & 容器化/Docker/Docker环境搭建/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">容器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/项目配置-运维-容器化//" class="article-tag-list-link color1">项目配置 & 运维 & 容器化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/01/博客文章/SC00 软件开发专业/SC05 项目配置 & 运维 & 容器化/Docker/Docker环境搭建/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客文章/SC00 软件开发专业/SC09 项目实战 &amp; 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/博客文章/SC00 软件开发专业/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/">Hexo配合GitHub搭建个人技术博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/博客文章/SC00 软件开发专业/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/" class="archive-article-date">
+  	<time datetime="2019-03-12T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、导语"><a href="#一、导语" class="headerlink" title="一、导语"></a>一、导语</h1><blockquote>
+<p>本来作者是使用阿里云服务器自建网站的，但是考虑到用处不大，且费用有点高，所以转而寻求更合适的方式。<br>作者习惯使用Atom + markdown插件 + Git插件写文章（*.md上传码云）。本文在此基础上，把写好的文章拷贝到Hexo资源文件夹，生成Page页面。<br>Atom写作环境的配置，请在本站内搜索《Atom搭建Markdown写作环境，托管到Git》</p>
+</blockquote>
+<blockquote>
+<p>测试环境：Deepin 15.5 发行版。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/03/12/博客文章/SC00 软件开发专业/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/项目实战-日常瞎折腾系列//" class="article-tag-list-link color5">项目实战 & 日常瞎折腾系列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/博客文章/SC00 软件开发专业/SC09 项目实战 & 日常瞎折腾系列/Hexo配合GitHub搭建个人技术博客/">展开全文 >></a>
         </p>
       
 
@@ -1313,15 +1265,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">胡思乱想</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">那年那兔那些事</a>
+                <a href="javascript:void(0)" class="js-tag color5">几点思考</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">诗词欣赏</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1329,11 +1285,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">那年那兔那些事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AVEVA Marine</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tribon</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1397,15 +1373,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字典表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">加载配置文件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1525,43 +1501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">二次开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AVEVA Marine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">船舶，生产设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">系统管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tribon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1581,6 +1521,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概念解析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">编程技巧</a>
               </li>
              
@@ -1589,15 +1537,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">元注解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1617,11 +1565,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1669,11 +1617,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术选型</a>
+                <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">模块化设计</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术选型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1685,15 +1633,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前后端分离</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CSS 布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1753,19 +1701,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1801,15 +1749,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">上传</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">下载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维导图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1941,10 +1889,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jmeter</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
               </li>
              
@@ -1961,15 +1905,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+                <a href="javascript:void(0)" class="js-tag color2">jmeter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1978,6 +1914,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">密码攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">渗透测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Maltego</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2001,10 +1949,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">TCP-IP协议</a>
               </li>
              
@@ -2017,11 +1961,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">正向代理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+                <a href="javascript:void(0)" class="js-tag color2">HTTP协议</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2033,11 +1973,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ETL</a>
+                <a href="javascript:void(0)" class="js-tag color5">正向代理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+                <a href="javascript:void(0)" class="js-tag color5">反向代理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2046,6 +1990,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ETL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2061,15 +2013,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网站开发</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">开发实录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">XPath</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2089,22 +2041,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Vitesse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">REST架构</a>
               </li>
              
@@ -2114,10 +2050,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2157,15 +2089,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">面向对象编程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">SOLID原则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
